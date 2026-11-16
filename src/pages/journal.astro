@@ -10,13 +10,10 @@ const nameBySlug = new Map(candidates.map((c) => [c.slug, fullName(c)]));
 <Base title="Journal des mises à jour" section="journal">
   <div class="page">
     <h1>Journal des mises à jour</h1>
+    <!-- prettier-ignore -->
     <p class="lead">
       Chaque jour, les informations du site sont vérifiées et mises à jour à partir de sources publiques.
-      Voici ce qui a changé, et pourquoi. Une erreur ?{' '}
-      <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">
-        Signalez-la
-      </a>
-      .
+      Voici ce qui a changé, et pourquoi. Une erreur ? <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">Signalez-la</a>.
     </p>
     <ol class="entries">
       {changelog.map((e) => (

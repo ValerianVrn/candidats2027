@@ -1,0 +1,160 @@
+---
+import Avatar from './Avatar.astro';
+import { familleOf, fullName, partyOf } from '../lib/data';
+import { FAMILLE_LABEL, statusLabel } from '../lib/labels';
+import type { Candidate } from '../lib/schemas';
+
+interface Props {
+  candidates: Candidate[];
+}
+const { candidates } = Astro.props;
+---
+
+{candidates.length > 0 && (
+  <section class="others" aria-labelledby="autres-titre">
+    <h2 id="autres-titre">
+      Autres candidatures <span class="count">{candidates.length}</span>
+    </h2>
+    <p class="why">
+      Candidats déclarés ou évoqués qui ne remplissent pas encore le{' '}
+      <a href="/methode#nuage">critère du nuage</a> (parti représenté au Parlement, qualification en 2022 ou
+      100 parrainages validés).
+    </p>
+    <ul>
+      {candidates.map((c) => {
+        const party = partyOf(c);
+        const famille = familleOf(c);
+        return (
+          <li
+            data-status={c.status}
+            data-risque={c.risques.length > 0 ? 'true' : 'false'}
+            style={`--ring:var(--f-${famille})`}
+          >
+            <a
+              class="card mini"
+              href={`/candidat/${c.slug}`}
+              data-slug={c.slug}
+              aria-label={`${fullName(c)}, ${statusLabel(c).toLowerCase()}${c.risques.length ? ', procédure en cours' : ''}`}
+            >
+              <span class:list={['ring', { dashed: c.status === 'potentiel' }]}>
+                <Avatar candidate={c} size={40} />
+              </span>
+              <span class="txt">
+                <span class="name">
+                  {fullName(c)}
+                  {c.risques.length > 0 && (
+                    <span class="bang" aria-hidden="true">
+                      !
+                    </span>
+                  )}
+                </span>
+                <span class="sub">
+                  {party ? party.name : FAMILLE_LABEL[famille]} · {statusLabel(c)}
+                </span>
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+)}
+
+<style>
+  .others {
+    padding: 8px var(--gutter) 24px;
+  }
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .count {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--muted);
+  }
+  .why {
+    margin: 4px 0 12px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+  }
+  li {
+    transition: opacity 0.3s ease;
+  }
+  li[data-dim] {
+    opacity: 0.12;
+    pointer-events: none;
+  }
+  .mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 56px;
+    padding: 8px 10px;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--surface) 70%, transparent);
+    border: 1px solid var(--line-soft);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .mini:hover,
+  .mini[aria-current='true'] {
+    border-color: var(--line);
+    background: var(--surface);
+  }
+  .ring {
+    display: flex;
+    border-radius: 50%;
+    border: 2px solid var(--ring);
+  }
+  .ring.dashed {
+    border-style: dashed;
+    opacity: 0.8;
+  }
+  .txt {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .name {
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sub {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bang {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--warn);
+    color: var(--warn-ink);
+    font-size: 10px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

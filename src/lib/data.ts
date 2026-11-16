@@ -13,6 +13,7 @@ import electionJson from '../data/election.json';
 import partiesJson from '../data/parties.json';
 import changelogJson from '../data/changelog.json';
 import siteJson from '../data/site.json';
+import { isFeatured } from './criteria';
 
 function parse<T>(schema: z.ZodType<T>, value: unknown, where: string): T {
   const result = schema.safeParse(value);
@@ -57,3 +58,7 @@ export const fullName = (c: Candidate) => `${c.firstName} ${c.lastName}`;
 
 /** Candidates still in the race (withdrawn ones are only listed in the journal). */
 export const activeCandidates = candidates.filter((c) => c.status !== 'retire');
+
+/** Main cloud vs « Autres candidatures », by the published criterion (src/lib/criteria.ts). */
+export const featuredCandidates = activeCandidates.filter((c) => isFeatured(c, partyOf(c)));
+export const otherCandidates = activeCandidates.filter((c) => !isFeatured(c, partyOf(c)));

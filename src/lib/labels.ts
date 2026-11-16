@@ -3,7 +3,6 @@ import type { Candidate, Famille, Status } from './schemas';
 export const FAMILLE_LABEL: Record<Famille, string> = {
   'extreme-gauche': 'Extrême gauche',
   gauche: 'Gauche',
-  ecologiste: 'Écologiste',
   centre: 'Centre',
   droite: 'Droite',
   'extreme-droite': 'Extrême droite',

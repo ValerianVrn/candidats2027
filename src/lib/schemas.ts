@@ -1,5 +1,5 @@
 import { z } from 'astro/zod';
-import { THEME_IDS } from './themes';
+import { THEME_IDS } from './themes.ts';
 
 /** Absolute https URL (no other protocol is ever rendered as a link). */
 export const httpsUrl = z.url({ protocol: /^https$/ });
@@ -21,15 +21,7 @@ export type Source = z.infer<typeof sourceSchema>;
 
 const sources = z.array(sourceSchema).min(1, 'every fact needs at least one source');
 
-export const FAMILLES = [
-  'extreme-gauche',
-  'gauche',
-  'ecologiste',
-  'centre',
-  'droite',
-  'extreme-droite',
-  'divers',
-] as const;
+export const FAMILLES = ['extreme-gauche', 'gauche', 'centre', 'droite', 'extreme-droite', 'divers'] as const;
 export const familleSchema = z.enum(FAMILLES);
 export type Famille = z.infer<typeof familleSchema>;
 
@@ -44,6 +36,13 @@ export const partySchema = z.object({
   famille: familleSchema,
   /** Where the family classification comes from (e.g. the Interior Ministry's nuances grid). */
   classificationSources: sources,
+  /** Whether the party currently has at least one member in each assembly (main-cloud criterion). */
+  representation: z.object({
+    assemblee: z.boolean(),
+    senat: z.boolean(),
+    parlementEuropeen: z.boolean(),
+    sources,
+  }),
 });
 export type Party = z.infer<typeof partySchema>;
 
@@ -93,8 +92,14 @@ export const candidateSchema = z
     status: statusSchema,
     /** Sources supporting the current status. */
     statusSources: sources,
-    /** Party id from parties.json, or null for candidates without a party. */
+    /** Party id from parties.json that officially supports the candidate, or null. */
     party: z.string().nullable(),
+    /** Official campaign or personal website domains (e.g. "exemple2027.fr"), allowed as sources for this candidate. */
+    officialDomains: z.array(z.string().regex(/^[a-z0-9.-]+\.[a-z]{2,}$/)),
+    /** Set when the candidate obtained the 500 sponsorships at the 2022 presidential election. */
+    qualified2022: z.object({ sources }).nullable(),
+    /** Latest validated sponsorship count published by the Conseil constitutionnel (from early 2027). */
+    parrainages: z.object({ count: z.number().int().min(0), date: isoDate, sources }).nullable(),
     /** Current role, e.g. « Député de la Somme ». */
     role: z.string().min(1),
     portrait: portraitSchema.nullable(),

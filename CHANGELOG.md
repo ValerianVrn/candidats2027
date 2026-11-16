@@ -13,4 +13,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 - Site shell in the « Constellation » design: floating card cloud with filters, candidate detail panel
   (bottom sheet on mobile), candidate pages, journal, countdown, click-to-load videos, numbered citations.
 - Azure hosting: dev and prod Static Web Apps (Bicep), OIDC deploy workflows, prod gated by owner approval.
+- Content guardrails (`check-data`): source allowlist, two independent sources for status and legal risks,
+  Commons-only portraits, optional link check; run in CI.
+- Published main-cloud criterion, « Autres candidatures » row, Méthode and IA pages, correction issue form.
+- Official election dates (18 April and 2 May 2027) and electoral silence windows.
 - Data schemas (Zod) validated at build time, with placeholder example data.
