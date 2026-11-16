@@ -1,0 +1,17 @@
+name: Deploy prod
+
+# Runs on every push to main (releases). The `production` environment requires the owner's approval,
+# and only that environment's Azure identity can deploy the prod Static Web App.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment: production
