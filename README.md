@@ -43,7 +43,19 @@ src/components/   Astro components
 src/lib/          pure TS logic (quiz scoring, dates)
 src/data/         JSON content (candidates, parties, election, quiz, changelog)
 docs/adr/         architecture decision records
+infra/            Azure Bicep (Static Web Apps)
+public/staticwebapp.config.json   SWA headers, 404, caching
 ```
+
+## Deployment
+
+| Environment | Azure Static Web App     | Deployed by                                         | URL                                                 |
+| ----------- | ------------------------ | --------------------------------------------------- | --------------------------------------------------- |
+| dev         | `swa-candidats2027-dev`  | every push to `develop` (`deploy-dev.yml`)          | https://kind-wave-0e4cc6003.6.azurestaticapps.net   |
+| prod        | `swa-candidats2027-prod` | push to `main` + owner approval (`deploy-prod.yml`) | https://nice-forest-04f91d203.5.azurestaticapps.net |
+
+Infrastructure is in `infra/main.bicep` (resource group `rg-candidats2027`). Authentication uses GitHub OIDC;
+no secret is stored. Details and how to change plans: [ADR 0003](docs/adr/0003-azure-static-web-apps.md).
 
 ## Workflow
 

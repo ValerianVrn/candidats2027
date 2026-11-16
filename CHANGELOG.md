@@ -12,4 +12,5 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 - Project scaffolding: Astro, TypeScript, Prettier, Vitest, CI, Dependabot.
 - Site shell in the « Constellation » design: floating card cloud with filters, candidate detail panel
   (bottom sheet on mobile), candidate pages, journal, countdown, click-to-load videos, numbered citations.
+- Azure hosting: dev and prod Static Web Apps (Bicep), OIDC deploy workflows, prod gated by owner approval.
 - Data schemas (Zod) validated at build time, with placeholder example data.
