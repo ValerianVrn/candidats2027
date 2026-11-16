@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import { HOST, PUBLISHER, TODO } from '../lib/publisher';
+---
+
+<Base title="Confidentialité">
+  <article class="page prose">
+    <h1>Politique de confidentialité</h1>
+    <p class="lead">
+      Ce site ne demande aucun compte, ne collecte aucune donnée par formulaire et n'enregistre pas vos
+      réponses au quiz.
+    </p>
+
+    <h2>Responsable du traitement</h2>
+    <p>
+      {PUBLISHER.name ?? TODO}, joignable à {PUBLISHER.email ?? TODO}.
+    </p>
+
+    <h2>Le quiz</h2>
+    <p>
+      Vos réponses peuvent révéler des opinions politiques, une catégorie de données particulièrement protégée
+      (article 9 du RGPD). C'est pourquoi le calcul est fait entièrement dans votre navigateur : vos réponses
+      ne sont transmises à aucun serveur, ni à nous, ni à un tiers, et ne sont pas conservées après la
+      fermeture de la page. Si vous copiez le lien de votre résultat, vos réponses sont contenues dans la
+      partie du lien située après le « # », qui n'est jamais envoyée au serveur. Aucune publicité ni mesure
+      d'audience n'est chargée sur la page du quiz.
+    </p>
+
+    <h2>Hébergement et journaux techniques</h2>
+    <p>
+      Le site est hébergé par {HOST.name}, dans la région {HOST.region}. Comme tout hébergeur, il traite
+      l'adresse IP et les informations techniques de votre navigateur pour vous délivrer les pages et assurer
+      la sécurité du service. Nous n'utilisons pas ces données à d'autres fins.
+    </p>
+
+    <h2 id="cookies">Cookies et publicité</h2>
+    <p>
+      Le site peut afficher des annonces fournies par Google (AdSense) sur la page d'accueil et le journal,
+      jamais sur le quiz ni sur les fiches des candidats. Avant tout dépôt de cookie publicitaire, un bandeau
+      vous demande votre consentement ; vous pouvez refuser aussi facilement qu'accepter, et modifier votre
+      choix à tout moment via le lien « Gérer les cookies » en bas de page. Si vous refusez, des annonces non
+      personnalisées peuvent être affichées. Les annonces à caractère politique sont bloquées.
+    </p>
+
+    <h2>Vidéos</h2>
+    <p>
+      Les vidéos de déclaration de candidature sont hébergées par YouTube. Rien n'est chargé depuis YouTube
+      tant que vous ne cliquez pas sur la vidéo ; le lecteur utilisé est la version « sans cookie »
+      (youtube-nocookie.com), soumise à la politique de confidentialité de Google.
+    </p>
+
+    <h2>Mesure d'audience</h2>
+    <p>Le site n'utilise actuellement aucun outil de mesure d'audience.</p>
+
+    <h2>Vos droits</h2>
+    <p>
+      Vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition et de limitation sur les
+      données vous concernant. Écrivez à {PUBLISHER.email ?? TODO}. Vous pouvez aussi introduire une
+      réclamation auprès de la CNIL (cnil.fr).
+    </p>
+  </article>
+</Base>
+
+<style>
+  .prose h2 {
+    margin: 28px 0 8px;
+    font-size: 20px;
+  }
+  .prose p {
+    line-height: 1.6;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 16px;
+  }
+</style>

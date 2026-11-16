@@ -33,6 +33,11 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - name: Release checks (legal notice complete)
+        if: ${{ inputs.environment == 'production' }}
+        run: npm test
+        env:
+          RELEASE: '1'
       - run: npm run build
       - if: ${{ inputs.noindex }}
         run: node scripts/noindex.mjs dist
