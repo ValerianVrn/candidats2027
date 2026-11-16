@@ -1,0 +1,16 @@
+---
+/**
+ * Loads AdSense (and with it Google's certified consent message) on pages that show ads.
+ * No ad script is ever included on pages without an AdSlot.
+ */
+import { ADSENSE_CLIENT } from '../lib/ads';
+---
+
+{ADSENSE_CLIENT && (
+  <script
+    is:inline
+    async
+    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+    crossorigin="anonymous"
+  />
+)}

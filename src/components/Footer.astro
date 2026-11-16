@@ -1,5 +1,11 @@
 ---
 import { REPORT_ERROR_URL } from '../lib/site';
+import { ADSENSE_CLIENT } from '../lib/ads';
+
+interface Props {
+  ads?: boolean;
+}
+const { ads = false } = Astro.props;
 ---
 
 <footer class="foot">
@@ -14,10 +20,35 @@ import { REPORT_ERROR_URL } from '../lib/site';
     </a>
     <a href="/mentions-legales">Mentions légales</a>
     <a href="/confidentialite">Confidentialité</a>
+    {ads && ADSENSE_CLIENT && (
+      <button type="button" class="linklike" data-cookies>
+        Gérer les cookies
+      </button>
+    )}
   </nav>
 </footer>
 
+<script>
+  document.querySelector('[data-cookies]')?.addEventListener('click', () => {
+    const w = window as unknown as {
+      googlefc?: { callbackQueue?: unknown[]; showRevocationMessage?: () => void };
+    };
+    w.googlefc = w.googlefc || {};
+    w.googlefc.callbackQueue = w.googlefc.callbackQueue || [];
+    w.googlefc.callbackQueue.push(() => w.googlefc?.showRevocationMessage?.());
+  });
+</script>
+
 <style>
+  .linklike {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--accent);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: inherit;
+  }
   .foot {
     display: flex;
     flex-wrap: wrap;
