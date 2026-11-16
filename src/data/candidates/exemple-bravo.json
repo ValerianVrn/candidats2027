@@ -1,0 +1,16 @@
+{
+  "slug": "exemple-bravo",
+  "firstName": "Bruno",
+  "lastName": "Démo",
+  "genre": "m",
+  "status": "potentiel",
+  "statusSources": [{ "url": "https://example.org/source-1", "outlet": "Exemple", "date": "2026-11-10" }],
+  "party": "parti-exemple-b",
+  "role": "Personnage fictif",
+  "portrait": null,
+  "declaration": null,
+  "programme": [],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

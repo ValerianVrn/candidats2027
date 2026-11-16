@@ -1,0 +1,151 @@
+---
+/**
+ * Click-to-load video: nothing is requested from YouTube until the reader clicks,
+ * then the privacy-enhanced (youtube-nocookie) player is inserted.
+ * Non-YouTube links are shown as a plain external link.
+ */
+import { formatDay } from '../lib/dates';
+
+interface Props {
+  url: string;
+  date: string;
+  label: string;
+}
+const { url, date, label } = Astro.props;
+
+function youtubeId(u: string): string | null {
+  try {
+    const parsed = new URL(u);
+    if (parsed.hostname === 'youtu.be') return parsed.pathname.slice(1) || null;
+    if (parsed.hostname.endsWith('youtube.com')) {
+      if (parsed.pathname.startsWith('/shorts/') || parsed.pathname.startsWith('/live/')) {
+        return parsed.pathname.split('/')[2] ?? null;
+      }
+      return parsed.searchParams.get('v');
+    }
+  } catch {
+    // invalid URL: fall through
+  }
+  return null;
+}
+const id = youtubeId(url);
+const safeId = id && /^[A-Za-z0-9_-]{6,20}$/.test(id) ? id : null;
+---
+
+{safeId ? (
+  <div class="video" data-video={safeId}>
+    <button type="button" class="video-btn" aria-label={`Lire la vidéo : ${label}`}>
+      <span class="play" aria-hidden="true">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        >
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </span>
+      <span class="meta">
+        <span class="title">{label}</span>
+        <span class="sub">{formatDay(date)} · cliquer pour charger la vidéo (YouTube)</span>
+      </span>
+    </button>
+  </div>
+) : (
+  <a class="video video-btn" href={url} target="_blank" rel="noopener">
+    <span class="play" aria-hidden="true">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linejoin="round"
+      >
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </span>
+    <span class="meta">
+      <span class="title">{label}</span>
+      <span class="sub">{formatDay(date)} · ouvrir la vidéo</span>
+    </span>
+  </a>
+)}
+
+<script>
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as Element).closest<HTMLButtonElement>('.video-btn');
+    const box = btn?.closest<HTMLElement>('[data-video]');
+    if (!btn || !box) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(box.dataset.video!)}?autoplay=1`;
+    iframe.title = btn.getAttribute('aria-label') ?? 'Vidéo';
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    box.replaceChildren(iframe);
+    box.classList.add('is-playing');
+  });
+</script>
+
+<style>
+  .video {
+    display: block;
+    border-radius: 12px;
+    background: var(--surface-2);
+    overflow: hidden;
+  }
+  .video-btn {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    background: var(--surface-2);
+    text-align: left;
+    color: var(--ink);
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  .video-btn:hover .play {
+    background: #34418a;
+  }
+  .play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 48px;
+    border-radius: 8px;
+    background: var(--raised);
+    color: #fff;
+    flex: 0 0 auto;
+  }
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13px;
+  }
+  .title {
+    font-weight: 600;
+  }
+  .sub {
+    color: var(--muted);
+  }
+  .video.is-playing {
+    aspect-ratio: 16 / 9;
+  }
+  .video :global(iframe) {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+</style>

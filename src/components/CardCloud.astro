@@ -1,0 +1,334 @@
+---
+import Avatar from './Avatar.astro';
+import { familleOf, fullName } from '../lib/data';
+import { layoutCloud } from '../lib/cloud';
+import { FAMILLE_LABEL, statusLabel } from '../lib/labels';
+import type { Candidate, Famille } from '../lib/schemas';
+
+interface Props {
+  candidates: Candidate[];
+}
+const { candidates } = Astro.props;
+
+const rank = (c: Candidate) => (c.status === 'officiel' ? 0 : c.status === 'declare' ? 1 : 2);
+const positions = new Map(
+  layoutCloud(candidates.map((c) => ({ slug: c.slug, rank: rank(c) }))).map((p) => [p.slug, p]),
+);
+const cols = Math.max(1, Math.ceil(Math.sqrt(candidates.length * 2.2)));
+const rows = Math.max(1, Math.ceil(candidates.length / cols));
+const stageHeight = Math.min(760, Math.max(460, rows * 170 + 60));
+
+const isDeclared = (c: Candidate) => c.status === 'declare' || c.status === 'officiel';
+const counts = {
+  all: candidates.length,
+  declare: candidates.filter(isDeclared).length,
+  potentiel: candidates.filter((c) => c.status === 'potentiel').length,
+  officiel: candidates.filter((c) => c.status === 'officiel').length,
+  risque: candidates.filter((c) => c.risques.length > 0).length,
+};
+const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
+---
+
+<div class="toolbar">
+  <div class="filters" role="group" aria-label="Filtrer les candidats">
+    <button type="button" class="chip" data-filter="all" aria-pressed="true">
+      Tous · {counts.all}
+    </button>
+    <button type="button" class="chip" data-filter="declare" aria-pressed="false">
+      Déclarés · {counts.declare}
+    </button>
+    <button type="button" class="chip" data-filter="potentiel" aria-pressed="false">
+      Potentiels · {counts.potentiel}
+    </button>
+    <button
+      type="button"
+      class="chip"
+      data-filter="officiel"
+      aria-pressed="false"
+      disabled={counts.officiel === 0}
+      title="Liste officielle publiée par le Conseil constitutionnel avant le premier tour"
+    >
+      Officiels{counts.officiel ? ` · ${counts.officiel}` : ' · à venir'}
+    </button>
+    <button
+      type="button"
+      class="chip"
+      data-filter="risque"
+      aria-pressed="false"
+      disabled={counts.risque === 0}
+    >
+      Avec procédure · {counts.risque}
+    </button>
+  </div>
+</div>
+
+<section class="cloud" aria-label="Candidats" style={`--stage-h:${stageHeight}px`}>
+  <ul class="stage">
+    {candidates.map((c) => {
+      const p = positions.get(c.slug)!;
+      const famille = familleOf(c);
+      const major = rank(c) < 2;
+      return (
+        <li
+          class:list={['cell', { minor: !major }]}
+          style={`--x:${p.x.toFixed(2)}%;--y:${p.y.toFixed(2)}%;--phase:${p.phase}s;--ring:var(--f-${famille})`}
+          data-status={c.status}
+          data-risque={c.risques.length > 0 ? 'true' : 'false'}
+        >
+          <a
+            class="card"
+            href={`/candidat/${c.slug}`}
+            data-slug={c.slug}
+            aria-label={`${fullName(c)}, ${FAMILLE_LABEL[famille]}, ${statusLabel(c).toLowerCase()}${c.risques.length ? ', procédure en cours' : ''}`}
+          >
+            <span class="float">
+              <span class="ring">
+                <Avatar candidate={c} size={major ? 96 : 74} eager={major} />
+                {c.risques.length > 0 && (
+                  <span class="badge" aria-hidden="true">
+                    !
+                  </span>
+                )}
+              </span>
+              <span class="name">{fullName(c)}</span>
+              <span class="fam">{FAMILLE_LABEL[famille]}</span>
+            </span>
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+
+  <div class="legend">
+    <span>
+      <span class="lg-ring" aria-hidden="true"></span>déclaré
+    </span>
+    <span>
+      <span class="lg-ring lg-ring--dashed" aria-hidden="true"></span>potentiel
+    </span>
+    <span>
+      <span class="lg-badge" aria-hidden="true">
+        !
+      </span>
+      procédure en cours
+    </span>
+    {famillesPresent.map((f) => (
+      <span>
+        <span class="lg-dot" style={`background:var(--f-${f})`} aria-hidden="true" />
+        {FAMILLE_LABEL[f]}
+      </span>
+    ))}
+    <a href="/methode#familles">Couleurs : famille politique du parti</a>
+  </div>
+</section>
+
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const cells = document.querySelectorAll<HTMLElement>('.cell');
+  function matches(cell: HTMLElement, filter: string): boolean {
+    const s = cell.dataset.status;
+    switch (filter) {
+      case 'declare':
+        return s === 'declare' || s === 'officiel';
+      case 'potentiel':
+        return s === 'potentiel';
+      case 'officiel':
+        return s === 'officiel';
+      case 'risque':
+        return cell.dataset.risque === 'true';
+      default:
+        return true;
+    }
+  }
+  chips.forEach((chip) =>
+    chip.addEventListener('click', () => {
+      const filter = chip.dataset.filter!;
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+      cells.forEach((cell) => {
+        const on = matches(cell, filter);
+        cell.toggleAttribute('data-dim', !on);
+        cell.querySelector('a')!.tabIndex = on ? 0 : -1;
+      });
+    }),
+  );
+</script>
+
+<style>
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px var(--gutter) 0;
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .cloud {
+    position: relative;
+    min-width: 0;
+  }
+  .stage {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: var(--stage-h);
+  }
+  .cell {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.35s ease;
+  }
+  .cell.minor {
+    opacity: 0.62;
+  }
+  .cell.minor .ring {
+    border-style: dashed;
+  }
+  .cell[data-dim] {
+    opacity: 0.08;
+    pointer-events: none;
+  }
+  .card {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+    border-radius: 16px;
+  }
+  .float {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: drift 7s ease-in-out infinite;
+    animation-delay: var(--phase);
+  }
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+  .ring {
+    position: relative;
+    display: flex;
+    border-radius: 50%;
+    border: 3px solid var(--ring);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  .card:hover .ring,
+  .card:focus-visible .ring,
+  .card[aria-current='true'] .ring {
+    transform: scale(1.07);
+    box-shadow:
+      0 0 0 6px color-mix(in srgb, var(--ring) 22%, transparent),
+      0 0 44px color-mix(in srgb, var(--ring) 45%, transparent);
+  }
+  .cell:has(.card[aria-current='true']) {
+    opacity: 1;
+    z-index: 2;
+  }
+  .badge {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--warn);
+    color: var(--warn-ink);
+    border: 2px solid var(--bg);
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .name {
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    text-shadow: 0 1px 8px var(--bg);
+  }
+  .fam {
+    margin-top: -5px;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding: 4px 0 0;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lg-ring {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--muted);
+  }
+  .lg-ring--dashed {
+    border-style: dashed;
+    opacity: 0.7;
+  }
+  .lg-badge {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--warn);
+    color: var(--warn-ink);
+    font-weight: 700;
+    font-size: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lg-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  /* Narrow screens: a calm wrapping grid instead of absolute positions. */
+  @media (max-width: 760px) {
+    .stage {
+      height: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+      gap: 18px 8px;
+      padding: 12px 0;
+    }
+    .cell {
+      position: static;
+      transform: none;
+      display: flex;
+      justify-content: center;
+    }
+    .name,
+    .fam {
+      white-space: normal;
+      text-align: center;
+      max-width: 110px;
+    }
+  }
+</style>

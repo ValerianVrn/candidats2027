@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import { candidates, changelog, fullName } from '../lib/data';
+import { formatDay } from '../lib/dates';
+import { REPORT_ERROR_URL } from '../lib/site';
+
+const nameBySlug = new Map(candidates.map((c) => [c.slug, fullName(c)]));
+---
+
+<Base title="Journal des mises à jour" section="journal">
+  <div class="page">
+    <h1>Journal des mises à jour</h1>
+    <p class="lead">
+      Chaque jour, les informations du site sont vérifiées et mises à jour à partir de sources publiques.
+      Voici ce qui a changé, et pourquoi. Une erreur ?{' '}
+      <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">
+        Signalez-la
+      </a>
+      .
+    </p>
+    <ol class="entries">
+      {changelog.map((e) => (
+        <li class="entry">
+          <h2>
+            <time datetime={e.date}>{formatDay(e.date)}</time>
+          </h2>
+          <p>{e.summary}</p>
+          {e.changes.length > 0 && (
+            <ul>
+              {e.changes.map((ch) => (
+                <li>
+                  {ch.candidate && nameBySlug.has(ch.candidate) && (
+                    <a href={`/candidat/${ch.candidate}`}>{nameBySlug.get(ch.candidate)}</a>
+                  )}
+                  {ch.candidate && nameBySlug.has(ch.candidate) && ' : '}
+                  {ch.text}
+                </li>
+              ))}
+            </ul>
+          )}
+          {e.sources.length > 0 && (
+            <p class="src">
+              Sources :{' '}
+              {e.sources.map((s, i) => (
+                <>
+                  {i > 0 && ', '}
+                  <a href={s.url} target="_blank" rel="noopener">
+                    {s.outlet}
+                  </a>
+                </>
+              ))}
+            </p>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</Base>
+
+<style>
+  .lead {
+    color: var(--muted);
+  }
+  .entries {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .entry {
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+  }
+  .entry h2 {
+    margin: 0 0 6px;
+    font-size: 18px;
+  }
+  .entry p {
+    margin: 0 0 8px;
+  }
+  .entry ul {
+    margin: 0 0 8px;
+    padding-left: 20px;
+  }
+  .src {
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
