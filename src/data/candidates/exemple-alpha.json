@@ -1,0 +1,48 @@
+{
+  "slug": "exemple-alpha",
+  "firstName": "Alice",
+  "lastName": "Exemple",
+  "genre": "f",
+  "status": "declare",
+  "statusSources": [{ "url": "https://example.org/source-1", "outlet": "Exemple", "date": "2026-11-10" }],
+  "party": "parti-exemple-a",
+  "role": "Personnage fictif",
+  "portrait": null,
+  "declaration": {
+    "date": "2026-09-03",
+    "videoUrl": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+    "sources": [{ "url": "https://example.org/source-1", "outlet": "Exemple", "date": "2026-11-10" }]
+  },
+  "programme": [
+    {
+      "theme": "energie",
+      "text": "Texte d'exemple sur l'énergie.",
+      "sources": [{ "url": "https://example.org/source-1", "outlet": "Exemple", "date": "2026-11-10" }]
+    },
+    {
+      "theme": "retraites",
+      "text": "Texte d'exemple sur les retraites.",
+      "sources": [{ "url": "https://example.org/source-2", "outlet": "Exemple Info", "date": "2026-11-12" }]
+    }
+  ],
+  "meetings": [
+    {
+      "date": "2026-12-12",
+      "city": "Lyon",
+      "title": "Meeting d'exemple",
+      "sources": [{ "url": "https://example.org/source-2", "outlet": "Exemple Info", "date": "2026-11-12" }]
+    }
+  ],
+  "risques": [
+    {
+      "id": "procedure-exemple",
+      "title": "Procédure d'exemple",
+      "statutJuridique": "Statut fictif",
+      "resume": "Résumé d'exemple.",
+      "impact": "Aucun, données fictives.",
+      "sources": [{ "url": "https://example.org/source-2", "outlet": "Exemple Info", "date": "2026-11-12" }],
+      "updatedAt": "2026-11-12"
+    }
+  ],
+  "lastChecked": "2026-11-16"
+}

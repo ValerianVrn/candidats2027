@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import CandidateDetail from '../../components/CandidateDetail.astro';
+import { candidates, fullName, partyOf } from '../../lib/data';
+import type { Candidate } from '../../lib/schemas';
+
+export function getStaticPaths() {
+  return candidates.map((candidate) => ({ params: { slug: candidate.slug }, props: { candidate } }));
+}
+
+interface Props {
+  candidate: Candidate;
+}
+const { candidate } = Astro.props;
+const party = partyOf(candidate);
+const description = `${fullName(candidate)}${party ? ` (${party.name})` : ''} : programme, agenda, déclaration de candidature et procédures en cours, avec sources.`;
+---
+
+<Base title={fullName(candidate)} description={description} section="candidats">
+  <div class="page">
+    <p class="back">
+      <a href={`/#${candidate.slug}`}>← Tous les candidats</a>
+    </p>
+    <div class="card">
+      <CandidateDetail candidate={candidate} mode="page" />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .back {
+    margin: 0 0 16px;
+    font-size: 14px;
+  }
+  .card {
+    padding: clamp(18px, 3vw, 32px);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+</style>

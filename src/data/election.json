@@ -1,0 +1,7 @@
+{
+  "firstRound": "2027-04-11T08:00:00+02:00",
+  "secondRound": "2027-04-25T08:00:00+02:00",
+  "sources": [{ "url": "https://example.org/placeholder", "outlet": "Exemple", "date": "2026-11-16" }],
+  "milestones": [],
+  "silence": []
+}

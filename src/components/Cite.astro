@@ -1,0 +1,36 @@
+---
+/**
+ * Citation marks « [1][2] ». Numbers are computed by the parent with a CitationRegistry
+ * (inline in its template, which Astro evaluates in document order).
+ */
+interface Props {
+  numbers: number[];
+  /** Prefix for anchor ids, unique per candidate block on the page. */
+  idPrefix: string;
+}
+const { numbers, idPrefix } = Astro.props;
+---
+
+<sup class="cite">
+  {numbers.map((n) => (
+    <a href={`#${idPrefix}-src-${n}`} aria-label={`Source ${n}`}>
+      [{n}]
+    </a>
+  ))}
+</sup>
+
+<style>
+  .cite {
+    font-size: 0.75em;
+    line-height: 0;
+    margin-left: 2px;
+    white-space: nowrap;
+  }
+  .cite a {
+    text-decoration: none;
+    margin-left: 1px;
+  }
+  .cite a:hover {
+    text-decoration: underline;
+  }
+</style>
