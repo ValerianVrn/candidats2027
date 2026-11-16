@@ -57,6 +57,8 @@ public/staticwebapp.config.json   SWA headers, 404, caching
 Infrastructure is in `infra/main.bicep` (resource group `rg-candidats2027`). Authentication uses GitHub OIDC;
 no secret is stored. Details and how to change plans: [ADR 0003](docs/adr/0003-azure-static-web-apps.md).
 
+Before the first release, see [docs/launch-checklist.md](docs/launch-checklist.md).
+
 ## Workflow
 
 `main` = production, `develop` = integration (default). Feature branches from `develop`, PRs into `develop`.
