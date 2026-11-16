@@ -39,6 +39,11 @@ jobs:
         env:
           RELEASE: '1'
       - run: npm run build
+        env:
+          # Set as variables of the GitHub environment (production only, at launch). Empty = no ads.
+          PUBLIC_ADSENSE_CLIENT: ${{ vars.PUBLIC_ADSENSE_CLIENT }}
+          PUBLIC_ADSENSE_SLOT_HOME: ${{ vars.PUBLIC_ADSENSE_SLOT_HOME }}
+          PUBLIC_ADSENSE_SLOT_JOURNAL: ${{ vars.PUBLIC_ADSENSE_SLOT_JOURNAL }}
       - if: ${{ inputs.noindex }}
         run: node scripts/noindex.mjs dist
 
