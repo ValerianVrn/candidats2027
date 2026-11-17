@@ -17,6 +17,9 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 - Legal notice (LCEN, right of reply) and privacy policy pages; the prod deploy is blocked until the
   publisher details are filled in. Launch checklist in `docs/launch-checklist.md`.
 - Azure hosting: dev and prod Static Web Apps (Bicep), OIDC deploy workflows, prod gated by owner approval.
+- Proximity quiz: one question per screen, scoring in the browser only, per-theme sources, shareable result
+  in the URL fragment, « Voir sur la carte » lens; quiz positions need two sources (check-data). Closed until
+  enough candidates have known positions.
 - Seed data: 44 sourced candidate profiles (36 declared, 8 potential), 29 parties classified by the Interior
   Ministry grid, declaration date precision, risk nature (legal / tax / political) and closed procedures.
 - Content guardrails (`check-data`): source allowlist, two independent sources for status and legal risks,
