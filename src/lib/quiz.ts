@@ -114,3 +114,36 @@ export function decodeAnswers(text: string): Record<string, Answer> {
   }
   return out;
 }
+
+export interface OptionGroup {
+  optionId: string;
+  /** Candidates holding this position, ordered by `sortKey` (e.g. last name), never by data order. */
+  slugs: string[];
+}
+
+/**
+ * Score-free comparison (shown while the quiz is closed): for one question, which candidates hold each option,
+ * in the question's option order, plus the candidates with no known position.
+ */
+export function groupByOption(
+  question: ScoringQuestion,
+  slugs: readonly string[],
+  sortKey: (slug: string) => string,
+): { groups: OptionGroup[]; unknown: string[] } {
+  const byName = (a: string, b: string) => sortKey(a).localeCompare(sortKey(b), 'fr');
+  const groups = question.options.map((o) => ({
+    optionId: o.id,
+    slugs: slugs.filter((s) => question.positions[s]?.option === o.id).toSorted(byName),
+  }));
+  const unknown = slugs.filter((s) => !question.positions[s]).toSorted(byName);
+  return { groups, unknown };
+}
+
+/** Known positions among `slugs` across all questions, and the total possible. */
+export function countPositions(
+  questions: readonly ScoringQuestion[],
+  slugs: readonly string[],
+): { known: number; total: number } {
+  const known = questions.reduce((n, q) => n + slugs.filter((s) => q.positions[s]).length, 0);
+  return { known, total: questions.length * slugs.length };
+}

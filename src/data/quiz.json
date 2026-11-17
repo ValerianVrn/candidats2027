@@ -3,6 +3,7 @@
     {
       "id": "retraites-age",
       "theme": "retraites",
+      "short": "Retraites",
       "type": "scale",
       "text": "À quel âge doit-on pouvoir partir à la retraite ?",
       "options": [
@@ -83,6 +84,7 @@
     {
       "id": "salaires",
       "theme": "travail",
+      "short": "Salaires",
       "type": "scale",
       "text": "Comment augmenter les salaires ?",
       "options": [
@@ -187,6 +189,7 @@
     {
       "id": "patrimoine",
       "theme": "fiscalite",
+      "short": "Patrimoine",
       "type": "scale",
       "text": "Faut-il taxer davantage les grands patrimoines ?",
       "options": [
@@ -291,6 +294,7 @@
     {
       "id": "depense-publique",
       "theme": "economie",
+      "short": "Dépense publique",
       "type": "scale",
       "text": "Que faire de la dépense publique ?",
       "options": [
@@ -425,6 +429,7 @@
     {
       "id": "immigration",
       "theme": "immigration",
+      "short": "Immigration",
       "type": "scale",
       "text": "Quelle politique d'immigration ?",
       "options": [
@@ -505,6 +510,7 @@
     {
       "id": "europe",
       "theme": "europe",
+      "short": "Europe",
       "type": "scale",
       "text": "Quelle relation avec l'Union européenne ?",
       "options": [
@@ -603,6 +609,7 @@
     {
       "id": "institutions",
       "theme": "institutions",
+      "short": "Institutions",
       "type": "choice",
       "text": "Quel changement des institutions privilégier ?",
       "options": [
@@ -707,6 +714,7 @@
     {
       "id": "temps-de-travail",
       "theme": "travail",
+      "short": "35 heures",
       "type": "scale",
       "text": "Faut-il revenir sur les 35 heures ?",
       "options": [
@@ -751,6 +759,7 @@
     {
       "id": "nucleaire",
       "theme": "energie",
+      "short": "Nucléaire",
       "type": "scale",
       "text": "Que faire du nucléaire ?",
       "options": [
@@ -819,6 +828,7 @@
     {
       "id": "ecologie",
       "theme": "ecologie",
+      "short": "Écologie",
       "type": "scale",
       "text": "Quelle place pour l'écologie ?",
       "options": [
@@ -905,6 +915,7 @@
     {
       "id": "otan",
       "theme": "defense",
+      "short": "OTAN",
       "type": "scale",
       "text": "Que faire de l'OTAN ?",
       "options": [
@@ -945,6 +956,7 @@
     {
       "id": "justice-penale",
       "theme": "securite",
+      "short": "Justice pénale",
       "type": "choice",
       "text": "Quelle priorité pour la justice pénale ?",
       "options": [

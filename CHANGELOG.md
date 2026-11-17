@@ -24,6 +24,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Added
 
+- « Comparer les positions » on `/quiz` while the scored quiz is closed: theme by theme, each answer with the
+  candidates who hold it (sourced) and « Non renseigné », no score.
 - « Qui finance ce site ? » page (`/financement`), linked from the footer: funding by ads only, placements,
   blocked political ads, no money from candidates or parties.
 - Project scaffolding: Astro, TypeScript, Prettier, Vitest, CI, Dependabot.

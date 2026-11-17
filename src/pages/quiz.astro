@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Avatar from '../components/Avatar.astro';
+import QuizCompare from '../components/QuizCompare.astro';
 import { clientPayload, questions, quizCandidates, quizReady } from '../lib/quiz-data';
 import { familleOf, fullName } from '../lib/data';
 import { MIN_COVERAGE } from '../lib/quiz';
@@ -11,21 +12,13 @@ const names = Object.fromEntries(quizCandidates.map((c) => [c.slug, fullName(c)]
 const bySlug = new Map(quizCandidates.map((c) => [c.slug, c]));
 ---
 
-<Base title="Quiz : de qui vos idées sont-elles proches ?" section="quiz">
+<Base
+  title={quizReady ? 'Quiz : de qui vos idées sont-elles proches ?' : 'Comparer les positions des candidats'}
+  section="quiz"
+>
   <div class="quiz">
     {!quizReady ? (
-      <section class="screen intro">
-        <p class="kicker">Quiz · bientôt disponible</p>
-        <h1>De qui vos idées sont-elles proches ?</h1>
-        <p>
-          Le quiz compare vos réponses aux positions des candidats sur une quinzaine de thèmes (énergie,
-          retraites, immigration, Europe…). Il ouvrira dès que suffisamment de candidats auront rendu
-          publiques leurs propositions, pour que la comparaison soit équitable.
-        </p>
-        <p class="muted">
-          En attendant, consultez les programmes depuis la <a href="/">page des candidats</a>.
-        </p>
-      </section>
+      <QuizCompare questions={questions} />
     ) : (
       <>
         <section class="screen intro" data-screen="intro">

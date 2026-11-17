@@ -9,6 +9,8 @@ import {
   shuffle,
   type Answer,
   type ScoringQuestion,
+  countPositions,
+  groupByOption,
 } from './quiz';
 
 const opts = (n: number) => Array.from({ length: n }, (_, i) => ({ id: `o${i}` }));
@@ -117,5 +119,38 @@ describe('shuffle', () => {
     let seed = 1;
     const rnd = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
     expect(shuffle([...items], rnd).toSorted()).toEqual(items);
+  });
+});
+
+describe('groupByOption', () => {
+  const question = q('nucleaire', 'scale', { zoe: 'o0', anne: 'o0', marc: 'o4' });
+  const names: Record<string, string> = {
+    zoe: 'Zoé Martin',
+    anne: 'Anne Durand',
+    marc: 'Marc Petit',
+    paul: 'Paul Roy',
+  };
+  const nameOf = (s: string) => names[s]!;
+
+  it('groups candidates by option in option order, alphabetically, with unknowns apart', () => {
+    const { groups, unknown } = groupByOption(question, ['zoe', 'paul', 'marc', 'anne'], nameOf);
+    expect(groups.map((g) => g.optionId)).toEqual(['o0', 'o1', 'o2', 'o3', 'o4']);
+    expect(groups[0]!.slugs).toEqual(['anne', 'zoe']);
+    expect(groups[1]!.slugs).toEqual([]);
+    expect(groups[4]!.slugs).toEqual(['marc']);
+    expect(unknown).toEqual(['paul']);
+  });
+
+  it('only considers the given candidates', () => {
+    const { groups, unknown } = groupByOption(question, ['marc'], nameOf);
+    expect(groups[0]!.slugs).toEqual([]);
+    expect(unknown).toEqual([]);
+  });
+});
+
+describe('countPositions', () => {
+  it('counts known positions among the given candidates', () => {
+    const qs = [q('a', 'scale', { x: 'o0', y: 'o1' }), q('b', 'choice', { x: 'o2', z: 'o0' })];
+    expect(countPositions(qs, ['x', 'y'])).toEqual({ known: 3, total: 4 });
   });
 });
