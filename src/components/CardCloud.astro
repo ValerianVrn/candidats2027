@@ -1,7 +1,7 @@
 ---
 import Avatar from './Avatar.astro';
 import { familleOf, fullName } from '../lib/data';
-import { layoutCloud } from '../lib/cloud';
+import { layoutCloud, ROW_HEIGHT } from '../lib/cloud';
 import { FAMILLE_LABEL, hasActiveProcedure, statusLabel } from '../lib/labels';
 import type { Candidate, Famille } from '../lib/schemas';
 
@@ -13,12 +13,19 @@ interface Props {
 const { candidates, everyone } = Astro.props;
 
 const rank = (c: Candidate) => (c.status === 'officiel' ? 0 : c.status === 'declare' ? 1 : 2);
-const positions = new Map(
-  layoutCloud(candidates.map((c) => ({ slug: c.slug, rank: rank(c) }))).map((p) => [p.slug, p]),
-);
-const cols = Math.max(1, Math.ceil(Math.sqrt(candidates.length * 2.2)));
-const rows = Math.max(1, Math.ceil(candidates.length / cols));
-const stageHeight = Math.min(760, Math.max(460, rows * 170 + 60));
+const inputs = candidates.map((c) => ({ slug: c.slug, rank: rank(c) }));
+// Two precomputed layouts; a container query picks one from the cloud's actual width (see styles).
+const wide = layoutCloud(inputs, 6);
+const medium = layoutCloud(inputs, 4);
+const posWide = new Map(wide.positions.map((p) => [p.slug, p]));
+const posMedium = new Map(medium.positions.map((p) => [p.slug, p]));
+const stageVars = [
+  `--cols6:${wide.cols}`,
+  `--h6:${wide.height.toFixed(3)}`,
+  `--cols4:${medium.cols}`,
+  `--h4:${medium.height.toFixed(3)}`,
+  `--row-h:${ROW_HEIGHT}px`,
+].join(';');
 
 const isDeclared = (c: Candidate) => c.status === 'declare' || c.status === 'officiel';
 const counts = {
@@ -64,16 +71,17 @@ const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
   </div>
 </div>
 
-<section class="cloud" aria-label="Candidats" style={`--stage-h:${stageHeight}px`}>
+<section class="cloud" aria-label="Candidats" style={stageVars}>
   <ul class="stage">
     {candidates.map((c) => {
-      const p = positions.get(c.slug)!;
+      const w = posWide.get(c.slug)!;
+      const m = posMedium.get(c.slug)!;
       const famille = familleOf(c);
       const major = rank(c) < 2;
       return (
         <li
           class:list={['cell', { minor: !major }]}
-          style={`--x:${p.x.toFixed(2)}%;--y:${p.y.toFixed(2)}%;--phase:${p.phase}s;--ring:var(--f-${famille})`}
+          style={`--c6:${w.col};--r6:${w.row.toFixed(3)};--c4:${m.col};--r4:${m.row.toFixed(3)};--phase:${w.phase}s;--ring:var(--f-${famille})`}
           data-status={c.status}
           data-risque={hasActiveProcedure(c) ? 'true' : 'false'}
         >
@@ -85,7 +93,7 @@ const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
           >
             <span class="float">
               <span class="ring">
-                <Avatar candidate={c} size={major ? 96 : 74} eager={major} />
+                <Avatar candidate={c} size={major ? 92 : 72} eager={major} />
                 {hasActiveProcedure(c) && (
                   <span class="badge" aria-hidden="true">
                     !
@@ -172,20 +180,51 @@ const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
   .cloud {
     position: relative;
     min-width: 0;
+    container: cloud / inline-size;
   }
+  /* Narrow: a calm wrapping grid. */
   .stage {
     list-style: none;
     margin: 0;
-    padding: 0;
-    position: relative;
-    height: var(--stage-h);
+    padding: 12px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+    gap: 18px 8px;
   }
   .cell {
-    position: absolute;
-    left: var(--x);
-    top: var(--y);
-    transform: translate(-50%, -50%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-width: 0;
     transition: opacity 0.35s ease;
+  }
+  /*
+   * Wider: each card owns a cell of a 4- or 6-column grid (cells ≥ 150 px wide, rows 200 px tall), so cards
+   * can't overlap each other or overflow the stage (see src/lib/cloud.ts and its tests).
+   */
+  @container cloud (min-width: 600px) {
+    .stage {
+      display: block;
+      position: relative;
+      padding: 0;
+      height: calc(var(--h4) * var(--row-h) + 32px);
+    }
+    .cell {
+      position: absolute;
+      width: calc(100% / var(--cols4));
+      left: calc(var(--c4) * 100% / var(--cols4));
+      top: calc(16px + var(--r4) * var(--row-h));
+    }
+  }
+  @container cloud (min-width: 900px) {
+    .stage {
+      height: calc(var(--h6) * var(--row-h) + 32px);
+    }
+    .cell {
+      width: calc(100% / var(--cols6));
+      left: calc(var(--c6) * 100% / var(--cols6));
+      top: calc(16px + var(--r6) * var(--row-h));
+    }
   }
   .cell.minor {
     opacity: 0.62;
@@ -199,6 +238,7 @@ const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
   }
   .card {
     display: block;
+    max-width: 140px;
     color: var(--ink);
     text-decoration: none;
     border-radius: 16px;
@@ -217,7 +257,7 @@ const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-12px);
+      transform: translateY(-8px);
     }
   }
   .ring {
@@ -238,7 +278,9 @@ const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
       0 0 0 6px color-mix(in srgb, var(--ring) 22%, transparent),
       0 0 44px color-mix(in srgb, var(--ring) 45%, transparent);
   }
-  .cell:has(.card[aria-current='true']) {
+  .cell:has(.card[aria-current='true']),
+  .cell:has(.card:hover),
+  .cell:has(.card:focus-visible) {
     opacity: 1;
     z-index: 2;
   }
@@ -259,16 +301,25 @@ const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
     justify-content: center;
   }
   .name {
+    max-width: 140px;
     font-weight: 600;
     font-size: 14px;
-    white-space: nowrap;
+    line-height: 1.25;
+    text-align: center;
     text-shadow: 0 1px 8px var(--bg);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .fam {
-    margin-top: -5px;
+    max-width: 140px;
+    margin-top: -4px;
     font-size: 12px;
     color: var(--muted);
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .legend {
     display: flex;
@@ -309,28 +360,5 @@ const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
     width: 10px;
     height: 10px;
     border-radius: 50%;
-  }
-
-  /* Narrow screens: a calm wrapping grid instead of absolute positions. */
-  @media (max-width: 760px) {
-    .stage {
-      height: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
-      gap: 18px 8px;
-      padding: 12px 0;
-    }
-    .cell {
-      position: static;
-      transform: none;
-      display: flex;
-      justify-content: center;
-    }
-    .name,
-    .fam {
-      white-space: normal;
-      text-align: center;
-      max-width: 110px;
-    }
   }
 </style>

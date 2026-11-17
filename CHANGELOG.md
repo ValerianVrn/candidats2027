@@ -7,6 +7,12 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Fixed
+
+- Constellation cards could overlap each other or cover the filters: each card now has its own grid cell (6 or
+  4 columns depending on the available width), names wrap on 2 lines, and the details panel stays on top.
+- Missing spaces before some links (footer, Méthode).
+
 ### Added
 
 - Project scaffolding: Astro, TypeScript, Prettier, Vitest, CI, Dependabot.

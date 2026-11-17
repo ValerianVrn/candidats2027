@@ -57,6 +57,10 @@ French-language static site about the 2027 French presidential election. Code, c
 - No « écriture inclusive » (point médian): it is politically marked. Labels agree with the candidate's `genre`.
 - Prettier (astro plugin) may move punctuation after a link onto its own line, which renders « GitHub . ».
   Keep such sentences on one line under `<!-- prettier-ignore -->`.
+- Astro compresses HTML: a line break between text and a following `<a>` disappears (« citées.En savoir plus »).
+  Write `{' '}` at the end of the line, or keep the link on the same line.
+- The cloud layout (`src/lib/cloud.ts`) guarantees no overlap only if cards stay ≤ 150 px wide and ≤ 168 px
+  tall (`CELL_MIN_WIDTH`, `CARD_MAX_HEIGHT`); keep names clamped to 2 lines if you change the card.
 - Scripts in `scripts/` run directly with Node (type stripping): import local TS with explicit `.ts` extensions.
 - Several major outlets (Le Monde, Le Figaro, Libération, BFM, Le Parisien…) block automated fetches (403);
   the link check treats 403 as unverifiable, not broken.
