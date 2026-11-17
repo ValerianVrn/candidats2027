@@ -11,7 +11,9 @@ Production stays empty until every item is done.
       consent message (Google-certified CMP) with a « Refuser » button as visible as « Accepter ».
 - [ ] In AdSense « Blocking controls » → « Sensitive categories », block **Politics**, **Religion** and anything
       election-related; keep it blocked until after the election (Code électoral L52-1, EU reg. 2024/900).
-- [ ] Optional: have a lawyer review the legal notice and the privacy policy.
+- [ ] Have a lawyer review the legal notice, the privacy policy and `/financement`.
+- [ ] Professional / media liability insurance for the SASU.
+- [ ] Make sure `contact@valerian-verona.fr` is read regularly (rights of reply, data requests).
 - [ ] Approve the first `production` deployment in GitHub.
 
 ## Claude (with the owner's approval for each step)

@@ -17,6 +17,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Added
 
+- « Qui finance ce site ? » page (`/financement`), linked from the footer: funding by ads only, placements,
+  blocked political ads, no money from candidates or parties.
 - Project scaffolding: Astro, TypeScript, Prettier, Vitest, CI, Dependabot.
 - Site shell in the « Constellation » design: floating card cloud with filters, candidate detail panel
   (bottom sheet on mobile), candidate pages, journal, countdown, click-to-load videos, numbered citations.
