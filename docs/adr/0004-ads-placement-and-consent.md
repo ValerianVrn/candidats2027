@@ -19,6 +19,9 @@ the election (Code électoral L52-1) and regulated by EU regulation 2024/900.
 - Ads are off unless `PUBLIC_ADSENSE_CLIENT` and the slot ids are set at build time (GitHub `production`
   environment variables); dev never shows ads.
 
+- The public page `/financement` explains to readers how the site is funded and where ads appear; keep it in
+  sync with these placements.
+
 ## Consequences
 
 - No ad code can read quiz answers (they never leave the quiz page, which loads no ad script).
