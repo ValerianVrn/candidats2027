@@ -9,6 +9,7 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Fixed
 
+- Countdown: the two-line label is centred next to the day count instead of starting on its baseline.
 - Legal notice: publisher details (SASU, SIREN, registered office, publication director, contact).
 - Constellation cards could overlap each other or cover the filters: each card now has its own grid cell (6 or
   4 columns depending on the available width), names wrap on 2 lines, and the details panel stays on top.
