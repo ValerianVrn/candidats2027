@@ -21,12 +21,7 @@
   "party": "nouvelle-energie",
   "officialDomains": [],
   "role": "Maire de Cannes, président de l'Association des maires de France",
-  "portrait": {
-    "file": "david-lisnard.jpg",
-    "author": "Marie tavares",
-    "licence": "CC BY 4.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Lisnard.jpg"
-  },
+  "portrait": null,
   "declaration": {
     "date": "2026-01-21",
     "datePrecision": "day",
