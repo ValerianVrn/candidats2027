@@ -24,8 +24,11 @@ French-language static site about the 2027 French presidential election. Code, c
 
 - Claude may merge its own `feature/*` / `fix/*` PRs into `develop` once CI (`build`) is green (merge commit).
 - Releases (`develop` → `main`) and production deploys are the owner's call. Never push code to `main`.
-- After launch only: data-only PRs (changes limited to `src/data/**`) that pass every guardrail may be merged
-  into `main` by the daily routine. See ADR 0002.
+- Daily data routine (ADR 0005), phase in `config/routine.json` (owner-only):
+  - `pre-launch`: `data/daily-*` branch from `develop` → PR into `develop`, merged when the diff guard passes.
+  - `live`: gitflow hotfix `hotfix/data-*` from `main` → PR into `main` → next patch tag + GitHub Release →
+    merge-back PR into `develop`. This is the only case where Claude creates tags and releases, and only patch
+    versions for data; major/minor releases stay the owner's.
 
 ## Content rules (the content is published without human review)
 
@@ -39,7 +42,8 @@ French-language static site about the 2027 French presidential election. Code, c
 ## Infrastructure
 
 - Azure: resource group `rg-candidats2027`, SWAs `swa-candidats2027-dev` / `-prod` (`infra/main.bicep`).
-- Deploys: `develop` → dev automatically; `main` → prod after the owner approves the `production` environment.
+- Deploys: `develop` → dev automatically; `main` → prod after the owner approves the `production` environment,
+  except content-only pushes once live, which use `production-data` (`scripts/deploy-env.ts`).
   Never approve a production deployment yourself.
 - Always run `az deployment group what-if` before deploying Bicep, and ask the owner before changing Azure
   resources.
