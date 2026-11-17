@@ -3,13 +3,16 @@ import Base from '../layouts/Base.astro';
 import CardCloud from '../components/CardCloud.astro';
 import CandidateDetail from '../components/CandidateDetail.astro';
 import OtherCandidates from '../components/OtherCandidates.astro';
+import AdSlot from '../components/AdSlot.astro';
 import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/data';
 ---
 
-<Base section="candidats">
+<Base section="candidats" ads>
   <h1 class="visually-hidden">Les candidats à l'élection présidentielle de 2027</h1>
   <CardCloud candidates={featuredCandidates} everyone={activeCandidates} />
   <OtherCandidates candidates={otherCandidates} />
+
+  <AdSlot placement="home" besidePanel />
 
   <div class="layout">
     <div class="spacer" aria-hidden="true"></div>

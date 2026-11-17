@@ -1,0 +1,24 @@
+# Launch checklist (owner + Claude, before the first release)
+
+Production stays empty until every item is done.
+
+## Owner
+
+- [ ] Fill in `src/lib/publisher.ts` (company name, legal form, SIRET, address, publication director, contact email).
+      The prod deploy runs `npm test` with `RELEASE=1` and fails while any field is empty.
+- [ ] Buy the domain (e.g. `candidats2027.fr`) and give Claude access to its DNS zone, or set the records yourself.
+- [ ] Create the AdSense account for the company; add the site; in « Privacy & messaging », create the GDPR
+      consent message (Google-certified CMP) with a « Refuser » button as visible as « Accepter ».
+- [ ] In AdSense « Blocking controls » → « Sensitive categories », block **Politics**, **Religion** and anything
+      election-related; keep it blocked until after the election (Code électoral L52-1, EU reg. 2024/900).
+- [ ] Optional: have a lawyer review the legal notice and the privacy policy.
+- [ ] Approve the first `production` deployment in GitHub.
+
+## Claude (with the owner's approval for each step)
+
+- [ ] Switch prod to the Standard plan if traffic justifies it (ADR 0003).
+- [ ] Attach the custom domain to `swa-candidats2027-prod`, set `site` in `astro.config.mjs`, add `ads.txt`.
+- [ ] Set the AdSense publisher id in the build (`PUBLIC_ADSENSE_CLIENT`) and check that no ad or Google
+      request happens before consent.
+- [ ] Run `npm run check-links` on the release candidate.
+- [ ] Enable the daily routine and the data auto-promotion path (ADR 0002).
