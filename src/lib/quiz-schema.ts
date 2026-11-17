@@ -21,6 +21,8 @@ export const quizQuestionSchema = z
   .object({
     id: z.string().regex(/^[a-z0-9-]+$/),
     theme: z.enum(THEME_IDS),
+    /** Short label for theme chips (« 35 heures »), defaults to the theme name. */
+    short: z.string().min(1).max(24).optional(),
     text: z.string().min(1),
     /**
      * `scale`: options are ordered (first → last), so neighbouring answers partly agree.

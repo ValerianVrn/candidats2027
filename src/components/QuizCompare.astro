@@ -1,0 +1,269 @@
+---
+/**
+ * « Comparer les positions »: shown on /quiz while the scored quiz is closed (too few known positions to be fair).
+ * One theme at a time, each answer option with the candidates who hold it (sourced), plus « Non renseigné ».
+ * No score, no ranking, nothing stored.
+ */
+import Avatar from './Avatar.astro';
+import { familleOf, featuredCandidates, fullName } from '../lib/data';
+import { formatDay } from '../lib/dates';
+import { countPositions, groupByOption } from '../lib/quiz';
+import { THEMES } from '../lib/themes';
+import type { QuizQuestion } from '../lib/quiz-schema';
+
+interface Props {
+  questions: QuizQuestion[];
+}
+const { questions } = Astro.props;
+
+const slugs = featuredCandidates.map((c) => c.slug);
+const bySlug = new Map(featuredCandidates.map((c) => [c.slug, c]));
+const nameOf = (s: string) => fullName(bySlug.get(s)!);
+/** Lists are ordered by last name, the usual neutral order. */
+const sortKey = (s: string) => {
+  const c = bySlug.get(s)!;
+  return `${c.lastName} ${c.firstName}`;
+};
+const { known, total } = countPositions(questions, slugs);
+const label = (q: QuizQuestion) => q.short ?? THEMES[q.theme];
+---
+
+<section class="compare" aria-labelledby="compare-title">
+  <p class="kicker">Comparer les positions</p>
+  <h1 id="compare-title">Où se situent les candidats ?</h1>
+  <p class="intro">
+    Choisissez un thème pour voir la position de chaque candidat, avec sa source. Aucun classement, aucun
+    score : seulement ce que les candidats ont dit ou écrit.
+  </p>
+  <!-- prettier-ignore -->
+  <p class="muted small">Le quiz personnalisé ouvrira quand assez de programmes seront publiés pour que la comparaison soit équitable ({known} positions connues sur {total} à ce jour, <a href="/methode#quiz">voir la méthode</a>).</p>
+
+  <div class="chips" role="tablist" aria-label="Thèmes">
+    {questions.map((q, i) => (
+      <button
+        type="button"
+        role="tab"
+        class="chip"
+        id={`tab-${q.id}`}
+        aria-controls={`theme-${q.id}`}
+        aria-selected={i === 0 ? 'true' : 'false'}
+        tabindex={i === 0 ? 0 : -1}
+        data-theme-tab={q.id}
+      >
+        {label(q)}
+      </button>
+    ))}
+  </div>
+
+  {questions.map((q, i) => {
+    const { groups, unknown } = groupByOption(q, slugs, sortKey);
+    return (
+      <section
+        class="theme"
+        id={`theme-${q.id}`}
+        role="tabpanel"
+        aria-labelledby={`tab-${q.id}`}
+        hidden={i !== 0}
+      >
+        <h2>{q.text}</h2>
+        <ul class="options">
+          {groups.map((g) => {
+            const option = q.options.find((o) => o.id === g.optionId)!;
+            return (
+              <li class="option">
+                <p class="option-label">{option.label}</p>
+                {g.slugs.length ? (
+                  <ul class="who">
+                    {g.slugs.map((s) => {
+                      const c = bySlug.get(s)!;
+                      const p = q.positions[s]!;
+                      const src = p.sources[0]!;
+                      return (
+                        <li style={`--ring:var(--f-${familleOf(c)})`}>
+                          <a class="person" href={`/candidat/${s}`}>
+                            <span class="ring">
+                              <Avatar candidate={c} size={32} />
+                            </span>
+                            {fullName(c)}
+                          </a>
+                          <a
+                            class="src"
+                            href={src.url}
+                            target="_blank"
+                            rel="noopener"
+                            title={`${p.kind === 'programme' ? 'Programme' : 'Déclaration'} · ${src.outlet}, ${formatDay(src.date)}`}
+                          >
+                            [source]
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <p class="none">Aucun candidat à ce jour</p>
+                )}
+              </li>
+            );
+          })}
+          <li class="option unknown">
+            <p class="option-label">Non renseigné</p>
+            <p class="none">
+              {unknown.length
+                ? unknown.map((s) => nameOf(s)).join(', ')
+                : 'Tous les candidats du nuage principal ont une position connue.'}
+            </p>
+          </li>
+        </ul>
+      </section>
+    );
+  })}
+</section>
+
+<script>
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>('[data-theme-tab]')];
+  function select(tab: HTMLButtonElement, focus = false) {
+    for (const t of tabs) {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')!)!.hidden = !on;
+    }
+    history.replaceState(null, '', `#theme-${tab.dataset.themeTab}`);
+    if (focus) tab.focus();
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      select(tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]!, true);
+    });
+  });
+  function fromHash() {
+    const tab = location.hash.startsWith('#theme-')
+      ? tabs.find((t) => t.dataset.themeTab === location.hash.slice('#theme-'.length))
+      : undefined;
+    if (tab && tab.getAttribute('aria-selected') !== 'true') select(tab);
+  }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+</script>
+
+<style>
+  .compare {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(28px, 5vw, 40px);
+  }
+  .kicker {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .intro {
+    margin: 0;
+  }
+  .muted {
+    margin: 0;
+    color: var(--muted);
+  }
+  .small {
+    font-size: 13px;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .chips .chip[aria-selected='true'] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+    font-weight: 600;
+  }
+  .theme {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .theme[hidden] {
+    display: none;
+  }
+  .theme h2 {
+    margin: 0;
+    font-size: clamp(20px, 3.5vw, 26px);
+  }
+  .options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .option {
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .option.unknown {
+    background: none;
+    border-style: dashed;
+  }
+  .option-label {
+    margin: 0;
+    font-weight: 600;
+  }
+  .who {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .who li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .person {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    min-height: 44px;
+  }
+  .person:hover {
+    text-decoration: underline;
+  }
+  .ring {
+    display: flex;
+    border-radius: 50%;
+    border: 2px solid var(--ring);
+  }
+  .src {
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .none {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
