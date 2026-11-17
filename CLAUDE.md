@@ -61,6 +61,8 @@ French-language static site about the 2027 French presidential election. Code, c
   Write `{' '}` at the end of the line, or keep the link on the same line.
 - The cloud layout (`src/lib/cloud.ts`) guarantees no overlap only if cards stay ≤ 150 px wide and ≤ 168 px
   tall (`CELL_MIN_WIDTH`, `CARD_MAX_HEIGHT`); keep names clamped to 2 lines if you change the card.
+- An element styled `display: flex/grid` ignores the `hidden` attribute unless you add `[hidden] { display: none }`
+  (that bug kept every detail tab visible).
 - Scripts in `scripts/` run directly with Node (type stripping): import local TS with explicit `.ts` extensions.
 - Several major outlets (Le Monde, Le Figaro, Libération, BFM, Le Parisien…) block automated fetches (403);
   the link check treats 403 as unverifiable, not broken.

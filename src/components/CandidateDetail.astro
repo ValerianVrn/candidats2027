@@ -51,11 +51,11 @@ const H = mode === 'page' ? 'h2' : 'h3';
       {mode === 'page' ? <h1 id={`${id}-name`}>{fullName(c)}</h1> : <h2 id={`${id}-name`}>{fullName(c)}</h2>}
       <p>{party ? `${party.name} · ${FAMILLE_LABEL[famille]}` : FAMILLE_LABEL[famille]}</p>
       <p class="role">{c.role}</p>
+      <p class="status">
+        <span class={`pill pill--${c.status}`}>{statusLabel(c)}</span>
+        <Cite numbers={reg.cite(c.statusSources)} idPrefix={id} />
+      </p>
     </div>
-    <span class={`pill pill--${c.status}`}>
-      {statusLabel(c)}
-      <Cite numbers={reg.cite(c.statusSources)} idPrefix={id} />
-    </span>
   </header>
 
   {mode === 'panel' && (
@@ -75,58 +75,42 @@ const H = mode === 'page' ? 'h2' : 'h3';
     </div>
   )}
 
-  <section
-    id={`${id}-programme`}
-    class="section"
-    role={mode === 'panel' ? 'tabpanel' : undefined}
-    aria-labelledby={mode === 'panel' ? `${id}-tab-programme` : undefined}
-  >
-    {mode === 'page' && <H>Programme</H>}
-    {programme.length ? (
-      <ul class="programme">
-        {programme.map((p) => (
-          <li>
-            <span class="theme">{THEMES[p.theme]}</span>
-            <span>
-              {p.text}
-              <Cite numbers={reg.cite(p.sources)} idPrefix={id} />
-            </span>
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p class="empty">Aucune proposition publiée à ce jour.</p>
-    )}
-  </section>
+  <div class="body">
+    <section
+      id={`${id}-programme`}
+      class="section"
+      role={mode === 'panel' ? 'tabpanel' : undefined}
+      aria-labelledby={mode === 'panel' ? `${id}-tab-programme` : undefined}
+    >
+      {mode === 'page' && <H>Programme</H>}
+      {programme.length ? (
+        <ul class="programme">
+          {programme.map((p) => (
+            <li>
+              <span class="theme">{THEMES[p.theme]}</span>
+              <span>
+                {p.text}
+                <Cite numbers={reg.cite(p.sources)} idPrefix={id} />
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="empty">Aucune proposition publiée à ce jour.</p>
+      )}
+    </section>
 
-  <section
-    id={`${id}-agenda`}
-    class="section"
-    role={mode === 'panel' ? 'tabpanel' : undefined}
-    aria-labelledby={mode === 'panel' ? `${id}-tab-agenda` : undefined}
-    hidden={mode === 'panel'}
-  >
-    {mode === 'page' && <H>Agenda</H>}
-    {upcoming.length ? (
-      <ul class="agenda">
-        {upcoming.map((m) => (
-          <li>
-            <time datetime={m.date}>{formatDay(m.date)}</time>
-            <span>
-              {m.title} · {m.city}
-              <Cite numbers={reg.cite(m.sources)} idPrefix={id} />
-            </span>
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p class="empty">Aucun meeting annoncé.</p>
-    )}
-    {past.length > 0 && (
-      <details class="past">
-        <summary>Meetings passés ({past.length})</summary>
+    <section
+      id={`${id}-agenda`}
+      class="section"
+      role={mode === 'panel' ? 'tabpanel' : undefined}
+      aria-labelledby={mode === 'panel' ? `${id}-tab-agenda` : undefined}
+      hidden={mode === 'panel'}
+    >
+      {mode === 'page' && <H>Agenda</H>}
+      {upcoming.length ? (
         <ul class="agenda">
-          {past.map((m) => (
+          {upcoming.map((m) => (
             <li>
               <time datetime={m.date}>{formatDay(m.date)}</time>
               <span>
@@ -136,127 +120,146 @@ const H = mode === 'page' ? 'h2' : 'h3';
             </li>
           ))}
         </ul>
-      </details>
-    )}
-  </section>
+      ) : (
+        <p class="empty">Aucun meeting annoncé.</p>
+      )}
+      {past.length > 0 && (
+        <details class="past">
+          <summary>Meetings passés ({past.length})</summary>
+          <ul class="agenda">
+            {past.map((m) => (
+              <li>
+                <time datetime={m.date}>{formatDay(m.date)}</time>
+                <span>
+                  {m.title} · {m.city}
+                  <Cite numbers={reg.cite(m.sources)} idPrefix={id} />
+                </span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </section>
 
-  <section
-    id={`${id}-declaration`}
-    class="section"
-    role={mode === 'panel' ? 'tabpanel' : undefined}
-    aria-labelledby={mode === 'panel' ? `${id}-tab-declaration` : undefined}
-    hidden={mode === 'panel'}
-  >
-    {mode === 'page' && <H>Déclaration de candidature</H>}
-    {c.declaration ? (
-      <>
-        {c.declaration.videoUrl && (
-          <VideoFacade
-            url={c.declaration.videoUrl}
-            dateLabel={formatDeclarationDate(c.declaration.date, c.declaration.datePrecision)}
-            label="Déclaration de candidature"
-          />
-        )}
-        <p>
-          Candidature déclarée {formatDeclarationDate(c.declaration.date, c.declaration.datePrecision)}.
-          <Cite numbers={reg.cite(c.declaration.sources)} idPrefix={id} />
-        </p>
-      </>
-    ) : (
-      <p class="empty">
-        {c.status === 'retire'
-          ? `S'est ${c.genre === 'f' ? 'retirée' : 'retiré'} de la course.`
-          : "N'a pas déclaré sa candidature à ce jour ; une candidature est évoquée par les sources citées."}
-      </p>
-    )}
-  </section>
-
-  <section
-    id={`${id}-risques`}
-    class="section"
-    role={mode === 'panel' ? 'tabpanel' : undefined}
-    aria-labelledby={mode === 'panel' ? `${id}-tab-risques` : undefined}
-    hidden={mode === 'panel'}
-  >
-    {mode === 'page' && <H>Procédures et incertitudes</H>}
-    {procedures.length === 0 && (
-      <p class="empty">Aucune procédure judiciaire ou fiscale n'est rapportée par nos sources.</p>
-    )}
-    {procedures.map((r) => (
-      <div class:list={['risk', { closed: !r.active }]}>
-        <p class="risk-title">
-          {r.active && (
-            <span class="bang" aria-hidden="true">
-              !
-            </span>
-          )}
-          {r.title}
-          {!r.active && <span class="tag">Clôturée</span>}
-          {r.nature === 'fiscal' && <span class="tag">Fiscal</span>}
-        </p>
-        <p>
-          <strong>Statut : </strong>
-          {r.statutJuridique}
-        </p>
-        <p>{r.resume}</p>
-        <p>
-          <strong>Effet possible sur la candidature : </strong>
-          {r.impact}
-          <Cite numbers={reg.cite(r.sources)} idPrefix={id} />
-        </p>
-        <p class="risk-date">Mis à jour le {formatDay(r.updatedAt)}</p>
-      </div>
-    ))}
-    {procedures.length > 0 && (
-      <p class="note">
-        Toute personne mise en cause est présumée innocente tant qu'elle n'a pas été définitivement condamnée.
-      </p>
-    )}
-    {uncertainties.length > 0 && (
-      <>
-        <p class="subhead">Incertitudes sur la candidature</p>
-        {uncertainties.map((r) => (
-          <div class="uncertain">
-            <p class="risk-title">{r.title}</p>
-            <p>{r.resume}</p>
-            <p>
-              <strong>Effet possible : </strong>
-              {r.impact}
-              <Cite numbers={reg.cite(r.sources)} idPrefix={id} />
-            </p>
-            <p class="risk-date">Mis à jour le {formatDay(r.updatedAt)}</p>
-          </div>
-        ))}
-      </>
-    )}
-  </section>
-
-  <footer class="sources">
-    <H class="sources-title">Sources</H>
-    <ol>
-      {reg.list.map((s, i) => (
-        <li id={`${id}-src-${i + 1}`}>
-          <a href={s.url} target="_blank" rel="noopener">
-            {s.outlet}
-            {s.title ? ` : ${s.title}` : ''}
-          </a>{' '}
-          <span>({formatDay(s.date)})</span>
-        </li>
-      ))}
-    </ol>
-    <p class="checked">
-      Vérifié le {formatDay(c.lastChecked)} ·{' '}
-      <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">
-        Signaler une erreur
-      </a>
-      {mode === 'panel' && (
+    <section
+      id={`${id}-declaration`}
+      class="section"
+      role={mode === 'panel' ? 'tabpanel' : undefined}
+      aria-labelledby={mode === 'panel' ? `${id}-tab-declaration` : undefined}
+      hidden={mode === 'panel'}
+    >
+      {mode === 'page' && <H>Déclaration de candidature</H>}
+      {c.declaration ? (
         <>
-          {' '}
-          · <a href={`/candidat/${c.slug}`}>Page dédiée</a>
+          {c.declaration.videoUrl && (
+            <VideoFacade
+              url={c.declaration.videoUrl}
+              dateLabel={formatDeclarationDate(c.declaration.date, c.declaration.datePrecision)}
+              label="Déclaration de candidature"
+            />
+          )}
+          <p>
+            Candidature déclarée {formatDeclarationDate(c.declaration.date, c.declaration.datePrecision)}.
+            <Cite numbers={reg.cite(c.declaration.sources)} idPrefix={id} />
+          </p>
+        </>
+      ) : (
+        <p class="empty">
+          {c.status === 'retire'
+            ? `S'est ${c.genre === 'f' ? 'retirée' : 'retiré'} de la course.`
+            : "N'a pas déclaré sa candidature à ce jour ; une candidature est évoquée par les sources citées."}
+        </p>
+      )}
+    </section>
+
+    <section
+      id={`${id}-risques`}
+      class="section"
+      role={mode === 'panel' ? 'tabpanel' : undefined}
+      aria-labelledby={mode === 'panel' ? `${id}-tab-risques` : undefined}
+      hidden={mode === 'panel'}
+    >
+      {mode === 'page' && <H>Procédures et incertitudes</H>}
+      {procedures.length === 0 && (
+        <p class="empty">Aucune procédure judiciaire ou fiscale n'est rapportée par nos sources.</p>
+      )}
+      {procedures.map((r) => (
+        <div class:list={['risk', { closed: !r.active }]}>
+          <p class="risk-title">
+            {r.active && (
+              <span class="bang" aria-hidden="true">
+                !
+              </span>
+            )}
+            {r.title}
+            {!r.active && <span class="tag">Clôturée</span>}
+            {r.nature === 'fiscal' && <span class="tag">Fiscal</span>}
+          </p>
+          <p>
+            <strong>Statut : </strong>
+            {r.statutJuridique}
+          </p>
+          <p>{r.resume}</p>
+          <p>
+            <strong>Effet possible sur la candidature : </strong>
+            {r.impact}
+            <Cite numbers={reg.cite(r.sources)} idPrefix={id} />
+          </p>
+          <p class="risk-date">Mis à jour le {formatDay(r.updatedAt)}</p>
+        </div>
+      ))}
+      {procedures.length > 0 && (
+        <p class="note">
+          Toute personne mise en cause est présumée innocente tant qu'elle n'a pas été définitivement
+          condamnée.
+        </p>
+      )}
+      {uncertainties.length > 0 && (
+        <>
+          <p class="subhead">Incertitudes sur la candidature</p>
+          {uncertainties.map((r) => (
+            <div class="uncertain">
+              <p class="risk-title">{r.title}</p>
+              <p>{r.resume}</p>
+              <p>
+                <strong>Effet possible : </strong>
+                {r.impact}
+                <Cite numbers={reg.cite(r.sources)} idPrefix={id} />
+              </p>
+              <p class="risk-date">Mis à jour le {formatDay(r.updatedAt)}</p>
+            </div>
+          ))}
         </>
       )}
-    </p>
-  </footer>
+    </section>
+
+    <footer class="sources">
+      <H class="sources-title">Sources</H>
+      <ol>
+        {reg.list.map((s, i) => (
+          <li id={`${id}-src-${i + 1}`}>
+            <a href={s.url} target="_blank" rel="noopener">
+              {s.outlet}
+              {s.title ? ` : ${s.title}` : ''}
+            </a>{' '}
+            <span>({formatDay(s.date)})</span>
+          </li>
+        ))}
+      </ol>
+      <p class="checked">
+        Vérifié le {formatDay(c.lastChecked)} ·{' '}
+        <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">
+          Signaler une erreur
+        </a>
+        {mode === 'panel' && (
+          <>
+            {' '}
+            · <a href={`/candidat/${c.slug}`}>Page dédiée</a>
+          </>
+        )}
+      </p>
+    </footer>
+  </div>
 </article>
 
 <style>
@@ -264,6 +267,38 @@ const H = mode === 'page' ? 'h2' : 'h3';
     display: flex;
     flex-direction: column;
     gap: 18px;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  /* Drawer: header and tabs stay put, only the tab content scrolls. */
+  .detail--panel {
+    height: 100%;
+    gap: 0;
+  }
+  .detail--panel .head {
+    padding: 24px 72px 18px 24px;
+  }
+  .detail--panel .tabs {
+    padding: 0 16px;
+  }
+  .detail--panel .body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 20px 24px 28px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+  }
+  .detail--panel .body::-webkit-scrollbar {
+    width: 6px;
+  }
+  .detail--panel .body::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 3px;
   }
   .head {
     display: flex;
@@ -295,6 +330,9 @@ const H = mode === 'page' ? 'h2' : 'h3';
   .who .role {
     color: var(--faint);
   }
+  .who .status {
+    margin-top: 8px;
+  }
   .tabs {
     display: flex;
     gap: 2px;
@@ -323,6 +361,10 @@ const H = mode === 'page' ? 'h2' : 'h3';
     flex-direction: column;
     gap: 12px;
     font-size: 14px;
+  }
+  /* « display: flex » above would otherwise override the hidden attribute (inactive tabs). */
+  .section[hidden] {
+    display: none;
   }
   .section > :global(h2),
   .section > :global(h3) {
