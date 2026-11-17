@@ -46,7 +46,8 @@ For every file in `src/data/candidates/` and for new names:
 - From February 2027: validated sponsorships published by the Conseil constitutionnel (`parrainages`).
 - New potential candidates (2+ outlets in the last 3 months) and potential ones who ruled it out (remove their
   file only through a `needs-human` PR, never by yourself).
-- Quiz positions in `src/data/quiz.json` when a candidate states a new position (two sources).
+- Quiz positions in `src/data/quiz.json` when a candidate states a new position, following
+  `docs/quiz-research-brief.md` (strict matching, two outlets, nothing inferred).
 
 Update `lastChecked` on every candidate you reviewed, and `src/data/site.json` → `lastChecked` to now.
 

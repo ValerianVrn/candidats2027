@@ -19,6 +19,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 - Legal notice (LCEN, right of reply) and privacy policy pages; the prod deploy is blocked until the
   publisher details are filled in. Launch checklist in `docs/launch-checklist.md`.
 - Azure hosting: dev and prod Static Web Apps (Bicep), OIDC deploy workflows, prod gated by owner approval.
+- Quiz questions (12 themes) and the first 34 sourced positions of the main candidates; research rules in
+  `docs/quiz-research-brief.md`. The quiz opens automatically once enough positions are known.
 - Proximity quiz: one question per screen, scoring in the browser only, per-theme sources, shareable result
   in the URL fragment, « Voir sur la carte » lens; quiz positions need two sources (check-data). Closed until
   enough candidates have known positions.
