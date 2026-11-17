@@ -14,13 +14,13 @@ const v = (x: string | null) => x ?? TODO;
     <p>
       {v(PUBLISHER.name)}
       <br />
-      {v(PUBLISHER.legalForm)} · SIRET {v(PUBLISHER.siret)}
+      {v(PUBLISHER.legalForm)} · {v(PUBLISHER.registration)}
       <br />
       {v(PUBLISHER.address)}
       <br />
-      Contact : {v(PUBLISHER.email)}
+      Contact : {PUBLISHER.email ? <a href={`mailto:${PUBLISHER.email}`}>{PUBLISHER.email}</a> : TODO}
     </p>
-    <p>Directeur ou directrice de la publication : {v(PUBLISHER.director)}</p>
+    <p>Directeur de la publication : {v(PUBLISHER.director)}</p>
 
     <h2>Hébergement</h2>
     <p>

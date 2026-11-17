@@ -4,7 +4,7 @@ Production stays empty until every item is done.
 
 ## Owner
 
-- [ ] Fill in `src/lib/publisher.ts` (company name, legal form, SIRET, address, publication director, contact email).
+- [x] Fill in `src/lib/publisher.ts` (company name, legal form, SIRET, address, publication director, contact email).
       The prod deploy runs `npm test` with `RELEASE=1` and fails while any field is empty.
 - [ ] Buy the domain (e.g. `candidats2027.fr`) and give Claude access to its DNS zone, or set the records yourself.
 - [ ] Create the AdSense account for the company; add the site; in « Privacy & messaging », create the GDPR

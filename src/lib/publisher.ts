@@ -3,15 +3,16 @@
  * the owner fills these in before the first release. `null` renders a visible « [à compléter] ».
  */
 export const PUBLISHER = {
-  /** Company name or « Prénom Nom (entrepreneur individuel) ». */
-  name: null as string | null,
-  legalForm: null as string | null,
-  siret: null as string | null,
-  address: null as string | null,
+  /** Company name. */
+  name: 'Valérian Verona' as string | null,
+  legalForm: 'SASU au capital de 1 000 €' as string | null,
+  /** Registration, as shown on the Kbis. */
+  registration: 'SIREN 131 242 281 R.C.S. Vannes' as string | null,
+  address: '9 Petit Kergroix, 56660 Saint-Jean-Brévelay' as string | null,
   /** Directeur ou directrice de la publication. */
-  director: null as string | null,
+  director: 'Valérian Verona' as string | null,
   /** Contact address for readers, rights of reply and data requests. */
-  email: null as string | null,
+  email: 'contact@valerian-verona.fr' as string | null,
 };
 
 export const HOST = {
