@@ -19,14 +19,23 @@ export const MAX_CANDIDATE_FILES = 5;
 const DATA_PREFIX = 'src/data/';
 const PORTRAIT_PREFIX = 'src/assets/portraits/';
 
-export function evaluateChanges(changes: readonly FileChange[]): GuardResult {
+/**
+ * @param onlyCheckDates paths whose only change is a `lastChecked` date: they don't count towards the
+ *   candidate-file limit (the routine refreshes every profile's date daily).
+ */
+export function evaluateChanges(
+  changes: readonly FileChange[],
+  onlyCheckDates: ReadonlySet<string> = new Set(),
+): GuardResult {
   const reasons: string[] = [];
   for (const c of changes) {
     const inData = c.path.startsWith(DATA_PREFIX) || c.path.startsWith(PORTRAIT_PREFIX);
     if (!inData) reasons.push(`changes a file outside the data: ${c.path}`);
     if (c.status.startsWith('D') || c.status.startsWith('R')) reasons.push(`deletes or renames ${c.path}`);
   }
-  const candidateFiles = changes.filter((c) => c.path.startsWith(`${DATA_PREFIX}candidates/`));
+  const candidateFiles = changes.filter(
+    (c) => c.path.startsWith(`${DATA_PREFIX}candidates/`) && !onlyCheckDates.has(c.path),
+  );
   if (candidateFiles.length > MAX_CANDIDATE_FILES) {
     reasons.push(`touches ${candidateFiles.length} candidate files (max ${MAX_CANDIDATE_FILES})`);
   }
@@ -60,4 +69,17 @@ export function isDataOnly(changes: readonly FileChange[]): boolean {
     changes.length > 0 &&
     changes.every((c) => c.path.startsWith(DATA_PREFIX) || c.path.startsWith(PORTRAIT_PREFIX))
   );
+}
+
+/** True when two JSON texts differ only by their `lastChecked` field. */
+export function differsOnlyByCheckDate(before: string, after: string): boolean {
+  try {
+    const a = JSON.parse(before) as Record<string, unknown>;
+    const b = JSON.parse(after) as Record<string, unknown>;
+    delete a.lastChecked;
+    delete b.lastChecked;
+    return JSON.stringify(a) === JSON.stringify(b);
+  } catch {
+    return false;
+  }
 }

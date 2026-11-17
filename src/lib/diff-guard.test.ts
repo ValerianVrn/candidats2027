@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { evaluateChanges, isDataOnly, parseNameStatus } from './diff-guard';
+import { differsOnlyByCheckDate, evaluateChanges, isDataOnly, parseNameStatus } from './diff-guard';
 
 describe('evaluateChanges', () => {
   it('allows a small data-only update', () => {
@@ -62,5 +62,34 @@ describe('isDataOnly', () => {
     [[{ status: 'M', path: 'config/routine.json' }]],
   ])('rejects anything else %#', (changes) => {
     expect(isDataOnly(changes)).toBe(false);
+  });
+});
+
+describe('daily check dates', () => {
+  it('ignores profiles where only lastChecked changed', () => {
+    const changes = Array.from({ length: 44 }, (_, i) => ({
+      status: 'M',
+      path: `src/data/candidates/c${i}.json`,
+    }));
+    const onlyDates = new Set(changes.slice(0, 41).map((c) => c.path));
+    expect(evaluateChanges(changes, onlyDates).autoMerge).toBe(true);
+    expect(evaluateChanges(changes, new Set(changes.slice(0, 30).map((c) => c.path))).autoMerge).toBe(false);
+  });
+
+  it('detects a change limited to lastChecked', () => {
+    const before = JSON.stringify({ slug: 'a', status: 'declare', lastChecked: '2026-11-17' });
+    expect(
+      differsOnlyByCheckDate(
+        before,
+        JSON.stringify({ slug: 'a', status: 'declare', lastChecked: '2026-11-18' }),
+      ),
+    ).toBe(true);
+    expect(
+      differsOnlyByCheckDate(
+        before,
+        JSON.stringify({ slug: 'a', status: 'retire', lastChecked: '2026-11-18' }),
+      ),
+    ).toBe(false);
+    expect(differsOnlyByCheckDate(before, 'not json')).toBe(false);
   });
 });
