@@ -12,6 +12,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 - Project scaffolding: Astro, TypeScript, Prettier, Vitest, CI, Dependabot.
 - Site shell in the « Constellation » design: floating card cloud with filters, candidate detail panel
   (bottom sheet on mobile), candidate pages, journal, countdown, click-to-load videos, numbered citations.
+- Daily routine follows gitflow (ADR 0005): data branch into `develop` before launch, then hotfix from `main`
+  with a patch tag, a GitHub Release and a merge-back; prod deploy picks `production-data` for content-only pushes.
 - Daily update routine prompt (`docs/daily-update-prompt.md`) and diff guard deciding which automated
   changes may merge without a human.
 - Ads (AdSense + Google certified consent message), off until configured; only on the home page and the

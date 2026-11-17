@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { evaluateChanges, parseNameStatus } from './diff-guard';
+import { evaluateChanges, isDataOnly, parseNameStatus } from './diff-guard';
 
 describe('evaluateChanges', () => {
   it('allows a small data-only update', () => {
@@ -37,5 +37,30 @@ describe('parseNameStatus', () => {
       { status: 'M', path: 'src/data/a.json' },
       { status: 'R100', path: 'new.json' },
     ]);
+  });
+});
+
+describe('isDataOnly', () => {
+  it('accepts data and portraits only', () => {
+    expect(
+      isDataOnly([
+        { status: 'M', path: 'src/data/candidates/a.json' },
+        { status: 'A', path: 'src/assets/portraits/a.jpg' },
+      ]),
+    ).toBe(true);
+  });
+
+  it.each([
+    [[]],
+    [[{ status: 'M', path: '.github/workflows/deploy-prod.yml' }]],
+    [
+      [
+        { status: 'M', path: 'src/data/quiz.json' },
+        { status: 'M', path: 'src/lib/quiz.ts' },
+      ],
+    ],
+    [[{ status: 'M', path: 'config/routine.json' }]],
+  ])('rejects anything else %#', (changes) => {
+    expect(isDataOnly(changes)).toBe(false);
   });
 });

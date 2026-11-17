@@ -1,7 +1,8 @@
 name: Deploy prod
 
-# Runs on every push to main (releases). The `production` environment requires the owner's approval,
-# and only that environment's Azure identity can deploy the prod Static Web App.
+# Runs on every push to main. Code (owner releases) deploys through the `production` environment, which requires
+# the owner's approval. Once the routine is live, pushes that only change content (daily data hotfixes) deploy
+# through `production-data`, which needs no approval (ADR 0005). Each environment has its own Azure identity.
 on:
   push:
     branches: [main]
@@ -11,7 +12,22 @@ permissions:
   id-token: write
 
 jobs:
+  classify:
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.env.outputs.environment }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - id: env
+        run: node scripts/deploy-env.ts "${{ github.event.before }}" "${{ github.sha }}"
+
   deploy:
+    needs: classify
     uses: ./.github/workflows/deploy.yml
     with:
-      environment: production
+      environment: ${{ needs.classify.outputs.environment }}

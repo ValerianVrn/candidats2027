@@ -21,4 +21,7 @@ Production stays empty until every item is done.
 - [ ] Set the AdSense publisher id in the build (`PUBLIC_ADSENSE_CLIENT`) and check that no ad or Google
       request happens before consent.
 - [ ] Run `npm run check-links` on the release candidate.
-- [ ] Enable the daily routine and the data auto-promotion path (ADR 0002).
+- [ ] Create the GitHub environment `production-data` (deployments from `main` only, no reviewer, same variables
+      as `production`) and an Azure federated credential for it on the prod identity
+      (`repo:ValerianVrn@78210211/candidats2027@1459747661:environment:production-data`).
+- [ ] After the owner's first release is tagged `v1.0.0`: the owner sets `config/routine.json` to `"live"` (ADR 0005).

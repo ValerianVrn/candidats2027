@@ -50,3 +50,14 @@ export function parseNameStatus(output: string): FileChange[] {
       return { status: parts[0]!, path: parts[parts.length - 1]! };
     });
 }
+
+/**
+ * True when every changed file is content (data or portraits). Used to pick the prod deploy environment:
+ * data-only pushes to main may deploy without the owner's approval (ADR 0005), anything else may not.
+ */
+export function isDataOnly(changes: readonly FileChange[]): boolean {
+  return (
+    changes.length > 0 &&
+    changes.every((c) => c.path.startsWith(DATA_PREFIX) || c.path.startsWith(PORTRAIT_PREFIX))
+  );
+}
