@@ -16,6 +16,8 @@ French-language static site about the 2027 French presidential election. Code, c
 - `src/pages/`: routes. `src/components/`: Astro components. `src/lib/`: pure, unit-tested TS.
 - `src/data/`: all content as JSON (schemas in `src/lib/schemas.ts`).
 - `docs/adr/`: decisions. `docs/research-brief.md`: rules for writing candidate data.
+- `docs/daily-update-prompt.md`: the daily routine (cloud agent) prompt; `npm run diff-guard` decides whether its
+  PR may merge without the owner.
 - `config/sources-allowlist.json`: accepted source domains (outside `src/data/` so data updates can't widen it).
 
 ## Workflow (project-specific exceptions to the global rules)

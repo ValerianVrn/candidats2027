@@ -16,7 +16,8 @@
     "test": "vitest run",
     "verify": "npm run format:check && npm run typecheck && npm test && npm run check-data && npm run build",
     "check-data": "node scripts/check-data.ts",
-    "check-links": "node scripts/check-data.ts --links"
+    "check-links": "node scripts/check-data.ts --links",
+    "diff-guard": "node scripts/diff-guard.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",

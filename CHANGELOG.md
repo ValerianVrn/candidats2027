@@ -12,6 +12,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 - Project scaffolding: Astro, TypeScript, Prettier, Vitest, CI, Dependabot.
 - Site shell in the « Constellation » design: floating card cloud with filters, candidate detail panel
   (bottom sheet on mobile), candidate pages, journal, countdown, click-to-load videos, numbered citations.
+- Daily update routine prompt (`docs/daily-update-prompt.md`) and diff guard deciding which automated
+  changes may merge without a human.
 - Ads (AdSense + Google certified consent message), off until configured; only on the home page and the
   journal, never on the quiz or candidate pages (ADR 0004).
 - Legal notice (LCEN, right of reply) and privacy policy pages; the prod deploy is blocked until the
