@@ -1,0 +1,86 @@
+{
+  "slug": "anasse-kazib",
+  "firstName": "Anasse",
+  "lastName": "Kazib",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-le-cheminot-anasse-kazib-annonce-sa-candidature_8040020.html",
+      "outlet": "franceinfo",
+      "title": "Le cheminot Anasse Kazib annonce sa candidature à la présidentielle 2027",
+      "date": "2026-06-01"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "revolution-permanente",
+  "officialDomains": ["anasse2027.fr"],
+  "role": "Cheminot, syndicaliste, porte-parole de Révolution permanente",
+  "portrait": {
+    "file": "anasse-kazib.jpg",
+    "author": "PabloMorao27",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anasse_Kazib,_d%C3%A9cembre_2021.jpg"
+  },
+  "declaration": {
+    "date": "2026-06-01",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-le-cheminot-anasse-kazib-annonce-sa-candidature_8040020.html",
+        "outlet": "franceinfo",
+        "title": "Le cheminot Anasse Kazib annonce sa candidature à la présidentielle 2027",
+        "date": "2026-06-01"
+      },
+      {
+        "url": "https://www.lejdd.fr/politique/presidentielle-2027-la-liste-des-40-candidats-declares-ou-pressentis-177960",
+        "outlet": "Le JDD",
+        "title": "Présidentielle 2027 : la liste des 40 candidats déclarés ou pressentis",
+        "date": "2026-07-02"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [],
+  "meetings": [],
+  "risques": [
+    {
+      "id": "proces-apologie-du-terrorisme",
+      "nature": "judiciaire",
+      "active": true,
+      "title": "Poursuites pour « apologie du terrorisme »",
+      "statutJuridique": "Poursuivi devant le tribunal correctionnel de Paris pour « apologie du terrorisme » ; procès renvoyé en juin 2025 puis de nouveau le 25 juin 2026, nouvelle date non précisée par les sources",
+      "resume": "Il est poursuivi pour des messages publiés sur X le 7 octobre 2023, jour des attaques du Hamas en Israël, dont des retweets saluant la « résistance palestinienne », à la suite d'une plainte de l'association Jeunesse française juive déposée en janvier 2024. Il encourt sept ans d'emprisonnement selon le JDD. Il dénonce une « criminalisation des militants politiques et syndicalistes ».",
+      "impact": "Aucun jugement n'a été rendu ; les sources ne font état d'aucun effet juridique sur sa candidature à ce stade.",
+      "sources": [
+        {
+          "url": "https://www.lejdd.fr/International/macron-et-meloni-a-antibes-niche-udr-edouard-philippe-en-visio-les-4-infos-dont-vous-allez-entendre-parler-demain-177183",
+          "outlet": "Le JDD",
+          "title": "Macron et Meloni à Antibes, niche UDR, Édouard Philippe en visio... Les 4 infos dont vous allez entendre parler demain",
+          "date": "2026-06-24"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20260626-pour-m%C3%A9lenchon-le-caract%C3%A8re-terroriste-du-7-octobre-peut-%C3%AAtre-questionn%C3%A9",
+          "outlet": "France 24 (AFP)",
+          "title": "Pour Mélenchon, le caractère terroriste du 7-Octobre peut être questionné",
+          "date": "2026-06-26"
+        },
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-le-cheminot-anasse-kazib-annonce-sa-candidature_8040020.html",
+          "outlet": "franceinfo",
+          "title": "Le cheminot Anasse Kazib annonce sa candidature à la présidentielle 2027",
+          "date": "2026-06-01"
+        }
+      ],
+      "updatedAt": "2026-11-17"
+    }
+  ],
+  "lastChecked": "2026-11-17"
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "thierry-breton",
+  "firstName": "Thierry",
+  "lastName": "Breton",
+  "genre": "m",
+  "status": "potentiel",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/thierry-breton-ne-ferme-pas-la-porte-a-une-candidature-pour-l-election-presidentielle-en-2027_8274176.html",
+      "outlet": "franceinfo",
+      "title": "Thierry Breton \"ne ferme pas la porte\" à une candidature pour l'élection présidentielle en 2027",
+      "date": "2026-11-09"
+    },
+    {
+      "url": "https://www.lejdd.fr/politique/on-va-voir-ce-qui-emerge-thierry-breton-nexclut-pas-une-candidature-a-la-presidentielle-188253",
+      "outlet": "Le JDD",
+      "title": "«On va voir ce qui émerge» : Thierry Breton n'exclut pas une candidature à la présidentielle",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": null,
+  "officialDomains": [],
+  "role": "Ancien commissaire européen",
+  "portrait": {
+    "file": "thierry-breton.jpg",
+    "author": "European Parliament from EU",
+    "licence": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hearing_of_Commissioner-designate_Thierry_Breton_(49068069128)_(cropped).jpg"
+  },
+  "declaration": null,
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

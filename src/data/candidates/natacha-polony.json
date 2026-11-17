@@ -1,0 +1,92 @@
+{
+  "slug": "natacha-polony",
+  "firstName": "Natacha",
+  "lastName": "Polony",
+  "genre": "f",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/l-essayiste-natacha-polony-annonce-sa-candidature-a-l-election-presidentielle_8236714.html",
+      "outlet": "franceinfo",
+      "title": "L'essayiste Natacha Polony annonce sa candidature à l'élection présidentielle",
+      "date": "2026-10-14"
+    },
+    {
+      "url": "https://lcp.fr/actualites/natacha-polony-annonce-sa-candidature-a-l-election-presidentielle-443808",
+      "outlet": "LCP",
+      "title": "Natacha Polony annonce sa candidature à l'élection présidentielle",
+      "date": "2026-10-14"
+    }
+  ],
+  "party": "nous-sommes-la-france",
+  "officialDomains": ["natachapolony2027.fr"],
+  "role": "Journaliste et essayiste, directrice de la revue L'Audace",
+  "portrait": {
+    "file": "natacha-polony.jpg",
+    "author": "Georges Biard",
+    "licence": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Natacha_Polony_2013_2.jpg"
+  },
+  "declaration": {
+    "date": "2026-10-14",
+    "datePrecision": "day",
+    "videoUrl": "https://x.com/NPolony/status/2110256632353407479",
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/l-essayiste-natacha-polony-annonce-sa-candidature-a-l-election-presidentielle_8236714.html",
+        "outlet": "franceinfo",
+        "title": "L'essayiste Natacha Polony annonce sa candidature à l'élection présidentielle",
+        "date": "2026-10-14"
+      },
+      {
+        "url": "https://lcp.fr/actualites/natacha-polony-annonce-sa-candidature-a-l-election-presidentielle-443808",
+        "outlet": "LCP",
+        "title": "Natacha Polony annonce sa candidature à l'élection présidentielle",
+        "date": "2026-10-14"
+      },
+      {
+        "url": "https://www.cnews.fr/france/2026-10-14/presidentielle-2027-lessayiste-natacha-polony-annonce-sa-candidature-1934782",
+        "outlet": "CNews",
+        "title": "Présidentielle 2027 : l'essayiste Natacha Polony annonce sa candidature",
+        "date": "2026-10-14"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "travail",
+      "text": "Veut « augmenter les salaires de 20 à 30 % ».",
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/natacha-polony-annonce-sa-candidature-a-l-election-presidentielle-443808",
+          "outlet": "LCP",
+          "title": "Natacha Polony annonce sa candidature à l'élection présidentielle",
+          "date": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Propose « un état d'urgence de la production », avec une priorité à la production française dans la commande publique et la fin des aides aux entreprises non liées à une production sur le territoire national.",
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/natacha-polony-annonce-sa-candidature-a-l-election-presidentielle-443808",
+          "outlet": "LCP",
+          "title": "Natacha Polony annonce sa candidature à l'élection présidentielle",
+          "date": "2026-10-14"
+        },
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/l-essayiste-natacha-polony-annonce-sa-candidature-a-l-election-presidentielle_8236714.html",
+          "outlet": "franceinfo",
+          "title": "L'essayiste Natacha Polony annonce sa candidature à l'élection présidentielle",
+          "date": "2026-10-14"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-17"
+}

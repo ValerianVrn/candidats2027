@@ -1,0 +1,164 @@
+{
+  "slug": "nathalie-arthaud",
+  "firstName": "Nathalie",
+  "lastName": "Arthaud",
+  "genre": "f",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/politique/nathalie-arthaud/presidentielle-2027-nathalie-arthaud-porte-parole-de-lutte-ouvriere-annonce-sa-candidature_7665874.html",
+      "outlet": "franceinfo",
+      "title": "Présidentielle 2027 : Nathalie Arthaud, porte-parole de Lutte ouvrière, annonce sa candidature",
+      "date": "2025-12-08"
+    },
+    {
+      "url": "https://www.france24.com/fr/info-en-continu/20260926-plus-l%C3%A9on-trotski-que-l%C3%A9on-xiv-premier-meeting-de-campagne-pour-arthaud-et-lo",
+      "outlet": "France 24 (AFP)",
+      "title": "\"Plus Léon Trotski que Léon XIV\": premier meeting de campagne pour Arthaud et LO",
+      "date": "2026-09-26"
+    }
+  ],
+  "party": "lutte-ouvriere",
+  "officialDomains": ["nathalie-arthaud.info"],
+  "role": "Porte-parole de Lutte ouvrière, enseignante",
+  "portrait": {
+    "file": "nathalie-arthaud.jpg",
+    "author": "Kokluts",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nathalie_Arthaud_(LO)_19-05-2024_(cropped2).jpg"
+  },
+  "declaration": {
+    "date": "2025-12-08",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/politique/nathalie-arthaud/presidentielle-2027-nathalie-arthaud-porte-parole-de-lutte-ouvriere-annonce-sa-candidature_7665874.html",
+        "outlet": "franceinfo",
+        "title": "Présidentielle 2027 : Nathalie Arthaud, porte-parole de Lutte ouvrière, annonce sa candidature",
+        "date": "2025-12-08"
+      },
+      {
+        "url": "https://www.lejdd.fr/politique/presidentielle-2027-la-liste-des-40-candidats-declares-ou-pressentis-177960",
+        "outlet": "Le JDD",
+        "title": "Présidentielle 2027 : la liste des 40 candidats déclarés ou pressentis",
+        "date": "2026-07-02"
+      }
+    ]
+  },
+  "qualified2022": {
+    "sources": [
+      {
+        "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm",
+        "outlet": "Conseil constitutionnel",
+        "title": "Décision n° 2022-187 PDR du 7 mars 2022 - Liste des candidats à l'élection présidentielle",
+        "date": "2022-03-07"
+      }
+    ]
+  },
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "travail",
+      "text": "Veut porter le SMIC à 2 200 euros net, indexer les salaires sur l'inflation et répartir le travail entre tous sans perte de salaire.",
+      "sources": [
+        {
+          "url": "https://www.nathalie-arthaud.info/medias/document/fichiers/2026/11/Depliant-NA-3nov.pdf",
+          "outlet": "Nathalie Arthaud (dépliant de campagne)",
+          "title": "Le camp des travailleurs",
+          "date": "2026-11-03"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20260926-plus-l%C3%A9on-trotski-que-l%C3%A9on-xiv-premier-meeting-de-campagne-pour-arthaud-et-lo",
+          "outlet": "France 24 (AFP)",
+          "title": "\"Plus Léon Trotski que Léon XIV\": premier meeting de campagne pour Arthaud et LO",
+          "date": "2026-09-26"
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "text": "Veut augmenter les retraites et les pensions et les indexer sur l'inflation.",
+      "sources": [
+        {
+          "url": "https://www.nathalie-arthaud.info/medias/document/fichiers/2026/11/Depliant-NA-3nov.pdf",
+          "outlet": "Nathalie Arthaud (dépliant de campagne)",
+          "title": "Le camp des travailleurs",
+          "date": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Prône l'interdiction des licenciements, l'expropriation des banques et la suppression du secret commercial et bancaire, avec la publication des comptes des entreprises.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nathalie-arthaud/presidentielle-2027-nathalie-arthaud-porte-parole-de-lutte-ouvriere-annonce-sa-candidature_7665874.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Nathalie Arthaud, porte-parole de Lutte ouvrière, annonce sa candidature",
+          "date": "2025-12-08"
+        },
+        {
+          "url": "https://www.nathalie-arthaud.info/medias/document/fichiers/2026/11/Depliant-NA-3nov.pdf",
+          "outlet": "Nathalie Arthaud (dépliant de campagne)",
+          "title": "Le camp des travailleurs",
+          "date": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "theme": "defense",
+      "text": "S'oppose au retour du service militaire et à l'augmentation du budget de l'armée.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nathalie-arthaud/presidentielle-2027-nathalie-arthaud-porte-parole-de-lutte-ouvriere-annonce-sa-candidature_7665874.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Nathalie Arthaud, porte-parole de Lutte ouvrière, annonce sa candidature",
+          "date": "2025-12-08"
+        }
+      ]
+    },
+    {
+      "theme": "immigration",
+      "text": "S'oppose à la « préférence nationale » et défend l'unité des travailleurs français et immigrés.",
+      "sources": [
+        {
+          "url": "https://www.nathalie-arthaud.info/medias/document/fichiers/2026/11/Depliant-NA-3nov.pdf",
+          "outlet": "Nathalie Arthaud (dépliant de campagne)",
+          "title": "Le camp des travailleurs",
+          "date": "2026-11-03"
+        }
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "date": "2027-04-04",
+      "city": "Paris",
+      "title": "Meeting au Zénith",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20260926-plus-l%C3%A9on-trotski-que-l%C3%A9on-xiv-premier-meeting-de-campagne-pour-arthaud-et-lo",
+          "outlet": "France 24 (AFP)",
+          "title": "\"Plus Léon Trotski que Léon XIV\": premier meeting de campagne pour Arthaud et LO",
+          "date": "2026-09-26"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "city": "Paris",
+      "title": "Premier meeting de campagne, salle de la Mutualité",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20260926-plus-l%C3%A9on-trotski-que-l%C3%A9on-xiv-premier-meeting-de-campagne-pour-arthaud-et-lo",
+          "outlet": "France 24 (AFP)",
+          "title": "\"Plus Léon Trotski que Léon XIV\": premier meeting de campagne pour Arthaud et LO",
+          "date": "2026-09-26"
+        }
+      ]
+    }
+  ],
+  "risques": [],
+  "lastChecked": "2026-11-17"
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "juan-branco",
+  "firstName": "Juan",
+  "lastName": "Branco",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.lejdd.fr/politique/presidentielle-2027-la-liste-des-40-candidats-declares-ou-pressentis-177960",
+      "outlet": "Le JDD",
+      "title": "Présidentielle 2027 : la liste des 40 candidats déclarés ou pressentis",
+      "date": "2026-07-02"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "les-ruches",
+  "officialDomains": ["ruches.org"],
+  "role": "Avocat et essayiste",
+  "portrait": {
+    "file": "juan-branco.jpg",
+    "author": "UPOP Marseille",
+    "licence": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Branco_Pick.jpg"
+  },
+  "declaration": {
+    "date": "2025-12-19",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.lejdd.fr/politique/presidentielle-2027-la-liste-des-40-candidats-declares-ou-pressentis-177960",
+        "outlet": "Le JDD",
+        "title": "Présidentielle 2027 : la liste des 40 candidats déclarés ou pressentis",
+        "date": "2026-07-02"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "institutions",
+      "text": "Défend davantage de démocratie directe et une refonte du rapport entre citoyens et pouvoir politique.",
+      "sources": [
+        {
+          "url": "https://www.cnews.fr/france/2026-10-04/presidentielle-2027-qui-sont-ces-candidats-etonnants-qui-veulent-se-lancer-dans",
+          "outlet": "CNews",
+          "title": "Présidentielle 2027 : qui sont ces candidats étonnants qui veulent se lancer dans la course à l'Élysée ?",
+          "date": "2026-10-04"
+        }
+      ]
+    },
+    {
+      "theme": "immigration",
+      "text": "S'est prononcé pour un assouplissement de la politique d'accueil.",
+      "sources": [
+        {
+          "url": "https://www.cnews.fr/france/2026-10-04/presidentielle-2027-qui-sont-ces-candidats-etonnants-qui-veulent-se-lancer-dans",
+          "outlet": "CNews",
+          "title": "Présidentielle 2027 : qui sont ces candidats étonnants qui veulent se lancer dans la course à l'Élysée ?",
+          "date": "2026-10-04"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [
+    {
+      "id": "procedure-pour-viol",
+      "nature": "judiciaire",
+      "active": true,
+      "title": "Procédure pour viol",
+      "statutJuridique": "Mis en examen pour viol ; le parquet de Paris a requis le 6 août 2026 son renvoi devant une cour criminelle départementale et un non-lieu pour deux autres plaintes ; la décision du juge d'instruction n'est pas connue",
+      "resume": "Le parquet demande qu'il soit jugé pour le viol d'une étudiante de 20 ans au printemps 2021 et requiert un non-lieu pour des faits d'agression sexuelle et de viol dénoncés par deux autres femmes. Juan Branco nie tout viol et dénonce un réquisitoire signé « après cinq ans de frénétiques recherches d'autres plaignantes demeurées vaines ». Il a été suspendu neuf mois du barreau en octobre 2025, notamment pour avoir publié des procès-verbaux d'auditions de la procédure.",
+      "impact": "Il bénéficie de la présomption d'innocence ; les sources n'indiquent aucun effet juridique de cette procédure sur sa candidature.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/societe/harcelement-sexuel/le-parquet-de-paris-requiert-le-renvoi-en-proces-pour-viol-de-l-avocat-juan-branco_8172581.html",
+          "outlet": "franceinfo",
+          "title": "Le parquet de Paris requiert le renvoi en procès pour viol de l'avocat Juan Branco",
+          "date": "2026-09-01"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20260901-le-parquet-de-paris-demande-que-l-avocat-juan-branco-soit-jug%C3%A9-pour-viol",
+          "outlet": "France 24 (AFP)",
+          "title": "Le parquet de Paris demande que l'avocat Juan Branco soit jugé pour viol",
+          "date": "2026-09-01"
+        },
+        {
+          "url": "https://www.cnews.fr/france/2026-09-02/le-parquet-de-paris-demande-que-lavocat-juan-branco-connu-pour-son-pamphlet-anti",
+          "outlet": "CNews",
+          "title": "Le parquet de Paris demande que l'avocat Juan Branco, connu pour son pamphlet anti-Emmanuel Macron, soit jugé pour viol",
+          "date": "2026-09-02"
+        }
+      ],
+      "updatedAt": "2026-11-17"
+    }
+  ],
+  "lastChecked": "2026-11-17"
+}

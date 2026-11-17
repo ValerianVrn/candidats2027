@@ -1,0 +1,62 @@
+{
+  "slug": "clara-egger",
+  "firstName": "Clara",
+  "lastName": "Egger",
+  "genre": "f",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.lejdd.fr/politique/presidentielle-2027-la-liste-des-40-candidats-declares-ou-pressentis-177960",
+      "outlet": "Le JDD",
+      "title": "Présidentielle 2027 : la liste des 40 candidats déclarés ou pressentis",
+      "date": "2026-07-02"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "solution-democratique",
+  "officialDomains": ["solutiondemocratique.fr"],
+  "role": "Présidente de Solution démocratique, enseignante-chercheuse en science politique",
+  "portrait": {
+    "file": "clara-egger.jpg",
+    "author": "Thomas Binet",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clara_Egger.jpg"
+  },
+  "declaration": {
+    "date": "2026-04-20",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.lejdd.fr/politique/presidentielle-2027-la-liste-des-40-candidats-declares-ou-pressentis-177960",
+        "outlet": "Le JDD",
+        "title": "Présidentielle 2027 : la liste des 40 candidats déclarés ou pressentis",
+        "date": "2026-07-02"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "institutions",
+      "text": "Veut instaurer la démocratie directe par le référendum d'initiative citoyenne et une décentralisation donnant davantage de pouvoir aux citoyens et aux communes.",
+      "sources": [
+        {
+          "url": "https://www.cnews.fr/france/2026-10-04/presidentielle-2027-qui-sont-ces-candidats-etonnants-qui-veulent-se-lancer-dans",
+          "outlet": "CNews",
+          "title": "Présidentielle 2027 : qui sont ces candidats étonnants qui veulent se lancer dans la course à l'Élysée ?",
+          "date": "2026-10-04"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-17"
+}

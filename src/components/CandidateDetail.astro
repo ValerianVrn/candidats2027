@@ -10,7 +10,7 @@ import Cite from './Cite.astro';
 import VideoFacade from './VideoFacade.astro';
 import { CitationRegistry } from '../lib/citations';
 import { familleOf, fullName, partyOf } from '../lib/data';
-import { formatDay } from '../lib/dates';
+import { formatDay, formatDeclarationDate } from '../lib/dates';
 import { FAMILLE_LABEL, statusLabel } from '../lib/labels';
 import { REPORT_ERROR_URL } from '../lib/site';
 import { THEMES, THEME_IDS } from '../lib/themes';
@@ -30,11 +30,14 @@ const today = new Date().toISOString().slice(0, 10);
 const programme = c.programme.toSorted((a, b) => THEME_IDS.indexOf(a.theme) - THEME_IDS.indexOf(b.theme));
 const upcoming = c.meetings.filter((m) => m.date >= today).toSorted((a, b) => a.date.localeCompare(b.date));
 const past = c.meetings.filter((m) => m.date < today).toSorted((a, b) => b.date.localeCompare(a.date));
+const procedures = c.risques.filter((r) => r.nature !== 'politique');
+const uncertainties = c.risques.filter((r) => r.nature === 'politique');
+const activeProcedures = procedures.filter((r) => r.active).length;
 const tabs = [
   { key: 'programme', label: 'Programme' },
   { key: 'agenda', label: 'Agenda' },
   { key: 'declaration', label: 'Déclaration' },
-  { key: 'risques', label: c.risques.length ? `Risques · ${c.risques.length}` : 'Risques' },
+  { key: 'risques', label: activeProcedures ? `Procédures · ${activeProcedures}` : 'Procédures' },
 ];
 const H = mode === 'page' ? 'h2' : 'h3';
 ---
@@ -150,12 +153,12 @@ const H = mode === 'page' ? 'h2' : 'h3';
         {c.declaration.videoUrl && (
           <VideoFacade
             url={c.declaration.videoUrl}
-            date={c.declaration.date}
+            dateLabel={formatDeclarationDate(c.declaration.date, c.declaration.datePrecision)}
             label="Déclaration de candidature"
           />
         )}
         <p>
-          Candidature déclarée le {formatDay(c.declaration.date)}.
+          Candidature déclarée {formatDeclarationDate(c.declaration.date, c.declaration.datePrecision)}.
           <Cite numbers={reg.cite(c.declaration.sources)} idPrefix={id} />
         </p>
       </>
@@ -175,38 +178,56 @@ const H = mode === 'page' ? 'h2' : 'h3';
     aria-labelledby={mode === 'panel' ? `${id}-tab-risques` : undefined}
     hidden={mode === 'panel'}
   >
-    {mode === 'page' && <H>Procédures et risques</H>}
-    {c.risques.length ? (
-      c.risques.map((r) => (
-        <div class="risk">
-          <p class="risk-title">
+    {mode === 'page' && <H>Procédures et incertitudes</H>}
+    {procedures.length === 0 && (
+      <p class="empty">Aucune procédure judiciaire ou fiscale n'est rapportée par nos sources.</p>
+    )}
+    {procedures.map((r) => (
+      <div class:list={['risk', { closed: !r.active }]}>
+        <p class="risk-title">
+          {r.active && (
             <span class="bang" aria-hidden="true">
               !
             </span>
-            {r.title}
-          </p>
-          <p>
-            <strong>Statut : </strong>
-            {r.statutJuridique}
-          </p>
-          <p>{r.resume}</p>
-          <p>
-            <strong>Effet possible sur la candidature : </strong>
-            {r.impact}
-            <Cite numbers={reg.cite(r.sources)} idPrefix={id} />
-          </p>
-          <p class="risk-date">Mis à jour le {formatDay(r.updatedAt)}</p>
-        </div>
-      ))
-    ) : (
-      <p class="empty">
-        Aucune procédure susceptible d'empêcher la candidature n'est rapportée par nos sources.
-      </p>
-    )}
-    {c.risques.length > 0 && (
+          )}
+          {r.title}
+          {!r.active && <span class="tag">Clôturée</span>}
+          {r.nature === 'fiscal' && <span class="tag">Fiscal</span>}
+        </p>
+        <p>
+          <strong>Statut : </strong>
+          {r.statutJuridique}
+        </p>
+        <p>{r.resume}</p>
+        <p>
+          <strong>Effet possible sur la candidature : </strong>
+          {r.impact}
+          <Cite numbers={reg.cite(r.sources)} idPrefix={id} />
+        </p>
+        <p class="risk-date">Mis à jour le {formatDay(r.updatedAt)}</p>
+      </div>
+    ))}
+    {procedures.length > 0 && (
       <p class="note">
         Toute personne mise en cause est présumée innocente tant qu'elle n'a pas été définitivement condamnée.
       </p>
+    )}
+    {uncertainties.length > 0 && (
+      <>
+        <p class="subhead">Incertitudes sur la candidature</p>
+        {uncertainties.map((r) => (
+          <div class="uncertain">
+            <p class="risk-title">{r.title}</p>
+            <p>{r.resume}</p>
+            <p>
+              <strong>Effet possible : </strong>
+              {r.impact}
+              <Cite numbers={reg.cite(r.sources)} idPrefix={id} />
+            </p>
+            <p class="risk-date">Mis à jour le {formatDay(r.updatedAt)}</p>
+          </div>
+        ))}
+      </>
     )}
   </section>
 
@@ -378,6 +399,39 @@ const H = mode === 'page' ? 'h2' : 'h3';
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
+  }
+  .risk.closed {
+    background: var(--surface-2);
+    border-color: var(--line);
+    color: var(--ink);
+  }
+  .risk.closed .risk-title {
+    color: var(--ink);
+  }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+  }
+  .subhead {
+    margin-top: 6px !important;
+    font-weight: 600;
+  }
+  .uncertain {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    line-height: 1.45;
+  }
+  .uncertain .risk-title {
+    color: var(--ink);
   }
   .risk-date,
   .note {

@@ -1,0 +1,195 @@
+{
+  "slug": "teddy-riner",
+  "firstName": "Teddy",
+  "lastName": "Riner",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/la-resignation-n-est-pas-une-option-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-2027_8274359.html",
+      "outlet": "franceinfo",
+      "title": "\"La résignation n'est pas une option\" : Teddy Riner annonce sa candidature à l'élection présidentielle 2027",
+      "date": "2026-11-09"
+    },
+    {
+      "url": "https://www.france24.com/fr/france/20261109-le-champion-olympique-de-judo-teddy-riner-annonce-sa-candidature-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle",
+      "outlet": "France 24",
+      "title": "Présidentielle : le champion olympique de judo Teddy Riner annonce sa candidature",
+      "date": "2026-11-09"
+    }
+  ],
+  "party": null,
+  "officialDomains": [],
+  "role": "Judoka, quintuple champion olympique",
+  "portrait": {
+    "file": "teddy-riner.jpg",
+    "author": "Georges Biard",
+    "licence": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teddy_Riner_Cannes_2016.jpg"
+  },
+  "declaration": {
+    "date": "2026-11-09",
+    "datePrecision": "day",
+    "videoUrl": "https://x.com/teddyriner/status/2119740524064322005",
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/la-resignation-n-est-pas-une-option-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-2027_8274359.html",
+        "outlet": "franceinfo",
+        "title": "\"La résignation n'est pas une option\" : Teddy Riner annonce sa candidature à l'élection présidentielle 2027",
+        "date": "2026-11-09"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20261109-le-champion-olympique-de-judo-teddy-riner-annonce-sa-candidature-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle",
+        "outlet": "France 24",
+        "title": "Présidentielle : le champion olympique de judo Teddy Riner annonce sa candidature",
+        "date": "2026-11-09"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "retraites",
+      "text": "Veut une nouvelle réforme des retraites, comprenant une part de capitalisation, estimant que « le système actuel ne tient pas ».",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-jt/france-2/13-heures/securite-retraites-que-propose-teddy-riner-candidat-a-l-election-presidentielle-de-2027_8276396.html",
+          "outlet": "franceinfo (France 2)",
+          "title": "Sécurité, retraites... Que propose Teddy Riner, candidat à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-10"
+        },
+        {
+          "url": "https://www.france24.com/fr/france/20261109-le-champion-olympique-de-judo-teddy-riner-annonce-sa-candidature-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle",
+          "outlet": "France 24",
+          "title": "Présidentielle : le champion olympique de judo Teddy Riner annonce sa candidature",
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "theme": "travail",
+      "text": "Veut assouplir les 35 heures et permettre aux Français qui le souhaitent d'augmenter leurs revenus en travaillant plus.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-jt/france-2/13-heures/securite-retraites-que-propose-teddy-riner-candidat-a-l-election-presidentielle-de-2027_8276396.html",
+          "outlet": "franceinfo (France 2)",
+          "title": "Sécurité, retraites... Que propose Teddy Riner, candidat à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-10"
+        },
+        {
+          "url": "https://la1ere.franceinfo.fr/des-tatamis-a-l-elysee-teddy-riner-candidat-surprise-a-la-presidentielle-1756122.html",
+          "outlet": "Outre-mer La 1ère",
+          "title": "Des tatamis à l'Élysée ? Teddy Riner candidat surprise à la présidentielle",
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Veut « augmenter le salaire net » par des allègements de charges.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261109-le-champion-olympique-de-judo-teddy-riner-annonce-sa-candidature-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle",
+          "outlet": "France 24",
+          "title": "Présidentielle : le champion olympique de judo Teddy Riner annonce sa candidature",
+          "date": "2026-11-09"
+        },
+        {
+          "url": "https://la1ere.franceinfo.fr/des-tatamis-a-l-elysee-teddy-riner-candidat-surprise-a-la-presidentielle-1756122.html",
+          "outlet": "Outre-mer La 1ère",
+          "title": "Des tatamis à l'Élysée ? Teddy Riner candidat surprise à la présidentielle",
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [
+    {
+      "id": "redressement-fiscal-voitures-de-luxe",
+      "nature": "fiscal",
+      "active": true,
+      "title": "Redressement fiscal lié à une société de location de voitures de luxe",
+      "statutJuridique": "Contentieux fiscal (administratif, non pénal) : redressement confirmé par la cour administrative d'appel de Versailles le 15 octobre 2026, après un premier rejet par le tribunal administratif de Cergy-Pontoise ; les sources ne mentionnent pas de pourvoi",
+      "resume": "L'administration fiscale a considéré comme des avantages en nature les dépenses de deux véhicules (une Ferrari et une Rolls-Royce) d'une société de location de voitures de luxe liée à Teddy Riner, qui en était le « conducteur exclusif ». Le redressement, notifié en 2019, porte sur 2016 et 2017 ; la cour a retenu une « intention délibérée » de « minorer l'impôt ». Les avocats de la société ont invoqué une faible activité de location en 2017 ; interrogé le 14 novembre 2026, Teddy Riner a déclaré avoir « toujours payé (ses) impôts ».",
+      "impact": "Il s'agit d'un litige fiscal et non d'une procédure pénale ; aucune source n'indique qu'il puisse empêcher sa candidature.",
+      "sources": [
+        {
+          "url": "https://la1ere.franceinfo.fr/guadeloupe/la-justice-conforte-le-fisc-dans-un-redressement-visant-teddy-riner-1754250.html",
+          "outlet": "Outre-mer La 1ère (AFP)",
+          "title": "La justice conforte le fisc dans un redressement visant Teddy Riner",
+          "date": "2026-11-03"
+        },
+        {
+          "url": "https://www.france24.com/fr/france/20261109-le-champion-olympique-de-judo-teddy-riner-annonce-sa-candidature-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle",
+          "outlet": "France 24",
+          "title": "Présidentielle : le champion olympique de judo Teddy Riner annonce sa candidature",
+          "date": "2026-11-09"
+        },
+        {
+          "url": "https://fr.euronews.com/2026/11/15/teddy-riner-qualifie-de-baiser-empoisonne-les-felicitations-du-chef-de-letat-pour-sa-candi",
+          "outlet": "Euronews",
+          "title": "Teddy Riner qualifie de \"baiser empoisonné\" les félicitations du chef de l'Etat pour sa candidature",
+          "date": "2026-11-15"
+        }
+      ],
+      "updatedAt": "2026-11-17"
+    },
+    {
+      "id": "liquidation-riner-estate",
+      "nature": "fiscal",
+      "active": true,
+      "title": "Liquidation judiciaire de la société Riner Estate à la demande du fisc",
+      "statutJuridique": "Procédure de liquidation judiciaire ouverte le 2 septembre 2026 par le tribunal des activités économiques de Nanterre, à la demande de l'administration fiscale (procédure commerciale, non pénale)",
+      "resume": "Selon L'Équipe, cité par l'AFP, l'administration fiscale réclame 244 789 euros à Riner Estate, société immobilière gérée par Teddy Riner et enregistrée à Levallois-Perret ; le jugement fixe la cessation des paiements au 3 mars 2025. Son entourage n'a pas souhaité commenter. Le JDD précise qu'il n'a jamais été poursuivi ni mis en cause dans une enquête du Parquet national financier visant un ancien partenaire d'affaires, dans le cadre de laquelle la société avait été perquisitionnée en 2018.",
+      "impact": "Les sources ne présentent pas cette procédure comme une condamnation pénale personnelle et n'indiquent aucun effet juridique sur sa candidature.",
+      "sources": [
+        {
+          "url": "https://fr.euronews.com/2026/11/12/presidentielle-2027-teddy-riner-rattrape-par-le-fisc-un-premier-combat-sur-le-terrain-poli",
+          "outlet": "Euronews",
+          "title": "Présidentielle 2027 : Teddy Riner rattrapé par le fisc, un premier combat sur le terrain politique",
+          "date": "2026-11-12"
+        },
+        {
+          "url": "https://la1ere.franceinfo.fr/candidat-declare-a-la-presidentielle-teddy-riner-voit-ressurgir-des-demeles-avec-le-fisc-1757052.html",
+          "outlet": "Outre-mer La 1ère (AFP)",
+          "title": "Candidat déclaré à la présidentielle, Teddy Riner voit ressurgir des démêlés avec le fisc",
+          "date": "2026-11-12"
+        },
+        {
+          "url": "https://www.lejdd.fr/politique/villa-pres-de-monaco-voitures-de-luxe-pourquoi-teddy-riner-est-il-dans-le-viseur-du-fisc-188484",
+          "outlet": "Le JDD",
+          "title": "Villa près de Monaco, voitures de luxe... Pourquoi Teddy Riner est-il dans le viseur du fisc ?",
+          "date": "2026-11-12"
+        }
+      ],
+      "updatedAt": "2026-11-17"
+    },
+    {
+      "id": "contentieux-tr-leader-group",
+      "nature": "fiscal",
+      "active": true,
+      "title": "Contentieux fiscal de la holding TR Leader Group",
+      "statutJuridique": "Contentieux fiscal (administratif, non pénal) : demande de restitution jugée irrecevable par le tribunal administratif de Cergy-Pontoise en janvier 2026",
+      "resume": "TR Leader Group, holding dont Teddy Riner a été le gérant jusqu'à fin octobre 2026, a reçu en mai 2022 un avis de recouvrement de 195 693 euros au titre de pénalités et d'intérêts de retard. Sa demande de restitution, déposée en 2023, a été jugée irrecevable en raison d'une irrégularité dans l'avis de mise en recouvrement contesté.",
+      "impact": "Il s'agit d'un litige fiscal visant une société ; aucune source n'indique qu'il puisse empêcher sa candidature.",
+      "sources": [
+        {
+          "url": "https://la1ere.franceinfo.fr/candidat-declare-a-la-presidentielle-teddy-riner-voit-ressurgir-des-demeles-avec-le-fisc-1757052.html",
+          "outlet": "Outre-mer La 1ère (AFP)",
+          "title": "Candidat déclaré à la présidentielle, Teddy Riner voit ressurgir des démêlés avec le fisc",
+          "date": "2026-11-12"
+        },
+        {
+          "url": "https://www.lejdd.fr/politique/villa-pres-de-monaco-voitures-de-luxe-pourquoi-teddy-riner-est-il-dans-le-viseur-du-fisc-188484",
+          "outlet": "Le JDD",
+          "title": "Villa près de Monaco, voitures de luxe... Pourquoi Teddy Riner est-il dans le viseur du fisc ?",
+          "date": "2026-11-12"
+        }
+      ],
+      "updatedAt": "2026-11-17"
+    }
+  ],
+  "lastChecked": "2026-11-17"
+}

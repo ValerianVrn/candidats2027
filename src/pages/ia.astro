@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import { REPORT_ERROR_URL, REPO_URL } from '../lib/site';
+---
+
+<Base
+  title="Usage de l'IA"
+  description="Comment une intelligence artificielle rédige et met à jour le contenu du site."
+>
+  <article class="page prose">
+    <h1>Un contenu rédigé par une IA</h1>
+    <p class="lead">
+      Conformément au règlement européen sur l'intelligence artificielle, nous vous informons que les textes
+      de ce site sont générés et mis à jour par une intelligence artificielle.
+    </p>
+    <h2>Ce que fait l'IA</h2>
+    <ul>
+      <!-- prettier-ignore -->
+      <li>
+        Chaque jour, l'assistant Claude (Anthropic) recherche les informations publiées sur les candidats,
+        rédige ou met à jour les résumés, et consigne les changements dans le <a href="/journal">journal</a>.
+      </li>
+      <li>Les textes ne sont pas relus un par un par un humain avant publication.</li>
+    </ul>
+    <h2>Les garde-fous</h2>
+    <ul>
+      <li>
+        Chaque information doit citer une source issue d'une liste fermée de médias et de sites publics ; une
+        vérification automatique bloque la publication sinon (<a href="/methode#sources">voir la méthode</a>).
+      </li>
+      <li>Les statuts et les procédures judiciaires exigent deux sources indépendantes.</li>
+      <li>
+        Toute modification importante ou inhabituelle est retenue pour une vérification humaine avant
+        publication.
+      </li>
+      <!-- prettier-ignore -->
+      <li>
+        L'historique complet des modifications est public sur <a href={REPO_URL} target="_blank" rel="noopener">GitHub</a>.
+      </li>
+    </ul>
+    <h2>Vous voyez une erreur ?</h2>
+    <!-- prettier-ignore -->
+    <p>
+      <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">Signalez-la</a>. Les signalements sont traités en priorité lors de la mise à jour suivante.
+    </p>
+  </article>
+</Base>
+
+<style>
+  .prose h2 {
+    margin: 28px 0 10px;
+    font-size: 22px;
+  }
+  .prose li,
+  .prose p {
+    line-height: 1.6;
+  }
+  .prose ul {
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 16px;
+  }
+</style>

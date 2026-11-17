@@ -1,0 +1,149 @@
+{
+  "slug": "eric-zemmour",
+  "firstName": "Éric",
+  "lastName": "Zemmour",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/eric-zemmour-leader-du-parti-d-extreme-droite-reconquete-officialise-sa-candidature-a-la-presidentielle_8276858.html",
+      "outlet": "franceinfo",
+      "title": "Eric Zemmour, leader du parti d'extrême droite Reconquête, officialise sa candidature à l'élection présidentielle de 2027",
+      "date": "2026-11-10"
+    },
+    {
+      "url": "https://www.france24.com/fr/france/20261110-%C3%A9ric-zemmour-confirme-candidature-pr%C3%A9sidentielle-enrayer-d%C3%A9clin",
+      "outlet": "France 24",
+      "title": "Éric Zemmour confirme sa candidature à la présidentielle pour \"enrayer le déclin\"",
+      "date": "2026-11-10"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "reconquete",
+  "officialDomains": ["parti-reconquete.fr"],
+  "qualified2022": {
+    "sources": [
+      {
+        "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm",
+        "outlet": "Conseil constitutionnel",
+        "title": "Décision n° 2022-187 PDR du 7 mars 2022 - Liste des candidats à l'élection présidentielle",
+        "date": "2022-03-07"
+      }
+    ]
+  },
+  "parrainages": null,
+  "role": "Président de Reconquête",
+  "portrait": {
+    "file": "eric-zemmour.jpg",
+    "author": "Anh De France",
+    "licence": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_d%27%C3%89ric_Zemmour,_avril_2022.jpg"
+  },
+  "declaration": {
+    "date": "2026-11-10",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/eric-zemmour-leader-du-parti-d-extreme-droite-reconquete-officialise-sa-candidature-a-la-presidentielle_8276858.html",
+        "outlet": "franceinfo",
+        "title": "Eric Zemmour, leader du parti d'extrême droite Reconquête, officialise sa candidature à l'élection présidentielle de 2027",
+        "date": "2026-11-10"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20261110-%C3%A9ric-zemmour-confirme-candidature-pr%C3%A9sidentielle-enrayer-d%C3%A9clin",
+        "outlet": "France 24",
+        "title": "Éric Zemmour confirme sa candidature à la présidentielle pour \"enrayer le déclin\"",
+        "date": "2026-11-10"
+      }
+    ]
+  },
+  "programme": [
+    {
+      "theme": "defense",
+      "text": "Veut « couper court à toute forme de soutien » à l'Ukraine et privilégier les efforts diplomatiques pour la paix.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/international/aide-a-lukraine-que-proposent-les-candidats-a-la-presidentielle",
+          "outlet": "Public Sénat",
+          "title": "Aide à l'Ukraine : que proposent les candidats à la présidentielle ?",
+          "date": "2026-11-16"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Propose de ne pas remplacer 800 000 postes dans la fonction publique, sans licenciement, en préservant notamment les enseignants, militaires, policiers et soignants.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Eric Zemmour souhaite supprimer 800 000 postes dans la fonction publique",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "sante",
+      "text": "Propose de supprimer le numerus clausus, d'inciter les médecins retraités à reprendre une activité avec des revenus exonérés d'impôt sur le revenu, et de permettre aux pharmaciens et infirmiers de traiter les affections bénignes.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Eric Zemmour souhaite supprimer 800 000 postes dans la fonction publique",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "securite",
+      "text": "Propose de recruter 40 000 surveillants pénitentiaires, de construire rapidement 100 000 places de prison préfabriquées, d'instaurer des peines planchers et de cumuler les peines.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Eric Zemmour souhaite supprimer 800 000 postes dans la fonction publique",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "education",
+      "text": "Veut mettre fin au collège unique, avec une orientation possible vers la voie professionnelle dès la 4e.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Eric Zemmour souhaite supprimer 800 000 postes dans la fonction publique",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "immigration",
+      "text": "Fixe l'objectif de deux millions d'immigrés en moins à la fin du quinquennat et propose d'expulser les étrangers au chômage depuis plus de six mois, y compris en situation régulière.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261110-%C3%A9ric-zemmour-confirme-candidature-pr%C3%A9sidentielle-enrayer-d%C3%A9clin",
+          "outlet": "France 24",
+          "title": "Éric Zemmour confirme sa candidature à la présidentielle pour \"enrayer le déclin\"",
+          "date": "2026-11-10"
+        },
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/eric-zemmour-leader-du-parti-d-extreme-droite-reconquete-officialise-sa-candidature-a-la-presidentielle_8276858.html",
+          "outlet": "franceinfo",
+          "title": "Eric Zemmour, leader du parti d'extrême droite Reconquête, officialise sa candidature à l'élection présidentielle de 2027",
+          "date": "2026-11-10"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-17"
+}
