@@ -1,0 +1,65 @@
+---
+/**
+ * One ad placement with a fixed reserved height (no layout shift), labelled « Annonce ».
+ * Only used on the home page and the journal: never on the quiz, candidate pages or next to a portrait.
+ */
+import { ADSENSE_CLIENT, AD_SLOTS } from '../lib/ads';
+
+interface Props {
+  placement: keyof typeof AD_SLOTS;
+  /** Leave room for the home page's side panel on wide screens. */
+  besidePanel?: boolean;
+}
+const { placement, besidePanel = false } = Astro.props;
+const slot = AD_SLOTS[placement];
+---
+
+{ADSENSE_CLIENT && slot && (
+  <aside class:list={['ad', { 'beside-panel': besidePanel }]} aria-label="Annonce">
+    <span class="ad-label">Annonce</span>
+    <ins
+      class="adsbygoogle"
+      style="display:block;height:100px"
+      data-ad-client={ADSENSE_CLIENT}
+      data-ad-slot={slot}
+      data-ad-format="horizontal"
+      data-full-width-responsive="false"
+    />
+  </aside>
+)}
+
+<script>
+  const units = document.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])');
+  if (units.length) {
+    const w = window as unknown as { adsbygoogle: unknown[] };
+    w.adsbygoogle = w.adsbygoogle || [];
+    units.forEach(() => w.adsbygoogle.push({}));
+  }
+</script>
+
+<style>
+  .ad {
+    max-width: 970px;
+    margin: 8px auto 16px;
+    padding: 0 var(--gutter);
+  }
+  @media (min-width: 1101px) {
+    .beside-panel {
+      margin-left: 0;
+      margin-right: calc(min(400px, 32vw) + var(--gutter) * 2);
+    }
+  }
+  .ad-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 4px;
+  }
+  .ad ins {
+    min-height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+</style>

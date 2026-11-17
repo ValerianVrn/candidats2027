@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import AdSlot from '../components/AdSlot.astro';
 import { candidates, changelog, fullName } from '../lib/data';
 import { formatDay } from '../lib/dates';
 import { REPORT_ERROR_URL } from '../lib/site';
@@ -7,17 +8,15 @@ import { REPORT_ERROR_URL } from '../lib/site';
 const nameBySlug = new Map(candidates.map((c) => [c.slug, fullName(c)]));
 ---
 
-<Base title="Journal des mises à jour" section="journal">
+<Base title="Journal des mises à jour" section="journal" ads>
   <div class="page">
     <h1>Journal des mises à jour</h1>
+    <!-- prettier-ignore -->
     <p class="lead">
       Chaque jour, les informations du site sont vérifiées et mises à jour à partir de sources publiques.
-      Voici ce qui a changé, et pourquoi. Une erreur ?{' '}
-      <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">
-        Signalez-la
-      </a>
-      .
+      Voici ce qui a changé, et pourquoi. Une erreur ? <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">Signalez-la</a>.
     </p>
+    <AdSlot placement="journal" />
     <ol class="entries">
       {changelog.map((e) => (
         <li class="entry">

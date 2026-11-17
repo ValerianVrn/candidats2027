@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import { HOST, PUBLISHER, TODO } from '../lib/publisher';
+import { REPORT_ERROR_URL } from '../lib/site';
+
+const v = (x: string | null) => x ?? TODO;
+---
+
+<Base title="Mentions légales">
+  <article class="page prose">
+    <h1>Mentions légales</h1>
+
+    <h2>Éditeur</h2>
+    <p>
+      {v(PUBLISHER.name)}
+      <br />
+      {v(PUBLISHER.legalForm)} · SIRET {v(PUBLISHER.siret)}
+      <br />
+      {v(PUBLISHER.address)}
+      <br />
+      Contact : {v(PUBLISHER.email)}
+    </p>
+    <p>Directeur ou directrice de la publication : {v(PUBLISHER.director)}</p>
+
+    <h2>Hébergement</h2>
+    <p>
+      {HOST.name}
+      <br />
+      {HOST.address}
+      <br />
+      Données hébergées dans la région {HOST.region}.
+    </p>
+
+    <h2>Contenu</h2>
+    <p>
+      Les textes du site sont rédigés et mis à jour par une intelligence artificielle à partir de sources
+      publiques citées (<a href="/ia">en savoir plus</a>, <a href="/methode">méthode</a>). Le site est
+      indépendant de tout candidat, parti ou organisation politique et ne reçoit aucun financement de leur
+      part.
+    </p>
+
+    <h2 id="droit-de-reponse">Droit de réponse et corrections</h2>
+    <p>
+      Toute personne nommée ou désignée sur le site dispose d'un droit de réponse (article 6, IV de la loi du
+      21 juin 2004 pour la confiance dans l'économie numérique). La demande est adressée par écrit à
+      l'éditeur, à l'adresse de contact ci-dessus, dans les trois mois suivant la mise en ligne de
+      l'information concernée. Elle précise les passages contestés et la teneur de la réponse souhaitée.
+    </p>
+    <!-- prettier-ignore -->
+    <p>Pour signaler simplement une erreur factuelle, vous pouvez aussi utiliser le <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">formulaire public de correction</a>.</p>
+
+    <h2>Propriété intellectuelle</h2>
+    <p>
+      Les portraits proviennent de Wikimedia Commons et sont réutilisés selon leur licence libre ; l'auteur et
+      la licence de chaque image sont indiqués sur la page du candidat. Les vidéos restent la propriété de
+      leurs auteurs et ne sont chargées qu'à votre demande. Le code source du site est public.
+    </p>
+
+    <h2>Données personnelles</h2>
+    <p>
+      Voir la <a href="/confidentialite">politique de confidentialité</a>.
+    </p>
+  </article>
+</Base>
+
+<style>
+  .prose h2 {
+    margin: 28px 0 8px;
+    font-size: 20px;
+  }
+  .prose p {
+    line-height: 1.6;
+  }
+</style>
