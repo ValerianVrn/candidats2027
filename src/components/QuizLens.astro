@@ -37,7 +37,7 @@ import { clientPayload, quizReady } from '../lib/quiz-data';
     for (const card of cards) {
       const s = scores.get(card.dataset.slug!);
       const score = s?.score ?? null;
-      card.style.setProperty('--lens', score === null ? '0.8' : String(0.75 + (score / 100) * 0.55));
+      card.style.setProperty('--lens', score === null ? '0.8' : String(0.8 + (score / 100) * 0.3));
       card.toggleAttribute('data-lens-none', score === null);
       const ring = card.querySelector('.ring');
       if (ring && score !== null) {
