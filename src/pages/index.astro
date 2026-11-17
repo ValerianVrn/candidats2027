@@ -14,81 +14,66 @@ import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/da
   <CardCloud candidates={featuredCandidates} everyone={activeCandidates} />
   <OtherCandidates candidates={otherCandidates} />
 
-  <AdSlot placement="home" besidePanel />
+  <AdSlot placement="home" />
 
-  <div class="layout">
-    <div class="spacer" aria-hidden="true"></div>
-    <div class="backdrop" data-close hidden></div>
-    <aside class="panel" aria-label="Détail du candidat" data-panel>
-      <button type="button" class="close" data-close aria-label="Fermer le détail">
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          aria-hidden="true"
-        >
-          <path d="M6 6l12 12M18 6L6 18"></path>
-        </svg>
-      </button>
-      <div class="intro" data-intro>
-        <h2>Choisissez un candidat</h2>
-        <p>
-          Touchez un portrait pour voir son programme, ses prochains meetings, sa déclaration de candidature
-          et les procédures en cours. Chaque information renvoie à sa source.
-        </p>
-        <a class="cta" href="/quiz">
-          Faire le quiz · 3 min
-        </a>
+  <!-- Candidate details: a wide drawer (native modal dialog: focus trap, Escape, backdrop, inert page). -->
+  <dialog class="drawer" aria-label="Détail du candidat" data-drawer>
+    <button type="button" class="close" data-close aria-label="Fermer le détail">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <path d="M6 6l12 12M18 6L6 18"></path>
+      </svg>
+    </button>
+    {activeCandidates.map((c) => (
+      <div class="wrap" data-detail-wrap={c.slug} hidden>
+        <CandidateDetail candidate={c} mode="panel" />
       </div>
-      {activeCandidates.map((c) => (
-        <div data-detail-wrap={c.slug} hidden>
-          <CandidateDetail candidate={c} mode="panel" />
-        </div>
-      ))}
-    </aside>
-  </div>
+    ))}
+  </dialog>
 </Base>
 
 <script>
-  const panel = document.querySelector<HTMLElement>('[data-panel]')!;
-  const backdrop = document.querySelector<HTMLElement>('.backdrop')!;
-  const intro = panel.querySelector<HTMLElement>('[data-intro]')!;
-  const narrow = window.matchMedia('(max-width: 1100px)');
+  const drawer = document.querySelector<HTMLDialogElement>('[data-drawer]')!;
   let lastCard: HTMLElement | null = null;
 
   function open(slug: string, fromCard?: HTMLElement) {
-    const wrap = panel.querySelector<HTMLElement>(`[data-detail-wrap="${CSS.escape(slug)}"]`);
+    const wrap = drawer.querySelector<HTMLElement>(`[data-detail-wrap="${CSS.escape(slug)}"]`);
     if (!wrap) return;
-    panel.querySelectorAll<HTMLElement>('[data-detail-wrap]').forEach((w) => (w.hidden = w !== wrap));
-    intro.hidden = true;
+    drawer.querySelectorAll<HTMLElement>('[data-detail-wrap]').forEach((w) => (w.hidden = w !== wrap));
+    // Always start on the first tab, scrolled to the top.
+    const firstTab = wrap.querySelector<HTMLButtonElement>('[role="tab"]');
+    if (firstTab) selectTab(firstTab);
+    wrap.querySelector<HTMLElement>('.body')?.scrollTo({ top: 0 });
+
     document.querySelectorAll('.card[aria-current]').forEach((a) => a.removeAttribute('aria-current'));
     const card = fromCard ?? document.querySelector<HTMLElement>(`.card[data-slug="${CSS.escape(slug)}"]`);
     card?.setAttribute('aria-current', 'true');
     lastCard = card ?? null;
-    panel.classList.add('is-open');
-    backdrop.hidden = !narrow.matches;
-    panel.scrollTop = 0;
     history.replaceState(null, '', `#${slug}`);
-    if (fromCard) wrap.querySelector<HTMLElement>('h2')?.focus({ preventScroll: !narrow.matches });
+    if (!drawer.open) drawer.showModal();
+    wrap.querySelector<HTMLElement>('h2')?.focus();
   }
 
-  function close() {
-    panel.classList.remove('is-open');
-    backdrop.hidden = true;
+  drawer.addEventListener('close', () => {
     document.querySelectorAll('.card[aria-current]').forEach((a) => a.removeAttribute('aria-current'));
-    if (narrow.matches) {
-      panel.querySelectorAll<HTMLElement>('[data-detail-wrap]').forEach((w) => (w.hidden = true));
-      intro.hidden = false;
-    }
-    history.replaceState(null, '', location.pathname);
+    history.replaceState(null, '', location.pathname + location.search);
     lastCard?.focus();
-  }
+  });
 
-  panel.querySelectorAll<HTMLElement>('[data-detail-wrap] h2').forEach((h) => (h.tabIndex = -1));
+  drawer.querySelectorAll<HTMLElement>('[data-detail-wrap] h2').forEach((h) => (h.tabIndex = -1));
+
+  // A click on the backdrop (outside the drawer box) closes it.
+  drawer.addEventListener('click', (e) => {
+    if (e.target === drawer) drawer.close();
+  });
 
   document.addEventListener('click', (e) => {
     const target = e.target as Element;
@@ -98,8 +83,7 @@ import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/da
       open(card.dataset.slug!, card);
       return;
     }
-    if (target.closest('[data-close]')) close();
-
+    if (target.closest('[data-close]')) drawer.close();
     const tab = target.closest<HTMLButtonElement>('[role="tab"]');
     if (tab) selectTab(tab);
   });
@@ -112,10 +96,10 @@ import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/da
       t.tabIndex = on ? 0 : -1;
       document.getElementById(t.getAttribute('aria-controls')!)!.hidden = !on;
     });
+    tab.closest('.wrap')?.querySelector<HTMLElement>('.body')?.scrollTo({ top: 0 });
   }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && panel.classList.contains('is-open')) close();
     const tab = (e.target as Element).closest?.<HTMLButtonElement>('[role="tab"]');
     if (tab && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
       const tabs = [...tab.closest('[role="tablist"]')!.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
@@ -126,125 +110,71 @@ import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/da
   });
 
   const initial = decodeURIComponent(location.hash.slice(1));
-  if (initial) open(initial);
+  if (initial && !initial.includes('=')) open(initial);
 </script>
 
 <style>
-  /* The cloud spans the page; on wide screens the panel floats at the right of the stage. */
-  .layout {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-    pointer-events: none;
-  }
-  .spacer,
-  .backdrop {
-    display: none;
-  }
-  .panel {
-    pointer-events: auto;
-    position: absolute;
-    top: 76px;
-    right: var(--gutter);
-    width: min(400px, 32vw);
-    max-height: calc(100% - 90px);
-    overflow-y: auto;
-    padding: 22px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
-  }
   :global(.cloud),
   :global(.others) {
-    margin-right: calc(min(400px, 32vw) + var(--gutter) * 2);
     padding-left: var(--gutter);
+    padding-right: var(--gutter);
   }
-  .close {
-    display: none;
-  }
-  .intro h2 {
-    margin: 0 0 8px;
-    font-size: 22px;
-  }
-  .intro p {
-    margin: 0 0 16px;
-    color: var(--muted);
-    font-size: 14px;
-  }
-  .cta {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 0 18px;
-    border-radius: 12px;
-    background: var(--ink);
-    color: var(--bg);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .cta:hover {
-    color: var(--bg);
-    background: #fff;
-  }
-  :global(main) {
-    position: relative;
+  :global(html:has(dialog[open])) {
+    overflow: hidden;
   }
 
-  /* Narrow screens: the panel becomes a bottom sheet. */
-  @media (max-width: 1100px) {
-    :global(.cloud),
-    :global(.others) {
-      margin-right: 0;
-      padding-left: var(--gutter);
-      padding-right: var(--gutter);
+  .drawer {
+    position: fixed;
+    inset: 0 0 0 auto;
+    margin: 0;
+    width: min(560px, 100vw);
+    max-width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    padding: 0;
+    border: 0;
+    border-left: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: -24px 0 60px rgba(0, 0, 0, 0.45);
+  }
+  .drawer[open] {
+    animation: slide-in 0.28s ease-out;
+  }
+  .drawer::backdrop {
+    background: rgba(5, 8, 20, 0.6);
+    backdrop-filter: blur(2px);
+  }
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
     }
-    .layout {
-      position: static;
-    }
-    .panel {
-      position: fixed;
-      z-index: 50;
-      top: auto;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: auto;
-      max-height: 86vh;
-      border-radius: 22px 22px 0 0;
-      transform: translateY(105%);
-      transition: transform 0.3s ease;
-      visibility: hidden;
-    }
-    .panel.is-open {
+    to {
       transform: none;
-      visibility: visible;
     }
-    .backdrop:not([hidden]) {
-      display: block;
-      position: fixed;
-      inset: 0;
-      z-index: 40;
-      background: rgba(5, 8, 20, 0.6);
-      pointer-events: auto;
-    }
-    .close {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: sticky;
-      top: 0;
-      margin: -8px -8px 0 auto;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      cursor: pointer;
-      z-index: 1;
-    }
-    .intro {
-      display: none;
-    }
+  }
+  .wrap {
+    height: 100%;
+  }
+  .wrap[hidden] {
+    display: none;
+  }
+  .close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    cursor: pointer;
+  }
+  .close:hover {
+    background: var(--raised);
   }
 </style>

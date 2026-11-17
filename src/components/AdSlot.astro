@@ -7,15 +7,13 @@ import { ADSENSE_CLIENT, AD_SLOTS } from '../lib/ads';
 
 interface Props {
   placement: keyof typeof AD_SLOTS;
-  /** Leave room for the home page's side panel on wide screens. */
-  besidePanel?: boolean;
 }
-const { placement, besidePanel = false } = Astro.props;
+const { placement } = Astro.props;
 const slot = AD_SLOTS[placement];
 ---
 
 {ADSENSE_CLIENT && slot && (
-  <aside class:list={['ad', { 'beside-panel': besidePanel }]} aria-label="Annonce">
+  <aside class="ad" aria-label="Annonce">
     <span class="ad-label">Annonce</span>
     <ins
       class="adsbygoogle"
@@ -42,12 +40,6 @@ const slot = AD_SLOTS[placement];
     max-width: 970px;
     margin: 8px auto 16px;
     padding: 0 var(--gutter);
-  }
-  @media (min-width: 1101px) {
-    .beside-panel {
-      margin-left: 0;
-      margin-right: calc(min(400px, 32vw) + var(--gutter) * 2);
-    }
   }
   .ad-label {
     display: block;

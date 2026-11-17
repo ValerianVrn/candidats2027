@@ -9,6 +9,9 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Fixed
 
+- Candidate details: the tabs (Programme, Agenda, Déclaration, Procédures) now switch content. The cramped side
+  panel is replaced by a wide drawer (native dialog) with a fixed header and tabs, a thin scroll bar for the
+  content only, and the status under the name; the cloud uses the full page width.
 - Daily routine: GitHub actions through the GitHub tools that work in the cloud (gh is not authenticated there),
   push check before research, every candidate reviewed every day (« news first »), full candidate list in the
   run summary; the diff guard ignores profiles whose only change is the daily `lastChecked` date.
