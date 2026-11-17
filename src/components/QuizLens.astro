@@ -1,0 +1,102 @@
+---
+/**
+ * « Voir sur la carte »: when the home page opens with #proximite=<answers>, portraits are resized by
+ * proximity and show the percentage. Computed in the browser from the URL fragment, never sent anywhere.
+ */
+import { clientPayload, quizReady } from '../lib/quiz-data';
+---
+
+{quizReady && (
+  <>
+    <div class="lens-banner" data-lens-banner hidden>
+      <span>Portraits ajustés selon vos réponses au quiz (calcul dans votre navigateur).</span>
+      <button type="button" data-lens-clear>
+        Effacer
+      </button>
+    </div>
+    <script type="application/json" id="lens-data" set:html={JSON.stringify(clientPayload)} />
+  </>
+)}
+
+<script>
+  import { decodeAnswers, scoreCandidates } from '../lib/quiz';
+
+  const el = document.getElementById('lens-data');
+  if (el && location.hash.startsWith('#proximite=')) {
+    const data = JSON.parse(el.textContent!) as { questions: Parameters<typeof scoreCandidates>[0] };
+    const answers = decodeAnswers(decodeURIComponent(location.hash.slice('#proximite='.length)));
+    const cards = [...document.querySelectorAll<HTMLElement>('.card[data-slug]')];
+    const scores = new Map(
+      scoreCandidates(
+        data.questions,
+        answers,
+        cards.map((c) => c.dataset.slug!),
+      ).map((s) => [s.slug, s]),
+    );
+    document.documentElement.dataset.lens = '';
+    for (const card of cards) {
+      const s = scores.get(card.dataset.slug!);
+      const score = s?.score ?? null;
+      card.style.setProperty('--lens', score === null ? '0.8' : String(0.75 + (score / 100) * 0.55));
+      card.toggleAttribute('data-lens-none', score === null);
+      const ring = card.querySelector('.ring');
+      if (ring && score !== null) {
+        const tag = document.createElement('span');
+        tag.className = 'lens-score';
+        tag.textContent = `${score} %`;
+        ring.append(tag);
+      }
+    }
+    const banner = document.querySelector<HTMLElement>('[data-lens-banner]')!;
+    banner.hidden = false;
+    banner.querySelector('[data-lens-clear]')!.addEventListener('click', () => {
+      history.replaceState(null, '', location.pathname);
+      location.reload();
+    });
+  }
+</script>
+
+<style>
+  .lens-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 14px;
+    margin: 12px var(--gutter) 0;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #1c2858;
+    font-size: 13px;
+  }
+  .lens-banner[hidden] {
+    display: none;
+  }
+  .lens-banner button {
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: none;
+    cursor: pointer;
+  }
+  :global([data-lens] .card[data-slug] .ring) {
+    transform: scale(var(--lens, 1));
+  }
+  :global([data-lens] .card[data-lens-none]) {
+    opacity: 0.45;
+  }
+  :global(.lens-score) {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+</style>

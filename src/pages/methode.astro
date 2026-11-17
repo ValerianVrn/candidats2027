@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import { parties } from '../lib/data';
 import { FAMILLE_LABEL } from '../lib/labels';
 import { PARRAINAGES_THRESHOLD } from '../lib/criteria';
+import { MIN_COVERAGE } from '../lib/quiz';
 import { REPORT_ERROR_URL, REPO_URL } from '../lib/site';
 import { FAMILLES } from '../lib/schemas';
 import allowlist from '../../config/sources-allowlist.json';
@@ -72,6 +73,33 @@ const byFamille = FAMILLES.map((f) => ({ f, list: parties.filter((p) => p.famill
         ))}
       </ul>
     )}
+
+    <h2 id="quiz">Le quiz</h2>
+    <ul>
+      <li>
+        Chaque question porte sur un sujet où les programmes diffèrent réellement. Chaque réponse proposée
+        correspond à la position d'au moins un candidat, confirmée par deux sources (programme officiel ou
+        déclaration publique rapportée par la presse).
+      </li>
+      <li>
+        Pour une question « graduée » (de la position la plus forte dans un sens à la plus forte dans
+        l'autre), une réponse voisine compte pour une partie ; pour une question à choix, seule la même
+        réponse compte. « Important pour moi » compte double.
+      </li>
+      <li>
+        La proximité est la moyenne de ces accords, calculée uniquement sur les thèmes où vous avez répondu et
+        où la position du candidat est connue. En dessous de {MIN_COVERAGE} thèmes communs, aucun pourcentage
+        n'est affiché. Aucune position n'est déduite ou supposée.
+      </li>
+      <li>
+        L'ordre des réponses est mélangé (ou inversé pour les questions graduées) ; à score égal, les
+        candidats sont classés par ordre alphabétique.
+      </li>
+      <li>
+        Le calcul a lieu dans votre navigateur : vos réponses ne sont ni envoyées ni enregistrées, et les
+        résultats ne sont jamais agrégés ni publiés.
+      </li>
+    </ul>
 
     <h2 id="sources">Sources</h2>
     <ul>

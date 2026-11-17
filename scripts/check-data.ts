@@ -19,7 +19,8 @@ import {
   type Candidate,
   type Party,
 } from '../src/lib/schemas.ts';
-import { checkCandidate, checkParty, type Allowlist, type Issue } from '../src/lib/guardrails.ts';
+import { checkCandidate, checkParty, checkQuiz, type Allowlist, type Issue } from '../src/lib/guardrails.ts';
+import { quizSchema } from '../src/lib/quiz-schema.ts';
 
 const root = join(import.meta.dirname, '..');
 const dataDir = join(root, 'src', 'data');
@@ -90,6 +91,11 @@ if (election) {
   }
 }
 parse(siteSchema, readJson(join(dataDir, 'site.json')), 'site.json');
+const quiz = parse(quizSchema, readJson(join(dataDir, 'quiz.json')), 'quiz.json');
+if (quiz) {
+  issues.push(...checkQuiz(quiz, allowlist, new Map(candidates.map((c) => [c.slug, c]))));
+  collectUrls(quiz);
+}
 const changelog = parse(changelogSchema, readJson(join(dataDir, 'changelog.json')), 'changelog.json');
 if (changelog) collectUrls(changelog);
 

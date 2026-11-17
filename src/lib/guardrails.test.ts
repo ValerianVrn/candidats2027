@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { checkCandidate, matchDomain } from './guardrails';
+import { checkCandidate, checkQuiz, matchDomain } from './guardrails';
 import { isFeatured } from './criteria';
 import type { Candidate, Party } from './schemas';
 
@@ -173,5 +173,56 @@ describe('isFeatured', () => {
     expect(
       isFeatured(candidate({ parrainages: { count: 100, date: '2027-02-01', sources: [] } }), null),
     ).toBe(true);
+  });
+});
+
+describe('checkQuiz', () => {
+  const q = (
+    positions: Record<
+      string,
+      { option: string; kind: 'programme' | 'declaration'; sources: ReturnType<typeof src>[] }
+    >,
+  ) => ({
+    questions: [
+      {
+        id: 'energie',
+        theme: 'energie' as const,
+        text: 'Q ?',
+        type: 'scale' as const,
+        options: [
+          { id: 'a', label: 'A' },
+          { id: 'b', label: 'B' },
+          { id: 'c', label: 'C' },
+        ],
+        positions,
+      },
+    ],
+  });
+  const cands = new Map([['a-b', candidate()]]);
+
+  it('accepts two outlets, one of them the candidate site', () => {
+    const quiz = q({
+      'a-b': {
+        option: 'a',
+        kind: 'programme',
+        sources: [src('https://ab2027.fr/p'), src('https://lemonde.fr/1')],
+      },
+    });
+    expect(checkQuiz(quiz, allowlist, cands)).toEqual([]);
+  });
+
+  it('rejects a single source and unknown candidates', () => {
+    const quiz = q({
+      'a-b': { option: 'a', kind: 'programme', sources: [src('https://lemonde.fr/1')] },
+      nobody: {
+        option: 'b',
+        kind: 'declaration',
+        sources: [src('https://lemonde.fr/1'), src('https://afp.com/2')],
+      },
+    });
+    expect(checkQuiz(quiz, allowlist, cands).map((i) => i.path)).toEqual([
+      'energie.positions.a-b.sources',
+      'energie.positions.nobody',
+    ]);
   });
 });

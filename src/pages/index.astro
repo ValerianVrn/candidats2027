@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CardCloud from '../components/CardCloud.astro';
 import CandidateDetail from '../components/CandidateDetail.astro';
+import QuizLens from '../components/QuizLens.astro';
 import OtherCandidates from '../components/OtherCandidates.astro';
 import AdSlot from '../components/AdSlot.astro';
 import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/data';
@@ -9,6 +10,7 @@ import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/da
 
 <Base section="candidats" ads>
   <h1 class="visually-hidden">Les candidats à l'élection présidentielle de 2027</h1>
+  <QuizLens />
   <CardCloud candidates={featuredCandidates} everyone={activeCandidates} />
   <OtherCandidates candidates={otherCandidates} />
 

@@ -3,6 +3,7 @@
  * The site publishes without human review, so these rules block a merge when broken.
  */
 import type { Candidate, Party, Source } from './schemas.ts';
+import type { Quiz } from './quiz-schema.ts';
 
 export interface Allowlist {
   media: string[];
@@ -126,5 +127,32 @@ export function checkParty(p: Party, file: string, allowlist: Allowlist): Issue[
   const ctx: CheckContext = { allow: [...allowlist.media, ...allowlist.official], issues: [] };
   checkSources(ctx, file, `${p.id}.classificationSources`, p.classificationSources);
   checkSources(ctx, file, `${p.id}.representation.sources`, p.representation.sources);
+  return ctx.issues;
+}
+
+/** Quiz positions: known candidate, two independent sources (allowlist or the candidate's own site). */
+export function checkQuiz(
+  quiz: Quiz,
+  allowlist: Allowlist,
+  candidates: ReadonlyMap<string, Candidate>,
+): Issue[] {
+  const ctx: CheckContext = { allow: [...allowlist.media, ...allowlist.official], issues: [] };
+  const file = 'quiz.json';
+  const ids = new Set<string>();
+  for (const q of quiz.questions) {
+    if (ids.has(q.id)) ctx.issues.push({ file, path: q.id, message: 'duplicate question id' });
+    ids.add(q.id);
+    for (const [slug, p] of Object.entries(q.positions)) {
+      const c = candidates.get(slug);
+      if (!c) {
+        ctx.issues.push({ file, path: `${q.id}.positions.${slug}`, message: 'unknown candidate' });
+        continue;
+      }
+      checkSources(ctx, file, `${q.id}.positions.${slug}.sources`, p.sources, {
+        extraDomains: c.officialDomains,
+        minIndependent: 2,
+      });
+    }
+  }
   return ctx.issues;
 }
