@@ -1,0 +1,37 @@
+{
+  "slug": "matthieu-pigasse",
+  "firstName": "Matthieu",
+  "lastName": "Pigasse",
+  "genre": "m",
+  "status": "potentiel",
+  "statusSources": [
+    {
+      "url": "https://www.france24.com/fr/info-en-continu/20260924-vacances-luxueuses-primaire-les-ambitions-pr%C3%A9sidentielles-de-pigasse-contrari%C3%A9es",
+      "outlet": "France 24",
+      "title": "Vacances luxueuses, primaire: les ambitions présidentielles de Pigasse contrariées",
+      "date": "2026-09-24"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": null,
+  "officialDomains": [],
+  "role": "Homme d'affaires",
+  "portrait": {
+    "file": "matthieu-pigasse.jpg",
+    "author": "Nathan Fabry",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eurocks2026_TDM_MP_NathanFabry.jpg"
+  },
+  "declaration": null,
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "joel-cheve",
+  "firstName": "Joël",
+  "lastName": "Chevé",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+      "outlet": "franceinfo",
+      "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+      "date": "2026-10-08"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "la-france-adulte",
+  "officialDomains": [],
+  "qualified2022": null,
+  "parrainages": null,
+  "role": "Masseur-kinésithérapeute dans la Manche, fondateur de l’association La France adulte",
+  "portrait": null,
+  "declaration": {
+    "date": "2026-11-09",
+    "datePrecision": "before",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-10-08"
+      },
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+        "date": "2026-11-10"
+      }
+    ]
+  },
+  "programme": [
+    {
+      "theme": "institutions",
+      "text": "Veut promouvoir une nouvelle gouvernance démocratique fondée sur un mécanisme de « remontées citoyennes ».",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-10-08"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

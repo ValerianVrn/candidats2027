@@ -1,0 +1,87 @@
+{
+  "slug": "dominique-de-villepin",
+  "firstName": "Dominique",
+  "lastName": "de Villepin",
+  "genre": "m",
+  "status": "potentiel",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/je-ne-suis-pas-encore-candidat-a-la-presidentielle-2027-indique-dominique-de-villepin_8265395.html",
+      "outlet": "franceinfo",
+      "title": "\"Je ne suis pas encore candidat\" à la présidentielle 2027, indique Dominique de Villepin",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://www.cnews.fr/france/2026-11-03/presidentielle-2027-dominique-de-villepin-sera-bien-candidat-mais-attend-avant-de",
+      "outlet": "CNEWS",
+      "title": "Présidentielle 2027 : Dominique de Villepin sera bien candidat, mais attend avant de l'annoncer officiellement",
+      "date": "2026-11-03"
+    }
+  ],
+  "party": null,
+  "officialDomains": [],
+  "role": "Ancien Premier ministre",
+  "portrait": {
+    "file": "dominique-de-villepin.jpg",
+    "author": "Georges Seguin (Okki)",
+    "licence": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dominique_de_Villepin_20100330_Salon_du_livre_de_Paris_2_cropped.jpg"
+  },
+  "declaration": null,
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "economie",
+      "text": "Veut ramener le déficit public à 3 % du PIB d'ici la fin du quinquennat, par une réduction des dépenses publiques.",
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-dominique-villepin-veut-une-nouvelle-abolition-des-privileges-et-un",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: Dominique Villepin veut une \"nouvelle abolition des privilèges\" et un \"big bang\" fiscal",
+          "date": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose une loi d'extinction progressive des niches fiscales et sociales, un impôt unique sur le patrimoine et une réduction à neuf grands impôts.",
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-dominique-villepin-veut-une-nouvelle-abolition-des-privileges-et-un",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: Dominique Villepin veut une \"nouvelle abolition des privilèges\" et un \"big bang\" fiscal",
+          "date": "2026-08-28"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [
+    {
+      "id": "affaire-des-statuettes",
+      "nature": "judiciaire",
+      "active": true,
+      "title": "Affaire des statuettes",
+      "statutJuridique": "Visé par une enquête préliminaire du parquet national financier, ouverte le 19 mai 2026 pour recel de détournement de fonds publics ; entendu en audition libre à la mi-juillet 2026",
+      "resume": "L'enquête porte sur une statuette et un buste offerts à Dominique de Villepin lorsqu'il était ministre des Affaires étrangères (2002-2004), puis conservés. Il a reconnu une « erreur », a rendu les objets au Quai d'Orsay fin avril 2026 et conteste toute contrepartie.",
+      "impact": "Les sources citées ne font état d'aucun effet sur la possibilité de se présenter à ce stade.",
+      "sources": [
+        {
+          "url": "https://www.cnews.fr/france/2026-05-20/dominique-de-villepin-ce-que-lon-sait-de-laffaire-des-statuettes-dans-laquelle",
+          "outlet": "CNEWS",
+          "title": "Dominique de Villepin : ce que l'on sait de l’affaire des statuettes, dans laquelle l’ancien Premier ministre est visé par une enquête",
+          "date": "2026-05-20"
+        },
+        {
+          "url": "https://www.franceinfo.fr/politique/affaire-des-statuettes-dominique-de-villepin-a-ete-entendu-en-audition-libre-mi-juillet_8124329.html",
+          "outlet": "franceinfo",
+          "title": "Affaire des statuettes : Dominique de Villepin a été entendu en audition libre mi-juillet",
+          "date": "2026-07-27"
+        }
+      ],
+      "updatedAt": "2026-11-16"
+    }
+  ],
+  "lastChecked": "2026-11-16"
+}

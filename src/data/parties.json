@@ -1,20 +1,875 @@
 [
   {
-    "id": "parti-exemple-a",
-    "name": "Parti Exemple A",
-    "short": "PEA",
-    "famille": "centre",
+    "id": "la-france-insoumise",
+    "name": "La France insoumise",
+    "short": "LFI",
+    "famille": "extreme-gauche",
     "classificationSources": [
-      { "url": "https://example.org/nuances", "outlet": "Exemple", "date": "2026-11-16" }
-    ]
+      {
+        "url": "https://www.franceinfo.fr/politique/la-france-insoumise/une-manipulation-scandaleuse-la-france-insoumise-conteste-son-classement-comme-mouvement-d-extreme-gauche-par-le-ministere-de-l-interieur-pour-les-municipales_7785701.html",
+        "outlet": "franceinfo",
+        "title": "La France insoumise conteste son classement comme mouvement d'\"extrême gauche\" par le ministère de l'Intérieur pour les municipales",
+        "date": "2026-02-05"
+      },
+      {
+        "url": "https://www.franceinfo.fr/politique/la-france-insoumise/le-conseil-d-etat-confirme-la-classification-de-la-france-insoumise-a-l-extreme-gauche-et-de-l-udr-a-l-extreme-droite-pour-les-municipales_7834004.html",
+        "outlet": "franceinfo",
+        "title": "Le Conseil d'Etat confirme la classification de La France insoumise à l'extrême gauche et de l'UDR à l'extrême droite pour les municipales",
+        "date": "2026-02-27"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": true,
+      "parlementEuropeen": true,
+      "sources": [
+        {
+          "url": "https://www.europe1.fr/politique/presidentielle-2027-jean-luc-melenchon-officialise-sa-candidature-930947",
+          "outlet": "Europe 1",
+          "title": "Présidentielle 2027 : Jean-Luc Mélenchon officialise sa candidature",
+          "date": "2026-05-03"
+        },
+        {
+          "url": "https://www.franceinfo.fr/elections/senatoriales/resultats-des-elections-senatoriales-2026-la-france-insoumise-fait-son-entree-au-senat-dix-ans-apres-sa-creation_8212526.html",
+          "outlet": "franceinfo",
+          "title": "Résultats des élections sénatoriales 2026 : dix ans après sa création, La France insoumise fait son entrée au Sénat",
+          "date": "2026-09-27"
+        }
+      ]
+    }
   },
   {
-    "id": "parti-exemple-b",
-    "name": "Parti Exemple B",
-    "short": "PEB",
-    "famille": "ecologiste",
+    "id": "lutte-ouvriere",
+    "name": "Lutte ouvrière",
+    "short": "LO",
+    "famille": "extreme-gauche",
     "classificationSources": [
-      { "url": "https://example.org/nuances", "outlet": "Exemple", "date": "2026-11-16" }
-    ]
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nathalie-arthaud/presidentielle-2027-nathalie-arthaud-porte-parole-de-lutte-ouvriere-annonce-sa-candidature_7665874.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Nathalie Arthaud, porte-parole de Lutte ouvrière, annonce sa candidature",
+          "date": "2025-12-08"
+        }
+      ]
+    }
+  },
+  {
+    "id": "revolution-permanente",
+    "name": "Révolution permanente",
+    "short": "RP",
+    "famille": "extreme-gauche",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-le-cheminot-anasse-kazib-annonce-sa-candidature_8040020.html",
+          "outlet": "franceinfo",
+          "title": "Le cheminot Anasse Kazib annonce sa candidature à la présidentielle 2027",
+          "date": "2026-06-01"
+        }
+      ]
+    }
+  },
+  {
+    "id": "npa-revolutionnaires",
+    "name": "NPA-Révolutionnaires",
+    "short": "NPA-R",
+    "famille": "extreme-gauche",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-le-npa-revolutionnaires-annonce-presenter-la-candidature-de-sa-porte-parole-selma-labib_AD-202606170500.html",
+          "outlet": "BFMTV",
+          "title": "Présidentielle 2027: le NPA-Révolutionnaires annonce présenter la candidature de sa porte-parole Selma Labib",
+          "date": "2026-06-17"
+        }
+      ]
+    }
+  },
+  {
+    "id": "place-publique",
+    "name": "Place publique",
+    "short": "PP",
+    "famille": "gauche",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": true,
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-le-dernier-decompte-des-candidats-deja-sur-la-ligne-de-depart",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : quel est le dernier décompte des candidats déjà sur la ligne de départ ?",
+          "date": "2026-09-18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "parti-communiste-francais",
+    "name": "Parti communiste français",
+    "short": "PCF",
+    "famille": "gauche",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-la-candidature-du-communiste-fabien-roussel-une-epine-dans-le-pied-de-jean-luc-melenchon",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle : la candidature du communiste Fabien Roussel, une épine dans le pied de Jean-Luc Mélenchon ?",
+          "date": "2026-09-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "les-ecologistes",
+    "name": "Les Écologistes",
+    "short": "LE",
+    "famille": "gauche",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": true,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/canicule-la-motion-de-censure-des-ecologistes-deposee-ce-jeudi-sera-debattue-lundi-a-l",
+          "outlet": "LCP",
+          "title": "Canicule: la motion de censure des Écologistes, déposée ce jeudi, sera débattue lundi à l'Assemblée",
+          "date": "2026-07-02"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/info-public-senat-melanie-vogel-elue-nouvelle-presidente-du-groupe-ecologiste-du-senat",
+          "outlet": "Public Sénat",
+          "title": "[Info Public Sénat] Le groupe écologiste du Sénat ferme la porte au sénateur LFI Gabriel Amard et élit Mélanie Vogel présidente",
+          "date": "2026-09-29"
+        }
+      ]
+    }
+  },
+  {
+    "id": "debout",
+    "name": "Debout !",
+    "short": "Debout !",
+    "famille": "gauche",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/francois-ruffin-n-exclut-pas-de-se-retirer-de-la-presidentielle-si-une-solution-se-degage-pour-battre-marine-le-pen-au-second-tour_8270501.html",
+          "outlet": "franceinfo",
+          "title": "François Ruffin n'exclut pas de se retirer de la présidentielle \"si une solution se dégage pour battre Marine Le Pen au second tour\" en 2027",
+          "date": "2026-11-06"
+        }
+      ]
+    }
+  },
+  {
+    "id": "generation-ecologie",
+    "name": "Génération écologie",
+    "short": "GE",
+    "famille": "gauche",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-radio/8h30-fauvelle-dely/affaire-lyhanna-presidentielle-2027-l-interview-de-delphine-batho_7997384.html",
+          "outlet": "franceinfo",
+          "title": "Affaire Lyhanna, présidentielle 2027... L'interview de Delphine Batho",
+          "date": "2026-06-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "equinoxe",
+    "name": "Équinoxe",
+    "short": "Équinoxe",
+    "famille": "gauche",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  },
+  {
+    "id": "renaissance",
+    "name": "Renaissance",
+    "short": "RE",
+    "famille": "centre",
+    "classificationSources": [
+      {
+        "url": "https://www.legifrance.gouv.fr/circulaire/id/45684",
+        "outlet": "Légifrance (ministère de l'Intérieur)",
+        "title": "Attribution des nuances aux candidats aux élections sénatoriales du 27 septembre 2026",
+        "date": "2026-08-23"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": true,
+      "parlementEuropeen": true,
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20260522-pr%C3%A9sidentielle-2027-gabriel-attal-annonce-sa-candidature-dans-le-camp-macroniste",
+          "outlet": "France 24",
+          "title": "Gabriel Attal annonce sa candidature pour la présidentielle de 2027",
+          "date": "2026-05-22"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261005-s%C3%A9natoriales-lr-perd-sept-si%C3%A8ges-mais-reste-devant-l-union-centriste-2e-groupe-du-s%C3%A9nat-et-le-ps",
+          "outlet": "France 24 (AFP)",
+          "title": "Sénatoriales: LR perd sept sièges mais reste devant l'Union centriste 2e groupe du Sénat et le PS",
+          "date": "2026-10-05"
+        },
+        {
+          "url": "https://www.europarl.europa.eu/meps/fr/135511/VALERIE_HAYER/history/10",
+          "outlet": "Parlement européen",
+          "title": "10e législature | Valérie HAYER | Députés | Parlement européen",
+          "date": "2026-11-16"
+        }
+      ]
+    }
+  },
+  {
+    "id": "horizons",
+    "name": "Horizons",
+    "short": "HOR",
+    "famille": "centre",
+    "classificationSources": [
+      {
+        "url": "https://www.legifrance.gouv.fr/circulaire/id/45684",
+        "outlet": "Légifrance (ministère de l'Intérieur)",
+        "title": "Attribution des nuances aux candidats aux élections sénatoriales du 27 septembre 2026",
+        "date": "2026-08-23"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": true,
+      "parlementEuropeen": true,
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-edouard-philippe-met-en-place-son-organigramme-pour-elargir-au-maximum-le-socle-et-depasser-horizons",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle : Edouard Philippe met en place son organigramme pour « élargir au maximum le socle » et dépasser Horizons",
+          "date": "2026-05-07"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/combien-horizons-le-parti-dedouard-philippe-compte-t-il-de-senateurs-apres-les-senatoriales",
+          "outlet": "Public Sénat",
+          "title": "Combien Horizons, le parti d'Edouard Philippe, compte-t-il de sénateurs après les sénatoriales ?",
+          "date": "2026-10-08"
+        },
+        {
+          "url": "https://www.europe1.fr/politique/primaire-des-democrates-aujourdhui-les-conditions-ne-sont-pas-reunies-alors-pour-quoi-faire-sinterroge-gilles-boyer-depute-europeen-horizons-1194756",
+          "outlet": "Europe 1",
+          "title": "Primaire des démocrates : «Aujourd'hui, les conditions ne sont pas réunies, alors pour quoi faire ?», s'interroge Gilles Boyer, député européen Horizons",
+          "date": "2026-10-30"
+        }
+      ]
+    }
+  },
+  {
+    "id": "les-republicains",
+    "name": "Les Républicains",
+    "short": "LR",
+    "famille": "droite",
+    "classificationSources": [
+      {
+        "url": "https://www.legifrance.gouv.fr/circulaire/id/45684",
+        "outlet": "Légifrance (ministère de l'Intérieur)",
+        "title": "Attribution des nuances aux candidats aux élections sénatoriales du 27 septembre 2026",
+        "date": "2026-08-23"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": true,
+      "parlementEuropeen": true,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/les-republicains/presidentielle-2027-bruno-retailleau-largement-designe-candidat-par-les-adherents-du-parti-les-republicains_7949957.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Bruno Retailleau largement désigné candidat par les adhérents du parti Les Républicains",
+          "date": "2026-04-19"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261005-s%C3%A9natoriales-lr-perd-sept-si%C3%A8ges-mais-reste-devant-l-union-centriste-2e-groupe-du-s%C3%A9nat-et-le-ps",
+          "outlet": "France 24 (AFP)",
+          "title": "Sénatoriales: LR perd sept sièges mais reste devant l'Union centriste 2e groupe du Sénat et le PS",
+          "date": "2026-10-05"
+        },
+        {
+          "url": "https://www.europarl.europa.eu/meps/fr/197534/FRANCOIS-XAVIER_BELLAMY/home",
+          "outlet": "Parlement européen",
+          "title": "Accueil | François-Xavier BELLAMY | Députés | Parlement européen",
+          "date": "2026-11-16"
+        }
+      ]
+    }
+  },
+  {
+    "id": "nouvelle-energie",
+    "name": "Nouvelle Énergie",
+    "short": "NE",
+    "famille": "droite",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": true,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261104-pr%C3%A9sidentielle-apr%C3%A8s-sa-campagne-virtuelle-lisnard-entre-dans-le-pays-du-r%C3%A9el",
+          "outlet": "France 24 (AFP)",
+          "title": "Présidentielle: après sa campagne virtuelle, Lisnard entre dans le \"pays du réel\"",
+          "date": "2026-11-04"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/tentative-de-groupe-nouvelle-energie-et-de-putsch-contre-claude-malhuret-psychodrame-cest-la-folle-semaine-du-mercato",
+          "outlet": "Public Sénat",
+          "title": "Tentative de groupe Nouvelle Energie et de « putsch » contre Claude Malhuret, « psychodrame » : c'est la folle semaine du « mercato » au Sénat",
+          "date": "2026-10-01"
+        }
+      ]
+    }
+  },
+  {
+    "id": "parti-animaliste",
+    "name": "Parti animaliste",
+    "short": "PA",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mouvement-ecologiste-independant",
+    "name": "Mouvement écologiste indépendant",
+    "short": "MEI",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  },
+  {
+    "id": "france-libre",
+    "name": "France Libre",
+    "short": "France Libre",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+          "date": "2026-11-10"
+        }
+      ]
+    }
+  },
+  {
+    "id": "a-nous-maintenant",
+    "name": "A nous maintenant",
+    "short": "A nous maintenant",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+          "date": "2026-11-10"
+        }
+      ]
+    }
+  },
+  {
+    "id": "la-france-adulte",
+    "name": "La France adulte",
+    "short": "La France adulte",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  },
+  {
+    "id": "trajectoire",
+    "name": "Trajectoire",
+    "short": "Trajectoire",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.cnews.fr/france/2026-10-04/presidentielle-2027-qui-sont-ces-candidats-etonnants-qui-veulent-se-lancer-dans",
+          "outlet": "CNews",
+          "title": "Présidentielle 2027 : qui sont ces candidats étonnants qui veulent se lancer dans la course à l'Élysée ?",
+          "date": "2026-10-04"
+        }
+      ]
+    }
+  },
+  {
+    "id": "solution-democratique",
+    "name": "Solution démocratique",
+    "short": "SD",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+          "date": "2026-11-10"
+        }
+      ]
+    }
+  },
+  {
+    "id": "les-ruches",
+    "name": "Les Ruches",
+    "short": "Les Ruches",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+          "date": "2026-11-10"
+        }
+      ]
+    }
+  },
+  {
+    "id": "nous-sommes-la-france",
+    "name": "Nous sommes la France",
+    "short": "NSLF",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  },
+  {
+    "id": "rassemblement-national",
+    "name": "Rassemblement national",
+    "short": "RN",
+    "famille": "extreme-droite",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": true,
+      "senat": false,
+      "parlementEuropeen": true,
+      "sources": [
+        {
+          "url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720614",
+          "outlet": "Assemblée nationale",
+          "title": "Mme Marine Le Pen - Pas-de-Calais (11e circonscription)",
+          "date": "2026-11-16"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/jordan-bardella-en-pologne-un-deplacement-qui-ne-leve-pas-les-ambiguites-du-rn-sur-lukraine-et-leurope",
+          "outlet": "Public Sénat",
+          "title": "Jordan Bardella en Pologne : un déplacement qui ne lève pas les ambiguïtés du RN sur l'Ukraine et l'Europe",
+          "date": "2026-06-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "reconquete",
+    "name": "Reconquête",
+    "short": "REC",
+    "famille": "extreme-droite",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/eric-zemmour-leader-du-parti-d-extreme-droite-reconquete-officialise-sa-candidature-a-la-presidentielle_8276858.html",
+        "outlet": "franceinfo",
+        "title": "Eric Zemmour, leader du parti d'extrême droite Reconquête, officialise sa candidature à l'élection présidentielle de 2027",
+        "date": "2026-11-10"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": true,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/candidats/elle-va-apporter-son-capital-popularite-quel-sera-le-role-de-sarah-knafo-aupres-d-eric-zemmour-dans-la-campagne-pour-la-presidentielle_8269433.html",
+          "outlet": "franceinfo",
+          "title": "\"Elle va apporter son capital popularité\" : quel sera le rôle de Sarah Knafo auprès d'Eric Zemmour dans la campagne pour la présidentielle ?",
+          "date": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "id": "debout-la-france",
+    "name": "Debout la France",
+    "short": "DLF",
+    "famille": "droite",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/le-souverainiste-nicolas-dupont-aignan-se-lance-pour-la-4e-fois-dans-la-course-a-l-elysee_7118136.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : le souverainiste Nicolas Dupont-Aignan se lance pour la 4e fois dans la course à l'Elysée",
+          "date": "2025-03-08"
+        }
+      ]
+    }
+  },
+  {
+    "id": "resistons",
+    "name": "Résistons !",
+    "short": "Résistons",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  },
+  {
+    "id": "les-patriotes",
+    "name": "Les Patriotes",
+    "short": "LP",
+    "famille": "extreme-droite",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  },
+  {
+    "id": "union-populaire-republicaine",
+    "name": "Union populaire républicaine",
+    "short": "UPR",
+    "famille": "divers",
+    "classificationSources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-11-09"
+      }
+    ],
+    "representation": {
+      "assemblee": false,
+      "senat": false,
+      "parlementEuropeen": false,
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-11-09"
+        }
+      ]
+    }
   }
 ]

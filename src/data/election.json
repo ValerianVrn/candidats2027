@@ -1,7 +1,60 @@
 {
-  "firstRound": "2027-04-11T08:00:00+02:00",
-  "secondRound": "2027-04-25T08:00:00+02:00",
-  "sources": [{ "url": "https://example.org/placeholder", "outlet": "Exemple", "date": "2026-11-16" }],
-  "milestones": [],
-  "silence": []
+  "firstRound": "2027-04-18T08:00:00+02:00",
+  "secondRound": "2027-05-02T08:00:00+02:00",
+  "sources": [
+    {
+      "url": "https://la1ere.franceinfo.fr/la-prochaine-election-presidentielle-aura-lieu-les-18-avril-et-2-mai-2027-mais-le-vote-se-deroulera-la-veille-dans-certains-territoires-ultramarins-1715707.html",
+      "outlet": "Outre-mer La 1ère (franceinfo)",
+      "title": "La prochaine élection présidentielle aura lieu les 18 avril et 2 mai 2027, mais le vote se déroulera la veille dans certains territoires ultramarins",
+      "date": "2026-07-01"
+    },
+    {
+      "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-calendrier-dates-inscription-candidats-vote/",
+      "outlet": "Toute l'Europe",
+      "title": "Présidentielle 2027 : inscription, candidats, vote… le calendrier complet",
+      "date": "2026-10-07"
+    }
+  ],
+  "milestones": [
+    {
+      "date": "2027-03-12",
+      "label": "Date limite d'inscription sur les listes électorales",
+      "sources": [
+        {
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-calendrier-dates-inscription-candidats-vote/",
+          "outlet": "Toute l'Europe",
+          "title": "Présidentielle 2027 : inscription, candidats, vote… le calendrier complet",
+          "date": "2026-10-07"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-05",
+      "label": "Début de la campagne officielle du premier tour",
+      "sources": [
+        {
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-calendrier-dates-inscription-candidats-vote/",
+          "outlet": "Toute l'Europe",
+          "title": "Présidentielle 2027 : inscription, candidats, vote… le calendrier complet",
+          "date": "2026-10-07"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-17",
+      "label": "Vote la veille du premier tour dans sept territoires ultramarins",
+      "sources": [
+        {
+          "url": "https://la1ere.franceinfo.fr/la-prochaine-election-presidentielle-aura-lieu-les-18-avril-et-2-mai-2027-mais-le-vote-se-deroulera-la-veille-dans-certains-territoires-ultramarins-1715707.html",
+          "outlet": "Outre-mer La 1ère (franceinfo)",
+          "title": "La prochaine élection présidentielle aura lieu les 18 avril et 2 mai 2027, mais le vote se déroulera la veille dans certains territoires ultramarins",
+          "date": "2026-07-01"
+        }
+      ]
+    }
+  ],
+  "silence": [
+    { "start": "2027-04-16T00:00:00+02:00", "end": "2027-04-18T20:00:00+02:00" },
+    { "start": "2027-04-30T00:00:00+02:00", "end": "2027-05-02T20:00:00+02:00" }
+  ]
 }

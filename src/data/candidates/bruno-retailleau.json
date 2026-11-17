@@ -1,0 +1,195 @@
+{
+  "slug": "bruno-retailleau",
+  "firstName": "Bruno",
+  "lastName": "Retailleau",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.france24.com/fr/france/20260419-pr%C3%A9sidentielle-2027-bruno-retailleau-d%C3%A9sign%C3%A9-candidat-des-r%C3%A9publicains-une-primaire-%C3%A9cart%C3%A9e",
+      "outlet": "France 24",
+      "title": "Présidentielle 2027 : Bruno Retailleau désigné candidat des Républicains, une primaire écartée",
+      "date": "2026-04-19"
+    },
+    {
+      "url": "https://www.franceinfo.fr/politique/les-republicains/presidentielle-2027-bruno-retailleau-largement-designe-candidat-par-les-adherents-du-parti-les-republicains_7949957.html",
+      "outlet": "franceinfo",
+      "title": "Présidentielle 2027 : Bruno Retailleau largement désigné candidat par les adhérents du parti Les Républicains",
+      "date": "2026-04-19"
+    },
+    {
+      "url": "https://www.europe1.fr/politique/presidentielle-2027-bruno-retailleau-juge-que-la-primaire-doit-se-faire-meme-sans-edouard-philippe-1228463",
+      "outlet": "Europe 1",
+      "title": "Présidentielle 2027 : Bruno Retailleau juge que la primaire doit se faire même sans Édouard Philippe",
+      "date": "2026-11-12"
+    }
+  ],
+  "party": "les-republicains",
+  "officialDomains": [],
+  "role": "Sénateur de la Vendée, président des Républicains",
+  "portrait": {
+    "file": "bruno-retailleau.jpg",
+    "author": "Anthonymontardyfr",
+    "licence": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bruno_Retailleau_-_Ministre_de_l%27Int%C3%A9rieur_fran%C3%A7ais_(3x4_cropped).jpg"
+  },
+  "declaration": {
+    "date": "2026-02-12",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/je-suis-pret-bruno-retailleau-se-declare-candidat-a-lelection-presidentielle-2027",
+        "outlet": "Public Sénat",
+        "title": "« Je serai le Président de l'ordre, de la justice et de la fierté française » : Bruno Retailleau se déclare candidat à la présidentielle de 2027",
+        "date": "2026-02-12"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20260212-pr%C3%A9sidentielle-2027-bruno-retailleau-annonce-candidature-prend-de-vitesse-concurrents-lr-bertrand-barnier",
+        "outlet": "France 24",
+        "title": "Présidentielle 2027 : Bruno Retailleau annonce sa candidature et prend de vitesse ses concurrents",
+        "date": "2026-02-12"
+      },
+      {
+        "url": "https://www.franceinfo.fr/politique/les-republicains/presidentielle-2027-bruno-retailleau-largement-designe-candidat-par-les-adherents-du-parti-les-republicains_7949957.html",
+        "outlet": "franceinfo",
+        "title": "Présidentielle 2027 : Bruno Retailleau largement désigné candidat par les adhérents du parti Les Républicains",
+        "date": "2026-04-19"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "education",
+      "text": "Propose de rétablir un examen d'entrée en sixième, d'augmenter de 135 euros par mois le salaire des enseignants en début de carrière et de créer un préapprentissage dès 14 ans.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-bruno-retailleau-veut-economiser-300-000-postes-dans-la-fonction-publique-grace-a-l-intelligence-artificielle_8279522.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Bruno Retailleau veut \"économiser 300 000 postes\" dans la fonction publique grâce à l'intelligence artificielle",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "securite",
+      "text": "Propose de supprimer le juge de l'application des peines et de construire 40 000 places de prison supplémentaires.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-bruno-retailleau-veut-economiser-300-000-postes-dans-la-fonction-publique-grace-a-l-intelligence-artificielle_8279522.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Bruno Retailleau veut \"économiser 300 000 postes\" dans la fonction publique grâce à l'intelligence artificielle",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "sante",
+      "text": "Propose de confier la direction de l'hôpital à un médecin assisté d'un administrateur et de confier la prévention aux mutuelles.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-bruno-retailleau-veut-economiser-300-000-postes-dans-la-fonction-publique-grace-a-l-intelligence-artificielle_8279522.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Bruno Retailleau veut \"économiser 300 000 postes\" dans la fonction publique grâce à l'intelligence artificielle",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Propose un plan de 197 milliards d'euros d'économies sur cinq ans, dont le non-remplacement de 400 000 départs à la retraite d'agents publics, avec un déficit public sous 3 % du PIB en 2031.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-2027-bruno-retailleau-sengage-sur-un-plan-deconomies-de-pres-de-200-milliards-deuros-sil-est-elu",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : Bruno Retailleau s'engage sur un plan d'économies de près de 200 milliards d'euros, s'il est élu",
+          "date": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose de supprimer les impôts de production et d'exonérer de cotisations sociales les heures supplémentaires.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-2027-bruno-retailleau-sengage-sur-un-plan-deconomies-de-pres-de-200-milliards-deuros-sil-est-elu",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : Bruno Retailleau s'engage sur un plan d'économies de près de 200 milliards d'euros, s'il est élu",
+          "date": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "text": "Propose une décote pour les départs à la retraite entre 63 et 65 ans, une part de capitalisation et la fin des derniers régimes spéciaux.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-2027-bruno-retailleau-sengage-sur-un-plan-deconomies-de-pres-de-200-milliards-deuros-sil-est-elu",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : Bruno Retailleau s'engage sur un plan d'économies de près de 200 milliards d'euros, s'il est élu",
+          "date": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Propose une révision constitutionnelle soumise à référendum à l'automne 2027, élargissant le référendum de l'article 11 à tout le domaine de la loi et permettant au président de soumettre aux électeurs une loi censurée par le Conseil constitutionnel.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-bruno-retailleau-veut-renverser-la-table-avec-une-profonde-reforme-constitutionnelle",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : Bruno Retailleau veut « renverser la table » avec une profonde réforme constitutionnelle",
+          "date": "2026-09-03"
+        }
+      ]
+    },
+    {
+      "theme": "immigration",
+      "text": "Propose d'inscrire dans la Constitution une « Charte de l'ordre républicain » prévoyant des plafonds migratoires et une condition d'assimilation pour la naturalisation.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-bruno-retailleau-veut-renverser-la-table-avec-une-profonde-reforme-constitutionnelle",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : Bruno Retailleau veut « renverser la table » avec une profonde réforme constitutionnelle",
+          "date": "2026-09-03"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [
+    {
+      "id": "primaire-droite-centre",
+      "nature": "politique",
+      "active": true,
+      "title": "Projet de primaire de la droite et du centre",
+      "statutJuridique": "Sans objet : processus politique, aucune procédure judiciaire",
+      "resume": "Le 10 novembre 2026, Bruno Retailleau a proposé par lettre à Édouard Philippe, Gabriel Attal et David Lisnard une primaire les 31 janvier et 7 février 2027. Les directeurs de campagne de Bruno Retailleau, Gabriel Attal et David Lisnard doivent se réunir le 17 novembre ; Édouard Philippe refuse d'y participer.",
+      "impact": "Gérard Larcher a proposé aux quatre candidats de discuter d'une « méthode de départage » en vue d'une candidature unique au début de 2027. Les sources ne précisent pas si les candidats battus à une éventuelle primaire se retireraient.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/bruno-retailleau-propose-une-primaire-de-la-droite-et-du-centre-les-31-janvier-et-7-fevrier_8277581.html",
+          "outlet": "franceinfo",
+          "title": "Bruno Retailleau propose une primaire de la droite et du centre les 31 janvier et 7 février",
+          "date": "2026-11-11"
+        },
+        {
+          "url": "https://www.europe1.fr/politique/presidentielle-2027-bruno-retailleau-juge-que-la-primaire-doit-se-faire-meme-sans-edouard-philippe-1228463",
+          "outlet": "Europe 1",
+          "title": "Présidentielle 2027 : Bruno Retailleau juge que la primaire doit se faire même sans Édouard Philippe",
+          "date": "2026-11-12"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261115-philippe-d-accord-pour-une-r%C3%A9union-autour-de-larcher-mais-pas-pour-parler-d-une-primaire",
+          "outlet": "France 24 (AFP)",
+          "title": "Philippe d'accord pour une réunion autour de Larcher, mais pas pour parler d'une primaire",
+          "date": "2026-11-15"
+        }
+      ],
+      "updatedAt": "2026-11-16"
+    }
+  ],
+  "lastChecked": "2026-11-16"
+}

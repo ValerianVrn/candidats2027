@@ -1,0 +1,68 @@
+{
+  "slug": "delphine-batho",
+  "firstName": "Delphine",
+  "lastName": "Batho",
+  "genre": "f",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+      "outlet": "franceinfo",
+      "title": "Qui sont les candidats déclarés à l'élection présidentielle de 2027 ? Découvrez la liste actualisée",
+      "date": "2026-11-09"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "generation-ecologie",
+  "officialDomains": [],
+  "role": "Députée des Deux-Sèvres",
+  "portrait": {
+    "file": "delphine-batho.jpg",
+    "author": "Greenbox",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20210820_batho_d_6593_(cropped).jpg"
+  },
+  "declaration": {
+    "date": "2025-11-25",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/politique/eelv/l-ex-ministre-delphine-batho-candidate-a-la-presidentielle-pour-reconstruire-une-ecologie-capable-de-gouverner_7639496.html",
+        "outlet": "franceinfo",
+        "title": "L'ex-ministre Delphine Batho candidate à la présidentielle \"pour reconstruire une écologie capable de gouverner\"",
+        "date": "2025-11-25"
+      },
+      {
+        "url": "https://www.franceinfo.fr/replay-radio/8h30-fauvelle-dely/affaire-lyhanna-presidentielle-2027-l-interview-de-delphine-batho_7997384.html",
+        "outlet": "franceinfo",
+        "title": "Affaire Lyhanna, présidentielle 2027... L'interview de Delphine Batho",
+        "date": "2026-06-07"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "securite",
+      "text": "Propose une brigade des mineurs spécialisée dans tous les départements et un dispositif exceptionnel pour réexaminer 70 000 plaintes.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-radio/8h30-fauvelle-dely/affaire-lyhanna-presidentielle-2027-l-interview-de-delphine-batho_7997384.html",
+          "outlet": "franceinfo",
+          "title": "Affaire Lyhanna, présidentielle 2027... L'interview de Delphine Batho",
+          "date": "2026-06-07"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

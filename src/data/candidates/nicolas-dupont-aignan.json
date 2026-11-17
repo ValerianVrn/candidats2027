@@ -1,0 +1,161 @@
+{
+  "slug": "nicolas-dupont-aignan",
+  "firstName": "Nicolas",
+  "lastName": "Dupont-Aignan",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+      "outlet": "franceinfo",
+      "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+      "date": "2026-10-08"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    },
+    {
+      "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/",
+      "outlet": "Toute l'Europe",
+      "title": "Présidentielle 2027 : qui sont les principaux candidats déjà déclarés ?",
+      "date": "2026-11-09"
+    }
+  ],
+  "party": "debout-la-france",
+  "officialDomains": ["dupontaignan.fr", "debout-la-france.fr"],
+  "qualified2022": {
+    "sources": [
+      {
+        "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm",
+        "outlet": "Conseil constitutionnel",
+        "title": "Décision n° 2022-187 PDR du 7 mars 2022 - Liste des candidats à l'élection présidentielle",
+        "date": "2022-03-07"
+      }
+    ]
+  },
+  "parrainages": null,
+  "role": "Maire de Yerres (Essonne), président de Debout la France",
+  "portrait": {
+    "file": "nicolas-dupont-aignan.jpg",
+    "author": "Debout la France",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nicolas_Dupont-Aignan,_homme_politique_fran%C3%A7ais.jpg"
+  },
+  "declaration": {
+    "date": "2025-03-08",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/le-souverainiste-nicolas-dupont-aignan-se-lance-pour-la-4e-fois-dans-la-course-a-l-elysee_7118136.html",
+        "outlet": "franceinfo",
+        "title": "Présidentielle 2027 : le souverainiste Nicolas Dupont-Aignan se lance pour la 4e fois dans la course à l'Elysée",
+        "date": "2025-03-08"
+      },
+      {
+        "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/je-serai-le-seul-candidat-qui-propose-de-sortir-de-l-union-europeenne-dit-nicolas-dupont-aignan-qui-se-lance-dans-sa-quatrieme-campagne-presidentielle_8201024.html",
+        "outlet": "franceinfo",
+        "title": "\"Je serai le seul candidat qui propose de sortir de l'Union européenne\", dit Nicolas Dupont-Aignan, qui se lance dans sa quatrième campagne présidentielle",
+        "date": "2026-09-19"
+      }
+    ]
+  },
+  "programme": [
+    {
+      "theme": "travail",
+      "text": "Propose de porter le smic net à 1 600 euros en baissant les charges salariales, pour un coût qu'il estime à cinq milliards d'euros.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/il-faut-mettre-le-smic-net-a-1-600-euros-propose-nicolas-dupont-aignan-au-lendemain-de-la-mobilisation-contre-la-vie-chere_8270444.html",
+          "outlet": "franceinfo",
+          "title": "\"Il faut mettre le smic net à 1 600 euros\", propose Nicolas Dupont-Aignan, candidat Debout la France à la présidentielle",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "defense",
+      "text": "Veut « supprimer l'aide à l'Ukraine » et plaide pour la levée des sanctions contre la Russie.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/je-serai-le-seul-candidat-qui-propose-de-sortir-de-l-union-europeenne-dit-nicolas-dupont-aignan-qui-se-lance-dans-sa-quatrieme-campagne-presidentielle_8201024.html",
+          "outlet": "franceinfo",
+          "title": "\"Je serai le seul candidat qui propose de sortir de l'Union européenne\", dit Nicolas Dupont-Aignan, qui se lance dans sa quatrième campagne présidentielle",
+          "date": "2026-09-19"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/international/aide-a-lukraine-que-proposent-les-candidats-a-la-presidentielle",
+          "outlet": "Public Sénat",
+          "title": "Aide à l'Ukraine : que proposent les candidats à la présidentielle ?",
+          "date": "2026-11-16"
+        }
+      ]
+    },
+    {
+      "theme": "europe",
+      "text": "Propose de faire sortir la France de l'Union européenne, une sortie dont il estime l'économie à 15 milliards d'euros, et de reconstruire l'Europe « sur des bases saines ».",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/je-serai-le-seul-candidat-qui-propose-de-sortir-de-l-union-europeenne-dit-nicolas-dupont-aignan-qui-se-lance-dans-sa-quatrieme-campagne-presidentielle_8201024.html",
+          "outlet": "franceinfo",
+          "title": "\"Je serai le seul candidat qui propose de sortir de l'Union européenne\", dit Nicolas Dupont-Aignan, qui se lance dans sa quatrième campagne présidentielle",
+          "date": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "theme": "immigration",
+      "text": "Veut rétablir le contrôle des frontières nationales pour contrôler l'immigration.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/je-serai-le-seul-candidat-qui-propose-de-sortir-de-l-union-europeenne-dit-nicolas-dupont-aignan-qui-se-lance-dans-sa-quatrieme-campagne-presidentielle_8201024.html",
+          "outlet": "franceinfo",
+          "title": "\"Je serai le seul candidat qui propose de sortir de l'Union européenne\", dit Nicolas Dupont-Aignan, qui se lance dans sa quatrième campagne présidentielle",
+          "date": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "theme": "energie",
+      "text": "Veut baisser le prix de l'électricité en sortant du marché européen de l'électricité.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/je-serai-le-seul-candidat-qui-propose-de-sortir-de-l-union-europeenne-dit-nicolas-dupont-aignan-qui-se-lance-dans-sa-quatrieme-campagne-presidentielle_8201024.html",
+          "outlet": "franceinfo",
+          "title": "\"Je serai le seul candidat qui propose de sortir de l'Union européenne\", dit Nicolas Dupont-Aignan, qui se lance dans sa quatrième campagne présidentielle",
+          "date": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose de baisser de 40 centimes par litre le prix de l'essence et du gazole en réduisant les taxes.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/je-serai-le-seul-candidat-qui-propose-de-sortir-de-l-union-europeenne-dit-nicolas-dupont-aignan-qui-se-lance-dans-sa-quatrieme-campagne-presidentielle_8201024.html",
+          "outlet": "franceinfo",
+          "title": "\"Je serai le seul candidat qui propose de sortir de l'Union européenne\", dit Nicolas Dupont-Aignan, qui se lance dans sa quatrième campagne présidentielle",
+          "date": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "theme": "societe",
+      "text": "Propose un capital de 10 000 euros pour chaque nouveau-né français, placé sur un livret d'épargne-retraite.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/je-serai-le-seul-candidat-qui-propose-de-sortir-de-l-union-europeenne-dit-nicolas-dupont-aignan-qui-se-lance-dans-sa-quatrieme-campagne-presidentielle_8201024.html",
+          "outlet": "franceinfo",
+          "title": "\"Je serai le seul candidat qui propose de sortir de l'Union européenne\", dit Nicolas Dupont-Aignan, qui se lance dans sa quatrième campagne présidentielle",
+          "date": "2026-09-19"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-17"
+}

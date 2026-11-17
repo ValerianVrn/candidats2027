@@ -2,13 +2,17 @@
 import Base from '../layouts/Base.astro';
 import CardCloud from '../components/CardCloud.astro';
 import CandidateDetail from '../components/CandidateDetail.astro';
+import QuizLens from '../components/QuizLens.astro';
+import OtherCandidates from '../components/OtherCandidates.astro';
 import AdSlot from '../components/AdSlot.astro';
-import { activeCandidates } from '../lib/data';
+import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/data';
 ---
 
 <Base section="candidats" ads>
   <h1 class="visually-hidden">Les candidats à l'élection présidentielle de 2027</h1>
-  <CardCloud candidates={activeCandidates} />
+  <QuizLens />
+  <CardCloud candidates={featuredCandidates} everyone={activeCandidates} />
+  <OtherCandidates candidates={otherCandidates} />
 
   <AdSlot placement="home" besidePanel />
 
@@ -150,7 +154,8 @@ import { activeCandidates } from '../lib/data';
     border-radius: var(--radius);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
   }
-  :global(.cloud) {
+  :global(.cloud),
+  :global(.others) {
     margin-right: calc(min(400px, 32vw) + var(--gutter) * 2);
     padding-left: var(--gutter);
   }
@@ -187,9 +192,11 @@ import { activeCandidates } from '../lib/data';
 
   /* Narrow screens: the panel becomes a bottom sheet. */
   @media (max-width: 1100px) {
-    :global(.cloud) {
+    :global(.cloud),
+    :global(.others) {
       margin-right: 0;
-      padding: 0 var(--gutter);
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
     }
     .layout {
       position: static;

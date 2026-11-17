@@ -1,0 +1,74 @@
+{
+  "slug": "bernard-cazeneuve",
+  "firstName": "Bernard",
+  "lastName": "Cazeneuve",
+  "genre": "m",
+  "status": "potentiel",
+  "statusSources": [
+    {
+      "url": "https://www.publicsenat.fr/actualites/politique/election-presidentielle-qui-sont-les-candidats-a-gauche",
+      "outlet": "Public Sénat",
+      "title": "Election présidentielle : qui sont les candidats à gauche ?",
+      "date": "2026-08-24"
+    },
+    {
+      "url": "https://www.cnews.fr/france/2026-11-10/presidentielle-2027-qui-sont-les-candidats-en-lice-1621746",
+      "outlet": "CNEWS",
+      "title": "Présidentielle 2027 : qui sont les candidats déjà en lice ?",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": null,
+  "officialDomains": [],
+  "role": "Ancien Premier ministre",
+  "portrait": {
+    "file": "bernard-cazeneuve.jpg",
+    "author": "Jérémy Barande",
+    "licence": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bernard_Cazeneuve,_(42399145362)_(cropped).jpg"
+  },
+  "declaration": null,
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "retraites",
+      "text": "Propose de faire de la durée de cotisation, plutôt que l'âge légal, le principal levier d'une réforme des retraites.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/si-je-peux-etre-utile-je-le-serai-bernard-cazeneuve-s-adresse-aux-francais-mais-maintient-le-suspense-sur-une-candidature-a-la-presidentielle-2027_8110241.html",
+          "outlet": "franceinfo",
+          "title": "\"Si je peux être utile, je le serai\" : Bernard Cazeneuve s'adresse aux Français et fait un pas de plus vers une candidature à l'élection présidentielle",
+          "date": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Propose de revenir à un mandat présidentiel de sept ans, de renforcer le rôle du Premier ministre et de limiter le recours au 49-3.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/si-je-peux-etre-utile-je-le-serai-bernard-cazeneuve-s-adresse-aux-francais-mais-maintient-le-suspense-sur-une-candidature-a-la-presidentielle-2027_8110241.html",
+          "outlet": "franceinfo",
+          "title": "\"Si je peux être utile, je le serai\" : Bernard Cazeneuve s'adresse aux Français et fait un pas de plus vers une candidature à l'élection présidentielle",
+          "date": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "theme": "europe",
+      "text": "Veut réformer le budget de l'Union européenne, créer une politique industrielle commune et sortir de la règle de l'unanimité.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/si-je-peux-etre-utile-je-le-serai-bernard-cazeneuve-s-adresse-aux-francais-mais-maintient-le-suspense-sur-une-candidature-a-la-presidentielle-2027_8110241.html",
+          "outlet": "franceinfo",
+          "title": "\"Si je peux être utile, je le serai\" : Bernard Cazeneuve s'adresse aux Français et fait un pas de plus vers une candidature à l'élection présidentielle",
+          "date": "2026-07-16"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

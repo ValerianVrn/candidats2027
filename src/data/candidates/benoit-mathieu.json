@@ -1,0 +1,81 @@
+{
+  "slug": "benoit-mathieu",
+  "firstName": "Benoît",
+  "lastName": "Mathieu",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-course-aux-500-signatures-d-elus-necessaires-pour-se-presenter-a",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la course aux 500 signatures d'élus nécessaires pour se présenter a commencé",
+      "date": "2026-07-05"
+    },
+    {
+      "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-le-dernier-decompte-des-candidats-deja-sur-la-ligne-de-depart",
+      "outlet": "Public Sénat",
+      "title": "Présidentielle 2027 : quel est le dernier décompte des candidats déjà sur la ligne de départ ?",
+      "date": "2026-09-18"
+    },
+    {
+      "url": "https://www.cnews.fr/france/2026-10-04/presidentielle-2027-qui-sont-ces-candidats-etonnants-qui-veulent-se-lancer-dans",
+      "outlet": "CNews",
+      "title": "Présidentielle 2027 : qui sont ces candidats étonnants qui veulent se lancer dans la course à l’Élysée ?",
+      "date": "2026-10-04"
+    },
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+      "outlet": "franceinfo",
+      "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+      "date": "2026-10-08"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": null,
+  "officialDomains": [],
+  "qualified2022": null,
+  "parrainages": null,
+  "role": "Professeur de mathématiques contractuel, ingénieur de formation",
+  "portrait": null,
+  "declaration": {
+    "date": "2026-07-05",
+    "datePrecision": "before",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-la-course-aux-500-signatures-d-elus-necessaires-pour-se-presenter-a",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: la course aux 500 signatures d'élus nécessaires pour se présenter a commencé",
+        "date": "2026-07-05"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-le-dernier-decompte-des-candidats-deja-sur-la-ligne-de-depart",
+        "outlet": "Public Sénat",
+        "title": "Présidentielle 2027 : quel est le dernier décompte des candidats déjà sur la ligne de départ ?",
+        "date": "2026-09-18"
+      }
+    ]
+  },
+  "programme": [
+    {
+      "theme": "institutions",
+      "text": "Propose le référendum d'initiative citoyenne, des conventions citoyennes tirées au sort et une assemblée constituante.",
+      "sources": [
+        {
+          "url": "https://www.cnews.fr/france/2026-10-04/presidentielle-2027-qui-sont-ces-candidats-etonnants-qui-veulent-se-lancer-dans",
+          "outlet": "CNews",
+          "title": "Présidentielle 2027 : qui sont ces candidats étonnants qui veulent se lancer dans la course à l’Élysée ?",
+          "date": "2026-10-04"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}
