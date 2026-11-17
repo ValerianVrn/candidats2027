@@ -1,0 +1,43 @@
+{
+  "slug": "xavier-bertrand",
+  "firstName": "Xavier",
+  "lastName": "Bertrand",
+  "genre": "m",
+  "status": "potentiel",
+  "statusSources": [
+    {
+      "url": "https://www.europe1.fr/politique/presidentielle-2027-xavier-bertrand-annonce-sa-candidature-lors-de-luniversite-de-rentree-du-medef-1037639",
+      "outlet": "Europe 1",
+      "title": "Présidentielle 2027 : Xavier Bertrand annonce sa candidature lors de l'Université de rentrée du Medef",
+      "date": "2026-08-27"
+    },
+    {
+      "url": "https://france3-regions.franceinfo.fr/hauts-de-france/nord-0/lille/je-le-serai-xavier-bertrand-annonce-sa-candidature-a-l-election-presidentielle-et-s-exprime-sur-d-eventuelles-primaires-3407339.html",
+      "outlet": "France 3 Régions (franceinfo)",
+      "title": "\"Je le serai\" : Xavier Bertrand annonce être candidat à l'élection présidentielle et s'exprime sur d'éventuelles primaires",
+      "date": "2026-08-27"
+    },
+    {
+      "url": "https://www.publicsenat.fr/actualites/politique/a-lehpad-pour-xavier-bertrand-le-candidat-a-droite-qui-fera-elire-lun-des-deux-extremes-aura-interet-a-essayer-la-chirurgie-esthetique-ou-lexil",
+      "outlet": "Public Sénat",
+      "title": "« À l'EHPAD ! » : pour Xavier Bertrand, le candidat à droite qui « fera élire l'un des deux extrêmes aura intérêt à essayer la chirurgie esthétique ou l'exil »",
+      "date": "2026-10-16"
+    }
+  ],
+  "party": null,
+  "officialDomains": [],
+  "role": "Président du conseil régional des Hauts-de-France",
+  "portrait": {
+    "file": "xavier-bertrand.jpg",
+    "author": "Claudio Centonze / European Union, 2025 / EC - Audiovisual Service",
+    "licence": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xavier_Bertrand_2025_(cropped).jpg"
+  },
+  "declaration": null,
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

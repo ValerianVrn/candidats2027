@@ -16,7 +16,7 @@ export interface Issue {
 }
 
 /** Hosts accepted for declaration videos (they are not sources). */
-const VIDEO_HOSTS = ['youtube.com', 'youtu.be', 'dailymotion.com', 'vimeo.com'];
+const VIDEO_HOSTS = ['youtube.com', 'youtu.be', 'dailymotion.com', 'vimeo.com', 'x.com', 'twitter.com'];
 const PORTRAIT_LICENCE = /^(CC0|Public domain|Domaine public|CC BY(-SA)? \d\.\d( [A-Z]{2,})?|CC BY(-SA)?)$/i;
 
 function hostOf(url: string): string {

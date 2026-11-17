@@ -103,6 +103,9 @@ One file per person: `src/data/candidates/<slug>.json`, slug = kebab-case of « 
 
 - `theme` ∈ `energie, ecologie, economie, fiscalite, travail, retraites, sante, education, logement,
 immigration, securite, institutions, europe, defense, agriculture, societe`.
+- `declaration.datePrecision`: `day` when the exact day is sourced; `month` when sources only give the month
+  (store the 1st of the month); `before` when you only know it happened by a date (e.g. first report). Never
+  present a report date as the declaration date.
 - `videoUrl`: the official video of the declaration (candidate's own YouTube channel preferred, or a broadcaster's
   official upload), `null` if none exists. It is not a source; the declaration still needs `sources`.
 - `meetings`: only announced, dated public meetings (future or within the last 2 months), with a source.
@@ -114,8 +117,9 @@ immigration, securite, institutions, europe, defense, agriculture, societe`.
 
 - Only from Wikimedia Commons, licence CC0, public domain, CC BY or CC BY-SA (any version). Never fair use,
   never press photos, never AI images.
-- Prefer a recent, neutral, front-facing photo. Download the 600 px thumbnail
-  (`https://upload.wikimedia.org/wikipedia/commons/thumb/x/xy/File.jpg/600px-File.jpg`) with
+- Prefer a recent, neutral, front-facing photo. Download a standard thumbnail size
+  (`https://upload.wikimedia.org/wikipedia/commons/thumb/x/xy/File.jpg/960px-File.jpg`; Commons rejects
+  arbitrary sizes such as 600px) with
   `curl -L -A "Candidats2027-research/1.0" -o src/assets/portraits/<slug>.jpg <url>` and check the file is a
   real JPEG/PNG (not an HTML error page).
 - Record the author and licence exactly as on the Commons file page. No suitable image → `"portrait": null`.

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { countdown, formatDateTime, formatDay, inSilence, relativeAgo } from './dates';
+import { countdown, formatDateTime, formatDay, formatDeclarationDate, inSilence, relativeAgo } from './dates';
 
 describe('countdown', () => {
   it('splits the remaining time into days, hours and minutes', () => {
@@ -47,5 +47,13 @@ describe('inSilence', () => {
     expect(inSilence(windows, new Date('2027-04-10T12:00:00+02:00'))).toBe(true);
     expect(inSilence(windows, new Date('2027-04-11T20:00:00+02:00'))).toBe(false);
     expect(inSilence(windows, new Date('2027-04-09T23:59:00+02:00'))).toBe(false);
+  });
+});
+
+describe('formatDeclarationDate', () => {
+  it('reflects the precision', () => {
+    expect(formatDeclarationDate('2026-09-03', 'day')).toBe('le 3 septembre 2026');
+    expect(formatDeclarationDate('2026-08-01', 'month')).toBe('en août 2026');
+    expect(formatDeclarationDate('2026-11-09', 'before')).toBe('au plus tard le 9 novembre 2026');
   });
 });

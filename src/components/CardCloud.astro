@@ -2,7 +2,7 @@
 import Avatar from './Avatar.astro';
 import { familleOf, fullName } from '../lib/data';
 import { layoutCloud } from '../lib/cloud';
-import { FAMILLE_LABEL, statusLabel } from '../lib/labels';
+import { FAMILLE_LABEL, hasActiveProcedure, statusLabel } from '../lib/labels';
 import type { Candidate, Famille } from '../lib/schemas';
 
 interface Props {
@@ -26,7 +26,7 @@ const counts = {
   declare: everyone.filter(isDeclared).length,
   potentiel: everyone.filter((c) => c.status === 'potentiel').length,
   officiel: everyone.filter((c) => c.status === 'officiel').length,
-  risque: everyone.filter((c) => c.risques.length > 0).length,
+  risque: everyone.filter((c) => hasActiveProcedure(c)).length,
 };
 const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
 ---
@@ -75,18 +75,18 @@ const famillesPresent = [...new Set(candidates.map(familleOf))] as Famille[];
           class:list={['cell', { minor: !major }]}
           style={`--x:${p.x.toFixed(2)}%;--y:${p.y.toFixed(2)}%;--phase:${p.phase}s;--ring:var(--f-${famille})`}
           data-status={c.status}
-          data-risque={c.risques.length > 0 ? 'true' : 'false'}
+          data-risque={hasActiveProcedure(c) ? 'true' : 'false'}
         >
           <a
             class="card"
             href={`/candidat/${c.slug}`}
             data-slug={c.slug}
-            aria-label={`${fullName(c)}, ${FAMILLE_LABEL[famille]}, ${statusLabel(c).toLowerCase()}${c.risques.length ? ', procédure en cours' : ''}`}
+            aria-label={`${fullName(c)}, ${FAMILLE_LABEL[famille]}, ${statusLabel(c).toLowerCase()}${hasActiveProcedure(c) ? ', procédure en cours' : ''}`}
           >
             <span class="float">
               <span class="ring">
                 <Avatar candidate={c} size={major ? 96 : 74} eager={major} />
-                {c.risques.length > 0 && (
+                {hasActiveProcedure(c) && (
                   <span class="badge" aria-hidden="true">
                     !
                   </span>

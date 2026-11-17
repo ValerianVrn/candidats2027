@@ -66,3 +66,12 @@ export function inSilence(windows: { start: string; end: string }[], now: Date):
   const t = now.getTime();
   return windows.some((w) => t >= new Date(w.start).getTime() && t < new Date(w.end).getTime());
 }
+
+const monthFmt = new Intl.DateTimeFormat('fr-FR', { timeZone: TZ, month: 'long', year: 'numeric' });
+
+/** « le 3 septembre 2026 », « en septembre 2026 », « au plus tard le 9 novembre 2026 » */
+export function formatDeclarationDate(isoDay: string, precision: 'day' | 'month' | 'before'): string {
+  if (precision === 'month') return `en ${monthFmt.format(parseDay(isoDay))}`;
+  if (precision === 'before') return `au plus tard le ${formatDay(isoDay)}`;
+  return `le ${formatDay(isoDay)}`;
+}

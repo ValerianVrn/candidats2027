@@ -72,6 +72,10 @@ export const meetingSchema = z.object({
 
 export const risqueSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
+  /** `judiciaire` / `fiscal`: a legal or tax procedure; `politique`: an uncertainty about the candidacy (vote, primary…). */
+  nature: z.enum(['judiciaire', 'fiscal', 'politique']),
+  /** False once the procedure is closed (kept for the record, no warning badge). */
+  active: z.boolean().default(true),
   title: z.string().min(1),
   /** Exact procedural status as reported, e.g. « condamnée en première instance, appel en cours ». */
   statutJuridique: z.string().min(1),
@@ -106,6 +110,11 @@ export const candidateSchema = z
     declaration: z
       .object({
         date: isoDate,
+        /**
+         * How precise `date` is: `day` (exact), `month` (only the month is known: store the 1st),
+         * `before` (only known to have happened by `date`, e.g. the date of the first report).
+         */
+        datePrecision: z.enum(['day', 'month', 'before']).default('day'),
         /** Video of the declaration, when there is one. */
         videoUrl: httpsUrl.nullable(),
         sources,

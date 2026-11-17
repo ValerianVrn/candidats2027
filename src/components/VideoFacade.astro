@@ -4,14 +4,14 @@
  * then the privacy-enhanced (youtube-nocookie) player is inserted.
  * Non-YouTube links are shown as a plain external link.
  */
-import { formatDay } from '../lib/dates';
 
 interface Props {
   url: string;
-  date: string;
+  /** Already formatted, e.g. « le 3 septembre 2026 ». */
+  dateLabel: string;
   label: string;
 }
-const { url, date, label } = Astro.props;
+const { url, dateLabel, label } = Astro.props;
 
 function youtubeId(u: string): string | null {
   try {
@@ -50,7 +50,7 @@ const safeId = id && /^[A-Za-z0-9_-]{6,20}$/.test(id) ? id : null;
       </span>
       <span class="meta">
         <span class="title">{label}</span>
-        <span class="sub">{formatDay(date)} · cliquer pour charger la vidéo (YouTube)</span>
+        <span class="sub">{dateLabel} · cliquer pour charger la vidéo (YouTube)</span>
       </span>
     </button>
   </div>
@@ -71,7 +71,7 @@ const safeId = id && /^[A-Za-z0-9_-]{6,20}$/.test(id) ? id : null;
     </span>
     <span class="meta">
       <span class="title">{label}</span>
-      <span class="sub">{formatDay(date)} · ouvrir la vidéo</span>
+      <span class="sub">{dateLabel} · ouvrir la vidéo</span>
     </span>
   </a>
 )}

@@ -13,6 +13,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 - Site shell in the « Constellation » design: floating card cloud with filters, candidate detail panel
   (bottom sheet on mobile), candidate pages, journal, countdown, click-to-load videos, numbered citations.
 - Azure hosting: dev and prod Static Web Apps (Bicep), OIDC deploy workflows, prod gated by owner approval.
+- Seed data: 44 sourced candidate profiles (36 declared, 8 potential), 29 parties classified by the Interior
+  Ministry grid, declaration date precision, risk nature (legal / tax / political) and closed procedures.
 - Content guardrails (`check-data`): source allowlist, two independent sources for status and legal risks,
   Commons-only portraits, optional link check; run in CI.
 - Published main-cloud criterion, « Autres candidatures » row, Méthode and IA pages, correction issue form.

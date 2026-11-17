@@ -1,0 +1,159 @@
+{
+  "slug": "francois-ruffin",
+  "firstName": "François",
+  "lastName": "Ruffin",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/francois-ruffin-n-exclut-pas-de-se-retirer-de-la-presidentielle-si-une-solution-se-degage-pour-battre-marine-le-pen-au-second-tour_8270501.html",
+      "outlet": "franceinfo",
+      "title": "François Ruffin n'exclut pas de se retirer de la présidentielle \"si une solution se dégage pour battre Marine Le Pen au second tour\" en 2027",
+      "date": "2026-11-06"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "debout",
+  "officialDomains": [],
+  "role": "Député de la Somme, président de Debout !",
+  "portrait": {
+    "file": "francois-ruffin.jpg",
+    "author": "Thinkerview",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fran%C3%A7ois_Ruffin_(cropped).jpg"
+  },
+  "declaration": {
+    "date": "2026-01-26",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/politique/ps/primaire-a-gauche/francois-ruffin-paye-au-smic-une-fois-president-c-est-un-symbole-il-nous-faut-une-grande-loi-de-separation-de-l-argent-et-de-l-etat-explique-le-candidat-a-la-primaire-de-la-gauche_7774160.html",
+        "outlet": "franceinfo",
+        "title": "François Ruffin payé au Smic une fois président : \"C'est un symbole. Il nous faut une grande loi de séparation de l'argent et de l'État\", explique le candidat à la primaire de la gauche",
+        "date": "2026-01-30"
+      },
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-s-il-n-y-a-pas-de-primaire-moi-j-y-vais-annonce-francois-ruffin",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: \"S'il n'y a pas de primaire, moi j'y vais\", annonce François Ruffin",
+        "date": "2026-05-12"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-le-dernier-decompte-des-candidats-deja-sur-la-ligne-de-depart",
+        "outlet": "Public Sénat",
+        "title": "Présidentielle 2027 : quel est le dernier décompte des candidats déjà sur la ligne de départ ?",
+        "date": "2026-09-18"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "travail",
+      "text": "Propose de porter le Smic à 1 700 euros et d'indexer tous les salaires sur l'inflation.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-radio/8h30-fauvelle-dely/mobilisations-sociales-salaires-ses-40-chantiers-pour-remettre-la-france-debout-le-8h30-franceinfo-de-francois-ruffin_8249932.html",
+          "outlet": "franceinfo",
+          "title": "Mobilisations sociales, salaires, ses 40 chantiers pour \"remettre la France debout\"... Le \"8h30 franceinfo\" de François Ruffin",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Veut rééquilibrer les aides publiques aux entreprises, aujourd'hui captées selon lui par les grandes entreprises, en faveur des petites entreprises.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-radio/8h30-fauvelle-dely/mobilisations-sociales-salaires-ses-40-chantiers-pour-remettre-la-france-debout-le-8h30-franceinfo-de-francois-ruffin_8249932.html",
+          "outlet": "franceinfo",
+          "title": "Mobilisations sociales, salaires, ses 40 chantiers pour \"remettre la France debout\"... Le \"8h30 franceinfo\" de François Ruffin",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Veut un rééquilibrage de l'impôt entre les grandes entreprises et les petites.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-radio/8h30-fauvelle-dely/mobilisations-sociales-salaires-ses-40-chantiers-pour-remettre-la-france-debout-le-8h30-franceinfo-de-francois-ruffin_8249932.html",
+          "outlet": "franceinfo",
+          "title": "Mobilisations sociales, salaires, ses 40 chantiers pour \"remettre la France debout\"... Le \"8h30 franceinfo\" de François Ruffin",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "logement",
+      "text": "Veut faire baisser le coût du logement.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-radio/8h30-fauvelle-dely/mobilisations-sociales-salaires-ses-40-chantiers-pour-remettre-la-france-debout-le-8h30-franceinfo-de-francois-ruffin_8249932.html",
+          "outlet": "franceinfo",
+          "title": "Mobilisations sociales, salaires, ses 40 chantiers pour \"remettre la France debout\"... Le \"8h30 franceinfo\" de François Ruffin",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Propose une « loi de séparation de l'argent et de l'État » : création d'une Haute autorité à la probité, interdiction pendant dix ans pour les anciens ministres d'exercer du lobbying dans leur ancien domaine, démission immédiate d'un ministre mis en examen et inéligibilité en cas de manquement au devoir de probité.",
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-apres-la-polemique-sur-sa-bd-francois-ruffin-a-la-relance-sur-le",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: après la polémique sur sa BD, François Ruffin à la relance sur le thème de la probité",
+          "date": "2026-07-02"
+        }
+      ]
+    },
+    {
+      "theme": "societe",
+      "text": "S'engage à être payé au Smic s'il est élu président.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/ps/primaire-a-gauche/francois-ruffin-paye-au-smic-une-fois-president-c-est-un-symbole-il-nous-faut-une-grande-loi-de-separation-de-l-argent-et-de-l-etat-explique-le-candidat-a-la-primaire-de-la-gauche_7774160.html",
+          "outlet": "franceinfo",
+          "title": "François Ruffin payé au Smic une fois président : \"C'est un symbole. Il nous faut une grande loi de séparation de l'argent et de l'État\", explique le candidat à la primaire de la gauche",
+          "date": "2026-01-30"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [
+    {
+      "id": "retrait-conditionnel",
+      "nature": "politique",
+      "active": true,
+      "title": "Retrait envisagé sous condition",
+      "statutJuridique": "Déclaration politique, sans caractère judiciaire.",
+      "resume": "François Ruffin a déclaré le 6 novembre 2026 qu'il n'excluait pas de retirer sa candidature « si une solution se dégage pour battre Marine Le Pen au second tour », tout en disant ne pas voir de telle solution pour l'instant.",
+      "impact": "Selon les sources, sa candidature pourrait être retirée si cette condition était remplie.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/francois-ruffin-n-exclut-pas-de-se-retirer-de-la-presidentielle-si-une-solution-se-degage-pour-battre-marine-le-pen-au-second-tour_8270501.html",
+          "outlet": "franceinfo",
+          "title": "François Ruffin n'exclut pas de se retirer de la présidentielle \"si une solution se dégage pour battre Marine Le Pen au second tour\" en 2027",
+          "date": "2026-11-06"
+        },
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+          "date": "2026-11-10"
+        }
+      ],
+      "updatedAt": "2026-11-16"
+    }
+  ],
+  "lastChecked": "2026-11-16"
+}

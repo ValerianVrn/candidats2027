@@ -1,7 +1,7 @@
 ---
 import Avatar from './Avatar.astro';
 import { familleOf, fullName, partyOf } from '../lib/data';
-import { FAMILLE_LABEL, statusLabel } from '../lib/labels';
+import { FAMILLE_LABEL, hasActiveProcedure, statusLabel } from '../lib/labels';
 import type { Candidate } from '../lib/schemas';
 
 interface Props {
@@ -27,14 +27,14 @@ const { candidates } = Astro.props;
         return (
           <li
             data-status={c.status}
-            data-risque={c.risques.length > 0 ? 'true' : 'false'}
+            data-risque={hasActiveProcedure(c) ? 'true' : 'false'}
             style={`--ring:var(--f-${famille})`}
           >
             <a
               class="card mini"
               href={`/candidat/${c.slug}`}
               data-slug={c.slug}
-              aria-label={`${fullName(c)}, ${statusLabel(c).toLowerCase()}${c.risques.length ? ', procédure en cours' : ''}`}
+              aria-label={`${fullName(c)}, ${statusLabel(c).toLowerCase()}${hasActiveProcedure(c) ? ', procédure en cours' : ''}`}
             >
               <span class:list={['ring', { dashed: c.status === 'potentiel' }]}>
                 <Avatar candidate={c} size={40} />
@@ -42,7 +42,7 @@ const { candidates } = Astro.props;
               <span class="txt">
                 <span class="name">
                   {fullName(c)}
-                  {c.risques.length > 0 && (
+                  {hasActiveProcedure(c) && (
                     <span class="bang" aria-hidden="true">
                       !
                     </span>

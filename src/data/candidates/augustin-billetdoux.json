@@ -1,0 +1,57 @@
+{
+  "slug": "augustin-billetdoux",
+  "firstName": "Augustin",
+  "lastName": "Billetdoux",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+      "outlet": "franceinfo",
+      "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+      "date": "2026-10-08"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": null,
+  "officialDomains": ["billetdoux2027.fr"],
+  "qualified2022": null,
+  "parrainages": null,
+  "role": "Auteur de romans et de pièces de théâtre, cadre dans une ONG",
+  "portrait": null,
+  "declaration": {
+    "date": "2025-09-01",
+    "datePrecision": "month",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-10-08"
+      }
+    ]
+  },
+  "programme": [
+    {
+      "theme": "economie",
+      "text": "Défend un « capitalisme de service public » dans lequel les entreprises privées s'attaqueraient, à leur échelle, aux « urgences sociales et environnementales ».",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-10-08"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

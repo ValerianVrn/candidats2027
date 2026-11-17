@@ -1,0 +1,242 @@
+{
+  "slug": "marine-le-pen",
+  "firstName": "Marine",
+  "lastName": "Le Pen",
+  "genre": "f",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/politique/marine-le-pen/je-suis-candidate-a-l-election-presidentielle-marine-le-pen-annonce-son-pourvoi-en-cassation-apres-sa-condamnation-allegee-en-appel_8098361.html",
+      "outlet": "franceinfo",
+      "title": "\"Je suis candidate\" : Marine Le Pen annonce qu'elle se présente à la présidentielle après la réduction de sa peine d'inéligibilité, et qu'elle va se pourvoir en cassation",
+      "date": "2026-07-07"
+    },
+    {
+      "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/",
+      "outlet": "Toute l'Europe",
+      "title": "Présidentielle 2027 : qui sont les principaux candidats déjà déclarés ?",
+      "date": "2026-11-09"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "rassemblement-national",
+  "officialDomains": ["rassemblementnational.fr"],
+  "qualified2022": {
+    "sources": [
+      {
+        "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm",
+        "outlet": "Conseil constitutionnel",
+        "title": "Décision n° 2022-187 PDR du 7 mars 2022 - Liste des candidats à l'élection présidentielle",
+        "date": "2022-03-07"
+      }
+    ]
+  },
+  "parrainages": null,
+  "role": "Députée du Pas-de-Calais",
+  "portrait": {
+    "file": "marine-le-pen.jpg",
+    "author": "Vox España",
+    "licence": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marine_Le_Pen_2025_(cropped).jpg"
+  },
+  "declaration": {
+    "date": "2026-07-07",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/politique/marine-le-pen/je-suis-candidate-a-l-election-presidentielle-marine-le-pen-annonce-son-pourvoi-en-cassation-apres-sa-condamnation-allegee-en-appel_8098361.html",
+        "outlet": "franceinfo",
+        "title": "\"Je suis candidate\" : Marine Le Pen annonce qu'elle se présente à la présidentielle après la réduction de sa peine d'inéligibilité, et qu'elle va se pourvoir en cassation",
+        "date": "2026-07-07"
+      },
+      {
+        "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/",
+        "outlet": "Toute l'Europe",
+        "title": "Présidentielle 2027 : qui sont les principaux candidats déjà déclarés ?",
+        "date": "2026-11-09"
+      }
+    ]
+  },
+  "programme": [
+    {
+      "theme": "defense",
+      "text": "Veut mettre fin dans les six mois à l'aide financière de la France à l'Ukraine, tout en jugeant possible de maintenir un soutien militaire et logistique.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/international/aide-a-lukraine-que-proposent-les-candidats-a-la-presidentielle",
+          "outlet": "Public Sénat",
+          "title": "Aide à l'Ukraine : que proposent les candidats à la présidentielle ?",
+          "date": "2026-11-16"
+        }
+      ]
+    },
+    {
+      "theme": "immigration",
+      "text": "Propose une consultation par référendum pour réviser la Constitution afin de supprimer le droit du sol et le regroupement familial, d'instaurer la préférence nationale pour les aides sociales et de restreindre le droit d'asile, en passant par l'article 11.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/front-national/presidentielle-2027-richard-ferrand-balaie-la-promesse-de-marine-le-pen-d-une-revision-de-la-constitution-par-referendum_8235298.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Richard Ferrand balaie la promesse de Marine Le Pen d'une révision de la Constitution par référendum",
+          "date": "2026-10-13"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Propose un plan de « 140 milliards d'euros nets » d'économies d'ici à 2032 par rapport à 2026, avec un déficit public sous 3 % du PIB dès 2030.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-marine-le-pen-promet-140-milliards-d-euros-nets-d-economies-d-ici-a-2032_8224807.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Marine Le Pen promet \"140 milliards d'euros net d'économies\" d'ici à 2032",
+          "date": "2026-10-06"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Veut inscrire dans la Constitution, par référendum, une « règle d'or » budgétaire imposant une baisse de la dette chaque année.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-marine-le-pen-promet-140-milliards-d-euros-nets-d-economies-d-ici-a-2032_8224807.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Marine Le Pen promet \"140 milliards d'euros net d'économies\" d'ici à 2032",
+          "date": "2026-10-06"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261006-140-milliards-d-%C3%A9conomies-ce-qu-il-faut-retenir-de-l-intervention-de-marine-le-pen",
+          "outlet": "France 24",
+          "title": "\"140 milliards\" d'économies : ce qu'il faut retenir de l'intervention de Marine Le Pen",
+          "date": "2026-10-06"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose une baisse de 30 milliards d'euros des impôts.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261006-140-milliards-d-%C3%A9conomies-ce-qu-il-faut-retenir-de-l-intervention-de-marine-le-pen",
+          "outlet": "France 24",
+          "title": "\"140 milliards\" d'économies : ce qu'il faut retenir de l'intervention de Marine Le Pen",
+          "date": "2026-10-06"
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "text": "Défend un âge de départ à la retraite de 62 ans, voire 60 ans, vise 15 à 20 milliards d'euros d'économies à terme sur les retraites et annonce une réforme créant un « pilier de capitalisation ».",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261006-140-milliards-d-%C3%A9conomies-ce-qu-il-faut-retenir-de-l-intervention-de-marine-le-pen",
+          "outlet": "France 24",
+          "title": "\"140 milliards\" d'économies : ce qu'il faut retenir de l'intervention de Marine Le Pen",
+          "date": "2026-10-06"
+        }
+      ]
+    },
+    {
+      "theme": "energie",
+      "text": "Veut mettre fin aux subventions aux énergies renouvelables intermittentes comme le solaire et l'éolien, et fixe un objectif de neutralité carbone « avant 2050 ».",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261006-140-milliards-d-%C3%A9conomies-ce-qu-il-faut-retenir-de-l-intervention-de-marine-le-pen",
+          "outlet": "France 24",
+          "title": "\"140 milliards\" d'économies : ce qu'il faut retenir de l'intervention de Marine Le Pen",
+          "date": "2026-10-06"
+        }
+      ]
+    },
+    {
+      "theme": "logement",
+      "text": "Propose d'appliquer la priorité nationale au logement social, d'abroger la loi SRU, de supprimer l'objectif « zéro artificialisation nette » et les diagnostics de performance énergétique, et de remplacer MaPrimeRénov' par un prêt à taux zéro.",
+      "sources": [
+        {
+          "url": "https://france3-regions.franceinfo.fr/hauts-de-france/pas-calais/lens/marine-le-pen-fait-sa-rentree-politique-a-henin-beaumont-et-met-la-priorite-nationale-au-c-ur-de-son-programme-pour-la-presidentielle-de-2027-3416348.html",
+          "outlet": "France 3 Hauts-de-France",
+          "title": "Marine Le Pen fait sa rentrée politique à Hénin-Beaumont et met \"la priorité nationale\" au cœur de son programme pour la présidentielle de 2027",
+          "date": "2026-09-13"
+        }
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "date": "2026-10-25",
+      "city": "Orléans",
+      "title": "Premier grand meeting de campagne",
+      "sources": [
+        {
+          "url": "https://fr.euronews.com/2026/10/25/orleans-marine-le-pen-lance-sa-campagne-au-lendemain-de-lacte-ii-de-la-mobilisation-social",
+          "outlet": "Euronews",
+          "title": "\"Tout le monde en France est maintenant d'accord avec nous\" : Marine Le Pen lance sa campagne à Orléans",
+          "date": "2026-10-25"
+        }
+      ]
+    }
+  ],
+  "risques": [
+    {
+      "id": "affaire-assistants-parlementaires-europeens",
+      "nature": "judiciaire",
+      "active": true,
+      "title": "Affaire des assistants d'eurodéputés du FN : pourvoi en cassation",
+      "statutJuridique": "Condamnée en appel le 7 juillet 2026 pour détournement de fonds publics ; pourvoi en cassation en cours, suspensif selon la Cour de cassation",
+      "resume": "La cour d'appel de Paris l'a condamnée le 7 juillet 2026 à trois ans d'emprisonnement dont un an ferme aménagé sous bracelet électronique, 100 000 euros d'amende et 45 mois d'inéligibilité dont 30 avec sursis, sans exécution provisoire. Les 15 mois d'inéligibilité ferme sont considérés comme déjà purgés, en raison de l'exécution provisoire de la peine de cinq ans d'inéligibilité prononcée en première instance le 31 mars 2025. La Cour de cassation, saisie de 13 pourvois, indique qu'elle pourrait statuer « au plus tard début avril 2027 », un calendrier « susceptible d'évoluer en fonction des facteurs procéduraux ».",
+      "impact": "Selon les sources, en cas de rejet du pourvoi, la condamnation devient définitive mais, l'inéligibilité ferme étant purgée, elle reste éligible. En cas de cassation de l'arrêt, la question de son éligibilité serait rouverte : un magistrat honoraire de la Cour de cassation et plusieurs juristes estiment que l'inéligibilité de première instance s'appliquerait de nouveau, ce que contestent sa défense et le procureur général Rémy Heitz. La validation de la liste des candidats revient au Conseil constitutionnel, qui doit la publier au plus tard le 26 mars 2027.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/presidentielle-bracelet-electronique-pourvoi-en-cassation-les-questions-qui-se-posent-apres-la-condamnation-reduite-de-marine-le-pen-en-appel_8097893.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle, pourvoi en cassation, inéligibilité… Les questions qui se posent après la condamnation en appel réduite de Marine Le Pen",
+          "date": "2026-07-07"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/condamnation-de-marine-le-pen-malgre-son-pourvoi-en-cassation-est-elle-toujours-ineligible-comme-laffirment-plusieurs-juristes",
+          "outlet": "Public Sénat",
+          "title": "Condamnation de Marine Le Pen : malgré son pourvoi en cassation, est-elle toujours inéligible comme l'affirment plusieurs juristes ?",
+          "date": "2026-07-08"
+        },
+        {
+          "url": "https://lcp.fr/actualites/marine-le-pen-condamnee-par-la-justice-mais-eligible-comment-la-cour-d-appel-de-paris-a",
+          "outlet": "LCP",
+          "title": "Marine Le Pen condamnée par la justice, mais éligible: comment la cour d'appel de Paris a motivé sa décision",
+          "date": "2026-07-07"
+        },
+        {
+          "url": "https://fr.euronews.com/2026/07/07/marine-le-pen-condamnee-a-45-mois-dineligibilite-dont-30-mois-assortis-de-sursis",
+          "outlet": "Euronews",
+          "title": "Marine Le Pen éligible pour la présidentielle de 2027 mais sous bracelet électronique pendant un an",
+          "date": "2026-07-07"
+        },
+        {
+          "url": "https://www.france24.com/fr/france/20260708-condamnation-de-marine-le-pen-la-cour-de-cassation-se-prononcera-au-plus-tard-d%C3%A9but-avril-2027",
+          "outlet": "France 24",
+          "title": "Condamnation de Marine Le Pen : la Cour de cassation se prononcera \"au plus tard début avril 2027\"",
+          "date": "2026-07-08"
+        },
+        {
+          "url": "https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/les-avocats-de-marine-le-pen-ont-jusqu-au-15-octobre-pour-justifier-le-pourvoi-dans-l-affaire-des-assistants-d-eurodeputes-fn_8177831.html",
+          "outlet": "franceinfo",
+          "title": "Les avocats de Marine Le Pen ont jusqu'au 15 octobre pour justifier le pourvoi dans l'affaire des assistants d'eurodéputés FN",
+          "date": "2026-09-04"
+        },
+        {
+          "url": "https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/marine-le-pen-est-elle-vraiment-ineligible-a-l-election-presidentielle-comme-l-affirme-un-magistrat-honoraire-de-la-cour-de-cassation_8257378.html",
+          "outlet": "franceinfo",
+          "title": "Marine Le Pen est-elle vraiment inéligible à l'élection présidentielle, comme l'affirme un magistrat honoraire de la Cour de cassation ?",
+          "date": "2026-10-30"
+        }
+      ],
+      "updatedAt": "2026-11-17"
+    }
+  ],
+  "lastChecked": "2026-11-17"
+}

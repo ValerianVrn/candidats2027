@@ -20,6 +20,7 @@ function candidate(overrides: Partial<Candidate> = {}): Candidate {
     portrait: null,
     declaration: {
       date: '2026-09-01',
+      datePrecision: 'day',
       videoUrl: 'https://www.youtube.com/watch?v=abcdefghijk',
       sources: [src('https://afp.com/3')],
     },
@@ -50,7 +51,12 @@ describe('checkCandidate', () => {
   it('rejects sources outside the allowlist', () => {
     const issues = checkCandidate(
       candidate({
-        declaration: { date: '2026-09-01', videoUrl: null, sources: [src('https://blog.example.com/x')] },
+        declaration: {
+          date: '2026-09-01',
+          datePrecision: 'day',
+          videoUrl: null,
+          sources: [src('https://blog.example.com/x')],
+        },
       }),
       'f',
       allowlist,
@@ -76,6 +82,8 @@ describe('checkCandidate', () => {
         risques: [
           {
             id: 'r',
+            nature: 'judiciaire',
+            active: true,
             title: 't',
             statutJuridique: 's',
             resume: 'r',
@@ -106,6 +114,7 @@ describe('checkCandidate', () => {
         },
         declaration: {
           date: '2026-09-01',
+          datePrecision: 'day',
           videoUrl: 'https://evil.example/v',
           sources: [src('https://afp.com/3')],
         },
@@ -118,6 +127,23 @@ describe('checkCandidate', () => {
       expect.arrayContaining(['party', 'portrait.sourceUrl', 'portrait.licence', 'declaration.videoUrl']),
     );
   });
+});
+
+it('accepts declaration videos posted on X', () => {
+  const issues = checkCandidate(
+    candidate({
+      declaration: {
+        date: '2026-11-09',
+        datePrecision: 'day',
+        videoUrl: 'https://x.com/someone/status/123',
+        sources: [src('https://afp.com/3')],
+      },
+    }),
+    'f',
+    allowlist,
+    new Set(),
+  );
+  expect(issues).toEqual([]);
 });
 
 describe('isFeatured', () => {

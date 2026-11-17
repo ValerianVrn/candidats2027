@@ -30,3 +30,8 @@ export const STATUS_PLURAL: Record<Status, string> = {
   officiel: 'Officiels',
   retire: 'Retirés',
 };
+
+/** Active legal or tax procedure: drives the « ! » badge and the « Avec procédure » filter. */
+export function hasActiveProcedure(c: Pick<Candidate, 'risques'>): boolean {
+  return c.risques.some((r) => r.nature !== 'politique' && r.active);
+}
