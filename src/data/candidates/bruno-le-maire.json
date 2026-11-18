@@ -1,0 +1,92 @@
+{
+  "slug": "bruno-le-maire",
+  "firstName": "Bruno",
+  "lastName": "Le Maire",
+  "genre": "m",
+  "status": "potentiel",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/j-arrive-avec-un-projet-bruno-le-maire-presente-un-programme-pour-une-autre-france-mais-reste-flou-sur-une-candidature-a-la-presidentielle_8279576.html",
+      "outlet": "franceinfo",
+      "title": "\"J'arrive avec un projet\" : Bruno Le Maire présente un programme pour \"une autre France\" mais reste flou sur une candidature à la présidentielle",
+      "date": "2026-11-12"
+    },
+    {
+      "url": "https://www.europe1.fr/economie/economie-immigration-democratie-bruno-le-maire-presente-ses-propositions-a-laube-de-2027-1228076",
+      "outlet": "Europe 1",
+      "title": "Economie, immigration, démocratie... Bruno Le Maire présente ses propositions à l'aube de 2027",
+      "date": "2026-11-12"
+    }
+  ],
+  "party": null,
+  "officialDomains": [],
+  "role": "Ancien ministre de l'Économie",
+  "portrait": {
+    "file": "bruno-le-maire.jpg",
+    "author": "Belgian Presidency of the Council of the EU 2024 from Belgium",
+    "licence": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EU2024BE_240223_Informal_meeting_of_economic_and_financial_affairs_ministers_Gent_JNZT_0040_(53545889372).jpg"
+  },
+  "declaration": null,
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "travail",
+      "text": "Propose d'augmenter le salaire médian de 200 euros par mois, en finançant autrement la protection sociale (hausse de 3 points de TVA, taxe sur les géants de la tech, taxe sur les importations carbonées).",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/j-arrive-avec-un-projet-bruno-le-maire-presente-un-programme-pour-une-autre-france-mais-reste-flou-sur-une-candidature-a-la-presidentielle_8279576.html",
+          "outlet": "franceinfo",
+          "title": "\"J'arrive avec un projet\" : Bruno Le Maire présente un programme pour \"une autre France\" mais reste flou sur une candidature à la présidentielle",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "text": "Propose de fixer l'âge de la retraite à 65 ans et de ne plus indexer les pensions et les prestations sociales sur l'inflation.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/j-arrive-avec-un-projet-bruno-le-maire-presente-un-programme-pour-une-autre-france-mais-reste-flou-sur-une-candidature-a-la-presidentielle_8279576.html",
+          "outlet": "franceinfo",
+          "title": "\"J'arrive avec un projet\" : Bruno Le Maire présente un programme pour \"une autre France\" mais reste flou sur une candidature à la présidentielle",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Veut un gouvernement d'une dizaine de membres, la fusion des régions et des départements, l'abandon du 49-3 et un recours régulier au référendum.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/j-arrive-avec-un-projet-bruno-le-maire-presente-un-programme-pour-une-autre-france-mais-reste-flou-sur-une-candidature-a-la-presidentielle_8279576.html",
+          "outlet": "franceinfo",
+          "title": "\"J'arrive avec un projet\" : Bruno Le Maire présente un programme pour \"une autre France\" mais reste flou sur une candidature à la présidentielle",
+          "date": "2026-11-12"
+        },
+        {
+          "url": "https://www.europe1.fr/economie/economie-immigration-democratie-bruno-le-maire-presente-ses-propositions-a-laube-de-2027-1228076",
+          "outlet": "Europe 1",
+          "title": "Economie, immigration, démocratie... Bruno Le Maire présente ses propositions à l'aube de 2027",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "europe",
+      "text": "Propose une fédération de six États-nations : France, Allemagne, Italie, Espagne, Pologne et Pays-Bas.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/j-arrive-avec-un-projet-bruno-le-maire-presente-un-programme-pour-une-autre-france-mais-reste-flou-sur-une-candidature-a-la-presidentielle_8279576.html",
+          "outlet": "franceinfo",
+          "title": "\"J'arrive avec un projet\" : Bruno Le Maire présente un programme pour \"une autre France\" mais reste flou sur une candidature à la présidentielle",
+          "date": "2026-11-12"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-17"
+}

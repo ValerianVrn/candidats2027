@@ -1,0 +1,238 @@
+{
+  "slug": "jean-luc-melenchon",
+  "firstName": "Jean-Luc",
+  "lastName": "Mélenchon",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-jean-luc-melenchon-officialise-sa-candidature-pour-2027-435851",
+      "outlet": "LCP",
+      "title": "Présidentielle: Jean-Luc Mélenchon officialise sa candidature pour 2027",
+      "date": "2026-05-03"
+    },
+    {
+      "url": "https://www.europe1.fr/politique/presidentielle-2027-jean-luc-melenchon-officialise-sa-candidature-930947",
+      "outlet": "Europe 1",
+      "title": "Présidentielle 2027 : Jean-Luc Mélenchon officialise sa candidature",
+      "date": "2026-05-03"
+    }
+  ],
+  "party": "la-france-insoumise",
+  "officialDomains": ["melenchon2027.fr"],
+  "role": "Fondateur de La France insoumise",
+  "portrait": {
+    "file": "jean-luc-melenchon.jpg",
+    "author": "Thomas Bresson",
+    "licence": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean-Luc_M%C3%A9lenchon_2022_(cropped).jpg"
+  },
+  "declaration": {
+    "date": "2026-05-03",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-jean-luc-melenchon-officialise-sa-candidature-pour-2027-435851",
+        "outlet": "LCP",
+        "title": "Présidentielle: Jean-Luc Mélenchon officialise sa candidature pour 2027",
+        "date": "2026-05-03"
+      },
+      {
+        "url": "https://www.europe1.fr/politique/presidentielle-2027-jean-luc-melenchon-officialise-sa-candidature-930947",
+        "outlet": "Europe 1",
+        "title": "Présidentielle 2027 : Jean-Luc Mélenchon officialise sa candidature",
+        "date": "2026-05-03"
+      }
+    ]
+  },
+  "qualified2022": {
+    "sources": [
+      {
+        "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm",
+        "outlet": "Conseil constitutionnel",
+        "title": "Décision n° 2022-187 PDR du 7 mars 2022 - Liste des candidats à l'élection présidentielle",
+        "date": "2022-03-07"
+      }
+    ]
+  },
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "institutions",
+      "text": "Propose de convoquer une Constituante pour passer à une 6e République, d'instaurer le référendum d'initiative citoyenne (RIC) et d'élire l'Assemblée nationale à la proportionnelle.",
+      "sources": [
+        {
+          "url": "https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre1",
+          "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+          "title": "Chapitre 1 : Le pouvoir au peuple",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "travail",
+      "text": "Propose d'augmenter immédiatement le SMIC à 1 700 euros net par mois et d'indexer les salaires sur l'inflation dans le privé comme dans la fonction publique.",
+      "sources": [
+        {
+          "url": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2",
+          "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+          "title": "Chapitre 2 : Partager les richesses",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose de rétablir un impôt de solidarité sur la fortune (ISF) avec un volet climatique et de porter le barème de l'impôt sur le revenu à 14 tranches.",
+      "sources": [
+        {
+          "url": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2",
+          "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+          "title": "Chapitre 2 : Partager les richesses",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "text": "Propose d'abroger le report de l'âge de départ à 64 ans et de rétablir la retraite à 60 ans à taux plein pour 40 annuités de cotisation.",
+      "sources": [
+        {
+          "url": "https://melenchon2027.fr/programme/livre/mettre-en-securite-sociale/chapitre1",
+          "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+          "title": "Chapitre 1 : À chacun selon ses besoins",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "sante",
+      "text": "Propose un remboursement à 100 % des soins de santé prescrits par la Sécurité sociale, la suppression des franchises médicales et la fin des dépassements d'honoraires dans le secteur conventionné.",
+      "sources": [
+        {
+          "url": "https://melenchon2027.fr/programme/livre/mettre-en-securite-sociale/chapitre1",
+          "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+          "title": "Chapitre 1 : À chacun selon ses besoins",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "ecologie",
+      "text": "Propose d'inscrire la « règle verte » dans la Constitution et vise une baisse de 65 % des émissions de gaz à effet de serre d'ici 2033.",
+      "sources": [
+        {
+          "url": "https://melenchon2027.fr/programme/livre/pour-une-bifurcation-ecologique-et-sociale/chapitre1",
+          "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+          "title": "Chapitre 1 : Planification écologique",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "defense",
+      "text": "Propose de quitter immédiatement le commandement intégré de l'OTAN puis, par étapes, l'organisation elle-même, et de refuser l'objectif de 5 % du PIB consacré aux dépenses de défense.",
+      "sources": [
+        {
+          "url": "https://melenchon2027.fr/programme/livre/un-monde-ordonne/chapitre2",
+          "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+          "title": "Chapitre 2 : Une France indépendante au service de la paix",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "theme": "europe",
+      "text": "Propose de sortir du cadre du traité de Lisbonne par une renégociation soumise à référendum, de suspendre la règle des 3 % de déficit et de désobéir aux règles européennes jugées bloquantes.",
+      "sources": [
+        {
+          "url": "https://melenchon2027.fr/programme/livre/un-monde-ordonne/chapitre1",
+          "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+          "title": "Chapitre 1 : Se libérer du libéralisme en Europe",
+          "date": "2026-11-06"
+        }
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "date": "2026-12-05",
+      "city": "Le Havre",
+      "title": "Meeting de campagne",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261008-pr%C3%A9sidentielle-m%C3%A9lenchon-en-meeting-au-havre-le-5-d%C3%A9cembre",
+          "outlet": "France 24 (AFP)",
+          "title": "Présidentielle: Mélenchon en meeting au Havre le 5 décembre",
+          "date": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "city": "Le Bourget",
+      "title": "Convention et présentation du programme « L'Avenir en commun »",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261107-france-presidentielle-2027-nouvelle-demonstration-de-force-de-jean-luc-melenchon-meeting-le-bourget-victoire",
+          "outlet": "France 24",
+          "title": "Avec une nouvelle démonstration de force de Jean-Luc Mélenchon, les insoumis s'y voient déjà",
+          "date": "2026-11-07"
+        },
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/direct-presidentielle-2027-jean-luc-melenchon-va-presenter-son-programme-au-bourget_8272022.html",
+          "outlet": "franceinfo",
+          "title": "Depuis son meeting au Bourget, Jean-Luc Mélenchon refuse de mettre \"de l'eau dans\" son \"vin pour séduire et être moins clivant\"",
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "city": "Clermont-Ferrand",
+      "title": "Meeting de campagne",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261008-pr%C3%A9sidentielle-m%C3%A9lenchon-en-meeting-au-havre-le-5-d%C3%A9cembre",
+          "outlet": "France 24 (AFP)",
+          "title": "Présidentielle: Mélenchon en meeting au Havre le 5 décembre",
+          "date": "2026-10-08"
+        }
+      ]
+    }
+  ],
+  "risques": [
+    {
+      "id": "assistants-parlementaires-europeens",
+      "nature": "judiciaire",
+      "active": false,
+      "title": "Enquête sur les assistants parlementaires européens",
+      "statutJuridique": "Information judiciaire clôturée le 26 mai 2026 sans mise en examen de Jean-Luc Mélenchon ; deux anciens assistants restent sous le statut de témoin assisté",
+      "resume": "Une information judiciaire, ouverte en novembre 2018 notamment pour détournement de fonds publics, cherchait à établir si des assistants rémunérés par le Parlement européen lorsqu'il était eurodéputé avaient travaillé pour son parti. Les juges ont clôturé l'instruction le 26 mai 2026 sans le mettre en examen. La France insoumise a déclaré qu'« à aucun moment, il ne pouvait nous être reproché la moindre infraction dans ce dossier ».",
+      "impact": "Aucune mise en examen n'a été prononcée contre lui ; les sources ne font état d'aucune conséquence sur sa candidature.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/la-france-insoumise/enquete-sur-les-assistants-parlementaires-de-lfi-l-instruction-est-close-sans-mise-en-examen_8029814.html",
+          "outlet": "franceinfo",
+          "title": "Enquête sur les assistants parlementaires de LFI : l'instruction est close, sans mise en examen",
+          "date": "2026-05-26"
+        },
+        {
+          "url": "https://www.cnews.fr/france/2026-05-27/assistants-parlementaires-de-jean-luc-melenchon-les-juges-cloturent-linstruction",
+          "outlet": "CNews",
+          "title": "Assistants parlementaires de Jean-Luc Mélenchon : les juges clôturent l'instruction, sans mise en examen",
+          "date": "2026-05-27"
+        },
+        {
+          "url": "https://www.lejdd.fr/politique/enquete-sur-les-assistants-parlementaires-de-lfi-linstruction-terminee-sans-mise-en-examen-174903",
+          "outlet": "Le JDD",
+          "title": "Enquête sur les assistants parlementaires de LFI : l'instruction terminée sans mise en examen",
+          "date": "2026-05-27"
+        }
+      ],
+      "updatedAt": "2026-11-17"
+    }
+  ],
+  "lastChecked": "2026-11-18"
+}

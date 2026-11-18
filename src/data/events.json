@@ -1,0 +1,45 @@
+[
+  {
+    "id": "debat-tf1-lci-2026-11-16",
+    "kind": "debat",
+    "date": "2026-11-16",
+    "time": "20:20",
+    "title": "Quelle société pour demain ?",
+    "channels": ["TF1", "LCI"],
+    "summary": "Débat consacré au pouvoir d'achat, à la pauvreté et à la solidarité, organisé par le groupe TF1 avec les Restos du Cœur.",
+    "participants": [
+      "gabriel-attal",
+      "raphael-glucksmann",
+      "marine-le-pen",
+      "jean-luc-melenchon",
+      "bruno-retailleau"
+    ],
+    "absents": [
+      {
+        "slug": "edouard-philippe",
+        "note": "A décliné l'invitation pour présider un conseil municipal au Havre consacré au budget local."
+      }
+    ],
+    "replayUrl": null,
+    "sources": [
+      {
+        "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-candidats-horaires-themes-ce-qu-il-faut-savoir-sur-le-debat-du-16-novembre-sur-tf1-et-lci/",
+        "outlet": "Toute l'Europe",
+        "title": "Présidentielle 2027 : candidats, horaires, thèmes… Ce qu'il faut savoir sur le débat du 16 novembre sur TF1 et LCI",
+        "date": "2026-11-16"
+      },
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-pourquoi-edouard-philippe-sera-absent-du-debat-face-a-marine-le-pen",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: pourquoi Edouard Philippe sera absent du débat face à Marine Le Pen et Jean-Luc Mélenchon sur TF1",
+        "date": "2026-11-16"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20261116-imp%C3%B4ts-logement-smic-les-candidats-%C3%A0-la-pr%C3%A9sidentielle-d%C3%A9battent-de-leurs-propositions",
+        "outlet": "France 24",
+        "title": "Impôts, logement, Smic... les candidats à la présidentielle débattent de leurs propositions",
+        "date": "2026-11-16"
+      }
+    ]
+  }
+]

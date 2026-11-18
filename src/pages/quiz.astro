@@ -1,0 +1,533 @@
+---
+import Base from '../layouts/Base.astro';
+import Avatar from '../components/Avatar.astro';
+import QuizCompare from '../components/QuizCompare.astro';
+import { clientPayload, questions, quizCandidates, quizReady } from '../lib/quiz-data';
+import { familleOf, fullName } from '../lib/data';
+import { MIN_COVERAGE } from '../lib/quiz';
+import { THEMES } from '../lib/themes';
+import { formatDay } from '../lib/dates';
+
+const names = Object.fromEntries(quizCandidates.map((c) => [c.slug, fullName(c)]));
+const bySlug = new Map(quizCandidates.map((c) => [c.slug, c]));
+---
+
+<Base
+  title={quizReady ? 'Quiz : de qui vos idées sont-elles proches ?' : 'Comparer les positions des candidats'}
+  section="quiz"
+>
+  <div class="quiz">
+    {!quizReady ? (
+      <QuizCompare questions={questions} />
+    ) : (
+      <>
+        <section class="screen intro" data-screen="intro">
+          <p class="kicker">Quiz · {questions.length} questions · 3 min</p>
+          <h1>De qui vos idées sont-elles proches ?</h1>
+          <p>
+            Répondez à des questions sur les grands thèmes de la campagne. Chaque réponse correspond à des
+            positions réelles et sourcées des candidats.
+          </p>
+          <ul class="promises">
+            <li>Une proximité d'idées, pas une consigne de vote.</li>
+            <li>Calculé dans votre navigateur : vos réponses ne sont ni envoyées ni enregistrées.</li>
+            <li>
+              <a href="/methode#quiz">Comment est calculé le résultat</a>
+            </li>
+          </ul>
+          <button type="button" class="primary" data-start>
+            Commencer
+          </button>
+        </section>
+
+        {questions.map((q, i) => (
+          <section class="screen question" data-screen="question" data-q={q.id} data-type={q.type} hidden>
+            <div class="bar-row">
+              <button type="button" class="ghost" data-prev aria-label="Question précédente">
+                ←
+              </button>
+              <span class="count">
+                Question {i + 1} / {questions.length}
+              </span>
+              <button type="button" class="ghost" data-skip>
+                Passer
+              </button>
+            </div>
+            <div class="progress" aria-hidden="true">
+              <span style={`width:${Math.round(((i + 1) / questions.length) * 100)}%`} />
+            </div>
+            <p class="kicker">{THEMES[q.theme]}</p>
+            <h2 id={`q-${q.id}`}>{q.text}</h2>
+            <div class="options" role="radiogroup" aria-labelledby={`q-${q.id}`}>
+              {q.options.map((o) => (
+                <button type="button" role="radio" aria-checked="false" class="option" data-option={o.id}>
+                  {o.label}
+                </button>
+              ))}
+              <button type="button" role="radio" aria-checked="false" class="option none" data-option="">
+                Sans avis
+              </button>
+            </div>
+            <label class="important">
+              <input type="checkbox" data-important />
+              Important pour moi (compte double)
+            </label>
+          </section>
+        ))}
+
+        <section class="screen result" data-screen="result" hidden>
+          <p class="kicker">Résultat</p>
+          <h2>Vos proximités avec les candidats</h2>
+          <p class="muted">
+            Une proximité d'idées, pas une consigne de vote. Le pourcentage ne porte que sur les thèmes où la
+            position du candidat est connue ; en dessous de {MIN_COVERAGE} thèmes, aucun pourcentage n'est
+            affiché.
+          </p>
+          <ol class="ranking" data-ranking>
+            {quizCandidates.map((c) => (
+              <li data-row={c.slug} style={`--ring:var(--f-${familleOf(c)})`}>
+                <a href={`/candidat/${c.slug}`} class="row-link">
+                  <span class="ring">
+                    <Avatar candidate={c} size={44} />
+                  </span>
+                  <span class="row-main">
+                    <span class="row-top">
+                      <span class="row-name">{fullName(c)}</span>
+                      <span class="row-score" data-score />
+                    </span>
+                    <span class="meter" aria-hidden="true">
+                      <span data-meter />
+                    </span>
+                    <span class="row-cov" data-cov />
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
+
+          <details class="themes">
+            <summary>Détail thème par thème, avec sources</summary>
+            {questions.map((q) => (
+              <div class="theme-block" data-detail={q.id}>
+                <h3>
+                  {THEMES[q.theme]} · {q.text}
+                </h3>
+                <ul>
+                  {q.options.map((o) => {
+                    const who = Object.entries(q.positions)
+                      .filter(([, p]) => p.option === o.id)
+                      .map(([slug, p]) => ({ c: bySlug.get(slug)!, p }));
+                    return (
+                      <li data-opt={o.id}>
+                        <span class="opt-label">{o.label}</span>
+                        <span class="opt-who">
+                          {who.length
+                            ? who.map(({ c, p }, k) => (
+                                <>
+                                  {k > 0 && ', '}
+                                  {fullName(c)}{' '}
+                                  <a
+                                    href={p.sources[0]!.url}
+                                    target="_blank"
+                                    rel="noopener"
+                                    title={`${p.kind === 'programme' ? 'Programme' : 'Déclaration'} · ${p.sources[0]!.outlet}, ${formatDay(p.sources[0]!.date)}`}
+                                  >
+                                    [source]
+                                  </a>
+                                </>
+                              ))
+                            : 'aucun candidat'}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </details>
+
+          <div class="actions">
+            <a class="primary" href="/" data-map>
+              Voir sur la carte
+            </a>
+            <button type="button" class="secondary" data-share>
+              Copier le lien du résultat
+            </button>
+            <button type="button" class="secondary" data-restart>
+              Recommencer
+            </button>
+          </div>
+          <p class="muted small" data-share-note hidden>
+            Lien copié. Vos réponses sont contenues dans le lien lui-même (après le #), elles ne passent par
+            aucun serveur.
+          </p>
+        </section>
+      </>
+    )}
+  </div>
+  <script type="application/json" id="quiz-data" set:html={JSON.stringify({ ...clientPayload, names })} />
+</Base>
+
+<script>
+  import { decodeAnswers, encodeAnswers, scoreCandidates, shuffle, type Answer } from '../lib/quiz';
+
+  const dataEl = document.getElementById('quiz-data');
+  const root = document.querySelector<HTMLElement>('.quiz');
+  const start = root?.querySelector<HTMLButtonElement>('[data-start]');
+  if (dataEl && root && start) {
+    const data = JSON.parse(dataEl.textContent!) as {
+      questions: Parameters<typeof scoreCandidates>[0];
+      names: Record<string, string>;
+    };
+    const screens = [...root.querySelectorAll<HTMLElement>('[data-screen]')];
+    const qScreens = screens.filter((s) => s.dataset.screen === 'question');
+    const resultScreen = screens.find((s) => s.dataset.screen === 'result')!;
+    let answers: Record<string, Answer> = {};
+
+    // Neutral presentation: unordered options are shuffled, ordered scales are randomly reversed.
+    for (const s of qScreens) {
+      const box = s.querySelector<HTMLElement>('.options')!;
+      const none = box.querySelector<HTMLElement>('.none')!;
+      const opts = [...box.querySelectorAll<HTMLElement>('.option:not(.none)')];
+      const order = s.dataset.type === 'choice' ? shuffle(opts) : Math.random() < 0.5 ? opts.reverse() : opts;
+      box.replaceChildren(...order, none);
+    }
+
+    const show = (el: HTMLElement) => {
+      screens.forEach((s) => (s.hidden = s !== el));
+      window.scrollTo({ top: 0 });
+      el.querySelector<HTMLElement>('h1, h2')?.focus();
+    };
+    screens.forEach((s) => s.querySelector<HTMLElement>('h1, h2')?.setAttribute('tabindex', '-1'));
+
+    const goTo = (i: number) => (i >= qScreens.length ? showResult() : show(qScreens[Math.max(0, i)]!));
+
+    start.addEventListener('click', () => goTo(0));
+    qScreens.forEach((s, i) => {
+      const id = s.dataset.q!;
+      const important = s.querySelector<HTMLInputElement>('[data-important]')!;
+      s.querySelectorAll<HTMLButtonElement>('.option').forEach((btn) =>
+        btn.addEventListener('click', () => {
+          s.querySelectorAll('.option').forEach((b) => b.setAttribute('aria-checked', String(b === btn)));
+          answers[id] = { option: btn.dataset.option || null, important: important.checked };
+          setTimeout(() => goTo(i + 1), 180);
+        }),
+      );
+      important.addEventListener('change', () => {
+        if (answers[id]) answers[id]!.important = important.checked;
+      });
+      s.querySelector('[data-skip]')!.addEventListener('click', () => {
+        answers[id] = { option: null, important: false };
+        goTo(i + 1);
+      });
+      s.querySelector('[data-prev]')!.addEventListener('click', () =>
+        i === 0 ? show(screens[0]!) : goTo(i - 1),
+      );
+    });
+
+    function showResult() {
+      const ranking = resultScreen.querySelector<HTMLElement>('[data-ranking]')!;
+      const scores = scoreCandidates(data.questions, answers, Object.keys(data.names), data.names);
+      for (const s of scores) {
+        const row = ranking.querySelector<HTMLElement>(`[data-row="${CSS.escape(s.slug)}"]`)!;
+        row.querySelector('[data-score]')!.textContent = s.score === null ? '—' : `${s.score} %`;
+        row.querySelector<HTMLElement>('[data-meter]')!.style.width = `${s.score ?? 0}%`;
+        row.querySelector('[data-cov]')!.textContent =
+          s.score === null
+            ? `Positions insuffisantes (${s.coverage} thème${s.coverage > 1 ? 's' : ''} en commun)`
+            : `sur ${s.coverage} thèmes`;
+        row.classList.toggle('low', s.score === null);
+        ranking.append(row);
+      }
+      resultScreen.querySelectorAll<HTMLElement>('[data-detail]').forEach((d) => {
+        const a = answers[d.dataset.detail!];
+        d.querySelectorAll<HTMLElement>('[data-opt]').forEach((li) =>
+          li.classList.toggle('mine', !!a && a.option === li.dataset.opt),
+        );
+      });
+      const encoded = encodeAnswers(answers);
+      resultScreen.querySelector<HTMLAnchorElement>('[data-map]')!.href = `/#proximite=${encoded}`;
+      history.replaceState(null, '', `#r=${encoded}`);
+      show(resultScreen);
+    }
+
+    resultScreen.querySelector('[data-restart]')!.addEventListener('click', () => {
+      answers = {};
+      qScreens.forEach((s) => {
+        s.querySelectorAll('.option').forEach((b) => b.setAttribute('aria-checked', 'false'));
+        s.querySelector<HTMLInputElement>('[data-important]')!.checked = false;
+      });
+      history.replaceState(null, '', location.pathname);
+      goTo(0);
+    });
+    resultScreen.querySelector('[data-share]')!.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        resultScreen.querySelector<HTMLElement>('[data-share-note]')!.hidden = false;
+      } catch {
+        // clipboard unavailable: the URL in the address bar already holds the result
+      }
+    });
+
+    // A shared result link (#r=…) opens directly on the result.
+    if (location.hash.startsWith('#r=')) {
+      answers = decodeAnswers(decodeURIComponent(location.hash.slice(3)));
+      if (Object.keys(answers).length) showResult();
+    }
+  }
+</script>
+
+<style>
+  .quiz {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 28px var(--gutter) 48px;
+  }
+  .screen {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .screen[hidden] {
+    display: none;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(28px, 5vw, 40px);
+  }
+  h2 {
+    margin: 0;
+    font-size: clamp(22px, 4vw, 28px);
+  }
+  h1:focus,
+  h2:focus {
+    outline: none;
+  }
+  .kicker {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .muted {
+    color: var(--muted);
+    margin: 0;
+  }
+  .small {
+    font-size: 13px;
+  }
+  .promises {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .primary,
+  .secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 22px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .primary {
+    border: 0;
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .primary:hover {
+    background: #fff;
+    color: var(--bg);
+  }
+  .secondary {
+    border: 1px solid var(--line);
+    background: none;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 14px;
+    min-height: 48px;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ghost {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0 12px;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .count {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .progress {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--line-soft);
+    overflow: hidden;
+  }
+  .progress span {
+    display: block;
+    height: 100%;
+    background: var(--accent);
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .option {
+    min-height: 56px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .option:hover {
+    border-color: #3a4a85;
+  }
+  .option[aria-checked='true'] {
+    border: 2px solid var(--accent);
+    background: #1c2858;
+    color: #fff;
+    font-weight: 600;
+  }
+  .option.none {
+    min-height: 48px;
+    border-style: dashed;
+    background: none;
+    color: var(--muted);
+  }
+  .important {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    font-size: 14px;
+  }
+  .important input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent);
+  }
+  .ranking {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .row-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 12px;
+  }
+  .row-link:hover {
+    background: var(--surface);
+  }
+  .ring {
+    display: flex;
+    border-radius: 50%;
+    border: 2px solid var(--ring);
+  }
+  .row-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .row-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .meter {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--line-soft);
+    overflow: hidden;
+  }
+  .meter span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--ring);
+    transition: width 0.6s ease;
+  }
+  .row-cov {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  li.low {
+    opacity: 0.6;
+  }
+  .themes summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .theme-block h3 {
+    font-family: var(--font-body);
+    font-size: 15px;
+    margin: 16px 0 8px;
+  }
+  .theme-block ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+  }
+  .theme-block li {
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: var(--surface-2);
+    display: flex;
+    flex-direction: column;
+  }
+  .theme-block li.mine {
+    outline: 2px solid var(--accent);
+  }
+  .opt-who {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+</style>

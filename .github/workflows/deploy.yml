@@ -1,0 +1,72 @@
+name: Deploy (reusable)
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: GitHub environment holding the Azure identity and SWA name (development | production)
+        required: true
+        type: string
+      noindex:
+        description: Block search engines (non-production environments)
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ steps.deploy.outputs.static_web_app_url }}
+    concurrency:
+      group: deploy-${{ inputs.environment }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Release checks (legal notice complete)
+        if: ${{ inputs.environment == 'production' }}
+        run: npm test
+        env:
+          RELEASE: '1'
+      - run: npm run build
+        env:
+          # Variables of the GitHub environment. SITE_URL: absolute site URL (canonical, sitemap).
+          # PUBLIC_ADSENSE_*: production only, at launch; empty = no ads.
+          SITE_URL: ${{ vars.SITE_URL }}
+          PUBLIC_ADSENSE_CLIENT: ${{ vars.PUBLIC_ADSENSE_CLIENT }}
+          PUBLIC_ADSENSE_SLOT_HOME: ${{ vars.PUBLIC_ADSENSE_SLOT_HOME }}
+          PUBLIC_ADSENSE_SLOT_JOURNAL: ${{ vars.PUBLIC_ADSENSE_SLOT_JOURNAL }}
+      - if: ${{ inputs.noindex }}
+        run: node scripts/noindex.mjs dist
+
+      - uses: azure/login@v3
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Fetch SWA deployment token (short-lived use, never stored)
+        id: token
+        run: |
+          token=$(az staticwebapp secrets list --name "${{ vars.SWA_NAME }}" --resource-group rg-candidats2027 --query properties.apiKey -o tsv)
+          echo "::add-mask::$token"
+          echo "value=$token" >> "$GITHUB_OUTPUT"
+
+      - id: deploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ steps.token.outputs.value }}
+          action: upload
+          app_location: dist
+          skip_app_build: true
+          skip_api_build: true

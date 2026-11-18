@@ -1,0 +1,44 @@
+{
+  "slug": "selma-labib",
+  "firstName": "Selma",
+  "lastName": "Labib",
+  "genre": "f",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-le-npa-revolutionnaires-annonce-presenter-la-candidature-de-sa-porte-parole-selma-labib_AD-202606170500.html",
+      "outlet": "BFMTV",
+      "title": "Présidentielle 2027: le NPA-Révolutionnaires annonce présenter la candidature de sa porte-parole Selma Labib",
+      "date": "2026-06-17"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "npa-revolutionnaires",
+  "officialDomains": ["npa-revolutionnaires.org"],
+  "role": "Porte-parole du NPA-Révolutionnaires, conductrice de bus",
+  "portrait": null,
+  "declaration": {
+    "date": "2026-06-17",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.bfmtv.com/politique/elections/presidentielle/presidentielle-2027-le-npa-revolutionnaires-annonce-presenter-la-candidature-de-sa-porte-parole-selma-labib_AD-202606170500.html",
+        "outlet": "BFMTV",
+        "title": "Présidentielle 2027: le NPA-Révolutionnaires annonce présenter la candidature de sa porte-parole Selma Labib",
+        "date": "2026-06-17"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-17"
+}

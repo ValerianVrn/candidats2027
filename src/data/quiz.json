@@ -1,0 +1,1225 @@
+{
+  "questions": [
+    {
+      "id": "retraites-age",
+      "theme": "retraites",
+      "short": "Retraites",
+      "type": "choice",
+      "text": "Que faire de l'âge de départ à la retraite ?",
+      "options": [
+        {
+          "id": "avancer",
+          "label": "Avancer l'âge de départ (retour à 60 ou 62 ans)"
+        },
+        {
+          "id": "garder",
+          "label": "Garder les règles actuelles"
+        },
+        {
+          "id": "reculer",
+          "label": "Reculer l'âge de départ (65 ans ou plus)"
+        },
+        {
+          "id": "supprimer-age",
+          "label": "Supprimer l'âge légal : seule la durée de cotisation compte"
+        }
+      ],
+      "positions": {
+        "bruno-retailleau": {
+          "option": "reculer",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://lcp.fr/actualites/logement-associations-jeunesse-ce-qu-il-faut-retenir-du-debat-presidentiel-sur-lci",
+              "outlet": "LCP",
+              "title": "Logement, associations, jeunesse...: ce qu'il faut retenir du débat présidentiel sur LCI",
+              "date": "2026-11-17"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-pauvrete-pouvoir-dachat-logement-le-pen-melenchon-glucksmann-retailleau-attal-confrontent-leurs-visions-de-la-solidarite-aux-restos",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : pauvreté, pouvoir d’achat, logement… Le Pen, Melenchon, Glucksmann, Retailleau, Attal confrontent leurs visions de la solidarité aux Restos du Cœur",
+              "date": "2026-11-16"
+            }
+          ]
+        },
+        "edouard-philippe": {
+          "option": "reculer",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.europe1.fr/politique/retraites-edouard-philippe-propose-de-porter-progressivement-la-duree-de-cotisation-a-45-ans-et-lage-de-depart-a-65-ans-1111253",
+              "outlet": "Europe 1",
+              "title": "Retraites : Édouard Philippe propose de «porter progressivement la durée de cotisation à 45 ans et l'âge de départ à 65 ans»",
+              "date": "2026-09-29"
+            },
+            {
+              "url": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html",
+              "outlet": "franceinfo",
+              "title": "Changement de système, passage à 60 ou à 65 ans, capitalisation... Que proposent les principaux candidats à l'élection présidentielle pour les retraites ?",
+              "date": "2026-09-30"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "avancer",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://melenchon2027.fr/programme/livre/mettre-en-securite-sociale/chapitre1",
+              "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+              "title": "Chapitre 1 : À chacun selon ses besoins",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841",
+              "outlet": "LCP",
+              "title": "Présidentielle 2027: ce qui change dans le nouveau programme de Jean-Luc Mélenchon",
+              "date": "2026-11-06"
+            }
+          ]
+        },
+        "marine-le-pen": {
+          "option": "avancer",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies",
+              "outlet": "France 24",
+              "title": "Réforme des retraites de Marine Le Pen : départ à 60 ou 62 ans, capitalisation et conditions durcies",
+              "date": "2026-11-17"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : que contient la réforme des retraites présentée par Marine Le Pen ?",
+              "date": "2026-11-17"
+            }
+          ]
+        },
+        "marine-tondelier": {
+          "option": "avancer",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html",
+              "outlet": "franceinfo",
+              "title": "Changement de système, passage à 60 ou à 65 ans, capitalisation... Que proposent les principaux candidats à l'élection présidentielle pour les retraites ?",
+              "date": "2026-09-30"
+            },
+            {
+              "url": "https://www.europe1.fr/politique/le-pen-retailleau-attal-que-proposent-les-principaux-candidats-a-la-presidentielle-pour-les-retraites-1114199",
+              "outlet": "Europe 1",
+              "title": "Le Pen, Retailleau, Attal... Que proposent les principaux candidats à la présidentielle pour les retraites ?",
+              "date": "2026-09-30"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "capitalisation",
+      "theme": "retraites",
+      "short": "Capitalisation",
+      "type": "scale",
+      "text": "Faut-il une part de retraite par capitalisation ?",
+      "options": [
+        {
+          "id": "repartition",
+          "label": "Non, seulement la retraite par répartition"
+        },
+        {
+          "id": "facultative",
+          "label": "Oui, une part de capitalisation facultative ou encouragée"
+        },
+        {
+          "id": "obligatoire",
+          "label": "Oui, une part de capitalisation obligatoire"
+        }
+      ],
+      "positions": {
+        "edouard-philippe": {
+          "option": "obligatoire",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html",
+              "outlet": "franceinfo",
+              "title": "Changement de système, passage à 60 ou à 65 ans, capitalisation... Que proposent les principaux candidats à l'élection présidentielle pour les retraites ?",
+              "date": "2026-09-30"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/reculer-ou-avancer-lage-legal-avec-ou-sans-capitalisation-ce-que-proposent-les-principaux-candidats-a-lelection-presidentielle-sur-les-retraites",
+              "outlet": "Public Sénat",
+              "title": "Reculer ou avancer l’âge légal, avec ou sans capitalisation : ce que proposent les principaux candidats à l’élection présidentielle sur les retraites",
+              "date": "2026-09-30"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "repartition",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://melenchon2027.fr/programme/livre/mettre-en-securite-sociale/chapitre1",
+              "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+              "title": "Chapitre 1 : À chacun selon ses besoins",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-pauvrete-pouvoir-dachat-logement-le-pen-melenchon-glucksmann-retailleau-attal-confrontent-leurs-visions-de-la-solidarite-aux-restos",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : pauvreté, pouvoir d’achat, logement… Le Pen, Melenchon, Glucksmann, Retailleau, Attal confrontent leurs visions de la solidarité aux Restos du Cœur",
+              "date": "2026-11-16"
+            },
+            {
+              "url": "https://lcp.fr/actualites/logement-associations-jeunesse-ce-qu-il-faut-retenir-du-debat-presidentiel-sur-lci",
+              "outlet": "LCP",
+              "title": "Logement, associations, jeunesse...: ce qu'il faut retenir du débat présidentiel sur LCI",
+              "date": "2026-11-17"
+            }
+          ]
+        },
+        "marine-le-pen": {
+          "option": "obligatoire",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://lcp.fr/actualites/reforme-des-retraites-c-est-quoi-la-capitalisation-obligatoire-que-marine-le-pen-veut",
+              "outlet": "LCP",
+              "title": "Réforme des retraites: c'est quoi la capitalisation obligatoire que Marine Le Pen veut mettre en place?",
+              "date": "2026-11-17"
+            },
+            {
+              "url": "https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies",
+              "outlet": "France 24",
+              "title": "Réforme des retraites de Marine Le Pen : départ à 60 ou 62 ans, capitalisation et conditions durcies",
+              "date": "2026-11-17"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "salaires",
+      "theme": "travail",
+      "short": "Salaires",
+      "type": "scale",
+      "text": "Comment augmenter les salaires ?",
+      "options": [
+        {
+          "id": "smic-2000",
+          "label": "Porter le Smic à 2 000 € net ou plus"
+        },
+        {
+          "id": "smic-1700",
+          "label": "Porter le Smic à environ 1 700 € net"
+        },
+        {
+          "id": "baisse-cotisations",
+          "label": "Baisser les cotisations pour augmenter le salaire net"
+        },
+        {
+          "id": "negociation",
+          "label": "Laisser les salaires aux négociations entre employeurs et salariés"
+        }
+      ],
+      "positions": {
+        "gabriel-attal": {
+          "option": "baisse-cotisations",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle : que proposent les candidats pour augmenter les salaires ?",
+              "date": "2026-10-30"
+            },
+            {
+              "url": "https://www.france24.com/fr/info-en-continu/20261116-imp%C3%B4ts-logement-smic-ce-qu-il-faut-retenir-du-d%C3%A9bat-entre-candidats-%C3%A0-la-pr%C3%A9sidentielle",
+              "outlet": "France 24",
+              "title": "Impôts, logement, Smic... les candidats à la présidentielle débattent de leurs propositions",
+              "date": "2026-11-16"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "smic-1700",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2",
+              "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+              "title": "Chapitre 2 : Partager les richesses",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841",
+              "outlet": "LCP",
+              "title": "Présidentielle 2027: ce qui change dans le nouveau programme de Jean-Luc Mélenchon",
+              "date": "2026-11-06"
+            }
+          ]
+        },
+        "nathalie-arthaud": {
+          "option": "smic-2000",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.nathalie-arthaud.info/medias/document/fichiers/2026/11/Depliant-NA-3nov.pdf",
+              "outlet": "Nathalie Arthaud (dépliant de campagne)",
+              "title": "Le camp des travailleurs",
+              "date": "2026-11-03"
+            },
+            {
+              "url": "https://www.france24.com/fr/info-en-continu/20260926-plus-l%C3%A9on-trotski-que-l%C3%A9on-xiv-premier-meeting-de-campagne-pour-arthaud-et-lo",
+              "outlet": "France 24 (AFP)",
+              "title": "\"Plus Léon Trotski que Léon XIV\": premier meeting de campagne pour Arthaud et LO",
+              "date": "2026-09-26"
+            },
+            {
+              "url": "https://www.franceinfo.fr/societe/manifestations/face-aux-attaques-du-grand-patronat-et-du-gouvernement-notre-seul-moyen-de-defense-c-est-la-mobilisation-et-la-greve-affirme-nathalie-arthaud_8268950.html",
+              "outlet": "franceinfo",
+              "title": "Face aux attaques \"du grand patronat et du gouvernement, notre seul moyen de défense, c'est la mobilisation et la grève\", affirme Nathalie Arthaud",
+              "date": "2026-11-05"
+            }
+          ]
+        },
+        "raphael-glucksmann": {
+          "option": "smic-1700",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/replay-radio/le-brief-politique/info-franceinfo-raphael-glucksmann-va-diffuser-ce-week-end-un-tract-presentant-dix-propositions-pour-sortir-de-la-crise_8261228.html",
+              "outlet": "franceinfo",
+              "title": "INFO FRANCEINFO. Raphaël Glucksmann va diffuser ce week-end un tract présentant dix propositions pour \"sortir de la crise\"",
+              "date": "2026-11-14"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle : que proposent les candidats pour augmenter les salaires ?",
+              "date": "2026-10-30"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "patrimoine",
+      "theme": "fiscalite",
+      "short": "Patrimoine",
+      "type": "scale",
+      "text": "Faut-il taxer davantage les grands patrimoines ?",
+      "options": [
+        {
+          "id": "isf",
+          "label": "Rétablir un impôt sur la fortune (ISF)"
+        },
+        {
+          "id": "contribution-ciblee",
+          "label": "Une contribution ciblée sur les très grandes fortunes ou les gros héritages"
+        },
+        {
+          "id": "statu-quo",
+          "label": "Ne rien changer"
+        },
+        {
+          "id": "baisse-capital",
+          "label": "Baisser la fiscalité du capital"
+        }
+      ],
+      "positions": {
+        "fabien-roussel": {
+          "option": "isf",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Fabien Roussel propose la mise en place de 60 000 \"policiers, gendarmes et douaniers\" de proximité",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle : que proposent les candidats pour augmenter les salaires ?",
+              "date": "2026-10-30"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "isf",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2",
+              "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+              "title": "Chapitre 2 : Partager les richesses",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841",
+              "outlet": "LCP",
+              "title": "Présidentielle 2027: ce qui change dans le nouveau programme de Jean-Luc Mélenchon",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-avec-la-nouvelle-france-jean-luc-melenchon-fait-de-lecologie-la-cle-de-voute-de-son-programme",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : avec la « Nouvelle France », Jean-Luc Mélenchon fait de l’écologie la clé de voûte de son programme",
+              "date": "2026-11-06"
+            }
+          ]
+        },
+        "marine-tondelier": {
+          "option": "contribution-ciblee",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Marine Tondelier promet l'ouverture de 2 000 centres de santé d'ici 2030 en France",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://lcp.fr/actualites/heritages-et-droits-de-succession-que-proposent-les-candidats-a-l-election",
+              "outlet": "LCP",
+              "title": "Héritages et droits de succession: que proposent les candidats à l'élection présidentielle?",
+              "date": "2026-08-27"
+            }
+          ]
+        },
+        "raphael-glucksmann": {
+          "option": "contribution-ciblee",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.france24.com/fr/france/20261109-pr%C3%A9sidentielle-glucksmann-promet-200-milliards-euros-sortie-%C3%A9nergies-fossiles",
+              "outlet": "France 24",
+              "title": "Présidentielle : Glucksmann promet 200 milliards d'euros pour la sortie des énergies fossiles",
+              "date": "2026-11-09"
+            },
+            {
+              "url": "https://lcp.fr/actualites/heritages-et-droits-de-succession-que-proposent-les-candidats-a-l-election",
+              "outlet": "LCP",
+              "title": "Héritages et droits de succession: que proposent les candidats à l'élection présidentielle?",
+              "date": "2026-08-27"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "depense-publique",
+      "theme": "economie",
+      "short": "Dépense publique",
+      "type": "scale",
+      "text": "Que faire de la dépense publique ?",
+      "options": [
+        {
+          "id": "augmenter",
+          "label": "L'augmenter pour les services publics et les embauches de fonctionnaires"
+        },
+        {
+          "id": "stabiliser",
+          "label": "La stabiliser"
+        },
+        {
+          "id": "reduire-moderement",
+          "label": "La réduire modérément (moins de 100 Md€ d'économies sur le quinquennat et moins de 200 000 postes publics en moins)"
+        },
+        {
+          "id": "reduire-fortement",
+          "label": "La réduire fortement (100 Md€ d'économies ou plus sur le quinquennat, ou 200 000 postes publics en moins ou plus)"
+        }
+      ],
+      "positions": {
+        "bruno-retailleau": {
+          "option": "reduire-fortement",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-2027-bruno-retailleau-sengage-sur-un-plan-deconomies-de-pres-de-200-milliards-deuros-sil-est-elu",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : Bruno Retailleau s'engage sur un plan d'économies de près de 200 milliards d'euros, s'il est élu",
+              "date": "2026-10-12"
+            },
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-bruno-retailleau-veut-economiser-300-000-postes-dans-la-fonction-publique-grace-a-l-intelligence-artificielle_8279522.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Bruno Retailleau veut \"économiser 300 000 postes\" dans la fonction publique grâce à l'intelligence artificielle",
+              "date": "2026-11-12"
+            }
+          ]
+        },
+        "david-lisnard": {
+          "option": "reduire-fortement",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.europe1.fr/politique/presidentielle-2027-david-lisnard-promet-un-gouvernement-commando-et-200-milliards-deconomies-1206317",
+              "outlet": "Europe 1",
+              "title": "Présidentielle 2027 : David Lisnard promet un «gouvernement commando» et 200 milliards d'économies",
+              "date": "2026-11-03"
+            },
+            {
+              "url": "https://www.france24.com/fr/info-en-continu/20261027-pr%C3%A9sidentielle-entre-retailleau-et-lisnard-il-y-a-match-%C3%A0-droite",
+              "outlet": "France 24 (AFP)",
+              "title": "Présidentielle : entre Retailleau et Lisnard, \"il y a match\" à droite",
+              "date": "2026-10-27"
+            }
+          ]
+        },
+        "edouard-philippe": {
+          "option": "reduire-fortement",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://fr.euronews.com/2026/10/09/presidentielle-2027-edouard-philippe-mise-sur-le-travail-et-la-reduction-des-depenses-publ",
+              "outlet": "Euronews",
+              "title": "Présidentielle 2027 : Édouard Philippe mise sur le travail et la réduction des dépenses publiques",
+              "date": "2026-10-09"
+            },
+            {
+              "url": "https://www.franceinfo.fr/politique/edouard-philippe/immigration-retraites-allocations-familiales-parcoursup-ce-qu-il-faut-retenir-de-l-interview-d-edouard-philippe-dans-l-emission-l-heure-de-verite_8228416.html",
+              "outlet": "franceinfo",
+              "title": "Immigration, allocations familiales, Parcoursup… Ce qu'il faut retenir de l'interview d'Edouard Philippe dans l'émission \"L'Heure de vérité\" sur France 2",
+              "date": "2026-10-08"
+            }
+          ]
+        },
+        "eric-zemmour": {
+          "option": "reduire-fortement",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Eric Zemmour souhaite supprimer 800 000 postes dans la fonction publique",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-sante-justice-education-cultureque-retenir-du-grand-oral-des-candidats-sur-les-services-publics",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : santé, justice, éducation, culture…Que retenir du grand oral des candidats sur les services publics",
+              "date": "2026-11-12"
+            }
+          ]
+        },
+        "fabien-roussel": {
+          "option": "augmenter",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Fabien Roussel propose la mise en place de 60 000 \"policiers, gendarmes et douaniers\" de proximité",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-sante-justice-education-cultureque-retenir-du-grand-oral-des-candidats-sur-les-services-publics",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : santé, justice, éducation, culture…Que retenir du grand oral des candidats sur les services publics",
+              "date": "2026-11-12"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "augmenter",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://lcp.fr/actualites/contre-budget-lfi-propose-1064-milliards-d-euros-de-recettes-supplementaires-et-817",
+              "outlet": "LCP",
+              "title": "Contre-budget : LFI propose 106,4 milliards d'euros de recettes supplémentaires et 81,7 milliards de dépenses nouvelles",
+              "date": "2026-10-14"
+            },
+            {
+              "url": "https://www.euronews.com/2026/11/07/melenchon-presents-party-manifesto-as-social-unrest-continues-across-france",
+              "outlet": "Euronews",
+              "title": "‘We need to change everything’: Mélenchon uses Le Bourget rally to press home his programme",
+              "date": "2026-11-07"
+            }
+          ]
+        },
+        "marine-le-pen": {
+          "option": "reduire-fortement",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.france24.com/fr/france/20261006-pr%C3%A9sidentielle-2027-marine-le-pen-promet-140-milliards-d-euros-nets-d-%C3%A9conomies-d-ici-5-ans",
+              "outlet": "France 24",
+              "title": "Présidentielle 2027 : Marine Le Pen promet \"140 milliards d'euros nets d'économies\" d'ici 5 ans",
+              "date": "2026-10-06"
+            },
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+              "outlet": "franceinfo",
+              "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+              "date": "2026-10-08"
+            }
+          ]
+        },
+        "marine-tondelier": {
+          "option": "augmenter",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Marine Tondelier promet l'ouverture de 2 000 centres de santé d'ici 2030 en France",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-sante-justice-education-cultureque-retenir-du-grand-oral-des-candidats-sur-les-services-publics",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : santé, justice, éducation, culture…Que retenir du grand oral des candidats sur les services publics",
+              "date": "2026-11-12"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "immigration",
+      "theme": "immigration",
+      "short": "Immigration",
+      "type": "scale",
+      "text": "Quelle politique d'immigration ?",
+      "options": [
+        {
+          "id": "assouplir",
+          "label": "Assouplir l'accueil des étrangers"
+        },
+        {
+          "id": "maintenir",
+          "label": "Maintenir à peu près le niveau actuel"
+        },
+        {
+          "id": "reduire",
+          "label": "La réduire nettement, avec des plafonds"
+        },
+        {
+          "id": "reduire-drastiquement",
+          "label": "La réduire drastiquement (fin du droit du sol, référendum, expulsions massives)"
+        }
+      ],
+      "positions": {
+        "edouard-philippe": {
+          "option": "reduire",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.france24.com/fr/info-en-continu/20261008-a-l-heure-de-v%C3%A9rit%C3%A9-philippe-%C3%A9bauche-une-france-%C3%A0-nouveau-command%C3%A9e-et-gouvern%C3%A9e",
+              "outlet": "France 24 (AFP)",
+              "title": "A \"L'Heure de vérité\", Philippe ébauche une France à nouveau \"commandée et gouvernée\"",
+              "date": "2026-10-08"
+            },
+            {
+              "url": "https://lcp.fr/actualites/edouard-philippe-veut-diviser-par-deux-l-immigration-legale-et-propose-un-moratoire-sur",
+              "outlet": "LCP",
+              "title": "Édouard Philippe veut 'diviser par deux' l'immigration légale et propose un moratoire sur le regroupement familial",
+              "date": "2026-10-09"
+            }
+          ]
+        },
+        "eric-zemmour": {
+          "option": "reduire-drastiquement",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.france24.com/fr/france/20261110-%C3%A9ric-zemmour-confirme-candidature-pr%C3%A9sidentielle-enrayer-d%C3%A9clin",
+              "outlet": "France 24",
+              "title": "Éric Zemmour confirme sa candidature à la présidentielle pour \"enrayer le déclin\"",
+              "date": "2026-11-10"
+            },
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/eric-zemmour-leader-du-parti-d-extreme-droite-reconquete-officialise-sa-candidature-a-la-presidentielle_8276858.html",
+              "outlet": "franceinfo",
+              "title": "Eric Zemmour, leader du parti d'extrême droite Reconquête, officialise sa candidature à l'élection présidentielle de 2027",
+              "date": "2026-11-10"
+            }
+          ]
+        },
+        "marine-le-pen": {
+          "option": "reduire-drastiquement",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/politique/front-national/presidentielle-2027-richard-ferrand-balaie-la-promesse-de-marine-le-pen-d-une-revision-de-la-constitution-par-referendum_8235298.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Richard Ferrand balaie la promesse de Marine Le Pen d'une révision de la Constitution par référendum",
+              "date": "2026-10-13"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/immigration-comment-une-proposition-de-loi-des-senateurs-ps-tente-de-dejouer-les-plans-de-marine-le-pen",
+              "outlet": "Public Sénat",
+              "title": "Immigration : comment une proposition de loi des sénateurs PS tente de déjouer les plans de Marine Le Pen",
+              "date": "2025-05-16"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "europe",
+      "theme": "europe",
+      "short": "Europe",
+      "type": "scale",
+      "text": "Quelle relation avec l'Union européenne ?",
+      "options": [
+        {
+          "id": "integration",
+          "label": "Plus d'intégration européenne"
+        },
+        {
+          "id": "reformer",
+          "label": "Rester et la réformer de l'intérieur"
+        },
+        {
+          "id": "renegocier",
+          "label": "Renégocier les traités ou ne plus les appliquer"
+        },
+        {
+          "id": "sortir",
+          "label": "Sortir de l'Union européenne"
+        }
+      ],
+      "positions": {
+        "gabriel-attal": {
+          "option": "integration",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/monde/europe/gabriel-attal-juge-que-l-europe-des-27-a-atteint-ses-limites-et-plaide-pour-des-etats-unis-d-europe_8197754.html",
+              "outlet": "franceinfo",
+              "title": "Gabriel Attal juge que l'Europe des 27 a \"atteint ses limites\" et plaide pour des \"Etats-Unis d'Europe\"",
+              "date": "2026-09-17"
+            },
+            {
+              "url": "https://www.france24.com/fr/info-en-continu/20260917-gabriel-attal-plaide-pour-des-etats-unis-d-europe-le-projet-d-une-g%C3%A9n%C3%A9ration",
+              "outlet": "France 24 (AFP)",
+              "title": "Gabriel Attal plaide pour des \"Etats-Unis d'Europe\", le \"projet d'une génération\"",
+              "date": "2026-09-17"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "renegocier",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://melenchon2027.fr/programme/livre/un-monde-ordonne/chapitre1",
+              "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+              "title": "Chapitre 1 : Se libérer du libéralisme en Europe",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841",
+              "outlet": "LCP",
+              "title": "Présidentielle 2027: ce qui change dans le nouveau programme de Jean-Luc Mélenchon",
+              "date": "2026-11-06"
+            }
+          ]
+        },
+        "nicolas-dupont-aignan": {
+          "option": "sortir",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/je-serai-le-seul-candidat-qui-propose-de-sortir-de-l-union-europeenne-dit-nicolas-dupont-aignan-qui-se-lance-dans-sa-quatrieme-campagne-presidentielle_8201024.html",
+              "outlet": "franceinfo",
+              "title": "\"Je serai le seul candidat qui propose de sortir de l'Union européenne\", dit Nicolas Dupont-Aignan, qui se lance dans sa quatrième campagne présidentielle",
+              "date": "2026-09-19"
+            },
+            {
+              "url": "https://www.europe1.fr/politique/presidentielle-2027-nicolas-dupont-aignan-promet-de-decoloniser-la-france-en-sortant-de-lue-1089125",
+              "outlet": "Europe 1",
+              "title": "Présidentielle 2027 : Nicolas Dupont-Aignan promet de «décoloniser la France» en sortant de l'UE",
+              "date": "2026-09-19"
+            }
+          ]
+        },
+        "raphael-glucksmann": {
+          "option": "integration",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-pas-candidat-pour-le-moment-raphael-glucksmann-trace-son-chemin-et-defend-sa-vision-pour-le-pays",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle : « Pas candidat » pour le moment, Raphaël Glucksmann « trace » son chemin et défend sa « vision pour le pays »",
+              "date": "2025-06-23"
+            },
+            {
+              "url": "https://lcp.fr/actualites/presidentielle-raphael-glucksmann-devoile-les-premieres-lignes-de-son-possible-programme",
+              "outlet": "LCP",
+              "title": "Présidentielle: Raphaël Glucksmann dévoile les premières lignes de son possible programme",
+              "date": "2026-05-26"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "institutions",
+      "theme": "institutions",
+      "short": "Institutions",
+      "type": "choice",
+      "text": "Quel changement des institutions privilégier ?",
+      "options": [
+        {
+          "id": "constituante",
+          "label": "Une 6e République, rédigée par une assemblée constituante"
+        },
+        {
+          "id": "ric",
+          "label": "Le référendum d'initiative citoyenne"
+        },
+        {
+          "id": "reforme-referendum",
+          "label": "Une réforme de la Constitution par référendum, sans changer de République"
+        },
+        {
+          "id": "statu-quo",
+          "label": "Pas de grand changement institutionnel"
+        }
+      ],
+      "positions": {
+        "bruno-retailleau": {
+          "option": "reforme-referendum",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-bruno-retailleau-veut-renverser-la-table-avec-une-profonde-reforme-constitutionnelle",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : Bruno Retailleau veut « renverser la table » avec une profonde réforme constitutionnelle",
+              "date": "2026-09-03"
+            },
+            {
+              "url": "https://www.europe1.fr/politique/primaire-de-la-droite-revision-constitutionnelle-bruno-retailleau-se-livre-a-quelques-mois-de-lelection-presidentielle-1052840",
+              "outlet": "Europe 1",
+              "title": "Primaire de la droite, révision constitutionnelle... Bruno Retailleau se livre à quelques mois de l'élection présidentielle",
+              "date": "2026-09-03"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "constituante",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre1",
+              "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+              "title": "Chapitre 1 : Le pouvoir au peuple",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-avec-la-nouvelle-france-jean-luc-melenchon-fait-de-lecologie-la-cle-de-voute-de-son-programme",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : avec la « Nouvelle France », Jean-Luc Mélenchon fait de l’écologie la clé de voûte de son programme",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841",
+              "outlet": "LCP",
+              "title": "Présidentielle 2027: ce qui change dans le nouveau programme de Jean-Luc Mélenchon",
+              "date": "2026-11-06"
+            }
+          ]
+        },
+        "marine-le-pen": {
+          "option": "reforme-referendum",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/politique/front-national/presidentielle-2027-richard-ferrand-balaie-la-promesse-de-marine-le-pen-d-une-revision-de-la-constitution-par-referendum_8235298.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Richard Ferrand balaie la promesse de Marine Le Pen d'une révision de la Constitution par référendum",
+              "date": "2026-10-13"
+            },
+            {
+              "url": "https://www.france24.com/fr/info-en-continu/20261006-140-milliards-d-%C3%A9conomies-ce-qu-il-faut-retenir-de-l-intervention-de-marine-le-pen",
+              "outlet": "France 24",
+              "title": "\"140 milliards\" d'économies : ce qu'il faut retenir de l'intervention de Marine Le Pen",
+              "date": "2026-10-06"
+            }
+          ]
+        },
+        "nicolas-dupont-aignan": {
+          "option": "ric",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.europe1.fr/politique/presidentielle-2027-nicolas-dupont-aignan-promet-de-decoloniser-la-france-en-sortant-de-lue-1089125",
+              "outlet": "Europe 1",
+              "title": "Présidentielle 2027 : Nicolas Dupont-Aignan promet de «décoloniser la France» en sortant de l'UE",
+              "date": "2026-09-19"
+            },
+            {
+              "url": "https://www.franceinfo.fr/replay-magazine/franceinfo/l-invite-politique/l-invite-politique-du-mardi-02-juin-2026_8001014.html",
+              "outlet": "franceinfo",
+              "title": "Nicolas Dupont-Aignan candidat en 2027 : \"Je dis à Éric Zemmour, Bruno Retailleau, 'vous ne pourrez pas faire ce que vous promettez si vous ne sortez pas de l'UE'\"",
+              "date": "2026-06-02"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "temps-de-travail",
+      "theme": "travail",
+      "short": "35 heures",
+      "type": "scale",
+      "text": "Faut-il revenir sur les 35 heures ?",
+      "options": [
+        {
+          "id": "reduire",
+          "label": "Réduire le temps de travail"
+        },
+        {
+          "id": "garder",
+          "label": "Garder les 35 heures"
+        },
+        {
+          "id": "assouplir",
+          "label": "Les assouplir, notamment par les heures supplémentaires"
+        },
+        {
+          "id": "abroger",
+          "label": "Abroger les 35 heures"
+        }
+      ],
+      "positions": {
+        "edouard-philippe": {
+          "option": "assouplir",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle : que proposent les candidats pour augmenter les salaires ?",
+              "date": "2026-10-30"
+            },
+            {
+              "url": "https://fr.euronews.com/2026/10/09/presidentielle-2027-edouard-philippe-mise-sur-le-travail-et-la-reduction-des-depenses-publ",
+              "outlet": "Euronews",
+              "title": "Présidentielle 2027 : Édouard Philippe mise sur le travail et la réduction des dépenses publiques",
+              "date": "2026-10-09"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nucleaire",
+      "theme": "energie",
+      "short": "Nucléaire",
+      "type": "scale",
+      "text": "Que faire du nucléaire ?",
+      "options": [
+        {
+          "id": "sortir",
+          "label": "Sortir du nucléaire"
+        },
+        {
+          "id": "reduire",
+          "label": "Réduire sa part au profit des renouvelables"
+        },
+        {
+          "id": "maintenir",
+          "label": "Maintenir le parc existant"
+        },
+        {
+          "id": "relancer",
+          "label": "Relancer le nucléaire avec de nouveaux réacteurs"
+        }
+      ],
+      "positions": {
+        "bruno-retailleau": {
+          "option": "relancer",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/fin-des-subventions-aux-eoliennes-et-au-photovoltaique-la-tribune-de-bruno-retailleau-met-le-socle-commun-en-surchauffe",
+              "outlet": "Public Sénat",
+              "title": "« Fin des subventions » aux éoliennes et au photovoltaïque : la tribune de Bruno Retailleau met le socle commun en surchauffe",
+              "date": "2025-07-03"
+            },
+            {
+              "url": "https://www.europe1.fr/politique/economiquement-vertueuse-ecologiquement-responsable-bruno-retailleau-clarifie-la-position-des-republicains-sur-les-energies-renouvelables-762050",
+              "outlet": "Europe 1",
+              "title": "«Économiquement vertueuse, écologiquement responsable» : Bruno Retailleau clarifie la position des Républicains sur les énergies renouvelables",
+              "date": "2025-07-03"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "sortir",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841",
+              "outlet": "LCP",
+              "title": "Présidentielle 2027: ce qui change dans le nouveau programme de Jean-Luc Mélenchon",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://www.france24.com/fr/france/20261106-france-insoumise-jean-luc-melenchon-presente-programme-presidentielle-2027-fidele-volonte-rupture-lfi",
+              "outlet": "France 24",
+              "title": "La France insoumise présente un programme pour la présidentielle 2027 fidèle à sa volonté de rupture",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://www.europe1.fr/politique/presidentielle-2027-jean-luc-melenchon-ne-veut-pas-mettre-de-leau-dans-son-vin-et-assume-un-programme-radical-1219349",
+              "outlet": "Europe 1",
+              "title": "Présidentielle 2027 : Jean-Luc Mélenchon ne veut pas «mettre de l’eau dans son vin» et assume un programme radical",
+              "date": "2026-11-09"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ecologie",
+      "theme": "ecologie",
+      "short": "Écologie",
+      "type": "scale",
+      "text": "Quelle place pour l'écologie ?",
+      "options": [
+        {
+          "id": "constitution",
+          "label": "En faire une priorité inscrite dans la Constitution"
+        },
+        {
+          "id": "accelerer",
+          "label": "Accélérer la transition avec des aides publiques"
+        },
+        {
+          "id": "rythme-actuel",
+          "label": "Garder le rythme actuel"
+        },
+        {
+          "id": "alleger-normes",
+          "label": "Alléger les normes environnementales"
+        }
+      ],
+      "positions": {
+        "david-lisnard": {
+          "option": "alleger-normes",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.france24.com/fr/info-en-continu/20260527-pr%C3%A9sidentielle-lisnard-veut-lib%C3%A9rer-l-innovation-en-supprimant-le-principe-de-pr%C3%A9caution",
+              "outlet": "France 24 (AFP)",
+              "title": "Présidentielle: Lisnard veut \"libérer l'innovation\" en supprimant le principe de précaution",
+              "date": "2026-05-27"
+            },
+            {
+              "url": "https://www.europe1.fr/politique/presidentielle-2027-david-lisnard-maire-de-cannes-se-declare-candidat-882219",
+              "outlet": "Europe 1",
+              "title": "Présidentielle 2027 : David Lisnard, maire de Cannes, se déclare candidat",
+              "date": "2026-01-21"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "constitution",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://melenchon2027.fr/programme/livre/pour-une-bifurcation-ecologique-et-sociale/chapitre1",
+              "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+              "title": "Chapitre 1 : Planification écologique",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://www.france24.com/fr/france/20261106-france-insoumise-jean-luc-melenchon-presente-programme-presidentielle-2027-fidele-volonte-rupture-lfi",
+              "outlet": "France 24",
+              "title": "La France insoumise présente un programme pour la présidentielle 2027 fidèle à sa volonté de rupture",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-avec-la-nouvelle-france-jean-luc-melenchon-fait-de-lecologie-la-cle-de-voute-de-son-programme",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : avec la « Nouvelle France », Jean-Luc Mélenchon fait de l’écologie la clé de voûte de son programme",
+              "date": "2026-11-06"
+            }
+          ]
+        },
+        "raphael-glucksmann": {
+          "option": "constitution",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.france24.com/fr/france/20261109-pr%C3%A9sidentielle-glucksmann-promet-200-milliards-euros-sortie-%C3%A9nergies-fossiles",
+              "outlet": "France 24",
+              "title": "Présidentielle : Glucksmann promet 200 milliards d'euros pour la sortie des énergies fossiles",
+              "date": "2026-11-09"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-raphael-glucksmann-met-200-milliards-sur-la-table-et-invite-le-senat-a-voter-en-faveur-dune-future-republique-ecologique",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : Raphaël Glucksmann met 200 milliards sur la table et invite le Sénat à voter en faveur d’une future « République écologique »",
+              "date": "2026-11-09"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "otan",
+      "theme": "defense",
+      "short": "OTAN",
+      "type": "scale",
+      "text": "Que faire de l'OTAN ?",
+      "options": [
+        {
+          "id": "sortir",
+          "label": "Sortir de l'OTAN"
+        },
+        {
+          "id": "distance",
+          "label": "Rester en prenant ses distances"
+        },
+        {
+          "id": "renforcer",
+          "label": "Rester et renforcer l'Europe de la défense"
+        }
+      ],
+      "positions": {
+        "jean-luc-melenchon": {
+          "option": "sortir",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://melenchon2027.fr/programme/livre/un-monde-ordonne/chapitre2",
+              "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+              "title": "Chapitre 2 : Une France indépendante au service de la paix",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://www.france24.com/fr/france/20261106-france-insoumise-jean-luc-melenchon-presente-programme-presidentielle-2027-fidele-volonte-rupture-lfi",
+              "outlet": "France 24",
+              "title": "La France insoumise présente un programme pour la présidentielle 2027 fidèle à sa volonté de rupture",
+              "date": "2026-11-06"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "justice-penale",
+      "theme": "securite",
+      "short": "Justice pénale",
+      "type": "choice",
+      "text": "Quelle priorité pour la justice pénale ?",
+      "options": [
+        {
+          "id": "prevention",
+          "label": "Prévention et police de proximité"
+        },
+        {
+          "id": "moyens-justice",
+          "label": "Plus de magistrats et de moyens pour la justice"
+        },
+        {
+          "id": "fermete",
+          "label": "Peines plus fermes et plus de places de prison"
+        }
+      ],
+      "positions": {
+        "bruno-retailleau": {
+          "option": "fermete",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-bruno-retailleau-veut-economiser-300-000-postes-dans-la-fonction-publique-grace-a-l-intelligence-artificielle_8279522.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Bruno Retailleau veut \"économiser 300 000 postes\" dans la fonction publique grâce à l'intelligence artificielle",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.europe1.fr/politique/objectif-elysee-2027-sil-est-elu-bruno-retailleau-souhaite-instaurer-des-peines-minimales-1064336",
+              "outlet": "Europe 1",
+              "title": "Objectif Élysée 2027 : s'il est élu, Bruno Retailleau souhaite instaurer des «peines minimales»",
+              "date": "2026-09-08"
+            }
+          ]
+        },
+        "edouard-philippe": {
+          "option": "fermete",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle-2027-la-possibilite-de-se-syndiquer-doit-etre-interdite-dans-la-magistrature-estime-edouard-philippe_8279816.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : \"La possibilité de se syndiquer doit être interdite\" dans la magistrature, estime Édouard Philippe",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-sante-justice-education-cultureque-retenir-du-grand-oral-des-candidats-sur-les-services-publics",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : santé, justice, éducation, culture…Que retenir du grand oral des candidats sur les services publics",
+              "date": "2026-11-12"
+            }
+          ]
+        },
+        "eric-zemmour": {
+          "option": "fermete",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Eric Zemmour souhaite supprimer 800 000 postes dans la fonction publique",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.europe1.fr/politique/en-direct-immigration-pouvoir-dachat-narcotrafic-ce-quil-faut-retenir-de-linterview-deric-zemmour-dans-la-france-en-face-936419",
+              "outlet": "Europe 1",
+              "title": "En direct - Immigration, pouvoir d'achat, narcotrafic… Ce qu'il faut retenir de l'interview d'Éric Zemmour dans La France en face",
+              "date": "2026-05-19"
+            }
+          ]
+        },
+        "fabien-roussel": {
+          "option": "prevention",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Fabien Roussel propose la mise en place de 60 000 \"policiers, gendarmes et douaniers\" de proximité",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-sante-justice-education-cultureque-retenir-du-grand-oral-des-candidats-sur-les-services-publics",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : santé, justice, éducation, culture…Que retenir du grand oral des candidats sur les services publics",
+              "date": "2026-11-12"
+            }
+          ]
+        },
+        "marine-tondelier": {
+          "option": "moyens-justice",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+              "outlet": "franceinfo",
+              "title": "Présidentielle 2027 : Marine Tondelier promet l'ouverture de 2 000 centres de santé d'ici 2030 en France",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-sante-justice-education-cultureque-retenir-du-grand-oral-des-candidats-sur-les-services-publics",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : santé, justice, éducation, culture…Que retenir du grand oral des candidats sur les services publics",
+              "date": "2026-11-12"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

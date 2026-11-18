@@ -1,0 +1,248 @@
+{
+  "slug": "edouard-philippe",
+  "firstName": "Édouard",
+  "lastName": "Philippe",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/politique/edouard-philippe/que-change-pour-edouard-philippe-son-placement-sous-statut-de-temoin-assiste-dans-l-enquete-pour-detournement-de-fonds-publics_8260295.html",
+      "outlet": "franceinfo",
+      "title": "Que change pour Edouard Philippe son placement sous statut de témoin assisté dans l'enquête pour détournement de fonds publics ?",
+      "date": "2026-10-30"
+    },
+    {
+      "url": "https://www.france24.com/fr/info-en-continu/20261106-%C3%A9douard-philippe-entame-une-tourn%C3%A9e-des-r%C3%A9gions-refusant-toujours-la-primaire",
+      "outlet": "France 24 (AFP)",
+      "title": "Édouard Philippe entame une tournée des régions, refusant toujours la primaire",
+      "date": "2026-11-06"
+    }
+  ],
+  "party": "horizons",
+  "officialDomains": [],
+  "role": "Maire du Havre",
+  "portrait": {
+    "file": "edouard-philippe.jpg",
+    "author": "Wasasaq8",
+    "licence": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edouard_Philippe_3x4_crop.jpg"
+  },
+  "declaration": {
+    "date": "2024-09-03",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/politique/edouard-philippe/l-ancien-premier-ministre-edouard-philippe-annonce-etre-candidat-a-la-prochaine-election-presidentielle_6761212.html",
+        "outlet": "franceinfo",
+        "title": "L'ancien Premier ministre Edouard Philippe annonce être \"candidat à la prochaine élection présidentielle\"",
+        "date": "2024-09-03"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20240903-en-pleine-crise-politique-%C3%A9douard-philippe-annonce-sa-candidature-%C3%A0-l-%C3%A9lys%C3%A9e",
+        "outlet": "France 24",
+        "title": "En pleine crise politique, Édouard Philippe annonce sa candidature à l'Élysée",
+        "date": "2024-09-03"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "logement",
+      "text": "Propose de construire 4 millions de logements supplémentaires en dix ans et de supprimer les frais de notaire pour les acheteurs de moins de 35 ans.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/edouard-philippe/presidentielle-2027-edouard-philippe-veut-batir-quatre-millions-de-logements-supplementaires-en-10-ans_8283821.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Edouard Philippe veut bâtir quatre millions de logements supplémentaires en dix ans",
+          "date": "2026-11-15"
+        }
+      ]
+    },
+    {
+      "theme": "societe",
+      "text": "Propose une allocation familiale unique d'environ 350 euros par mois dès le premier enfant.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/politique-familiale-allocations-creches-que-proposent-les-candidats-a-la-presidentielle",
+          "outlet": "Public Sénat",
+          "title": "Politique familiale, allocations, crèches : que proposent les candidats à la présidentielle ?",
+          "date": "2026-10-09"
+        },
+        {
+          "url": "https://www.franceinfo.fr/politique/edouard-philippe/presidentielle-2027-edouard-philippe-veut-batir-quatre-millions-de-logements-supplementaires-en-10-ans_8283821.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Edouard Philippe veut bâtir quatre millions de logements supplémentaires en dix ans",
+          "date": "2026-11-15"
+        }
+      ]
+    },
+    {
+      "theme": "immigration",
+      "text": "Propose de diviser par deux l'immigration légale, à un niveau nettement inférieur à 200 000 titres de séjour par an.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261008-a-l-heure-de-v%C3%A9rit%C3%A9-philippe-%C3%A9bauche-une-france-%C3%A0-nouveau-command%C3%A9e-et-gouvern%C3%A9e",
+          "outlet": "France 24 (AFP)",
+          "title": "A \"L'Heure de vérité\", Philippe ébauche une France à nouveau \"commandée et gouvernée\"",
+          "date": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Veut ramener le déficit public à 2 % du PIB à la fin du mandat et ne pas remplacer un fonctionnaire partant sur trois.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261008-a-l-heure-de-v%C3%A9rit%C3%A9-philippe-%C3%A9bauche-une-france-%C3%A0-nouveau-command%C3%A9e-et-gouvern%C3%A9e",
+          "outlet": "France 24 (AFP)",
+          "title": "A \"L'Heure de vérité\", Philippe ébauche une France à nouveau \"commandée et gouvernée\"",
+          "date": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "theme": "travail",
+      "text": "Propose d'exonérer de cotisations sociales les salariés qui acceptent de travailler plus longtemps.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261008-a-l-heure-de-v%C3%A9rit%C3%A9-philippe-%C3%A9bauche-une-france-%C3%A0-nouveau-command%C3%A9e-et-gouvern%C3%A9e",
+          "outlet": "France 24 (AFP)",
+          "title": "A \"L'Heure de vérité\", Philippe ébauche une France à nouveau \"commandée et gouvernée\"",
+          "date": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Prévoit de présenter une vingtaine d'ordonnances après les élections législatives qui suivraient une dissolution.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261008-a-l-heure-de-v%C3%A9rit%C3%A9-philippe-%C3%A9bauche-une-france-%C3%A0-nouveau-command%C3%A9e-et-gouvern%C3%A9e",
+          "outlet": "France 24 (AFP)",
+          "title": "A \"L'Heure de vérité\", Philippe ébauche une France à nouveau \"commandée et gouvernée\"",
+          "date": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "text": "Propose de porter progressivement l'âge légal de départ à 65 ans et la durée de cotisation à 45 ans en moins de dix ans, en conservant les départs anticipés pour carrières longues et problèmes de santé.",
+      "sources": [
+        {
+          "url": "https://www.europe1.fr/politique/retraites-edouard-philippe-propose-de-porter-progressivement-la-duree-de-cotisation-a-45-ans-et-lage-de-depart-a-65-ans-1111253",
+          "outlet": "Europe 1",
+          "title": "Retraites : Édouard Philippe propose de «porter progressivement la durée de cotisation à 45 ans et l'âge de départ à 65 ans»",
+          "date": "2026-09-29"
+        }
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "date": "2026-11-19",
+      "city": "Rillieux-la-Pape",
+      "title": "Réunion publique",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261106-%C3%A9douard-philippe-entame-une-tourn%C3%A9e-des-r%C3%A9gions-refusant-toujours-la-primaire",
+          "outlet": "France 24 (AFP)",
+          "title": "Édouard Philippe entame une tournée des régions, refusant toujours la primaire",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "city": "Toulouse",
+      "title": "Réunion publique",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261106-%C3%A9douard-philippe-entame-une-tourn%C3%A9e-des-r%C3%A9gions-refusant-toujours-la-primaire",
+          "outlet": "France 24 (AFP)",
+          "title": "Édouard Philippe entame une tournée des régions, refusant toujours la primaire",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "city": "Chartres",
+      "title": "Réunion publique",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261106-%C3%A9douard-philippe-entame-une-tourn%C3%A9e-des-r%C3%A9gions-refusant-toujours-la-primaire",
+          "outlet": "France 24 (AFP)",
+          "title": "Édouard Philippe entame une tournée des régions, refusant toujours la primaire",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "city": "La Ciotat",
+      "title": "Réunion publique",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261106-%C3%A9douard-philippe-entame-une-tourn%C3%A9e-des-r%C3%A9gions-refusant-toujours-la-primaire",
+          "outlet": "France 24 (AFP)",
+          "title": "Édouard Philippe entame une tournée des régions, refusant toujours la primaire",
+          "date": "2026-11-06"
+        }
+      ]
+    }
+  ],
+  "risques": [
+    {
+      "id": "enquete-communaute-urbaine-le-havre",
+      "nature": "judiciaire",
+      "active": true,
+      "title": "Information judiciaire sur la communauté urbaine du Havre",
+      "statutJuridique": "Témoin assisté (non mis en examen) depuis le 29 octobre 2026 ; information judiciaire en cours",
+      "resume": "Des juges d'instruction financiers parisiens enquêtent sur des soupçons de détournement de fonds publics, de favoritisme et de harcèlement moral au sein de la communauté urbaine du Havre, à la suite d'une plainte d'une ancienne directrice générale adjointe. Édouard Philippe a été placé sous le statut de témoin assisté le 29 octobre 2026 ; son avocat affirme qu'il n'existe pas d'indice grave et concordant contre lui.",
+      "impact": "Selon franceinfo et France 24, la perspective de poursuites s'éloigne pour lui ; le statut peut évoluer si de nouveaux éléments apparaissent. Les sources ne font état d'aucun effet sur l'éligibilité.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/edouard-philippe/que-change-pour-edouard-philippe-son-placement-sous-statut-de-temoin-assiste-dans-l-enquete-pour-detournement-de-fonds-publics_8260295.html",
+          "outlet": "franceinfo",
+          "title": "Que change pour Edouard Philippe son placement sous statut de témoin assisté dans l'enquête pour détournement de fonds publics ?",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.france24.com/fr/france/20261029-soup%C3%A7ons-de-d%C3%A9tournement-de-fonds-publics-%C3%A9douard-philippe-plac%C3%A9-sous-le-statut-de-t%C3%A9moin-assist%C3%A9",
+          "outlet": "France 24",
+          "title": "Soupçons de détournement de fonds publics : Édouard Philippe placé sous le statut de témoin assisté",
+          "date": "2026-10-29"
+        }
+      ],
+      "updatedAt": "2026-11-16"
+    },
+    {
+      "id": "primaire-droite-centre",
+      "nature": "politique",
+      "active": true,
+      "title": "Projet de primaire et de candidature unique de la droite et du centre",
+      "statutJuridique": "Sans objet : processus politique, aucune procédure judiciaire",
+      "resume": "Bruno Retailleau, Gabriel Attal et David Lisnard soutiennent une primaire de la droite et du centre ; Édouard Philippe refuse d'y participer. Il s'est dit prêt à participer à une réunion proposée par Gérard Larcher, à condition qu'elle porte sur le rassemblement et non sur une primaire.",
+      "impact": "Gérard Larcher veut discuter d'une « méthode de départage » en vue d'une candidature unique au début de 2027. Les sources ne font pas état d'un retrait d'Édouard Philippe.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261115-philippe-d-accord-pour-une-r%C3%A9union-autour-de-larcher-mais-pas-pour-parler-d-une-primaire",
+          "outlet": "France 24 (AFP)",
+          "title": "Philippe d'accord pour une réunion autour de Larcher, mais pas pour parler d'une primaire",
+          "date": "2026-11-15"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/la-febrilite-est-de-leur-cote-pas-du-sien-sous-pression-du-camp-attal-et-retailleau-edouard-philippe-reste-droit-dans-ses-bottes-et-refuse-la-primaire",
+          "outlet": "Public Sénat",
+          "title": "« La fébrilité est de leur côté, pas du sien » : sous pression du camp Attal et Retailleau, Edouard Philippe reste droit dans ses bottes et refuse la primaire",
+          "date": "2026-11-06"
+        }
+      ],
+      "updatedAt": "2026-11-16"
+    }
+  ],
+  "lastChecked": "2026-11-18"
+}

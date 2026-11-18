@@ -1,0 +1,87 @@
+{
+  "slug": "antoine-mikolajczak",
+  "firstName": "Antoine",
+  "lastName": "Mikolajczak",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+      "outlet": "franceinfo",
+      "title": "Qui sont les candidats déclarés à l'élection présidentielle de 2027 ? Découvrez la liste actualisée",
+      "date": "2026-11-09"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "equinoxe",
+  "officialDomains": ["parti-equinoxe.fr"],
+  "role": "Ingénieur, candidat désigné par les adhérents d'Équinoxe",
+  "portrait": null,
+  "declaration": {
+    "date": "2026-09-18",
+    "datePrecision": "before",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-le-dernier-decompte-des-candidats-deja-sur-la-ligne-de-depart",
+        "outlet": "Public Sénat",
+        "title": "Présidentielle 2027 : quel est le dernier décompte des candidats déjà sur la ligne de départ ?",
+        "date": "2026-09-18"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "Qui sont les candidats déclarés à l'élection présidentielle de 2027 ? Découvrez la liste actualisée",
+        "date": "2026-11-09"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "institutions",
+      "text": "Propose de réduire les pouvoirs du président, d'élire les députés à la proportionnelle et de tirer au sort les sénateurs parmi les élus locaux.",
+      "sources": [
+        {
+          "url": "https://parti-equinoxe.fr/le-projet/",
+          "outlet": "Équinoxe",
+          "title": "Le projet",
+          "date": "2026-11-16"
+        }
+      ]
+    },
+    {
+      "theme": "ecologie",
+      "text": "Propose une taxe carbone dont 80 % des recettes seraient redistribuées aux ménages.",
+      "sources": [
+        {
+          "url": "https://parti-equinoxe.fr/le-projet/",
+          "outlet": "Équinoxe",
+          "title": "Le projet",
+          "date": "2026-11-16"
+        }
+      ]
+    },
+    {
+      "theme": "sante",
+      "text": "Propose d'interdire la publicité pour les produits ultra-transformés.",
+      "sources": [
+        {
+          "url": "https://parti-equinoxe.fr/le-projet/",
+          "outlet": "Équinoxe",
+          "title": "Le projet",
+          "date": "2026-11-16"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

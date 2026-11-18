@@ -1,0 +1,68 @@
+{
+  "slug": "florian-philippot",
+  "firstName": "Florian",
+  "lastName": "Philippot",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/",
+      "outlet": "Toute l'Europe",
+      "title": "Présidentielle 2027 : qui sont les principaux candidats déjà déclarés ?",
+      "date": "2026-11-09"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    },
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+      "outlet": "franceinfo",
+      "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+      "date": "2026-10-08"
+    }
+  ],
+  "party": "les-patriotes",
+  "officialDomains": ["les-patriotes.fr"],
+  "qualified2022": null,
+  "parrainages": null,
+  "role": "Président des Patriotes",
+  "portrait": {
+    "file": "florian-philippot.jpg",
+    "author": "Claude Truong-Ngoc",
+    "licence": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Florian_Philippot_par_Claude_Truong-Ngoc_juillet_2014.jpg"
+  },
+  "declaration": {
+    "date": "2026-05-09",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-le-souverainiste-florian-philippot-annonce-sa-candidature-a-l-elysee_7993346.html",
+        "outlet": "franceinfo",
+        "title": "Le souverainiste Florian Philippot annonce sa candidature à l'élection présidentielle de 2027",
+        "date": "2026-05-09"
+      }
+    ]
+  },
+  "programme": [
+    {
+      "theme": "europe",
+      "text": "Veut faire sortir la France de l'Union européenne et de l'Otan.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-le-souverainiste-florian-philippot-annonce-sa-candidature-a-l-elysee_7993346.html",
+          "outlet": "franceinfo",
+          "title": "Le souverainiste Florian Philippot annonce sa candidature à l'élection présidentielle de 2027",
+          "date": "2026-05-09"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-17"
+}

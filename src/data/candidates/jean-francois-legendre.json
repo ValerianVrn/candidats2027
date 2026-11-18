@@ -1,0 +1,75 @@
+{
+  "slug": "jean-francois-legendre",
+  "firstName": "Jean-François",
+  "lastName": "Legendre",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+      "outlet": "franceinfo",
+      "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+      "date": "2026-10-08"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "a-nous-maintenant",
+  "officialDomains": [],
+  "qualified2022": null,
+  "parrainages": null,
+  "role": "Ancien chef d’entreprise, habitant des Alpes-de-Haute-Provence",
+  "portrait": null,
+  "declaration": {
+    "date": "2026-11-09",
+    "datePrecision": "before",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+        "outlet": "franceinfo",
+        "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+        "date": "2026-10-08"
+      },
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+        "date": "2026-11-10"
+      }
+    ]
+  },
+  "programme": [
+    {
+      "theme": "institutions",
+      "text": "Plaide pour davantage de démocratie participative et pour un pouvoir accru des maires grâce à un ministère dédié.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Promet de « briser la dette ».",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-10-08"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

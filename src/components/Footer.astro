@@ -1,0 +1,72 @@
+---
+import { REPORT_ERROR_URL } from '../lib/site';
+import { ADSENSE_CLIENT } from '../lib/ads';
+
+interface Props {
+  ads?: boolean;
+}
+const { ads = false } = Astro.props;
+---
+
+<footer class="foot">
+  <p>
+    Contenu rédigé et mis à jour chaque jour par une IA (Claude), à partir de sources citées.{' '}
+    <a href="/ia">En savoir plus</a>
+  </p>
+  <nav aria-label="Informations">
+    <a href="/candidats">Liste des candidats</a>
+    <a href="/methode">Méthode</a>
+    <a href="/financement">Financement</a>
+    <a href={REPORT_ERROR_URL} rel="noopener" target="_blank">
+      Signaler une erreur
+    </a>
+    <a href="/mentions-legales">Mentions légales</a>
+    <a href="/confidentialite">Confidentialité</a>
+    {ads && ADSENSE_CLIENT && (
+      <button type="button" class="linklike" data-cookies>
+        Gérer les cookies
+      </button>
+    )}
+  </nav>
+</footer>
+
+<script>
+  document.querySelector('[data-cookies]')?.addEventListener('click', () => {
+    const w = window as unknown as {
+      googlefc?: { callbackQueue?: unknown[]; showRevocationMessage?: () => void };
+    };
+    w.googlefc = w.googlefc || {};
+    w.googlefc.callbackQueue = w.googlefc.callbackQueue || [];
+    w.googlefc.callbackQueue.push(() => w.googlefc?.showRevocationMessage?.());
+  });
+</script>
+
+<style>
+  .linklike {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--accent);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: inherit;
+  }
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding: 16px var(--gutter) 24px;
+    border-top: 1px solid var(--line-soft);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .foot p {
+    margin: 0;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+</style>

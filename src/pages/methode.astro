@@ -1,0 +1,179 @@
+---
+import Base from '../layouts/Base.astro';
+import { parties } from '../lib/data';
+import { FAMILLE_LABEL } from '../lib/labels';
+import { PARRAINAGES_THRESHOLD } from '../lib/criteria';
+import { MIN_COVERAGE } from '../lib/quiz';
+import { REPORT_ERROR_URL, REPO_URL } from '../lib/site';
+import { FAMILLES } from '../lib/schemas';
+import allowlist from '../../config/sources-allowlist.json';
+
+const byFamille = FAMILLES.map((f) => ({ f, list: parties.filter((p) => p.famille === f) })).filter(
+  (g) => g.list.length > 0,
+);
+---
+
+<Base title="Méthode" description="Comment les informations du site sont choisies, sourcées et mises à jour.">
+  <article class="page prose">
+    <h1>Méthode</h1>
+    <p class="lead">
+      Ce site présente les candidats à l'élection présidentielle de 2027 de façon factuelle et égale pour
+      tous. Voici les règles appliquées, sans exception.
+    </p>
+
+    <h2 id="statuts">Qui apparaît sur le site</h2>
+    <ul>
+      <li>
+        <strong>Déclaré</strong> : la personne a annoncé publiquement sa candidature, ou a été désignée par
+        son parti et l'a acceptée.
+      </li>
+      <li>
+        <strong>Potentiel</strong> : pas de déclaration, mais au moins deux médias différents ont rapporté au
+        cours des trois derniers mois qu'elle l'envisage ou qu'elle est sollicitée.
+      </li>
+      <li>
+        <strong>Officiel</strong> : figure sur la liste des candidats publiée par le Conseil constitutionnel,
+        après vérification des 500 parrainages (en mars 2027).
+      </li>
+    </ul>
+
+    <h2 id="nuage">Nuage principal et « autres candidatures »</h2>
+    <p>Un candidat figure dans le nuage principal s'il remplit au moins une de ces conditions :</p>
+    <ol>
+      <li>
+        il est officiellement soutenu par un parti qui compte au moins un élu à l'Assemblée nationale, au
+        Sénat ou au Parlement européen ;
+      </li>
+      <li>il avait obtenu les 500 parrainages lors de l'élection présidentielle de 2022 ;</li>
+      <li>
+        il a obtenu au moins {PARRAINAGES_THRESHOLD} parrainages validés, publiés par le Conseil
+        constitutionnel (à partir de début 2027).
+      </li>
+    </ol>
+    <p>
+      Les autres candidats sont présentés dans la rubrique « Autres candidatures », avec le même niveau
+      d'information. La place d'un portrait dans le nuage ne signifie rien : elle ne dépend ni de
+      l'orientation politique ni des sondages.
+    </p>
+
+    <h2 id="familles">Familles politiques</h2>
+    <p>
+      La couleur d'un portrait indique la famille politique du <strong>parti</strong> qui soutient le
+      candidat, selon la classification par blocs des nuances politiques du ministère de l'Intérieur. Un
+      candidat sans parti est classé « Sans étiquette ». Cette couleur ne dit rien des positions personnelles
+      du candidat : pour les comparer, consultez son programme ou faites le quiz.
+    </p>
+    {byFamille.length > 0 && (
+      <ul class="familles">
+        {byFamille.map((g) => (
+          <li>
+            <span class="dot" style={`background:var(--f-${g.f})`} aria-hidden="true" />
+            <strong>{FAMILLE_LABEL[g.f]}</strong> : {g.list.map((p) => p.name).join(', ')}
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <h2 id="quiz">Le quiz</h2>
+    <ul>
+      <li>
+        Chaque question porte sur un sujet où les programmes diffèrent réellement. Chaque réponse proposée
+        correspond à la position d'au moins un candidat, confirmée par deux sources (programme officiel ou
+        déclaration publique rapportée par la presse).
+      </li>
+      <li>
+        Pour une question « graduée » (de la position la plus forte dans un sens à la plus forte dans
+        l'autre), une réponse voisine compte pour une partie ; pour une question à choix, seule la même
+        réponse compte. « Important pour moi » compte double.
+      </li>
+      <li>
+        La proximité est la moyenne de ces accords, calculée uniquement sur les thèmes où vous avez répondu et
+        où la position du candidat est connue. En dessous de {MIN_COVERAGE} thèmes communs, aucun pourcentage
+        n'est affiché. Aucune position n'est déduite ou supposée.
+      </li>
+      <li>
+        L'ordre des réponses est mélangé (ou inversé pour les questions graduées) ; à score égal, les
+        candidats sont classés par ordre alphabétique.
+      </li>
+      <li>
+        Tant que ce seuil n'est pas atteint, la page du quiz présente une simple comparaison des positions
+        connues, thème par thème, sans score ni classement.
+      </li>
+      <li>
+        Le calcul a lieu dans votre navigateur : vos réponses ne sont ni envoyées ni enregistrées, et les
+        résultats ne sont jamais agrégés ni publiés.
+      </li>
+    </ul>
+
+    <h2 id="sources">Sources</h2>
+    <ul>
+      <li>Chaque information renvoie à au moins une source, indiquée par un numéro entre crochets.</li>
+      <li>
+        Le statut d'un candidat et toute procédure judiciaire ou fiscale sont confirmés par au moins deux
+        médias différents.
+      </li>
+      <li>
+        Seules sont acceptées les sources d'une liste fermée : {allowlist.media.length} médias nationaux,
+        régionaux et audiovisuels, des sites publics (Conseil constitutionnel, ministères, Parlement…) et,
+        pour les programmes uniquement, le site officiel du candidat. Pas de sondages, de blogs ni de réseaux
+        sociaux.
+      </li>
+      <li>
+        Les procédures sont décrites avec le statut exact rapporté par les sources (mise en examen,
+        condamnation en première instance, appel en cours…). Toute personne mise en cause est présumée
+        innocente tant qu'elle n'a pas été définitivement condamnée.
+      </li>
+      <li>Les portraits proviennent de Wikimedia Commons, sous licence libre, avec mention de l'auteur.</li>
+    </ul>
+
+    <h2 id="mises-a-jour">Mises à jour et corrections</h2>
+    <!-- prettier-ignore -->
+    <p>
+      Les informations sont vérifiées chaque jour et chaque modification est consignée dans le{' '}
+      <a href="/journal">journal</a>. L'historique complet est public sur <a href={REPO_URL} target="_blank" rel="noopener">GitHub</a>. Aucune publication n'a lieu pendant la période de réserve électorale, de la veille de chaque tour
+      jusqu'à la fermeture des bureaux de vote.
+    </p>
+    <!-- prettier-ignore -->
+    <p>
+      Une erreur, un oubli ? <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">Signalez-le</a> : chaque signalement est examiné et la correction, le cas échéant, apparaît dans le journal. Voir aussi <a href="/ia">comment l'intelligence artificielle est utilisée</a>.
+    </p>
+  </article>
+</Base>
+
+<style>
+  .prose h2 {
+    margin: 32px 0 10px;
+    font-size: 22px;
+  }
+  .prose p,
+  .prose li {
+    line-height: 1.6;
+  }
+  .prose ul,
+  .prose ol {
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 16px;
+  }
+  .familles {
+    list-style: none;
+    padding-left: 0 !important;
+  }
+  .familles li {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    transform: translateY(1px);
+  }
+</style>

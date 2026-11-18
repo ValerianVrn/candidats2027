@@ -1,0 +1,62 @@
+[
+  {
+    "date": "2026-11-18",
+    "summary": "Ajout des débats télévisés et révision de trois questions de comparaison des positions.",
+    "changes": [
+      {
+        "candidate": null,
+        "text": "Débat « Quelle société pour demain ? » du 16 novembre 2026 (TF1 et LCI) ajouté à l'agenda de Gabriel Attal, Raphaël Glucksmann, Marine Le Pen, Jean-Luc Mélenchon et Bruno Retailleau ; Édouard Philippe avait décliné l'invitation."
+      },
+      {
+        "candidate": null,
+        "text": "Comparaison des positions : la question sur la retraite porte désormais sur l'orientation (avancer, garder, reculer l'âge ou supprimer l'âge légal), une question sur la capitalisation est ajoutée, et les réponses sur la dépense publique indiquent un seuil chiffré."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-candidats-horaires-themes-ce-qu-il-faut-savoir-sur-le-debat-du-16-novembre-sur-tf1-et-lci/",
+        "outlet": "Toute l'Europe",
+        "title": "Présidentielle 2027 : candidats, horaires, thèmes… Ce qu'il faut savoir sur le débat du 16 novembre sur TF1 et LCI",
+        "date": "2026-11-16"
+      },
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-pourquoi-edouard-philippe-sera-absent-du-debat-face-a-marine-le-pen",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: pourquoi Edouard Philippe sera absent du débat face à Marine Le Pen et Jean-Luc Mélenchon sur TF1",
+        "date": "2026-11-16"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20261116-imp%C3%B4ts-logement-smic-les-candidats-%C3%A0-la-pr%C3%A9sidentielle-d%C3%A9battent-de-leurs-propositions",
+        "outlet": "France 24",
+        "title": "Impôts, logement, Smic... les candidats à la présidentielle débattent de leurs propositions",
+        "date": "2026-11-16"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-17",
+    "summary": "Mise en ligne des fiches de 44 personnalités déclarées ou évoquées comme candidates à l'élection présidentielle de 2027.",
+    "changes": [
+      {
+        "candidate": null,
+        "text": "36 candidats déclarés et 8 candidatures évoquées, avec statut, parti, déclaration, propositions, meetings et procédures en cours, chacun sourcé."
+      },
+      {
+        "candidate": null,
+        "text": "Dates officielles du scrutin : premier tour le 18 avril 2027, second tour le 2 mai 2027."
+      },
+      {
+        "candidate": "david-lisnard",
+        "text": "Portrait retiré par précaution : la licence libre de la photo utilisée n'a pas pu être confirmée. Il sera remplacé dès qu'une photo libre de droits vérifiée sera disponible."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://la1ere.franceinfo.fr/la-prochaine-election-presidentielle-aura-lieu-les-18-avril-et-2-mai-2027-mais-le-vote-se-deroulera-la-veille-dans-certains-territoires-ultramarins-1715707.html",
+        "outlet": "Outre-mer La 1ère (franceinfo)",
+        "title": "La prochaine élection présidentielle aura lieu les 18 avril et 2 mai 2027, mais le vote se déroulera la veille dans certains territoires ultramarins",
+        "date": "2026-07-01"
+      }
+    ]
+  }
+]

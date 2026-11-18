@@ -1,0 +1,191 @@
+{
+  "slug": "gabriel-attal",
+  "firstName": "Gabriel",
+  "lastName": "Attal",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.france24.com/fr/france/20260522-pr%C3%A9sidentielle-2027-gabriel-attal-annonce-sa-candidature-dans-le-camp-macroniste",
+      "outlet": "France 24",
+      "title": "Gabriel Attal annonce sa candidature pour la présidentielle de 2027",
+      "date": "2026-05-22"
+    },
+    {
+      "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-gabriel-attal-officialise-sa-candidature-en-aveyron",
+      "outlet": "Public Sénat",
+      "title": "Présidentielle 2027 : en Aveyron, Gabriel Attal officialise sa candidature",
+      "date": "2026-05-22"
+    },
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-le-candidat-renaissance-gabriel-attal-promet-qu-il-n-y-aura-pas-de-poste-supprime-dans-l-education-nationale-s-il-est-elu_8278985.html",
+      "outlet": "franceinfo",
+      "title": "Présidentielle 2027 : Gabriel Attal promet qu'il n'y aura \"pas de poste supprimé\" dans l'Éducation nationale s'il est élu",
+      "date": "2026-11-12"
+    }
+  ],
+  "party": "renaissance",
+  "officialDomains": [],
+  "role": "Député des Hauts-de-Seine, secrétaire général de Renaissance",
+  "portrait": {
+    "file": "gabriel-attal.jpg",
+    "author": "Ismail Aissoub",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gabriel_Attal_2025_(3x4_cropped).jpg"
+  },
+  "declaration": {
+    "date": "2026-05-22",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-gabriel-attal-officialise-sa-candidature-en-aveyron",
+        "outlet": "Public Sénat",
+        "title": "Présidentielle 2027 : en Aveyron, Gabriel Attal officialise sa candidature",
+        "date": "2026-05-22"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20260522-pr%C3%A9sidentielle-2027-gabriel-attal-annonce-sa-candidature-dans-le-camp-macroniste",
+        "outlet": "France 24",
+        "title": "Gabriel Attal annonce sa candidature pour la présidentielle de 2027",
+        "date": "2026-05-22"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "education",
+      "text": "Promet de ne supprimer aucun poste dans l'Éducation nationale et propose une hausse de salaire d'environ 200 à 500 euros par mois pour les enseignants à partir du budget 2028.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-le-candidat-renaissance-gabriel-attal-promet-qu-il-n-y-aura-pas-de-poste-supprime-dans-l-education-nationale-s-il-est-elu_8278985.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Gabriel Attal promet qu'il n'y aura \"pas de poste supprimé\" dans l'Éducation nationale s'il est élu",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "securite",
+      "text": "Propose de supprimer le juge de l'application des peines et de réécrire le Code de procédure pénale en 100 jours avec des avocats, des magistrats et des parlementaires.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-le-candidat-renaissance-gabriel-attal-promet-qu-il-n-y-aura-pas-de-poste-supprime-dans-l-education-nationale-s-il-est-elu_8278985.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Gabriel Attal promet qu'il n'y aura \"pas de poste supprimé\" dans l'Éducation nationale s'il est élu",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Propose un plan de départs volontaires portant sur 100 000 postes de la fonction publique, hors Éducation nationale.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-le-candidat-renaissance-gabriel-attal-promet-qu-il-n-y-aura-pas-de-poste-supprime-dans-l-education-nationale-s-il-est-elu_8278985.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Gabriel Attal promet qu'il n'y aura \"pas de poste supprimé\" dans l'Éducation nationale s'il est élu",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "logement",
+      "text": "Propose de créer une banque nationale d'investissement pour le logement afin de faciliter l'accès des jeunes à la propriété.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-le-candidat-renaissance-gabriel-attal-promet-qu-il-n-y-aura-pas-de-poste-supprime-dans-l-education-nationale-s-il-est-elu_8278985.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Gabriel Attal promet qu'il n'y aura \"pas de poste supprimé\" dans l'Éducation nationale s'il est élu",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "societe",
+      "text": "Propose de défiscaliser les pensions alimentaires perçues par les parents isolés et de créer une « carte famille monoparentale ».",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/politique-familiale-allocations-creches-que-proposent-les-candidats-a-la-presidentielle",
+          "outlet": "Public Sénat",
+          "title": "Politique familiale, allocations, crèches : que proposent les candidats à la présidentielle ?",
+          "date": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Propose une réforme constitutionnelle pour mieux partager le pouvoir, notamment avec les collectivités territoriales.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-il-faut-une-reforme-constitutionnelle-profonde-pour-mieux-partager-le-pouvoir-defend-gabriel-attal-au-20-heures-de-france-2_8172656.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : \"Il faut une réforme constitutionnelle profonde, pour mieux partager le pouvoir\", défend Gabriel Attal au \"20 Heures\" de France 2",
+          "date": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "theme": "travail",
+      "text": "Propose de supprimer le plafond annuel de 220 heures supplémentaires et de réécrire le Code du travail autour de quelques grands principes, le détail relevant des accords de branche et d'entreprise.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20260430-attal-continue-de-d%C3%A9velopper-la-th%C3%A9matique-travail-en-vue-de-2027",
+          "outlet": "France 24 (AFP)",
+          "title": "Attal continue de développer la thématique travail en vue de 2027",
+          "date": "2026-04-30"
+        }
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "date": "2026-10-10",
+      "city": "Lyon",
+      "title": "Meeting régional",
+      "sources": [
+        {
+          "url": "https://france3-regions.franceinfo.fr/auvergne-rhone-alpes/rhone/lyon/en-meeting-a-lyon-le-candidat-renaissance-gabriel-attal-a-presente-son-pacte-pour-la-jeunesse-3431238.html",
+          "outlet": "France 3 Régions (franceinfo)",
+          "title": "En meeting à Lyon, le candidat Renaissance Gabriel Attal a présenté son \"pacte pour la jeunesse\"",
+          "date": "2026-10-10"
+        }
+      ]
+    }
+  ],
+  "risques": [
+    {
+      "id": "primaire-droite-centre",
+      "nature": "politique",
+      "active": true,
+      "title": "Projet de primaire de la droite et du centre",
+      "statutJuridique": "Sans objet : processus politique, aucune procédure judiciaire",
+      "resume": "Le 28 octobre 2026, Gabriel Attal a appelé à une « primaire des démocrates » d'ici à la fin janvier 2027. Il s'est dit ouvert aux dates des 31 janvier et 7 février proposées par Bruno Retailleau ; les directeurs de campagne de Gabriel Attal, Bruno Retailleau et David Lisnard doivent se réunir le 17 novembre. Édouard Philippe refuse d'y participer.",
+      "impact": "Gérard Larcher a proposé aux quatre candidats de discuter d'une « méthode de départage » en vue d'une candidature unique au début de 2027. Les sources ne précisent pas si les candidats battus à une éventuelle primaire se retireraient.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261028-gabriel-attal-pr%C3%B4ne-une-primaire-des-d%C3%A9mocrates-avant-l-%C3%A9lection-pr%C3%A9sidentielle-en-france",
+          "outlet": "France 24",
+          "title": "Présidentielle 2027 : Gabriel Attal appelle à organiser une \"primaire des démocrates\"",
+          "date": "2026-10-28"
+        },
+        {
+          "url": "https://www.europe1.fr/politique/presidentielle-2027-bruno-retailleau-juge-que-la-primaire-doit-se-faire-meme-sans-edouard-philippe-1228463",
+          "outlet": "Europe 1",
+          "title": "Présidentielle 2027 : Bruno Retailleau juge que la primaire doit se faire même sans Édouard Philippe",
+          "date": "2026-11-12"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261115-philippe-d-accord-pour-une-r%C3%A9union-autour-de-larcher-mais-pas-pour-parler-d-une-primaire",
+          "outlet": "France 24 (AFP)",
+          "title": "Philippe d'accord pour une réunion autour de Larcher, mais pas pour parler d'une primaire",
+          "date": "2026-11-15"
+        }
+      ],
+      "updatedAt": "2026-11-16"
+    }
+  ],
+  "lastChecked": "2026-11-18"
+}

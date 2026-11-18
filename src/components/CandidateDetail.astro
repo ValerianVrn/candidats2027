@@ -1,0 +1,544 @@
+---
+/**
+ * Full details of one candidate. `panel` mode (home side panel / bottom sheet) uses tabs;
+ * `page` mode (/candidat/<slug>) stacks every section.
+ *
+ * All citation numbers are computed inline in this template so they follow document order.
+ */
+import Avatar from './Avatar.astro';
+import Cite from './Cite.astro';
+import VideoFacade from './VideoFacade.astro';
+import { CitationRegistry } from '../lib/citations';
+import { eventsOf, familleOf, fullName, partyOf } from '../lib/data';
+import { formatDay, formatDeclarationDate } from '../lib/dates';
+import { FAMILLE_LABEL, statusLabel } from '../lib/labels';
+import { REPORT_ERROR_URL } from '../lib/site';
+import { THEMES, THEME_IDS } from '../lib/themes';
+import type { Candidate } from '../lib/schemas';
+
+interface Props {
+  candidate: Candidate;
+  mode: 'panel' | 'page';
+}
+const { candidate: c, mode } = Astro.props;
+
+const reg = new CitationRegistry();
+const id = `c-${c.slug}`;
+const party = partyOf(c);
+const famille = familleOf(c);
+const today = new Date().toISOString().slice(0, 10);
+const programme = c.programme.toSorted((a, b) => THEME_IDS.indexOf(a.theme) - THEME_IDS.indexOf(b.theme));
+const upcoming = c.meetings.filter((m) => m.date >= today).toSorted((a, b) => a.date.localeCompare(b.date));
+const past = c.meetings.filter((m) => m.date < today).toSorted((a, b) => b.date.localeCompare(a.date));
+const broadcasts = eventsOf(c.slug);
+const KIND_LABEL = { debat: 'Débat', emission: 'Émission' } as const;
+const procedures = c.risques.filter((r) => r.nature !== 'politique');
+const uncertainties = c.risques.filter((r) => r.nature === 'politique');
+const activeProcedures = procedures.filter((r) => r.active).length;
+const tabs = [
+  { key: 'programme', label: 'Programme' },
+  { key: 'agenda', label: 'Agenda' },
+  { key: 'declaration', label: 'Déclaration' },
+  { key: 'risques', label: activeProcedures ? `Procédures · ${activeProcedures}` : 'Procédures' },
+];
+const H = mode === 'page' ? 'h2' : 'h3';
+---
+
+<article class={`detail detail--${mode}`} data-detail={c.slug} aria-labelledby={`${id}-name`}>
+  <header class="head">
+    <span class="ring" style={`--ring: var(--f-${famille})`}>
+      <Avatar candidate={c} size={64} />
+    </span>
+    <div class="who">
+      {mode === 'page' ? <h1 id={`${id}-name`}>{fullName(c)}</h1> : <h2 id={`${id}-name`}>{fullName(c)}</h2>}
+      <p>{party ? `${party.name} · ${FAMILLE_LABEL[famille]}` : FAMILLE_LABEL[famille]}</p>
+      <p class="role">{c.role}</p>
+      <p class="status">
+        <span class={`pill pill--${c.status}`}>{statusLabel(c)}</span>
+        <Cite numbers={reg.cite(c.statusSources)} idPrefix={id} />
+      </p>
+    </div>
+  </header>
+
+  {mode === 'panel' && (
+    <div class="tabs" role="tablist" aria-label="Rubriques">
+      {tabs.map((t, i) => (
+        <button
+          type="button"
+          role="tab"
+          id={`${id}-tab-${t.key}`}
+          aria-controls={`${id}-${t.key}`}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          tabindex={i === 0 ? 0 : -1}
+        >
+          {t.label}
+        </button>
+      ))}
+    </div>
+  )}
+
+  <div class="body">
+    <section
+      id={`${id}-programme`}
+      class="section"
+      role={mode === 'panel' ? 'tabpanel' : undefined}
+      aria-labelledby={mode === 'panel' ? `${id}-tab-programme` : undefined}
+    >
+      {mode === 'page' && <H>Programme</H>}
+      {programme.length ? (
+        <ul class="programme">
+          {programme.map((p) => (
+            <li>
+              <span class="theme">{THEMES[p.theme]}</span>
+              <span>
+                {p.text}
+                <Cite numbers={reg.cite(p.sources)} idPrefix={id} />
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="empty">Aucune proposition publiée à ce jour.</p>
+      )}
+    </section>
+
+    <section
+      id={`${id}-agenda`}
+      class="section"
+      role={mode === 'panel' ? 'tabpanel' : undefined}
+      aria-labelledby={mode === 'panel' ? `${id}-tab-agenda` : undefined}
+      hidden={mode === 'panel'}
+    >
+      {mode === 'page' && <H>Agenda</H>}
+      {broadcasts.length > 0 && (
+        <>
+          <p class="subhead">Débats et émissions</p>
+          <ul class="agenda">
+            {broadcasts.map(({ event: e, absent }) => (
+              <li>
+                <time datetime={e.date}>
+                  {formatDay(e.date)}
+                  {e.time ? ` · ${e.time.replace(':', ' h ')}` : ''} · {e.channels.join(' et ')}
+                </time>
+                <span>
+                  {KIND_LABEL[e.kind]} « {e.title} »
+                  {absent ? ` : ${c.genre === 'f' ? 'absente' : 'absent'}. ${absent.note}` : ''}
+                  <Cite numbers={reg.cite(e.sources)} idPrefix={id} />
+                  {e.replayUrl && (
+                    <>
+                      {' '}
+                      ·{' '}
+                      <a href={e.replayUrl} target="_blank" rel="noopener">
+                        Revoir
+                      </a>
+                    </>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p class="subhead">Meetings</p>
+        </>
+      )}
+      {upcoming.length ? (
+        <ul class="agenda">
+          {upcoming.map((m) => (
+            <li>
+              <time datetime={m.date}>{formatDay(m.date)}</time>
+              <span>
+                {m.title} · {m.city}
+                <Cite numbers={reg.cite(m.sources)} idPrefix={id} />
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="empty">Aucun meeting annoncé.</p>
+      )}
+      {past.length > 0 && (
+        <details class="past">
+          <summary>Meetings passés ({past.length})</summary>
+          <ul class="agenda">
+            {past.map((m) => (
+              <li>
+                <time datetime={m.date}>{formatDay(m.date)}</time>
+                <span>
+                  {m.title} · {m.city}
+                  <Cite numbers={reg.cite(m.sources)} idPrefix={id} />
+                </span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </section>
+
+    <section
+      id={`${id}-declaration`}
+      class="section"
+      role={mode === 'panel' ? 'tabpanel' : undefined}
+      aria-labelledby={mode === 'panel' ? `${id}-tab-declaration` : undefined}
+      hidden={mode === 'panel'}
+    >
+      {mode === 'page' && <H>Déclaration de candidature</H>}
+      {c.declaration ? (
+        <>
+          {c.declaration.videoUrl && (
+            <VideoFacade
+              url={c.declaration.videoUrl}
+              dateLabel={formatDeclarationDate(c.declaration.date, c.declaration.datePrecision)}
+              label="Déclaration de candidature"
+            />
+          )}
+          <p>
+            Candidature déclarée {formatDeclarationDate(c.declaration.date, c.declaration.datePrecision)}.
+            <Cite numbers={reg.cite(c.declaration.sources)} idPrefix={id} />
+          </p>
+        </>
+      ) : (
+        <p class="empty">
+          {c.status === 'retire'
+            ? `S'est ${c.genre === 'f' ? 'retirée' : 'retiré'} de la course.`
+            : "N'a pas déclaré sa candidature à ce jour ; une candidature est évoquée par les sources citées."}
+        </p>
+      )}
+    </section>
+
+    <section
+      id={`${id}-risques`}
+      class="section"
+      role={mode === 'panel' ? 'tabpanel' : undefined}
+      aria-labelledby={mode === 'panel' ? `${id}-tab-risques` : undefined}
+      hidden={mode === 'panel'}
+    >
+      {mode === 'page' && <H>Procédures et incertitudes</H>}
+      {procedures.length === 0 && (
+        <p class="empty">Aucune procédure judiciaire ou fiscale n'est rapportée par nos sources.</p>
+      )}
+      {procedures.map((r) => (
+        <div class:list={['risk', { closed: !r.active }]}>
+          <p class="risk-title">
+            {r.active && (
+              <span class="bang" aria-hidden="true">
+                !
+              </span>
+            )}
+            {r.title}
+            {!r.active && <span class="tag">Clôturée</span>}
+            {r.nature === 'fiscal' && <span class="tag">Fiscal</span>}
+          </p>
+          <p>
+            <strong>Statut : </strong>
+            {r.statutJuridique}
+          </p>
+          <p>{r.resume}</p>
+          <p>
+            <strong>Effet possible sur la candidature : </strong>
+            {r.impact}
+            <Cite numbers={reg.cite(r.sources)} idPrefix={id} />
+          </p>
+          <p class="risk-date">Mis à jour le {formatDay(r.updatedAt)}</p>
+        </div>
+      ))}
+      {procedures.length > 0 && (
+        <p class="note">
+          Toute personne mise en cause est présumée innocente tant qu'elle n'a pas été définitivement
+          condamnée.
+        </p>
+      )}
+      {uncertainties.length > 0 && (
+        <>
+          <p class="subhead">Incertitudes sur la candidature</p>
+          {uncertainties.map((r) => (
+            <div class="uncertain">
+              <p class="risk-title">{r.title}</p>
+              <p>{r.resume}</p>
+              <p>
+                <strong>Effet possible : </strong>
+                {r.impact}
+                <Cite numbers={reg.cite(r.sources)} idPrefix={id} />
+              </p>
+              <p class="risk-date">Mis à jour le {formatDay(r.updatedAt)}</p>
+            </div>
+          ))}
+        </>
+      )}
+    </section>
+
+    <footer class="sources">
+      <H class="sources-title">Sources</H>
+      <ol>
+        {reg.list.map((s, i) => (
+          <li id={`${id}-src-${i + 1}`}>
+            <a href={s.url} target="_blank" rel="noopener">
+              {s.outlet}
+              {s.title ? ` : ${s.title}` : ''}
+            </a>{' '}
+            <span>({formatDay(s.date)})</span>
+          </li>
+        ))}
+      </ol>
+      <p class="checked">
+        Vérifié le {formatDay(c.lastChecked)} ·{' '}
+        <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">
+          Signaler une erreur
+        </a>
+        {mode === 'panel' && (
+          <>
+            {' '}
+            · <a href={`/candidat/${c.slug}`}>Page dédiée</a>
+          </>
+        )}
+      </p>
+    </footer>
+  </div>
+</article>
+
+<style>
+  .detail {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  /* Drawer: header and tabs stay put, only the tab content scrolls. */
+  .detail--panel {
+    height: 100%;
+    gap: 0;
+  }
+  .detail--panel .head {
+    padding: 24px 72px 18px 24px;
+  }
+  .detail--panel .tabs {
+    padding: 0 16px;
+  }
+  .detail--panel .body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 20px 24px 28px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+  }
+  .detail--panel .body::-webkit-scrollbar {
+    width: 6px;
+  }
+  .detail--panel .body::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 3px;
+  }
+  .head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .ring {
+    border-radius: 50%;
+    border: 3px solid var(--ring);
+    display: flex;
+  }
+  .who {
+    flex: 1;
+    min-width: 0;
+  }
+  .who h1,
+  .who h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+  .detail--page .who h1 {
+    font-size: clamp(26px, 4vw, 36px);
+  }
+  .who p {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .who .role {
+    color: var(--faint);
+  }
+  .who .status {
+    margin-top: 8px;
+  }
+  .tabs {
+    display: flex;
+    gap: 2px;
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+  }
+  .tabs button {
+    min-height: 44px;
+    padding: 0 10px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: none;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .tabs button[aria-selected='true'] {
+    color: var(--ink-strong);
+    font-weight: 600;
+    border-bottom-color: var(--accent);
+  }
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14px;
+  }
+  /* « display: flex » above would otherwise override the hidden attribute (inactive tabs). */
+  .section[hidden] {
+    display: none;
+  }
+  .section > :global(h2),
+  .section > :global(h3) {
+    margin: 12px 0 0;
+    font-size: 20px;
+  }
+  .section p {
+    margin: 0;
+  }
+  .programme,
+  .agenda {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .programme li {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.45;
+  }
+  .theme {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .agenda li {
+    display: flex;
+    flex-direction: column;
+  }
+  .agenda time {
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .past summary {
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .empty {
+    color: var(--muted);
+  }
+  .risk {
+    padding: 14px;
+    border-radius: 12px;
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-line);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #e9ddc4;
+    line-height: 1.45;
+  }
+  .risk-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--warn-text);
+  }
+  .bang {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--warn);
+    color: var(--warn-ink);
+    font-size: 11px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+  .risk.closed {
+    background: var(--surface-2);
+    border-color: var(--line);
+    color: var(--ink);
+  }
+  .risk.closed .risk-title {
+    color: var(--ink);
+  }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+  }
+  .subhead {
+    margin-top: 6px !important;
+    font-weight: 600;
+  }
+  .uncertain {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    line-height: 1.45;
+  }
+  .uncertain .risk-title {
+    color: var(--ink);
+  }
+  .risk-date,
+  .note {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .risk .risk-date {
+    color: #bfb39a;
+  }
+  .sources {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .sources-title {
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .sources ol {
+    margin: 0;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sources li:target {
+    color: var(--ink);
+  }
+  .checked {
+    margin: 10px 0 0;
+  }
+</style>

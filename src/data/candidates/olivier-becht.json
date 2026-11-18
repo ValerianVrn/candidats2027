@@ -1,0 +1,86 @@
+{
+  "slug": "olivier-becht",
+  "firstName": "Olivier",
+  "lastName": "Becht",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://france3-regions.franceinfo.fr/grand-est/haut-rhin/je-suis-lucide-je-ne-suis-pas-le-favori-olivier-becht-depute-du-haut-rhin-declare-sa-candidature-a-l-election-presidentielle-3422486.html",
+      "outlet": "France 3 Régions (franceinfo)",
+      "title": "\"Je suis lucide, je ne suis pas le favori\", Olivier Becht, député du Haut-Rhin, déclare sa candidature à l'élection présidentielle",
+      "date": "2026-09-24"
+    },
+    {
+      "url": "https://www.europe1.fr/politique/olivier-becht-propose-des-centres-de-redressement-encadres-par-danciens-militaires-pour-les-casseurs-1217156",
+      "outlet": "Europe 1",
+      "title": "Olivier Becht propose des «centres de redressement» encadrés par d'anciens militaires pour les casseurs",
+      "date": "2026-11-08"
+    }
+  ],
+  "party": null,
+  "officialDomains": ["becht2027.fr"],
+  "role": "Député du Haut-Rhin",
+  "portrait": {
+    "file": "olivier-becht.jpg",
+    "author": "Jean-Luc Hauser",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olivier_Becht_(cropped).jpg"
+  },
+  "declaration": {
+    "date": "2026-09-24",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://france3-regions.franceinfo.fr/grand-est/haut-rhin/je-suis-lucide-je-ne-suis-pas-le-favori-olivier-becht-depute-du-haut-rhin-declare-sa-candidature-a-l-election-presidentielle-3422486.html",
+        "outlet": "France 3 Régions (franceinfo)",
+        "title": "\"Je suis lucide, je ne suis pas le favori\", Olivier Becht, député du Haut-Rhin, déclare sa candidature à l'élection présidentielle",
+        "date": "2026-09-24"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "securite",
+      "text": "Propose des « centres de redressement » encadrés par d'anciens militaires, où les délinquants travailleraient pour indemniser les victimes et suivraient une formation professionnelle.",
+      "sources": [
+        {
+          "url": "https://www.europe1.fr/politique/olivier-becht-propose-des-centres-de-redressement-encadres-par-danciens-militaires-pour-les-casseurs-1217156",
+          "outlet": "Europe 1",
+          "title": "Olivier Becht propose des «centres de redressement» encadrés par d'anciens militaires pour les casseurs",
+          "date": "2026-11-08"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Propose une réforme des institutions qu'il appelle « fédéralisme à la française ».",
+      "sources": [
+        {
+          "url": "https://france3-regions.franceinfo.fr/grand-est/haut-rhin/je-suis-lucide-je-ne-suis-pas-le-favori-olivier-becht-depute-du-haut-rhin-declare-sa-candidature-a-l-election-presidentielle-3422486.html",
+          "outlet": "France 3 Régions (franceinfo)",
+          "title": "\"Je suis lucide, je ne suis pas le favori\", Olivier Becht, député du Haut-Rhin, déclare sa candidature à l'élection présidentielle",
+          "date": "2026-09-24"
+        }
+      ]
+    },
+    {
+      "theme": "energie",
+      "text": "Annonce viser une énergie « 100 % propre, 100 % française ».",
+      "sources": [
+        {
+          "url": "https://becht2027.fr/",
+          "outlet": "Site de campagne d'Olivier Becht",
+          "title": "Olivier BECHT Président 2027",
+          "date": "2026-11-16"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

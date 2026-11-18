@@ -1,0 +1,37 @@
+name: Signaler une erreur
+description: Une information du site est fausse, dépassée ou manque de source.
+title: '[Correction] '
+labels: [correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Chaque signalement est examiné lors de la mise à jour quotidienne. Les corrections apparaissent dans le journal du site.
+        Ce formulaire est public : n'y indiquez pas d'informations personnelles.
+  - type: input
+    id: page
+    attributes:
+      label: Page ou candidat concerné
+      placeholder: ex. /candidat/prenom-nom
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Quelle information est erronée ?
+      description: Recopiez le passage concerné.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction proposée
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source (lien vers un article de presse ou un site officiel)
+      placeholder: https://
+    validations:
+      required: true

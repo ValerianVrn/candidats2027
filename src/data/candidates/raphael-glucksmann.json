@@ -1,0 +1,184 @@
+{
+  "slug": "raphael-glucksmann",
+  "firstName": "Raphaël",
+  "lastName": "Glucksmann",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.publicsenat.fr/actualites/politique/primaire-de-la-gauche-raphael-glucksmann-plie-le-match-et-remporte-le-scrutin-des-le-premier-tour-avec-66",
+      "outlet": "Public Sénat",
+      "title": "Primaire de la gauche : Raphaël Glucksmann plie le match et remporte le scrutin dès le premier tour avec 66 %",
+      "date": "2026-10-11"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "place-publique",
+  "officialDomains": [],
+  "role": "Député européen, fondateur de Place publique",
+  "portrait": {
+    "file": "raphael-glucksmann.jpg",
+    "author": "Librairie Mollat",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rapha%C3%ABl_Glucksmann.jpg"
+  },
+  "declaration": {
+    "date": "2026-08-23",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.france24.com/fr/france/20260823-rapha%C3%ABl-glucksmann-annonce-sa-candidature-%C3%A0-la-pr%C3%A9sidentielle-de-2027",
+        "outlet": "France 24",
+        "title": "Raphaël Glucksmann annonce sa candidature à la présidentielle de 2027",
+        "date": "2026-08-23"
+      },
+      {
+        "url": "https://www.franceinfo.fr/politique/raphael-glucksmann/le-choix-le-plus-important-de-notre-vie-de-citoyen-raphael-glucksmann-candidat-a-l-election-presidentielle-de-2027_8159177.html",
+        "outlet": "franceinfo",
+        "title": "\"Le choix le plus important de notre vie de citoyen\" : Raphaël Glucksmann candidat à l'élection présidentielle de 2027",
+        "date": "2026-08-24"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-raphael-glucksmann-vainqueur-de-la-primaire-du-ps-desormais-face-a-la-difficile-question-du-rassemblement-a-gauche",
+        "outlet": "Public Sénat",
+        "title": "Présidentielle : Raphaël Glucksmann, vainqueur de la primaire du PS, désormais face à la difficile question du rassemblement à gauche",
+        "date": "2026-10-11"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "travail",
+      "text": "Propose de porter le Smic à 1 700 euros net par mois et de baisser la CSG pour augmenter le salaire net.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-radio/le-brief-politique/info-franceinfo-raphael-glucksmann-va-diffuser-ce-week-end-un-tract-presentant-dix-propositions-pour-sortir-de-la-crise_8261228.html",
+          "outlet": "franceinfo",
+          "title": "INFO FRANCEINFO. Raphaël Glucksmann va diffuser ce week-end un tract présentant dix propositions pour \"sortir de la crise\"",
+          "date": "2026-11-14"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle : que proposent les candidats pour augmenter les salaires ?",
+          "date": "2026-10-30"
+        }
+      ]
+    },
+    {
+      "theme": "education",
+      "text": "Propose d'augmenter la rémunération des enseignants de 10 %, jusqu'à 25 % en milieu de carrière, et de remplacer Parcoursup.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-sante-justice-education-cultureque-retenir-du-grand-oral-des-candidats-sur-les-services-publics",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : santé, justice, éducation, culture…Que retenir du grand oral des candidats sur les services publics",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "energie",
+      "text": "Propose un plan de 200 milliards d'euros d'investissements publics sur le quinquennat pour sortir des énergies fossiles, avec plus du doublement de la production d'énergies renouvelables d'ici 2035 et le maintien du nucléaire.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261109-pr%C3%A9sidentielle-glucksmann-promet-200-milliards-euros-sortie-%C3%A9nergies-fossiles",
+          "outlet": "France 24",
+          "title": "Présidentielle : Glucksmann promet 200 milliards d'euros pour la sortie des énergies fossiles",
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "theme": "ecologie",
+      "text": "Veut proclamer un « état d'urgence écologique » et inscrire le principe d'une « République écologique » dans la Constitution.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261109-pr%C3%A9sidentielle-glucksmann-promet-200-milliards-euros-sortie-%C3%A9nergies-fossiles",
+          "outlet": "France 24",
+          "title": "Présidentielle : Glucksmann promet 200 milliards d'euros pour la sortie des énergies fossiles",
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose une « contribution exceptionnelle » de 5 % sur les patrimoines de plus de 100 millions d'euros et une taxation renforcée des plus gros héritages.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261109-pr%C3%A9sidentielle-glucksmann-promet-200-milliards-euros-sortie-%C3%A9nergies-fossiles",
+          "outlet": "France 24",
+          "title": "Présidentielle : Glucksmann promet 200 milliards d'euros pour la sortie des énergies fossiles",
+          "date": "2026-11-09"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/fiscalite-ecole-immigration-ce-que-propose-raphael-glucksmann",
+          "outlet": "Public Sénat",
+          "title": "Fiscalité, école, immigration : ce que propose Raphaël Glucksmann",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "theme": "immigration",
+      "text": "Propose une convention citoyenne sur l'immigration, composée de citoyens tirés au sort, dont les propositions seraient soumises au Parlement.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/fiscalite-ecole-immigration-ce-que-propose-raphael-glucksmann",
+          "outlet": "Public Sénat",
+          "title": "Fiscalité, école, immigration : ce que propose Raphaël Glucksmann",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "theme": "retraites",
+      "text": "Propose une réforme des retraites sans retour à 60 ans, avec un départ plus tôt pour les carrières hachées et les métiers pénibles.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/fiscalite-ecole-immigration-ce-que-propose-raphael-glucksmann",
+          "outlet": "Public Sénat",
+          "title": "Fiscalité, école, immigration : ce que propose Raphaël Glucksmann",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "theme": "societe",
+      "text": "Propose un service civique obligatoire de dix mois pour les jeunes.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/fiscalite-ecole-immigration-ce-que-propose-raphael-glucksmann",
+          "outlet": "Public Sénat",
+          "title": "Fiscalité, école, immigration : ce que propose Raphaël Glucksmann",
+          "date": "2026-08-24"
+        }
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "date": "2026-12-06",
+      "city": "Paris",
+      "title": "Meeting au Paris Event Center (19e arrondissement)",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/replay-radio/le-brief-politique/info-franceinfo-raphael-glucksmann-va-diffuser-ce-week-end-un-tract-presentant-dix-propositions-pour-sortir-de-la-crise_8261228.html",
+          "outlet": "franceinfo",
+          "title": "INFO FRANCEINFO. Raphaël Glucksmann va diffuser ce week-end un tract présentant dix propositions pour \"sortir de la crise\"",
+          "date": "2026-11-14"
+        }
+      ]
+    }
+  ],
+  "risques": [],
+  "lastChecked": "2026-11-18"
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "mira-markovic",
+  "firstName": "Mira",
+  "lastName": "Markovic",
+  "genre": "f",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.cnews.fr/france/2026-10-02/presidentielle-2027-si-nous-ne-sommes-pas-la-personne-ne-parle-des-animaux",
+      "outlet": "CNews",
+      "title": "Présidentielle 2027 : «Si nous ne sommes pas là, personne ne parle des animaux», déplore Mira Markovic, la candidate du Parti animaliste",
+      "date": "2026-10-02"
+    },
+    {
+      "url": "https://www.huffingtonpost.fr/politique/article/pour-la-presidentielle-2027-la-candidate-du-parti-animaliste-mira-markovic-cherche-les-500-parrainages_334061.html",
+      "outlet": "HuffPost",
+      "title": "Pour la présidentielle 2027, la candidate du Parti animaliste, Mira Markovic, cherche les 500 parrainages",
+      "date": "2026-10-03"
+    },
+    {
+      "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+      "outlet": "franceinfo",
+      "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+      "date": "2026-10-08"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "parti-animaliste",
+  "officialDomains": ["parti-animaliste.fr"],
+  "qualified2022": null,
+  "parrainages": null,
+  "role": "Cofondatrice du Parti animaliste, psychologue de formation",
+  "portrait": null,
+  "declaration": {
+    "date": "2026-10-02",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.cnews.fr/france/2026-10-02/presidentielle-2027-si-nous-ne-sommes-pas-la-personne-ne-parle-des-animaux",
+        "outlet": "CNews",
+        "title": "Présidentielle 2027 : «Si nous ne sommes pas là, personne ne parle des animaux», déplore Mira Markovic, la candidate du Parti animaliste",
+        "date": "2026-10-02"
+      },
+      {
+        "url": "https://www.huffingtonpost.fr/politique/article/pour-la-presidentielle-2027-la-candidate-du-parti-animaliste-mira-markovic-cherche-les-500-parrainages_334061.html",
+        "outlet": "HuffPost",
+        "title": "Pour la présidentielle 2027, la candidate du Parti animaliste, Mira Markovic, cherche les 500 parrainages",
+        "date": "2026-10-03"
+      }
+    ]
+  },
+  "programme": [
+    {
+      "theme": "societe",
+      "text": "Veut créer un ministère de la condition animale indépendant et sortir les animaux du régime juridique des biens.",
+      "sources": [
+        {
+          "url": "https://www.huffingtonpost.fr/politique/article/pour-la-presidentielle-2027-la-candidate-du-parti-animaliste-mira-markovic-cherche-les-500-parrainages_334061.html",
+          "outlet": "HuffPost",
+          "title": "Pour la présidentielle 2027, la candidate du Parti animaliste, Mira Markovic, cherche les 500 parrainages",
+          "date": "2026-10-03"
+        }
+      ]
+    },
+    {
+      "theme": "agriculture",
+      "text": "Veut l'arrêt de l'élevage intensif, avec un accompagnement financier de la reconversion des éleveurs.",
+      "sources": [
+        {
+          "url": "https://www.huffingtonpost.fr/politique/article/pour-la-presidentielle-2027-la-candidate-du-parti-animaliste-mira-markovic-cherche-les-500-parrainages_334061.html",
+          "outlet": "HuffPost",
+          "title": "Pour la présidentielle 2027, la candidate du Parti animaliste, Mira Markovic, cherche les 500 parrainages",
+          "date": "2026-10-03"
+        },
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "theme": "societe",
+      "text": "Veut interdire la chasse et la corrida.",
+      "sources": [
+        {
+          "url": "https://www.huffingtonpost.fr/politique/article/pour-la-presidentielle-2027-la-candidate-du-parti-animaliste-mira-markovic-cherche-les-500-parrainages_334061.html",
+          "outlet": "HuffPost",
+          "title": "Pour la présidentielle 2027, la candidate du Parti animaliste, Mira Markovic, cherche les 500 parrainages",
+          "date": "2026-10-03"
+        },
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+          "outlet": "franceinfo",
+          "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+          "date": "2026-10-08"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-16"
+}

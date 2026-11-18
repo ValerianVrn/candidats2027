@@ -1,0 +1,110 @@
+---
+/**
+ * « Liste des candidats à la présidentielle 2027 »: the full, crawlable text list (the page meant to rank on
+ * « liste candidats »). Same data and order rules as the rest of the site (by last name, no ranking).
+ */
+import Base from '../layouts/Base.astro';
+import { activeCandidates, election, familleOf, fullName, partyOf, site } from '../lib/data';
+import { parisDay } from '../lib/freshness';
+import { formatDay, formatDeclarationDate } from '../lib/dates';
+import { FAMILLE_LABEL, statusLabel } from '../lib/labels';
+import { itemListLd } from '../lib/seo';
+import type { Candidate } from '../lib/schemas';
+
+const byName = (a: Candidate, b: Candidate) =>
+  `${a.lastName} ${a.firstName}`.localeCompare(`${b.lastName} ${b.firstName}`, 'fr');
+const declared = activeCandidates
+  .filter((c) => c.status === 'declare' || c.status === 'officiel')
+  .toSorted(byName);
+const potential = activeCandidates.filter((c) => c.status === 'potentiel').toSorted(byName);
+const groups = [
+  { id: 'declares', title: `Candidats déclarés (${declared.length})`, list: declared },
+  { id: 'potentiels', title: `Candidatures évoquées (${potential.length})`, list: potential },
+];
+const firstRound = formatDay(election.firstRound.slice(0, 10));
+const secondRound = formatDay(election.secondRound.slice(0, 10));
+const checkedOn = formatDay(parisDay(site.lastChecked));
+const jsonLd = itemListLd(
+  Astro.site!,
+  'Liste des candidats à l’élection présidentielle 2027',
+  [...declared, ...potential].map((c) => ({ name: fullName(c), path: `/candidat/${c.slug}` })),
+);
+---
+
+<Base
+  title="Liste des candidats à la présidentielle 2027"
+  description={`Liste complète des ${declared.length} candidats déclarés et des ${potential.length} candidatures évoquées à l'élection présidentielle 2027, avec leur parti et la date de déclaration. Mise à jour le ${checkedOn}.`}
+  section="candidats"
+  jsonLd={jsonLd}
+>
+  <article class="page">
+    <h1>Liste des candidats à la présidentielle 2027</h1>
+    <p class="lead">
+      {declared.length} candidats déclarés et {potential.length} candidatures évoquées pour l'élection
+      présidentielle dont le premier tour aura lieu le {firstRound} et le second tour le {secondRound}. Mise à
+      jour le {checkedOn}.
+    </p>
+    <!-- prettier-ignore -->
+    <p class="muted">Seuls figureront sur le bulletin les candidats retenus par le Conseil constitutionnel, après vérification des 500 parrainages. Ordre alphabétique ; voir la <a href="/methode">méthode</a>.</p>
+
+    {groups.map((g) => (
+      <section aria-labelledby={g.id}>
+        <h2 id={g.id}>{g.title}</h2>
+        <ul class="list">
+          {g.list.map((c) => {
+            const party = partyOf(c);
+            return (
+              <li>
+                <a href={`/candidat/${c.slug}`}>{fullName(c)}</a>
+                <span class="meta">
+                  {party ? party.name : FAMILLE_LABEL[familleOf(c)]} · {statusLabel(c)}
+                  {c.declaration &&
+                    ` ${formatDeclarationDate(c.declaration.date, c.declaration.datePrecision)}`}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+  </article>
+</Base>
+
+<style>
+  .lead {
+    font-size: 16px;
+  }
+  .muted {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  h2 {
+    margin: 28px 0 10px;
+    font-size: 22px;
+  }
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 8px 24px;
+  }
+  .list li {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .list a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .list a:hover {
+    text-decoration: underline;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>

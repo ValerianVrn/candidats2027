@@ -1,0 +1,177 @@
+{
+  "slug": "marine-tondelier",
+  "firstName": "Marine",
+  "lastName": "Tondelier",
+  "genre": "f",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://lcp.fr/actualites/candidature-a-la-presidentielle-pas-de-choix-definitif-des-ecologistes-avant-la-mi",
+      "outlet": "LCP",
+      "title": "Candidature à la présidentielle: pas de choix définitif des Écologistes avant la mi-décembre",
+      "date": "2026-09-21"
+    },
+    {
+      "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-personne-ne-gagnera-seul-assure-marine-tondelier",
+      "outlet": "Public Sénat",
+      "title": "Présidentielle 2027 : « Personne ne gagnera seul », assure Marine Tondelier",
+      "date": "2026-11-05"
+    }
+  ],
+  "party": "les-ecologistes",
+  "officialDomains": [],
+  "role": "Dirigeante du parti Les Écologistes",
+  "portrait": {
+    "file": "marine-tondelier.jpg",
+    "author": "Selbymay",
+    "licence": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huma2023MarineTondelier.jpg"
+  },
+  "declaration": {
+    "date": "2025-10-22",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/la-patronne-des-ecologistes-marine-tondelier-se-declare-candidate-a-l-election-presidentielle-de-2027_7568824.html",
+        "outlet": "franceinfo",
+        "title": "La patronne des Ecologistes, Marine Tondelier, se déclare candidate à l'élection présidentielle de 2027",
+        "date": "2025-10-22"
+      },
+      {
+        "url": "https://www.europe1.fr/politique/marine-tondelier-la-patronne-des-ecologistes-officiellement-candidate-a-lelection-presidentielle-de-2027-850505",
+        "outlet": "Europe 1",
+        "title": "Marine Tondelier, la patronne des Écologistes, officiellement candidate à l'élection présidentielle de 2027",
+        "date": "2025-10-22"
+      },
+      {
+        "url": "https://www.franceinfo.fr/politique/eelv/presidentielle-2027-sans-surprise-marine-tondelier-a-ete-designee-pour-representer-les-ecologistes-a-la-primaire-de-la-gauche_7666159.html",
+        "outlet": "franceinfo",
+        "title": "Marine Tondelier désignée sans surprise pour représenter le parti Les Ecologistes à la primaire de la gauche en vue de la présidentielle 2027",
+        "date": "2025-12-08"
+      }
+    ]
+  },
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "sante",
+      "text": "Propose d'ouvrir 2 000 centres de santé d'ici 2030 et, dans les zones bien dotées, de conditionner l'installation d'un médecin au départ en retraite d'un autre.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Marine Tondelier promet l'ouverture de 2 000 centres de santé d'ici 2030 en France",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "securite",
+      "text": "Propose de créer 9 000 postes de magistrats, 10 000 postes de greffiers et 7 000 postes d'assistants de justice, et de limiter l'occupation des prisons à 100 %.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Marine Tondelier promet l'ouverture de 2 000 centres de santé d'ici 2030 en France",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose une taxation supplémentaire des héritages : 10 % au-delà de 4 millions d'euros, 20 % au-delà de 13 millions d'euros.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Marine Tondelier promet l'ouverture de 2 000 centres de santé d'ici 2030 en France",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "ecologie",
+      "text": "Propose un parc public d'un million de voitures électriques sur cinq ans, loué selon les revenus aux 60 % des Français les plus modestes.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Marine Tondelier promet l'ouverture de 2 000 centres de santé d'ici 2030 en France",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Propose d'inscrire un droit à une information fiable dans la Constitution et de limiter la concentration des médias.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Marine Tondelier promet l'ouverture de 2 000 centres de santé d'ici 2030 en France",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "societe",
+      "text": "Propose de consacrer 1 % du budget de l'État à la culture.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-marine-tondelier-promet-l-ouverture-de-2-000-centres-de-sante-d-ici-2030-en-france_8279639.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Marine Tondelier promet l'ouverture de 2 000 centres de santé d'ici 2030 en France",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "travail",
+      "text": "Propose de porter le Smic à 2 000 euros brut par mois dès 2027 et de limiter à 1 pour 20 l'écart entre le salaire médian d'une entreprise et celui de son dirigeant.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle : que proposent les candidats pour augmenter les salaires ?",
+          "date": "2026-10-30"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [
+    {
+      "id": "vote-interne-ecologistes-decembre-2026",
+      "nature": "politique",
+      "active": true,
+      "title": "Vote des adhérents des Écologistes sur le maintien de la candidature",
+      "statutJuridique": "Procédure interne au parti, sans caractère judiciaire.",
+      "resume": "Le conseil fédéral des Écologistes a adopté le 21 septembre 2026 une motion renvoyant le choix de la stratégie présidentielle à un vote des adhérents du 10 au 13 décembre 2026. Les adhérents choisiront entre la candidature de Marine Tondelier et le soutien à un candidat d'une autre formation de gauche. Le 5 novembre 2026, Marine Tondelier n'a pas exclu de se retirer « sans chemin de victoire ».",
+      "impact": "Selon les sources, ce vote peut conduire au retrait de sa candidature au profit d'un autre candidat de gauche.",
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/candidature-a-la-presidentielle-pas-de-choix-definitif-des-ecologistes-avant-la-mi",
+          "outlet": "LCP",
+          "title": "Candidature à la présidentielle: pas de choix définitif des Écologistes avant la mi-décembre",
+          "date": "2026-09-21"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-les-ecologistes-reportent-lheure-du-choix-a-decembre-marine-tondelier-toujours-en-lice",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : les Écologistes reportent l'heure du choix à décembre, Marine Tondelier toujours en lice",
+          "date": "2026-09-21"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-personne-ne-gagnera-seul-assure-marine-tondelier",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : « Personne ne gagnera seul », assure Marine Tondelier",
+          "date": "2026-11-05"
+        }
+      ],
+      "updatedAt": "2026-11-16"
+    }
+  ],
+  "lastChecked": "2026-11-18"
+}

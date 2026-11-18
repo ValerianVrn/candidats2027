@@ -1,0 +1,86 @@
+{
+  "slug": "francois-hollande",
+  "firstName": "François",
+  "lastName": "Hollande",
+  "genre": "m",
+  "status": "potentiel",
+  "statusSources": [
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    },
+    {
+      "url": "https://fr.euronews.com/my-europe/2026/09/03/presidentielle-francois-hollande-devoile-son-plan-pour-la-france-dans-un-livre-sans-se-dec",
+      "outlet": "Euronews",
+      "title": "Nouveau livre de Hollande, un manifeste sous forme de programme pour la présidentielle",
+      "date": "2026-09-03"
+    }
+  ],
+  "party": null,
+  "officialDomains": [],
+  "role": "Député de la Corrèze, ancien président de la République",
+  "portrait": {
+    "file": "francois-hollande.jpg",
+    "author": "Christophe Licoppe / European Union, 2024 / EC - Audiovisual Service",
+    "licence": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fran%C3%A7ois_Hollande_-_Ceremony_of_Honour_for_Jacques_Delors_-_2024.jpg"
+  },
+  "declaration": null,
+  "qualified2022": null,
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "retraites",
+      "text": "Propose de fixer l'âge de départ à la retraite à 63 ans, puis d'allonger progressivement la durée de cotisation, et de limiter à 1 % pendant cinq ans l'indexation des pensions.",
+      "sources": [
+        {
+          "url": "https://fr.euronews.com/my-europe/2026/09/03/presidentielle-francois-hollande-devoile-son-plan-pour-la-france-dans-un-livre-sans-se-dec",
+          "outlet": "Euronews",
+          "title": "Nouveau livre de Hollande, un manifeste sous forme de programme pour la présidentielle",
+          "date": "2026-09-03"
+        }
+      ]
+    },
+    {
+      "theme": "travail",
+      "text": "Veut augmenter le salaire net en diminuant les cotisations salariales.",
+      "sources": [
+        {
+          "url": "https://fr.euronews.com/my-europe/2026/09/03/presidentielle-francois-hollande-devoile-son-plan-pour-la-france-dans-un-livre-sans-se-dec",
+          "outlet": "Euronews",
+          "title": "Nouveau livre de Hollande, un manifeste sous forme de programme pour la présidentielle",
+          "date": "2026-09-03"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose de relever progressivement le taux normal de TVA de 20 à 24 % et de mettre à contribution les gros héritages et les patrimoines supérieurs à 10 millions d'euros brut.",
+      "sources": [
+        {
+          "url": "https://fr.euronews.com/my-europe/2026/09/03/presidentielle-francois-hollande-devoile-son-plan-pour-la-france-dans-un-livre-sans-se-dec",
+          "outlet": "Euronews",
+          "title": "Nouveau livre de Hollande, un manifeste sous forme de programme pour la présidentielle",
+          "date": "2026-09-03"
+        }
+      ]
+    },
+    {
+      "theme": "europe",
+      "text": "Propose une Europe à plusieurs vitesses, dans laquelle six à huit États membres avancent ensemble sur les industries d'avenir, le numérique, l'intelligence artificielle et la défense.",
+      "sources": [
+        {
+          "url": "https://fr.euronews.com/my-europe/2026/09/03/presidentielle-francois-hollande-devoile-son-plan-pour-la-france-dans-un-livre-sans-se-dec",
+          "outlet": "Euronews",
+          "title": "Nouveau livre de Hollande, un manifeste sous forme de programme pour la présidentielle",
+          "date": "2026-09-03"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [],
+  "lastChecked": "2026-11-18"
+}

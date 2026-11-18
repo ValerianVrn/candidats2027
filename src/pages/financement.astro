@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import { PUBLISHER } from '../lib/publisher';
+---
+
+<Base
+  title="Qui finance ce site ?"
+  description="Comment le site Candidats 2027 est financé, où sont affichées les publicités et ce qui garantit son indépendance."
+>
+  <article class="page prose">
+    <h1>Qui finance ce site ?</h1>
+    <p class="lead">
+      Candidats 2027 est un site indépendant, financé uniquement par la publicité. Aucun candidat, parti ou
+      organisation politique ne le finance ni ne le soutient.
+    </p>
+
+    <h2>Qui publie le site</h2>
+    <!-- prettier-ignore -->
+    <p>Le site est édité par {PUBLISHER.name} ({PUBLISHER.legalForm}). Ses coordonnées complètes figurent dans les <a href="/mentions-legales">mentions légales</a>.</p>
+
+    <h2>D'où vient l'argent</h2>
+    <ul>
+      <li>
+        Les seules recettes sont les publicités affichées sur le site, fournies par une régie (Google
+        AdSense).
+      </li>
+      <li>
+        Le site n'accepte aucun don, paiement ou avantage d'un candidat, d'un parti ou d'une équipe de
+        campagne. Une entreprise n'a pas le droit de financer une campagne électorale (article L52-8 du Code
+        électoral) : la stricte égalité de traitement entre candidats garantit que le site n'en devient pas un
+        soutien indirect.
+      </li>
+    </ul>
+
+    <h2>Où sont les publicités</h2>
+    <ul>
+      <li>
+        Au maximum deux emplacements, signalés par la mention « Annonce » : sous les candidats sur la page
+        d'accueil, et dans le journal des mises à jour.
+      </li>
+      <li>
+        Jamais sur le quiz, sur les fiches des candidats, dans le détail d'un candidat ni à côté d'un
+        portrait.
+      </li>
+      <li>
+        Les publicités à caractère politique, religieux ou électoral sont bloquées : la publicité commerciale
+        à des fins de propagande électorale est interdite pendant la campagne (article L52-1 du Code
+        électoral).
+      </li>
+      <li>
+        Aucun annonceur n'a de lien avec le contenu : les annonces sont choisies par la régie, pas par nous.
+      </li>
+    </ul>
+
+    <h2>Vos données</h2>
+    <!-- prettier-ignore -->
+    <p>Aucun cookie publicitaire n'est déposé sans votre accord, et vous pouvez refuser aussi facilement qu'accepter. Vos réponses au quiz ne quittent jamais votre navigateur. Détails dans la <a href="/confidentialite">politique de confidentialité</a>.</p>
+
+    <h2>Ce qui garantit l'indépendance du contenu</h2>
+    <!-- prettier-ignore -->
+    <p>Les règles de sélection et de rédaction sont publiques (<a href="/methode">méthode</a>), le contenu est rédigé par une IA à partir de sources citées (<a href="/ia">en savoir plus</a>) et chaque modification est consignée dans le <a href="/journal">journal</a>.</p>
+  </article>
+</Base>
+
+<style>
+  .prose h2 {
+    margin: 28px 0 8px;
+    font-size: 20px;
+  }
+  .prose p,
+  .prose li {
+    line-height: 1.6;
+  }
+  .prose ul {
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 16px;
+  }
+</style>

@@ -1,0 +1,186 @@
+{
+  "slug": "fabien-roussel",
+  "firstName": "Fabien",
+  "lastName": "Roussel",
+  "genre": "m",
+  "status": "declare",
+  "statusSources": [
+    {
+      "url": "https://www.france24.com/fr/france/20260906-pr%C3%A9sidentielle-2027-fabien-roussel-officialise-sa-candidature-avec-le-pcf",
+      "outlet": "France 24",
+      "title": "Présidentielle 2027 : Fabien Roussel officialise sa candidature avec le PCF",
+      "date": "2026-09-06"
+    },
+    {
+      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
+      "date": "2026-11-10"
+    }
+  ],
+  "party": "parti-communiste-francais",
+  "officialDomains": [],
+  "role": "Secrétaire national du PCF, maire de Saint-Amand-les-Eaux (Nord)",
+  "portrait": {
+    "file": "fabien-roussel.jpg",
+    "author": "Zouhair NAKARA",
+    "licence": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roussel_Fabien_1.jpg"
+  },
+  "declaration": {
+    "date": "2026-09-06",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://lcp.fr/actualites/fabien-roussel-officiellement-candidat-du-pcf-a-l-election-presidentielle-de-2027-441389",
+        "outlet": "LCP",
+        "title": "Fabien Roussel officiellement candidat du PCF à l'élection présidentielle de 2027",
+        "date": "2026-09-06"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20260906-pr%C3%A9sidentielle-2027-fabien-roussel-officialise-sa-candidature-avec-le-pcf",
+        "outlet": "France 24",
+        "title": "Présidentielle 2027 : Fabien Roussel officialise sa candidature avec le PCF",
+        "date": "2026-09-06"
+      }
+    ]
+  },
+  "qualified2022": {
+    "sources": [
+      {
+        "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022187PDR.htm",
+        "outlet": "Conseil constitutionnel",
+        "title": "Décision n° 2022-187 PDR du 7 mars 2022",
+        "date": "2022-03-07"
+      }
+    ]
+  },
+  "parrainages": null,
+  "programme": [
+    {
+      "theme": "securite",
+      "text": "Propose de créer 60 000 postes de policiers, gendarmes et douaniers de proximité, notamment contre le trafic de drogue, et d'interdire le lanceur de balles de défense (LBD).",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Fabien Roussel propose la mise en place de 60 000 \"policiers, gendarmes et douaniers\" de proximité",
+          "date": "2026-11-12"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-sante-justice-education-cultureque-retenir-du-grand-oral-des-candidats-sur-les-services-publics",
+          "outlet": "Public Sénat",
+          "title": "Présidentielle 2027 : santé, justice, éducation, culture…Que retenir du grand oral des candidats sur les services publics",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "education",
+      "text": "Propose d'abroger Parcoursup et la réforme du baccalauréat de Jean-Michel Blanquer, et de recruter 90 000 enseignants.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Fabien Roussel propose la mise en place de 60 000 \"policiers, gendarmes et douaniers\" de proximité",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "travail",
+      "text": "Propose de créer 500 000 postes dans la fonction publique et d'augmenter le point d'indice de 10 % immédiatement, puis de 20 à 30 % en cinq ans.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Fabien Roussel propose la mise en place de 60 000 \"policiers, gendarmes et douaniers\" de proximité",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "energie",
+      "text": "Propose de créer un groupe public de l'énergie réunissant EDF, Engie et TotalEnergies.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Fabien Roussel propose la mise en place de 60 000 \"policiers, gendarmes et douaniers\" de proximité",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "logement",
+      "text": "Propose un service public du logement, 200 millions d'euros par an pour construire des logements sociaux et la rénovation d'un million de logements privés.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Fabien Roussel propose la mise en place de 60 000 \"policiers, gendarmes et douaniers\" de proximité",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose de rétablir l'impôt sur la fortune (ISF), de supprimer la flat tax et d'augmenter l'impôt sur les sociétés des grandes entreprises.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-fabien-roussel-propose-la-mise-en-place-de-60-000-policiers-gendarmes-et-douaniers-de-proximite_8279156.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : Fabien Roussel propose la mise en place de 60 000 \"policiers, gendarmes et douaniers\" de proximité",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "theme": "economie",
+      "text": "Veut doubler la part de l'industrie dans le PIB et doubler la production d'électricité nucléaire, renouvelable et hydraulique.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20260906-pr%C3%A9sidentielle-2027-fabien-roussel-officialise-sa-candidature-avec-le-pcf",
+          "outlet": "France 24",
+          "title": "Présidentielle 2027 : Fabien Roussel officialise sa candidature avec le PCF",
+          "date": "2026-09-06"
+        }
+      ]
+    }
+  ],
+  "meetings": [],
+  "risques": [
+    {
+      "id": "enquete-pnf-assistant-parlementaire",
+      "nature": "judiciaire",
+      "active": true,
+      "title": "Enquête sur un emploi d'assistant parlementaire (2009-2014)",
+      "statutJuridique": "Enquête préliminaire du parquet national financier ouverte en 2022 ; entendu en audition libre fin août 2022. Aucune mise en examen rapportée par les sources consultées.",
+      "resume": "Le parquet national financier enquête pour détournement de fonds publics sur l'emploi de Fabien Roussel comme assistant du député Jean-Jacques Candelier entre 2009 et 2014, après une enquête de Mediapart. Fabien Roussel conteste ces accusations et affirme disposer de documents attestant son travail.",
+      "impact": "Les sources consultées ne font état d'aucune suite judiciaire postérieure à l'audition de 2022 et n'évoquent pas d'effet sur la possibilité de se présenter.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/parti-communiste-francais/presidentielle-2022-fabien-roussel-vise-par-une-enquete-pour-des-soupcons-demploi-fictif_5005776.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2022 : Fabien Roussel visé par une enquête pour des soupçons d'emploi fictif",
+          "date": "2022-03-12"
+        },
+        {
+          "url": "https://www.france24.com/fr/france/20220311-pr%C3%A9sidentielle-fabien-roussel-vis%C3%A9-par-une-enqu%C3%AAte-sur-des-soup%C3%A7ons-d-emploi-fictif",
+          "outlet": "France 24",
+          "title": "Présidentielle : Fabien Roussel visé par une enquête sur des soupçons d'emploi fictif",
+          "date": "2022-03-11"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20220912-soup%C3%A7ons-d-emploi-fictif-fabien-roussel-entendu-en-audition-libre-fin-ao%C3%BBt",
+          "outlet": "France 24",
+          "title": "Soupçons d'emploi fictif: Fabien Roussel entendu en audition libre fin août",
+          "date": "2022-09-12"
+        }
+      ],
+      "updatedAt": "2026-11-16"
+    }
+  ],
+  "lastChecked": "2026-11-18"
+}
