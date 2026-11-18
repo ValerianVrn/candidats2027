@@ -4,8 +4,9 @@
  *   node scripts/check-data.ts            schema + allowlist + two-source rules
  *   node scripts/check-data.ts --links    also checks that every cited URL still exists
  *
- * Exits with code 1 on any error. Link check: 404/410 and unknown hosts are errors; other failures
- * (403 from sites that block bots, timeouts) are only reported as warnings.
+ * Exits with code 1 on any error. Link check: only 404/410 (the page is gone) are errors; other failures
+ * (403 from sites that block bots, timeouts, DNS failures such as ENOTFOUND in sandboxes that block some
+ * hosts) are only reported as warnings, since they say nothing about the page itself.
  */
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -139,7 +140,7 @@ if (process.argv.includes('--links')) {
     }),
   );
   for (const r of results) {
-    if (r.status === 404 || r.status === 410 || r.error === 'ENOTFOUND') {
+    if (r.status === 404 || r.status === 410) {
       issues.push({ file: '(links)', path: r.url, message: r.error ?? `HTTP ${r.status}` });
     } else if (r.error || r.status >= 400) {
       warnings.push(`${r.url}: ${r.error ?? `HTTP ${r.status}`} (unverifiable, not blocking)`);

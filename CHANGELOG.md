@@ -9,6 +9,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Fixed
 
+- Daily routine: reviews all candidates in batches of 8 and checks its list before publishing (it had stopped
+  after 13 of 44); the link check no longer fails on DNS errors from the cloud sandbox, only on 404/410.
 - Candidate details: the tabs (Programme, Agenda, Déclaration, Procédures) now switch content. The cramped side
   panel is replaced by a wide drawer (native dialog) with a fixed header and tabs, a thin scroll bar for the
   content only, and the status under the name; the cloud uses the full page width.
