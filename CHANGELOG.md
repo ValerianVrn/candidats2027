@@ -31,6 +31,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Added
 
+- Share cards (Open Graph, 1200 × 630): one per candidate (portrait, name, party, status) and one for the site,
+  rendered at build time with `sharp` (now a direct dependency).
 - SEO: visible home H1 and intro, « Liste des candidats à la présidentielle 2027 » page (`/candidats`), search-friendly
   titles and descriptions, schema.org JSON-LD (WebSite, ItemList, Person, BreadcrumbList), `sitemap.xml` and a
   `robots.txt` pointing to it; the site URL comes from `SITE_URL` at build time.

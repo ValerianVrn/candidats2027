@@ -22,7 +22,9 @@ Production stays empty until every item is done.
 - [ ] Attach the custom domain to `swa-candidats2027-prod`, set `site` in `astro.config.mjs`, add `ads.txt`.
 - [ ] Set the AdSense publisher id in the build (`PUBLIC_ADSENSE_CLIENT`) and check that no ad or Google
       request happens before consent.
-- [ ] Set the `SITE_URL` variable of the GitHub `production` environment to the domain (canonical URLs, sitemap).
+- [ ] Domain chosen by the owner: **liste-candidats-2027.fr** (bought 2026-11-18). Attach it to `swa-candidats2027-prod`.
+- [ ] Set the `SITE_URL` variable of the GitHub `production` environment to `https://liste-candidats-2027.fr`
+      (canonical URLs, sitemap, share cards).
 - [ ] Google Search Console and Bing Webmaster Tools: verify the domain (DNS record) and submit `/sitemap.xml`.
 - [ ] Run `npm run check-links` on the release candidate.
 - [ ] Create the GitHub environment `production-data` (deployments from `main` only, no reviewer, same variables
