@@ -59,6 +59,12 @@ The cost of a run is in opening and verifying pages, not in searching. So:
    programmes, meetings, sponsorships). Note every candidate mentioned and every new name.
 2. **Every candidate:** for **each** of the files in `src/data/candidates/` (all of them, no sampling), one search
    « Prénom Nom présidentielle » restricted to recent results. Read the result snippets only.
+   - Work through the list **in batches of 8 parallel searches**, in alphabetical order of file name, until the
+     list is exhausted. With 44 candidates that is 6 batches: it takes a few minutes, and that is expected.
+   - **Do not stop early.** « Nothing new so far » is not a reason to skip the remaining candidates, and neither is
+     the time already spent. A run that reviews fewer than all candidates is a failed run.
+   - Before publishing, compare your list of reviewed slugs with `ls src/data/candidates`. If any is missing,
+     search it now.
 3. **Open and verify articles only** when a result is newer than the candidate's `lastChecked` and its URL is not
    already cited in their file. Then apply the rules below and the research briefs.
 4. Keep a list of the candidates reviewed: it goes in the summary (section 8).
