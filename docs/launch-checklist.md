@@ -14,12 +14,13 @@ Production stays empty until every item is done.
 - [ ] Have a lawyer review the legal notice, the privacy policy and `/financement`.
 - [ ] Professional / media liability insurance for the SASU.
 - [ ] Make sure `contact@liste-candidats-2027.fr` is read regularly (rights of reply, data requests).
-- [ ] Approve the first `production` deployment in GitHub.
+- [x] Approve the first `production` deployment in GitHub.
 
 ## Claude (with the owner's approval for each step)
 
 - [ ] Switch prod to the Standard plan if traffic justifies it (ADR 0003).
-- [ ] Attach the custom domain to `swa-candidats2027-prod`, set `site` in `astro.config.mjs`, add `ads.txt`.
+- [x] Attach the custom domain to `swa-candidats2027-prod` (both `liste-candidats-2027.fr` and `www`, the bare
+      domain as default) and set `SITE_URL`. Still to do with AdSense: add `ads.txt`.
 - [ ] Set the AdSense publisher id in the build (`PUBLIC_ADSENSE_CLIENT`) and check that no ad or Google
       request happens before consent.
 - [x] Domain chosen by the owner: **liste-candidats-2027.fr** (bought 2026-11-18), attached to `swa-candidats2027-prod`
@@ -27,9 +28,9 @@ Production stays empty until every item is done.
       `CNAME www → nice-forest-04f91d203.5.azurestaticapps.net`; then add `www` as a second custom domain.
 - [x] Set the `SITE_URL` variable of the GitHub `production` environment to `https://liste-candidats-2027.fr`
       (canonical URLs, sitemap, share cards).
-- [ ] Google Search Console and Bing Webmaster Tools: verify the domain (DNS record) and submit `/sitemap.xml`.
-- [ ] Run `npm run check-links` on the release candidate.
-- [ ] Create the GitHub environment `production-data` (deployments from `main` only, no reviewer, same variables
+- [x] Google Search Console and Bing Webmaster Tools: verify the domain (DNS record) and submit `/sitemap.xml`.
+- [x] Run `npm run check-links` on the release candidate.
+- [x] Create the GitHub environment `production-data` (deployments from `main` only, no reviewer, same variables
       as `production`) and an Azure federated credential for it on the prod identity
       (`repo:ValerianVrn@78210211/candidats2027@1459747661:environment:production-data`).
-- [ ] After the owner's first release is tagged `v1.0.0`: the owner sets `config/routine.json` to `"live"` (ADR 0005).
+- [x] After the owner's first release is tagged `v1.0.0`: `config/routine.json` set to `"live"` on 2026-11-18 at the owner's request (ADR 0005).
