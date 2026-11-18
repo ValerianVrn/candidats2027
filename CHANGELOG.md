@@ -24,6 +24,9 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Added
 
+- Quiz: retirement is now a question of direction (advance, keep, raise the age, or no legal age: contribution
+  length only), a new question on pension capitalisation, and explicit thresholds on public spending
+  (100 Md€ or 200 000 public posts over the term); 47 sourced positions.
 - « Comparer les positions » on `/quiz` while the scored quiz is closed: theme by theme, each answer with the
   candidates who hold it (sourced) and « Non renseigné », no score.
 - « Qui finance ce site ? » page (`/financement`), linked from the footer: funding by ads only, placements,
