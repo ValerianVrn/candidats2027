@@ -7,8 +7,13 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-11-18
+
+First public release, on https://liste-candidats-2027.fr.
+
 ### Fixed
 
+- Legal notice and privacy policy: contact address on the site's own domain (`contact@liste-candidats-2027.fr`).
 - Candidate pages: the « Tous les candidats » link (which reopened the home page) becomes a breadcrumb « Accueil ›
   Liste des candidats › Nom », the same trail as the structured data.
 - « Vérifié il y a … » stays honest: the routine only advances it after reviewing every profile. The Journal
