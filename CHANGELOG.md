@@ -9,9 +9,9 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Fixed
 
-- « Vérifié » no longer overstates freshness: the header shows the oldest profile check unless every profile was
-  checked in the last run. The Journal shows the last complete check, the last change and the days checked
-  without change (`site.json → checks`). Each routine PR now carries the run's full summary as a daily log.
+- « Vérifié il y a … » stays honest: the routine only advances it after reviewing every profile. The Journal
+  shows the last check, the last change and the days checked without change (`site.json → checks`). Each
+  routine PR now carries the run's full summary as a daily log.
 - Daily routine: reviews all candidates in batches of 8 and checks its list before publishing (it had stopped
   after 13 of 44); the link check no longer fails on DNS errors from the cloud sandbox, only on 404/410.
 - Candidate details: the tabs (Programme, Agenda, Déclaration, Procédures) now switch content. The cramped side
