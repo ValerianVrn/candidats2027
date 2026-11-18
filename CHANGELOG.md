@@ -29,6 +29,9 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Added
 
+- SEO: visible home H1 and intro, « Liste des candidats à la présidentielle 2027 » page (`/candidats`), search-friendly
+  titles and descriptions, schema.org JSON-LD (WebSite, ItemList, Person, BreadcrumbList), `sitemap.xml` and a
+  `robots.txt` pointing to it; the site URL comes from `SITE_URL` at build time.
 - Televised debates and major broadcasts (`src/data/events.json`, two sources each): shown in each participant's
   Agenda (with sourced absences) and as « Dernier / Prochain débat » on the home page. First entry: the TF1/LCI
   debate of 16 November 2026.

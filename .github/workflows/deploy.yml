@@ -40,7 +40,9 @@ jobs:
           RELEASE: '1'
       - run: npm run build
         env:
-          # Set as variables of the GitHub environment (production only, at launch). Empty = no ads.
+          # Variables of the GitHub environment. SITE_URL: absolute site URL (canonical, sitemap).
+          # PUBLIC_ADSENSE_*: production only, at launch; empty = no ads.
+          SITE_URL: ${{ vars.SITE_URL }}
           PUBLIC_ADSENSE_CLIENT: ${{ vars.PUBLIC_ADSENSE_CLIENT }}
           PUBLIC_ADSENSE_SLOT_HOME: ${{ vars.PUBLIC_ADSENSE_SLOT_HOME }}
           PUBLIC_ADSENSE_SLOT_JOURNAL: ${{ vars.PUBLIC_ADSENSE_SLOT_JOURNAL }}

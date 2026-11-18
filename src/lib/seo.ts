@@ -1,0 +1,86 @@
+/**
+ * Search-engine helpers: schema.org JSON-LD builders and the sitemap. Pure functions, unit tested.
+ * Structured data only states what the page shows (no ratings, no opinions).
+ */
+
+export type JsonLd = Record<string, unknown>;
+
+const CONTEXT = 'https://schema.org';
+
+export function websiteLd(site: URL, name: string, description: string): JsonLd {
+  return { '@context': CONTEXT, '@type': 'WebSite', name, url: site.href, inLanguage: 'fr-FR', description };
+}
+
+export function itemListLd(site: URL, name: string, items: { name: string; path: string }[]): JsonLd {
+  return {
+    '@context': CONTEXT,
+    '@type': 'ItemList',
+    name,
+    numberOfItems: items.length,
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.name,
+      url: new URL(it.path, site).href,
+    })),
+  };
+}
+
+export function personLd(
+  site: URL,
+  p: {
+    givenName: string;
+    familyName: string;
+    path: string;
+    jobTitle: string;
+    party: string | null;
+    image: string | null;
+  },
+): JsonLd {
+  return {
+    '@context': CONTEXT,
+    '@type': 'Person',
+    name: `${p.givenName} ${p.familyName}`,
+    givenName: p.givenName,
+    familyName: p.familyName,
+    jobTitle: p.jobTitle,
+    url: new URL(p.path, site).href,
+    ...(p.party ? { affiliation: { '@type': 'Organization', name: p.party } } : {}),
+    ...(p.image ? { image: new URL(p.image, site).href } : {}),
+  };
+}
+
+export function breadcrumbLd(site: URL, crumbs: { name: string; path: string }[]): JsonLd {
+  return {
+    '@context': CONTEXT,
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: new URL(c.path, site).href,
+    })),
+  };
+}
+
+/** Serialises JSON-LD for a <script> tag (no « </script> » breakout). */
+export function serializeLd(data: JsonLd | JsonLd[]): string {
+  return JSON.stringify(data).replace(/</g, '\\u003c');
+}
+
+export interface SitemapEntry {
+  path: string;
+  /** YYYY-MM-DD */
+  lastmod: string | null;
+}
+
+export function sitemapXml(site: URL, entries: SitemapEntry[]): string {
+  const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const urls = entries
+    .map(
+      (e) =>
+        `  <url><loc>${esc(new URL(e.path, site).href)}</loc>${e.lastmod ? `<lastmod>${e.lastmod}</lastmod>` : ''}</url>`,
+    )
+    .join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+}

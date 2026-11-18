@@ -6,11 +6,23 @@ import QuizLens from '../components/QuizLens.astro';
 import OtherCandidates from '../components/OtherCandidates.astro';
 import AdSlot from '../components/AdSlot.astro';
 import DebateStrip from '../components/DebateStrip.astro';
-import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/data';
+import { activeCandidates, election, featuredCandidates, otherCandidates } from '../lib/data';
+import { formatDay } from '../lib/dates';
+import { websiteLd } from '../lib/seo';
+import { SITE_DESCRIPTION, SITE_NAME } from '../lib/site';
+
+const declaredCount = activeCandidates.filter(
+  (c) => c.status === 'declare' || c.status === 'officiel',
+).length;
+const potentialCount = activeCandidates.filter((c) => c.status === 'potentiel').length;
 ---
 
-<Base section="candidats" ads>
-  <h1 class="visually-hidden">Les candidats à l'élection présidentielle de 2027</h1>
+<Base section="candidats" ads jsonLd={websiteLd(Astro.site!, SITE_NAME, SITE_DESCRIPTION)}>
+  <div class="intro">
+    <h1>Candidats à l'élection présidentielle 2027</h1>
+    <!-- prettier-ignore -->
+    <p>{declaredCount} candidats déclarés et {potentialCount} candidatures évoquées · premier tour le {formatDay(election.firstRound.slice(0, 10))}, second tour le {formatDay(election.secondRound.slice(0, 10))} · <a href="/candidats">voir la liste complète</a></p>
+  </div>
   <QuizLens />
   <DebateStrip />
   <CardCloud candidates={featuredCandidates} everyone={activeCandidates} />
@@ -120,6 +132,18 @@ import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/da
 </script>
 
 <style>
+  .intro {
+    padding: 18px var(--gutter) 0;
+  }
+  .intro h1 {
+    margin: 0;
+    font-size: clamp(22px, 3vw, 30px);
+  }
+  .intro p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
   :global(.cloud),
   :global(.others) {
     padding-left: var(--gutter);
