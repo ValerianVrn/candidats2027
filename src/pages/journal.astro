@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import AdSlot from '../components/AdSlot.astro';
-import { activeCandidates, candidates, changelog, fullName, site, verified } from '../lib/data';
+import { activeCandidates, candidates, changelog, fullName, site } from '../lib/data';
 import { formatDateTime, formatDay, formatShortDay } from '../lib/dates';
 import { REPORT_ERROR_URL } from '../lib/site';
 
@@ -24,9 +24,7 @@ const quietDays = site.checks
       Voici ce qui a changé, et pourquoi. Une erreur ? <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">Signalez-la</a>.
     </p>
     <p class="status">
-      {verified.at
-        ? `Dernière vérification complète des ${activeCandidates.length} fiches : ${formatDateTime(verified.at)}.`
-        : `Toutes les fiches ont été vérifiées au moins depuis le ${formatDay(verified.day)}.`}
+      Dernière vérification : {formatDateTime(site.lastChecked)}.
       {lastChange && ` Dernier changement : ${formatDay(lastChange)}.`}
     </p>
     {quietDays.length > 0 && (

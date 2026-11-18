@@ -17,7 +17,6 @@ import changelogJson from '../data/changelog.json';
 import siteJson from '../data/site.json';
 import eventsJson from '../data/events.json';
 import { isFeatured } from './criteria';
-import { verification } from './freshness';
 
 function parse<T>(schema: z.ZodType<T>, value: unknown, where: string): T {
   const result = schema.safeParse(value);
@@ -85,9 +84,3 @@ export function eventsOf(slug: string): { event: CampaignEvent; absent: { note: 
     .filter((e) => e.participants.includes(slug) || e.absents.some((a) => a.slug === slug))
     .map((e) => ({ event: e, absent: e.absents.find((a) => a.slug === slug) ?? null }));
 }
-
-/** What the site can honestly claim was checked (see src/lib/freshness.ts). */
-export const verified = verification(
-  activeCandidates.map((c) => c.lastChecked),
-  site.lastChecked,
-);

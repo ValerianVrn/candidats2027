@@ -1,6 +1,6 @@
 ---
-import { election, verified } from '../lib/data';
-import { countdown, formatDateTime, formatDay, formatShortDay, relativeAgo } from '../lib/dates';
+import { election, site } from '../lib/data';
+import { countdown, formatDateTime, formatDay, relativeAgo } from '../lib/dates';
 
 interface Props {
   section: 'candidats' | 'quiz' | 'journal' | null;
@@ -50,22 +50,13 @@ const links = [
     </p>
     <p class="updated">
       <span class="dot" aria-hidden="true"></span>
-      {verified.at ? (
-        <time
-          datetime={verified.at}
-          data-ago
-          title={`Toutes les fiches vérifiées le ${formatDateTime(verified.at)}`}
-        >
-          Vérifié {relativeAgo(new Date(verified.at), now)}
-        </time>
-      ) : (
-        <time
-          datetime={verified.day}
-          title={`Toutes les fiches ont été vérifiées au moins depuis le ${formatDay(verified.day)}`}
-        >
-          Vérifié le {formatShortDay(verified.day)}
-        </time>
-      )}
+      <time
+        datetime={site.lastChecked}
+        data-ago
+        title={`Dernière vérification : ${formatDateTime(site.lastChecked)}`}
+      >
+        Vérifié {relativeAgo(new Date(site.lastChecked), now)}
+      </time>
     </p>
   </div>
 </header>
