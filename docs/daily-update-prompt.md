@@ -69,6 +69,8 @@ What to look for:
 - New or evolving legal/tax procedures (`risques`) — two sources, exact procedural status, presumption of
   innocence.
 - Announced meetings (add future ones, keep the last 2 months).
+- Televised debates and major broadcasts with candidates (past 48 h and announced ones) in
+  `src/data/events.json`, following the research brief (two outlets, absents only when sourced).
 - New programme proposals (most recent first; keep at most ~10 items per candidate, replacing outdated ones).
 - From February 2027: validated sponsorships published by the Conseil constitutionnel (`parrainages`).
 - New potential candidates (2+ outlets in the last 3 months) and potential ones who ruled it out (remove their

@@ -1,0 +1,151 @@
+---
+/**
+ * Home page strip: the next announced debate, or the last one from the past three weeks.
+ * Participants' portraits open the same detail drawer as the cloud (class `card` + data-slug).
+ */
+import Avatar from './Avatar.astro';
+import { candidates, events, familleOf, fullName } from '../lib/data';
+import { formatDay } from '../lib/dates';
+import { homeDebate } from '../lib/events';
+
+const today = new Date().toISOString().slice(0, 10);
+const featured = homeDebate(events, today);
+const bySlug = new Map(candidates.map((c) => [c.slug, c]));
+---
+
+{featured && (
+  <section class="debate" aria-labelledby="debate-title">
+    <p class="kicker">{featured.upcoming ? 'Prochain débat' : 'Dernier débat'}</p>
+    <div class="row">
+      <div class="info">
+        <h2 id="debate-title">« {featured.event.title} »</h2>
+        <p class="when">
+          {formatDay(featured.event.date)}
+          {featured.event.time ? ` · ${featured.event.time.replace(':', ' h ')}` : ''} ·{' '}
+          {featured.event.channels.join(' et ')}
+        </p>
+        <p class="summary">{featured.event.summary}</p>
+        {featured.event.absents.length > 0 && (
+          <p class="absent">
+            {featured.event.absents
+              .map(
+                (a) =>
+                  `${fullName(bySlug.get(a.slug)!)} : ${a.note.charAt(0).toLowerCase()}${a.note.slice(1)}`,
+              )
+              .join(' ')}
+          </p>
+        )}
+        <p class="links">
+          {featured.event.replayUrl && (
+            <>
+              <a href={featured.event.replayUrl} target="_blank" rel="noopener">
+                Revoir le débat
+              </a>
+              {' · '}
+            </>
+          )}
+          Sources :{' '}
+          {featured.event.sources.map((s, i) => (
+            <>
+              {i > 0 && ', '}
+              <a href={s.url} target="_blank" rel="noopener">
+                {s.outlet}
+              </a>
+            </>
+          ))}
+        </p>
+      </div>
+      <ul class="faces" aria-label="Participants">
+        {featured.event.participants
+          .map((s) => bySlug.get(s)!)
+          .toSorted((a, b) => a.lastName.localeCompare(b.lastName, 'fr'))
+          .map((c) => (
+            <li style={`--ring:var(--f-${familleOf(c)})`}>
+              <a class="card face" href={`/candidat/${c.slug}`} data-slug={c.slug} aria-label={fullName(c)}>
+                <span class="face-ring">
+                  <Avatar candidate={c} size={44} />
+                </span>
+                <span class="face-name">{c.lastName}</span>
+              </a>
+            </li>
+          ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<style>
+  .debate {
+    margin: 16px var(--gutter) 0;
+    padding: 14px 18px;
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--surface) 80%, transparent);
+    border: 1px solid var(--line);
+  }
+  .kicker {
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+  }
+  .info {
+    flex: 1 1 360px;
+    min-width: 0;
+  }
+  h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .info p {
+    margin: 2px 0 0;
+    font-size: 13px;
+  }
+  .when {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .summary,
+  .absent,
+  .links {
+    color: var(--muted);
+  }
+  .faces {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--ink);
+    text-decoration: none;
+    min-width: 56px;
+  }
+  .face-ring {
+    display: flex;
+    border-radius: 50%;
+    border: 2px solid var(--ring);
+    transition: transform 0.2s ease;
+  }
+  .face:hover .face-ring,
+  .face:focus-visible .face-ring {
+    transform: scale(1.08);
+  }
+  .face-name {
+    font-size: 12px;
+  }
+</style>

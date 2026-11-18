@@ -3,8 +3,10 @@ import {
   candidateSchema,
   changelogSchema,
   electionSchema,
+  eventSchema,
   partySchema,
   siteSchema,
+  type CampaignEvent,
   type Candidate,
   type Famille,
   type Party,
@@ -13,6 +15,7 @@ import electionJson from '../data/election.json';
 import partiesJson from '../data/parties.json';
 import changelogJson from '../data/changelog.json';
 import siteJson from '../data/site.json';
+import eventsJson from '../data/events.json';
 import { isFeatured } from './criteria';
 
 function parse<T>(schema: z.ZodType<T>, value: unknown, where: string): T {
@@ -62,3 +65,22 @@ export const activeCandidates = candidates.filter((c) => c.status !== 'retire');
 /** Main cloud vs « Autres candidatures », by the published criterion (src/lib/criteria.ts). */
 export const featuredCandidates = activeCandidates.filter((c) => isFeatured(c, partyOf(c)));
 export const otherCandidates = activeCandidates.filter((c) => !isFeatured(c, partyOf(c)));
+
+/** Debates and major broadcasts, newest first. */
+export const events: CampaignEvent[] = parse(z.array(eventSchema), eventsJson, 'src/data/events.json')
+  .map((e) => {
+    for (const slug of [...e.participants, ...e.absents.map((a) => a.slug)]) {
+      if (!candidates.some((c) => c.slug === slug)) {
+        throw new Error(`src/data/events.json: event "${e.id}" names unknown candidate "${slug}"`);
+      }
+    }
+    return e;
+  })
+  .toSorted((a, b) => b.date.localeCompare(a.date));
+
+/** Events a candidate took part in or declined. */
+export function eventsOf(slug: string): { event: CampaignEvent; absent: { note: string } | null }[] {
+  return events
+    .filter((e) => e.participants.includes(slug) || e.absents.some((a) => a.slug === slug))
+    .map((e) => ({ event: e, absent: e.absents.find((a) => a.slug === slug) ?? null }));
+}

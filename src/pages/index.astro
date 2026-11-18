@@ -5,12 +5,14 @@ import CandidateDetail from '../components/CandidateDetail.astro';
 import QuizLens from '../components/QuizLens.astro';
 import OtherCandidates from '../components/OtherCandidates.astro';
 import AdSlot from '../components/AdSlot.astro';
+import DebateStrip from '../components/DebateStrip.astro';
 import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/data';
 ---
 
 <Base section="candidats" ads>
   <h1 class="visually-hidden">Les candidats à l'élection présidentielle de 2027</h1>
   <QuizLens />
+  <DebateStrip />
   <CardCloud candidates={featuredCandidates} everyone={activeCandidates} />
   <OtherCandidates candidates={otherCandidates} />
 
@@ -109,8 +111,12 @@ import { activeCandidates, featuredCandidates, otherCandidates } from '../lib/da
     }
   });
 
-  const initial = decodeURIComponent(location.hash.slice(1));
-  if (initial && !initial.includes('=')) open(initial);
+  function openFromHash() {
+    const slug = decodeURIComponent(location.hash.slice(1));
+    if (slug && !slug.includes('=')) open(slug);
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
 </script>
 
 <style>

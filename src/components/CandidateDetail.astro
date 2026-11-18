@@ -9,7 +9,7 @@ import Avatar from './Avatar.astro';
 import Cite from './Cite.astro';
 import VideoFacade from './VideoFacade.astro';
 import { CitationRegistry } from '../lib/citations';
-import { familleOf, fullName, partyOf } from '../lib/data';
+import { eventsOf, familleOf, fullName, partyOf } from '../lib/data';
 import { formatDay, formatDeclarationDate } from '../lib/dates';
 import { FAMILLE_LABEL, statusLabel } from '../lib/labels';
 import { REPORT_ERROR_URL } from '../lib/site';
@@ -30,6 +30,8 @@ const today = new Date().toISOString().slice(0, 10);
 const programme = c.programme.toSorted((a, b) => THEME_IDS.indexOf(a.theme) - THEME_IDS.indexOf(b.theme));
 const upcoming = c.meetings.filter((m) => m.date >= today).toSorted((a, b) => a.date.localeCompare(b.date));
 const past = c.meetings.filter((m) => m.date < today).toSorted((a, b) => b.date.localeCompare(a.date));
+const broadcasts = eventsOf(c.slug);
+const KIND_LABEL = { debat: 'Débat', emission: 'Émission' } as const;
 const procedures = c.risques.filter((r) => r.nature !== 'politique');
 const uncertainties = c.risques.filter((r) => r.nature === 'politique');
 const activeProcedures = procedures.filter((r) => r.active).length;
@@ -108,6 +110,36 @@ const H = mode === 'page' ? 'h2' : 'h3';
       hidden={mode === 'panel'}
     >
       {mode === 'page' && <H>Agenda</H>}
+      {broadcasts.length > 0 && (
+        <>
+          <p class="subhead">Débats et émissions</p>
+          <ul class="agenda">
+            {broadcasts.map(({ event: e, absent }) => (
+              <li>
+                <time datetime={e.date}>
+                  {formatDay(e.date)}
+                  {e.time ? ` · ${e.time.replace(':', ' h ')}` : ''} · {e.channels.join(' et ')}
+                </time>
+                <span>
+                  {KIND_LABEL[e.kind]} « {e.title} »
+                  {absent ? ` : ${c.genre === 'f' ? 'absente' : 'absent'}. ${absent.note}` : ''}
+                  <Cite numbers={reg.cite(e.sources)} idPrefix={id} />
+                  {e.replayUrl && (
+                    <>
+                      {' '}
+                      ·{' '}
+                      <a href={e.replayUrl} target="_blank" rel="noopener">
+                        Revoir
+                      </a>
+                    </>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p class="subhead">Meetings</p>
+        </>
+      )}
       {upcoming.length ? (
         <ul class="agenda">
           {upcoming.map((m) => (

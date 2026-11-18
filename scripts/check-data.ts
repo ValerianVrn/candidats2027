@@ -14,12 +14,20 @@ import {
   candidateSchema,
   changelogSchema,
   electionSchema,
+  eventSchema,
   partySchema,
   siteSchema,
   type Candidate,
   type Party,
 } from '../src/lib/schemas.ts';
-import { checkCandidate, checkParty, checkQuiz, type Allowlist, type Issue } from '../src/lib/guardrails.ts';
+import {
+  checkCandidate,
+  checkEvent,
+  checkParty,
+  checkQuiz,
+  type Allowlist,
+  type Issue,
+} from '../src/lib/guardrails.ts';
 import { quizSchema } from '../src/lib/quiz-schema.ts';
 
 const root = join(import.meta.dirname, '..');
@@ -91,6 +99,17 @@ if (election) {
   }
 }
 parse(siteSchema, readJson(join(dataDir, 'site.json')), 'site.json');
+const eventList = parse(z.array(eventSchema), readJson(join(dataDir, 'events.json')), 'events.json');
+if (eventList) {
+  const slugSet = new Set(candidates.map((c) => c.slug));
+  const ids = new Set<string>();
+  for (const e of eventList) {
+    if (ids.has(e.id)) issues.push({ file: 'events.json', path: e.id, message: 'duplicate event id' });
+    ids.add(e.id);
+    issues.push(...checkEvent(e, allowlist, slugSet));
+  }
+  collectUrls(eventList);
+}
 const quiz = parse(quizSchema, readJson(join(dataDir, 'quiz.json')), 'quiz.json');
 if (quiz) {
   issues.push(...checkQuiz(quiz, allowlist, new Map(candidates.map((c) => [c.slug, c]))));

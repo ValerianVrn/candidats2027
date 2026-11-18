@@ -24,6 +24,9 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Added
 
+- Televised debates and major broadcasts (`src/data/events.json`, two sources each): shown in each participant's
+  Agenda (with sourced absences) and as « Dernier / Prochain débat » on the home page. First entry: the TF1/LCI
+  debate of 16 November 2026.
 - Quiz: retirement is now a question of direction (advance, keep, raise the age, or no legal age: contribution
   length only), a new question on pension capitalisation, and explicit thresholds on public spending
   (100 Md€ or 200 000 public posts over the term); 47 sourced positions.
