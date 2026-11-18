@@ -12,7 +12,7 @@ export const PUBLISHER = {
   /** Directeur ou directrice de la publication. */
   director: 'Valérian Verona' as string | null,
   /** Contact address for readers, rights of reply and data requests. */
-  email: 'contact@valerian-verona.fr' as string | null,
+  email: 'contact@liste-candidats-2027.fr' as string | null,
 };
 
 export const HOST = {
