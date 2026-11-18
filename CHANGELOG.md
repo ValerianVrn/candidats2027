@@ -7,6 +7,13 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-18
+
+### Fixed
+
+- Browser icon: the site's own « 27 » icon with a tricolour bar replaces the Astro logo (SVG, ICO and Apple touch
+  icon, rendered from the SVG by `scripts/favicons.ts`).
+
 ## [1.0.1] - 2026-11-18
 
 ### Changed
