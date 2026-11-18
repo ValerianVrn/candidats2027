@@ -9,6 +9,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Fixed
 
+- Candidate pages: the « Tous les candidats » link (which reopened the home page) becomes a breadcrumb « Accueil ›
+  Liste des candidats › Nom », the same trail as the structured data.
 - « Vérifié il y a … » stays honest: the routine only advances it after reviewing every profile. The Journal
   shows the last check, the last change and the days checked without change (`site.json → checks`). Each
   routine PR now carries the run's full summary as a daily log.
