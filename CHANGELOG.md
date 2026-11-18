@@ -7,6 +7,11 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Added
+
+- AdSense: `ads.txt` for the site's publisher account; the publisher id is set on the production environments, so
+  the ad script (with Google's consent message) loads on the home page and the journal only.
+
 ## [1.1.0] - 2026-11-18
 
 ### Fixed
