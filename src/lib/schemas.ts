@@ -160,3 +160,27 @@ export const changelogEntrySchema = z.object({
 });
 export const changelogSchema = z.array(changelogEntrySchema);
 export type ChangelogEntry = z.infer<typeof changelogEntrySchema>;
+
+/** A televised debate or major broadcast, shared by every candidate taking part (src/data/events.json). */
+export const eventSchema = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  kind: z.enum(['debat', 'emission']),
+  date: isoDate,
+  /** Start time, Paris time (HH:MM), when the sources give it. */
+  time: z
+    .string()
+    .regex(/^\d{2}:\d{2}$/)
+    .nullable(),
+  /** Programme title as broadcast, e.g. « Quelle société pour demain ? ». */
+  title: z.string().min(1),
+  channels: z.array(z.string().min(1)).min(1),
+  /** One neutral sentence on the format or theme. */
+  summary: z.string().min(1),
+  participants: z.array(z.string()).min(1),
+  /** Invited candidates who declined, with the reason as reported. */
+  absents: z.array(z.object({ slug: z.string(), note: z.string().min(1) })),
+  /** Official replay (broadcaster's site or channel), when one exists. */
+  replayUrl: httpsUrl.nullable(),
+  sources,
+});
+export type CampaignEvent = z.infer<typeof eventSchema>;

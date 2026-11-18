@@ -2,7 +2,7 @@
  * Content guardrails (pure functions, no I/O). Run by scripts/check-data.ts in CI.
  * The site publishes without human review, so these rules block a merge when broken.
  */
-import type { Candidate, Party, Source } from './schemas.ts';
+import type { CampaignEvent, Candidate, Party, Source } from './schemas.ts';
 import type { Quiz } from './quiz-schema.ts';
 
 export interface Allowlist {
@@ -153,6 +153,17 @@ export function checkQuiz(
         minIndependent: 2,
       });
     }
+  }
+  return ctx.issues;
+}
+
+/** Debates and broadcasts: two independent outlets, known candidates only. */
+export function checkEvent(e: CampaignEvent, allowlist: Allowlist, slugs: ReadonlySet<string>): Issue[] {
+  const ctx: CheckContext = { allow: [...allowlist.media, ...allowlist.official], issues: [] };
+  const file = 'events.json';
+  checkSources(ctx, file, `${e.id}.sources`, e.sources, { minIndependent: 2 });
+  for (const slug of [...e.participants, ...e.absents.map((a) => a.slug)]) {
+    if (!slugs.has(slug)) ctx.issues.push({ file, path: `${e.id}`, message: `unknown candidate "${slug}"` });
   }
   return ctx.issues;
 }

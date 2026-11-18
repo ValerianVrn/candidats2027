@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { checkCandidate, checkQuiz, matchDomain } from './guardrails';
+import { checkCandidate, checkEvent, checkQuiz, matchDomain } from './guardrails';
 import { isFeatured } from './criteria';
 import type { Candidate, Party } from './schemas';
 
@@ -224,5 +224,34 @@ describe('checkQuiz', () => {
       'energie.positions.a-b.sources',
       'energie.positions.nobody',
     ]);
+  });
+});
+
+describe('checkEvent', () => {
+  const event = (sources: ReturnType<typeof src>[], participants = ['a-b']) => ({
+    id: 'debat',
+    kind: 'debat' as const,
+    date: '2026-11-16',
+    time: '20:20',
+    title: 'Débat',
+    channels: ['TF1'],
+    summary: 'Débat.',
+    participants,
+    absents: [],
+    replayUrl: null,
+    sources,
+  });
+  it('needs two outlets and known candidates', () => {
+    expect(
+      checkEvent(event([src('https://lemonde.fr/1'), src('https://afp.com/2')]), allowlist, new Set(['a-b'])),
+    ).toEqual([]);
+    expect(checkEvent(event([src('https://lemonde.fr/1')]), allowlist, new Set(['a-b'])).length).toBe(1);
+    expect(
+      checkEvent(
+        event([src('https://lemonde.fr/1'), src('https://afp.com/2')], ['x']),
+        allowlist,
+        new Set(['a-b']),
+      ).length,
+    ).toBe(1);
   });
 });

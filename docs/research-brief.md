@@ -113,6 +113,16 @@ immigration, securite, institutions, europe, defense, agriculture, societe`.
   proposal (official site, programme document, or press report of their proposal), most recent first.
 - `qualified2022`: sources = Conseil constitutionnel list of 2022 candidates or press reporting it.
 
+## Debates and major broadcasts (`src/data/events.json`)
+
+- One entry per televised debate between candidates, or major broadcast (e.g. a prime-time interview series),
+  shared by every candidate in it: `kind` (`debat` | `emission`), `date`, `time` (Paris, `HH:MM`, or null),
+  broadcast `title`, `channels`, one neutral `summary` sentence (format or theme), `participants`, `absents` (invited
+  candidates who declined, with the reason exactly as reported), `replayUrl` (official broadcaster replay only,
+  else null) and `sources` (**two outlets**).
+- Add announced future debates as soon as two outlets report them; they show on the home page.
+- Never list someone as absent unless the sources say they were invited to _that_ debate and did not take part.
+
 ## Portraits
 
 - Only from Wikimedia Commons, licence CC0, public domain, CC BY or CC BY-SA (any version). Never fair use,
