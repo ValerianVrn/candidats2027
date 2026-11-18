@@ -84,9 +84,14 @@ What to look for:
 - Quiz positions in `src/data/quiz.json` when a candidate states a new position, following
   `docs/quiz-research-brief.md` (strict matching, two outlets, nothing inferred).
 
-Update `lastChecked` on every candidate you reviewed (all of them), and `src/data/site.json` → `lastChecked` to now.
-These updates are published every day, even when nothing else changed, so the « Vérifié il y a… » indicator stays
-true.
+Update `lastChecked` on every candidate you reviewed (all of them). In `src/data/site.json`:
+
+- append `{ "date": "YYYY-MM-DD", "reviewed": <number of profiles reviewed> }` to `checks` (every run);
+- set `lastChecked` to now **only if you reviewed every profile**. The header shows the oldest profile check
+  otherwise, so a partial run never claims a full check.
+
+These updates are published every day, even when nothing else changed: the Journal lists days « vérifié sans
+changement » from `checks`.
 
 ## 5. Journal
 
@@ -109,7 +114,8 @@ then follow the phase.
 
 ### Phase `pre-launch`
 
-Open a PR into `develop` titled `chore(data): daily update YYYY-MM-DD` (body: summary, changes, sources), then:
+Open a PR into `develop` titled `chore(data): daily update YYYY-MM-DD`. Its body is the **full summary of
+section 8** (one line per candidate, changes with sources, blockers): the PR list is the owner's daily log. Then:
 
 ```bash
 npm run diff-guard -- origin/develop
@@ -121,7 +127,8 @@ npm run diff-guard -- origin/develop
 
 ### Phase `live` (gitflow hotfix)
 
-1. Open a PR into `main` titled `chore(data): daily update YYYY-MM-DD`, then check it:
+1. Open a PR into `main` titled `chore(data): daily update YYYY-MM-DD`, with the full section-8 summary as its
+   body (the owner's daily log), then check it:
 
    ```bash
    npm run diff-guard -- origin/main
