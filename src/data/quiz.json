@@ -4,29 +4,47 @@
       "id": "retraites-age",
       "theme": "retraites",
       "short": "Retraites",
-      "type": "scale",
-      "text": "À quel âge doit-on pouvoir partir à la retraite ?",
+      "type": "choice",
+      "text": "Que faire de l'âge de départ à la retraite ?",
       "options": [
         {
-          "id": "60-ans",
-          "label": "60 ans à taux plein"
+          "id": "avancer",
+          "label": "Avancer l'âge de départ (retour à 60 ou 62 ans)"
         },
         {
-          "id": "62-ans",
-          "label": "62 ans"
+          "id": "garder",
+          "label": "Garder les règles actuelles"
         },
         {
-          "id": "64-ans",
-          "label": "64 ans, l'âge prévu aujourd'hui"
+          "id": "reculer",
+          "label": "Reculer l'âge de départ (65 ans ou plus)"
         },
         {
-          "id": "65-ans-plus",
-          "label": "65 ans ou plus"
+          "id": "supprimer-age",
+          "label": "Supprimer l'âge légal : seule la durée de cotisation compte"
         }
       ],
       "positions": {
+        "bruno-retailleau": {
+          "option": "reculer",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://lcp.fr/actualites/logement-associations-jeunesse-ce-qu-il-faut-retenir-du-debat-presidentiel-sur-lci",
+              "outlet": "LCP",
+              "title": "Logement, associations, jeunesse...: ce qu'il faut retenir du débat présidentiel sur LCI",
+              "date": "2026-11-17"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-pauvrete-pouvoir-dachat-logement-le-pen-melenchon-glucksmann-retailleau-attal-confrontent-leurs-visions-de-la-solidarite-aux-restos",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : pauvreté, pouvoir d’achat, logement… Le Pen, Melenchon, Glucksmann, Retailleau, Attal confrontent leurs visions de la solidarité aux Restos du Cœur",
+              "date": "2026-11-16"
+            }
+          ]
+        },
         "edouard-philippe": {
-          "option": "65-ans-plus",
+          "option": "reculer",
           "kind": "declaration",
           "sources": [
             {
@@ -44,7 +62,7 @@
           ]
         },
         "jean-luc-melenchon": {
-          "option": "60-ans",
+          "option": "avancer",
           "kind": "programme",
           "sources": [
             {
@@ -62,13 +80,31 @@
           ]
         },
         "marine-le-pen": {
-          "option": "62-ans",
+          "option": "avancer",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies",
+              "outlet": "France 24",
+              "title": "Réforme des retraites de Marine Le Pen : départ à 60 ou 62 ans, capitalisation et conditions durcies",
+              "date": "2026-11-17"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-que-contient-la-reforme-des-retraites-presentee-par-marine-le-pen",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : que contient la réforme des retraites présentée par Marine Le Pen ?",
+              "date": "2026-11-17"
+            }
+          ]
+        },
+        "marine-tondelier": {
+          "option": "avancer",
           "kind": "declaration",
           "sources": [
             {
-              "url": "https://www.publicsenat.fr/actualites/politique/reculer-ou-avancer-lage-legal-avec-ou-sans-capitalisation-ce-que-proposent-les-principaux-candidats-a-lelection-presidentielle-sur-les-retraites",
-              "outlet": "Public Sénat",
-              "title": "Reculer ou avancer l’âge légal, avec ou sans capitalisation : ce que proposent les principaux candidats à l’élection présidentielle sur les retraites",
+              "url": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html",
+              "outlet": "franceinfo",
+              "title": "Changement de système, passage à 60 ou à 65 ans, capitalisation... Que proposent les principaux candidats à l'élection présidentielle pour les retraites ?",
               "date": "2026-09-30"
             },
             {
@@ -76,6 +112,89 @@
               "outlet": "Europe 1",
               "title": "Le Pen, Retailleau, Attal... Que proposent les principaux candidats à la présidentielle pour les retraites ?",
               "date": "2026-09-30"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "capitalisation",
+      "theme": "retraites",
+      "short": "Capitalisation",
+      "type": "scale",
+      "text": "Faut-il une part de retraite par capitalisation ?",
+      "options": [
+        {
+          "id": "repartition",
+          "label": "Non, seulement la retraite par répartition"
+        },
+        {
+          "id": "facultative",
+          "label": "Oui, une part de capitalisation facultative ou encouragée"
+        },
+        {
+          "id": "obligatoire",
+          "label": "Oui, une part de capitalisation obligatoire"
+        }
+      ],
+      "positions": {
+        "edouard-philippe": {
+          "option": "obligatoire",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html",
+              "outlet": "franceinfo",
+              "title": "Changement de système, passage à 60 ou à 65 ans, capitalisation... Que proposent les principaux candidats à l'élection présidentielle pour les retraites ?",
+              "date": "2026-09-30"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/reculer-ou-avancer-lage-legal-avec-ou-sans-capitalisation-ce-que-proposent-les-principaux-candidats-a-lelection-presidentielle-sur-les-retraites",
+              "outlet": "Public Sénat",
+              "title": "Reculer ou avancer l’âge légal, avec ou sans capitalisation : ce que proposent les principaux candidats à l’élection présidentielle sur les retraites",
+              "date": "2026-09-30"
+            }
+          ]
+        },
+        "jean-luc-melenchon": {
+          "option": "repartition",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://melenchon2027.fr/programme/livre/mettre-en-securite-sociale/chapitre1",
+              "outlet": "Mélenchon 2027 (programme « L'Avenir en commun »)",
+              "title": "Chapitre 1 : À chacun selon ses besoins",
+              "date": "2026-11-06"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-pauvrete-pouvoir-dachat-logement-le-pen-melenchon-glucksmann-retailleau-attal-confrontent-leurs-visions-de-la-solidarite-aux-restos",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : pauvreté, pouvoir d’achat, logement… Le Pen, Melenchon, Glucksmann, Retailleau, Attal confrontent leurs visions de la solidarité aux Restos du Cœur",
+              "date": "2026-11-16"
+            },
+            {
+              "url": "https://lcp.fr/actualites/logement-associations-jeunesse-ce-qu-il-faut-retenir-du-debat-presidentiel-sur-lci",
+              "outlet": "LCP",
+              "title": "Logement, associations, jeunesse...: ce qu'il faut retenir du débat présidentiel sur LCI",
+              "date": "2026-11-17"
+            }
+          ]
+        },
+        "marine-le-pen": {
+          "option": "obligatoire",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://lcp.fr/actualites/reforme-des-retraites-c-est-quoi-la-capitalisation-obligatoire-que-marine-le-pen-veut",
+              "outlet": "LCP",
+              "title": "Réforme des retraites: c'est quoi la capitalisation obligatoire que Marine Le Pen veut mettre en place?",
+              "date": "2026-11-17"
+            },
+            {
+              "url": "https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies",
+              "outlet": "France 24",
+              "title": "Réforme des retraites de Marine Le Pen : départ à 60 ou 62 ans, capitalisation et conditions durcies",
+              "date": "2026-11-17"
             }
           ]
         }
@@ -308,11 +427,11 @@
         },
         {
           "id": "reduire-moderement",
-          "label": "La réduire modérément"
+          "label": "La réduire modérément (moins de 100 Md€ d'économies sur le quinquennat et moins de 200 000 postes publics en moins)"
         },
         {
           "id": "reduire-fortement",
-          "label": "La réduire fortement"
+          "label": "La réduire fortement (100 Md€ d'économies ou plus sur le quinquennat, ou 200 000 postes publics en moins ou plus)"
         }
       ],
       "positions": {
@@ -345,10 +464,28 @@
               "date": "2026-11-03"
             },
             {
-              "url": "https://www.france24.com/fr/info-en-continu/20261103-pr%C3%A9sidentielle-s-il-est-%C3%A9lu-david-lisnard-promet-un-gouvernement-commando",
+              "url": "https://www.france24.com/fr/info-en-continu/20261027-pr%C3%A9sidentielle-entre-retailleau-et-lisnard-il-y-a-match-%C3%A0-droite",
               "outlet": "France 24 (AFP)",
-              "title": "Présidentielle : s'il est élu, David Lisnard promet un \"gouvernement commando\"",
-              "date": "2026-11-03"
+              "title": "Présidentielle : entre Retailleau et Lisnard, \"il y a match\" à droite",
+              "date": "2026-10-27"
+            }
+          ]
+        },
+        "edouard-philippe": {
+          "option": "reduire-fortement",
+          "kind": "declaration",
+          "sources": [
+            {
+              "url": "https://fr.euronews.com/2026/10/09/presidentielle-2027-edouard-philippe-mise-sur-le-travail-et-la-reduction-des-depenses-publ",
+              "outlet": "Euronews",
+              "title": "Présidentielle 2027 : Édouard Philippe mise sur le travail et la réduction des dépenses publiques",
+              "date": "2026-10-09"
+            },
+            {
+              "url": "https://www.franceinfo.fr/politique/edouard-philippe/immigration-retraites-allocations-familiales-parcoursup-ce-qu-il-faut-retenir-de-l-interview-d-edouard-philippe-dans-l-emission-l-heure-de-verite_8228416.html",
+              "outlet": "franceinfo",
+              "title": "Immigration, allocations familiales, Parcoursup… Ce qu'il faut retenir de l'interview d'Edouard Philippe dans l'émission \"L'Heure de vérité\" sur France 2",
+              "date": "2026-10-08"
             }
           ]
         },
@@ -357,15 +494,15 @@
           "kind": "declaration",
           "sources": [
             {
-              "url": "https://www.europe1.fr/politique/en-direct-immigration-pouvoir-dachat-narcotrafic-ce-quil-faut-retenir-de-linterview-deric-zemmour-dans-la-france-en-face-936419",
-              "outlet": "Europe 1",
-              "title": "En direct - Immigration, pouvoir d'achat, narcotrafic… Ce qu'il faut retenir de l'interview d'Éric Zemmour dans La France en face",
-              "date": "2026-05-19"
-            },
-            {
               "url": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-eric-zemmour-souhaite-supprimer-800-000-postes-dans-la-fonction-publique_8279303.html",
               "outlet": "franceinfo",
               "title": "Présidentielle 2027 : Eric Zemmour souhaite supprimer 800 000 postes dans la fonction publique",
+              "date": "2026-11-12"
+            },
+            {
+              "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-sante-justice-education-cultureque-retenir-du-grand-oral-des-candidats-sur-les-services-publics",
+              "outlet": "Public Sénat",
+              "title": "Présidentielle 2027 : santé, justice, éducation, culture…Que retenir du grand oral des candidats sur les services publics",
               "date": "2026-11-12"
             }
           ]
@@ -403,6 +540,24 @@
               "outlet": "Euronews",
               "title": "‘We need to change everything’: Mélenchon uses Le Bourget rally to press home his programme",
               "date": "2026-11-07"
+            }
+          ]
+        },
+        "marine-le-pen": {
+          "option": "reduire-fortement",
+          "kind": "programme",
+          "sources": [
+            {
+              "url": "https://www.france24.com/fr/france/20261006-pr%C3%A9sidentielle-2027-marine-le-pen-promet-140-milliards-d-euros-nets-d-%C3%A9conomies-d-ici-5-ans",
+              "outlet": "France 24",
+              "title": "Présidentielle 2027 : Marine Le Pen promet \"140 milliards d'euros nets d'économies\" d'ici 5 ans",
+              "date": "2026-10-06"
+            },
+            {
+              "url": "https://www.franceinfo.fr/elections/presidentielle/portraits-qui-sont-les-candidats-declares-a-l-election-presidentielle-de-2027_8208032.html",
+              "outlet": "franceinfo",
+              "title": "PORTRAITS. Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+              "date": "2026-10-08"
             }
           ]
         },
