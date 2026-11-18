@@ -7,6 +7,13 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-18
+
+### Changed
+
+- Daily routine goes live (ADR 0005): content updates ship as data hotfixes from `main` with a patch tag, and deploy
+  to production through the `production-data` environment without approval.
+
 ## [1.0.0] - 2026-11-18
 
 First public release, on https://liste-candidats-2027.fr.
