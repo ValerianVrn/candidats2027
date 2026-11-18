@@ -1,11 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
 import AdSlot from '../components/AdSlot.astro';
-import { candidates, changelog, fullName } from '../lib/data';
-import { formatDay } from '../lib/dates';
+import { activeCandidates, candidates, changelog, fullName, site, verified } from '../lib/data';
+import { formatDateTime, formatDay, formatShortDay } from '../lib/dates';
 import { REPORT_ERROR_URL } from '../lib/site';
 
 const nameBySlug = new Map(candidates.map((c) => [c.slug, fullName(c)]));
+const lastChange = changelog[0]?.date ?? null;
+const changeDays = new Set(changelog.map((e) => e.date));
+/** Runs that reviewed every profile and found nothing to change. */
+const quietDays = site.checks
+  .filter((c) => c.reviewed >= activeCandidates.length && !changeDays.has(c.date))
+  .map((c) => c.date)
+  .toSorted((a, b) => b.localeCompare(a));
 ---
 
 <Base title="Journal des mises à jour" section="journal" ads>
@@ -16,6 +23,15 @@ const nameBySlug = new Map(candidates.map((c) => [c.slug, fullName(c)]));
       Chaque jour, les informations du site sont vérifiées et mises à jour à partir de sources publiques.
       Voici ce qui a changé, et pourquoi. Une erreur ? <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">Signalez-la</a>.
     </p>
+    <p class="status">
+      {verified.at
+        ? `Dernière vérification complète des ${activeCandidates.length} fiches : ${formatDateTime(verified.at)}.`
+        : `Toutes les fiches ont été vérifiées au moins depuis le ${formatDay(verified.day)}.`}
+      {lastChange && ` Dernier changement : ${formatDay(lastChange)}.`}
+    </p>
+    {quietDays.length > 0 && (
+      <p class="quiet">Vérifié sans changement : {quietDays.map((d) => formatShortDay(d)).join(', ')}.</p>
+    )}
     <AdSlot placement="journal" />
     <ol class="entries">
       {changelog.map((e) => (
@@ -58,6 +74,19 @@ const nameBySlug = new Map(candidates.map((c) => [c.slug, fullName(c)]));
 
 <style>
   .lead {
+    color: var(--muted);
+  }
+  .status {
+    margin: 16px 0 0;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .quiet {
+    margin: 8px 0 0;
+    font-size: 13px;
     color: var(--muted);
   }
   .entries {

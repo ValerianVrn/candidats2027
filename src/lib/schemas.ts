@@ -150,6 +150,8 @@ export type Election = z.infer<typeof electionSchema>;
 export const siteSchema = z.object({
   /** Last time the daily routine checked the news, changes or not. */
   lastChecked: isoDateTime,
+  /** One entry per routine run: how many profiles it reviewed (shown on the Journal). */
+  checks: z.array(z.object({ date: isoDate, reviewed: z.number().int().min(0) })).default([]),
 });
 
 export const changelogEntrySchema = z.object({
