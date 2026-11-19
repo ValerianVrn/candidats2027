@@ -16,9 +16,12 @@ The daily routine must update content without the owner, follow gitflow, and nev
   PR into `develop`, merged by the routine when `npm run diff-guard` passes. Dev deploys.
 - **After launch** (`"phase": "live"`, set by the owner): gitflow hotfix.
   1. `hotfix/data-YYYY-MM-DD` from `main`, PR into `main`, merged when the diff guard passes.
-  2. Next patch tag (`vX.Y.Z+1`) on the merge commit and a GitHub Release with the day's journal entry. The
-     version lives in tags only; major and minor numbers are the owner's code releases.
-  3. Merge-back PR `main` → `develop`; a conflict stops the routine (`needs-human`).
+  2. Next patch tag (`vX.Y.Z+1`) on the merge commit and a GitHub Release with the day's journal entry, created by
+     the `release-data` job of `deploy-prod.yml` after the deploy (the routine's cloud sandbox cannot push tags,
+     found 2026-11-19). The version lives in tags only; major and minor numbers are the owner's code releases.
+  3. Merge-back: branch `merge-back/data-YYYY-MM-DD` from `main` with `develop` merged in (the protection rule
+     requires an up-to-date branch, so `main` itself can't be the PR head), PR into `develop`; a conflict stops
+     the routine.
 - `deploy-prod.yml` classifies each push to `main` with `scripts/deploy-env.ts`: content-only pushes (while
   `live`) deploy through the `production-data` environment, without approval; everything else through
   `production`, with the owner's approval. Each environment has its own Azure federated credential.

@@ -26,7 +26,7 @@ and `gh` only if it works (`gh auth status`). `git push` uses the repository cre
   nothing, open nothing, end the run.
 - If an open PR labelled `needs-human` exists from a previous run: do not merge anything today; you may still
   open a new PR, labelled `needs-human` too.
-- If a merge-back PR (`main` → `develop`) from a previous run is still open: stop and leave it to the owner.
+- If a merge-back PR into `develop` from a previous run is still open: stop and leave it to the owner.
 
 ## 2. Start
 
@@ -137,23 +137,20 @@ npm run diff-guard -- origin/develop
    Exit code 2 → label `needs-human`, comment, stop. Exit code 0 → wait for `build`, then merge (merge commit).
    The prod deploy starts by itself (data-only pushes use the `production-data` environment, no approval).
 
-2. Tag and release the merge commit with the next patch version:
+2. Do not tag: once the deploy succeeds, the `Deploy prod` workflow creates the next patch tag and the GitHub
+   Release (« Données du YYYY-MM-DD », notes from today's Journal entry). The sandbox cannot push tags.
+
+3. Merge back into develop, from a branch that already contains `develop` (the rule requires an up-to-date branch):
 
    ```bash
-   git fetch origin --tags && git switch --detach origin/main
-   last=$(git tag --list 'v*' --sort=-v:refname | head -1)        # e.g. v1.2.3
-   next=$(echo "$last" | awk -F. '{printf "%s.%s.%d", $1, $2, $3+1}')
-   git tag -a "$next" -m "Mise à jour des données du $(date +%F)" && git push origin "$next"
+   git fetch origin
+   git switch -c merge-back/data-$(date +%F) origin/main
+   git merge --no-edit origin/develop     # conflict → git merge --abort, no PR, report it in the summary, stop
+   git push -u origin merge-back/data-$(date +%F)
    ```
 
-   Then create the GitHub Release for that tag (title « Données du YYYY-MM-DD », notes = the journal entry and its
-   sources). Never change the major or minor number: those are the owner's code releases.
-
-3. Merge back into develop:
-
-   Open a PR from `main` into `develop` titled `chore: merge back <tag> into develop`.
-
-   If GitHub reports a conflict: label `needs-human`, stop. Otherwise wait for `build`, then merge (merge commit).
+   Open a PR from `merge-back/data-YYYY-MM-DD` into `develop` titled `chore: merge back data YYYY-MM-DD into develop`.
+   Never use `main` itself as the PR head. Wait for `build`, then merge (merge commit).
 
 ## 8. Summary (end of every run)
 
@@ -165,6 +162,6 @@ blocked you. A summary without the full candidate list means the run is incomple
 
 - Never push to `develop` or `main` directly, force-push, delete branches, delete or move tags, or approve
   deployments.
-- Only create `vX.Y.Z` patch tags and releases in phase `live`, for a data hotfix you merged that day.
+- Never create tags or releases: the `Deploy prod` workflow tags data hotfixes itself.
 - Never edit code, workflows, `config/`, `docs/`, `CLAUDE.md` or tests.
 - Never publish polls, aggregate quiz results, or describe a candidate with adjectives or opinions.

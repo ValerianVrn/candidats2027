@@ -31,3 +31,32 @@ jobs:
     uses: ./.github/workflows/deploy.yml
     with:
       environment: ${{ needs.classify.outputs.environment }}
+
+  # Daily data hotfixes get the next patch tag and a GitHub Release here, with GITHUB_TOKEN: the routine's cloud
+  # sandbox cannot push tags (ADR 0005). Code releases (major/minor) stay the owner's.
+  release-data:
+    needs: [classify, deploy]
+    if: needs.classify.outputs.environment == 'production-data'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Tag and release the data update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          last=$(git tag --list 'v*' --sort=-v:refname | head -1)
+          next=$(echo "$last" | awk -F. '{printf "%s.%s.%d", $1, $2, $3+1}')
+          day=$(TZ=Europe/Paris date +%F)
+          node -e '
+            const day = process.argv[1];
+            const e = JSON.parse(require("fs").readFileSync("src/data/changelog.json", "utf8")).find((x) => x.date === day);
+            const lines = e
+              ? [e.summary, "", ...e.changes.map((c) => "- " + c.text), "", "Sources :", ...e.sources.map((s) => "- " + s.outlet + " : " + s.url)]
+              : ["Vérification quotidienne des profils : aucun changement de contenu."];
+            console.log(lines.join("\n"));
+          ' "$day" > notes.md
+          gh release create "$next" --target "$GITHUB_SHA" --title "Données du $day" --notes-file notes.md
