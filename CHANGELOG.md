@@ -7,6 +7,11 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Fixed
+
+- Daily routine (live): the prod deploy workflow creates the data patch tag and release (the cloud sandbox can't
+  push tags), and merge-backs use a branch with `develop` merged in instead of `main` itself.
+
 ### Added
 
 - AdSense: `ads.txt` for the site's publisher account; the publisher id is set on the production environments, so

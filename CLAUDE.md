@@ -28,8 +28,8 @@ French-language static site about the 2027 French presidential election. Code, c
 - Daily data routine (ADR 0005), phase in `config/routine.json` (owner-only):
   - `pre-launch`: `data/daily-*` branch from `develop` → PR into `develop`, merged when the diff guard passes.
   - `live`: gitflow hotfix `hotfix/data-*` from `main` → PR into `main` → next patch tag + GitHub Release →
-    merge-back PR into `develop`. This is the only case where Claude creates tags and releases, and only patch
-    versions for data; major/minor releases stay the owner's.
+    merge-back PR (branch from `main` with `develop` merged in) into `develop`. The patch tag and release are
+    created by `deploy-prod.yml` (`release-data` job), not by the routine; major/minor releases stay the owner's.
 
 ## Content rules (the content is published without human review)
 
