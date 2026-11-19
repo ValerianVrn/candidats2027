@@ -7,6 +7,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-19
+
 ### Fixed
 
 - Daily routine (live): the prod deploy workflow creates the data patch tag and release (the cloud sandbox can't
