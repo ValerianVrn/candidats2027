@@ -1,6 +1,7 @@
 {
-  "lastChecked": "2026-11-20T07:12:53+01:00",
+  "lastChecked": "2026-11-21T07:13:10+01:00",
   "checks": [
+    { "date": "2026-11-21", "reviewed": 44 },
     { "date": "2026-11-20", "reviewed": 44 },
     { "date": "2026-11-19", "reviewed": 44 }
   ]
