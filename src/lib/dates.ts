@@ -75,3 +75,14 @@ export function formatDeclarationDate(isoDay: string, precision: 'day' | 'month'
   if (precision === 'before') return `au plus tard le ${formatDay(isoDay)}`;
   return `le ${formatDay(isoDay)}`;
 }
+
+/** ISO date-time with the Paris offset of that day, e.g. « 2026-11-16T20:20:00+01:00 » (for structured data). */
+export function parisDateTime(isoDay: string, time: string | null): string {
+  if (!time) return isoDay;
+  const probe = new Date(`${isoDay}T12:00:00Z`);
+  const name = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Paris', timeZoneName: 'longOffset' })
+    .formatToParts(probe)
+    .find((p) => p.type === 'timeZoneName')!.value;
+  const offset = name === 'GMT' ? '+00:00' : name.replace('GMT', '');
+  return `${isoDay}T${time}:00${offset}`;
+}

@@ -1,5 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { breadcrumbLd, itemListLd, personLd, serializeLd, sitemapXml, websiteLd } from './seo';
+import {
+  breadcrumbLd,
+  eventLd,
+  itemListLd,
+  personLd,
+  profilePageLd,
+  serializeLd,
+  sitemapXml,
+  websiteLd,
+} from './seo';
 
 const site = new URL('https://exemple.fr');
 
@@ -49,5 +58,36 @@ describe('sitemapXml', () => {
     ]);
     expect(xml).toContain('<loc>https://exemple.fr/</loc><lastmod>2026-11-18</lastmod>');
     expect(xml).toContain('<loc>https://exemple.fr/a?b=1&amp;c=2</loc></url>');
+  });
+});
+
+describe('profilePageLd and eventLd', () => {
+  it('wraps the person with its check date', () => {
+    const p = personLd(site, {
+      givenName: 'A',
+      familyName: 'B',
+      path: '/x',
+      jobTitle: 'j',
+      party: null,
+      image: null,
+    });
+    const page = profilePageLd(p, '2026-11-22');
+    expect(page['@type']).toBe('ProfilePage');
+    expect(page.dateModified).toBe('2026-11-22');
+    expect((page.mainEntity as Record<string, unknown>)['@context']).toBeUndefined();
+  });
+
+  it('describes a broadcast debate with its participants', () => {
+    const e = eventLd(site, {
+      name: 'Débat',
+      startDate: '2026-11-16T20:20:00+01:00',
+      description: 'd',
+      path: '/calendrier',
+      place: 'TF1, LCI',
+      broadcast: true,
+      performers: [{ name: 'A B', path: '/candidat/a-b' }],
+    });
+    expect(e.location).toEqual({ '@type': 'VirtualLocation', name: 'TF1, LCI' });
+    expect(e.performer).toEqual([{ '@type': 'Person', name: 'A B', url: 'https://exemple.fr/candidat/a-b' }]);
   });
 });

@@ -89,7 +89,9 @@ const H = mode === 'page' ? 'h2' : 'h3';
         <ul class="programme">
           {programme.map((p) => (
             <li>
-              <span class="theme">{THEMES[p.theme]}</span>
+              <a class="theme" href={`/programmes/${p.theme}`}>
+                {THEMES[p.theme]}
+              </a>
               <span>
                 {p.text}
                 <Cite numbers={reg.cite(p.sources)} idPrefix={id} />
@@ -421,10 +423,16 @@ const H = mode === 'page' ? 'h2' : 'h3';
     line-height: 1.45;
   }
   .theme {
+    align-self: flex-start;
     color: var(--muted);
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+  .theme:hover {
+    color: var(--accent);
+    text-decoration: underline;
   }
   .agenda li {
     display: flex;
