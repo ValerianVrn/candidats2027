@@ -1,0 +1,245 @@
+---
+/**
+ * « Calendrier »: the two rounds, the key dates and the televised debates, each with its sources. The page that
+ * answers « date présidentielle 2027 » and « débat présidentielle 2027 ». Rebuilt every day by the routine, so
+ * « à venir » / « passés » stay true.
+ */
+import Base from '../layouts/Base.astro';
+import Cite from '../components/Cite.astro';
+import { candidates, election, events, fullName } from '../lib/data';
+import { CitationRegistry } from '../lib/citations';
+import { formatDay, parisDateTime } from '../lib/dates';
+import { parisDay } from '../lib/freshness';
+import { breadcrumbLd, eventLd, type JsonLd } from '../lib/seo';
+
+const site = Astro.site!;
+const today = parisDay(new Date().toISOString());
+const bySlug = new Map(candidates.map((c) => [c.slug, c]));
+const person = (slug: string) => {
+  const c = bySlug.get(slug);
+  return c ? { name: fullName(c), path: `/candidat/${c.slug}` } : null;
+};
+const firstDay = election.firstRound.slice(0, 10);
+const secondDay = election.secondRound.slice(0, 10);
+const dates = [
+  ...election.milestones.map((m) => ({ date: m.date, label: m.label, sources: m.sources, round: false })),
+  { date: firstDay, label: 'Premier tour', sources: election.sources, round: true },
+  { date: secondDay, label: 'Second tour', sources: election.sources, round: true },
+].toSorted((a, b) => a.date.localeCompare(b.date));
+const debates = events.filter((e) => e.kind === 'debat');
+const upcoming = debates.filter((e) => e.date >= today).toSorted((a, b) => a.date.localeCompare(b.date));
+const past = debates.filter((e) => e.date < today).toSorted((a, b) => b.date.localeCompare(a.date));
+const reg = new CitationRegistry();
+const id = 'cal';
+
+const jsonLd: JsonLd[] = [
+  eventLd(site, {
+    name: 'Premier tour de l’élection présidentielle 2027',
+    startDate: election.firstRound,
+    description: 'Premier tour de scrutin de l’élection présidentielle française.',
+    path: '/calendrier',
+    place: 'France',
+    broadcast: false,
+    performers: [],
+  }),
+  eventLd(site, {
+    name: 'Second tour de l’élection présidentielle 2027',
+    startDate: election.secondRound,
+    description: 'Second tour de scrutin de l’élection présidentielle française.',
+    path: '/calendrier',
+    place: 'France',
+    broadcast: false,
+    performers: [],
+  }),
+  ...debates.map((e) =>
+    eventLd(site, {
+      name: e.title,
+      startDate: parisDateTime(e.date, e.time),
+      description: e.summary,
+      path: '/calendrier',
+      place: e.channels.join(', '),
+      broadcast: true,
+      performers: e.participants.map(person).filter((p) => p !== null),
+    }),
+  ),
+  breadcrumbLd(site, [
+    { name: 'Accueil', path: '/' },
+    { name: 'Calendrier', path: '/calendrier' },
+  ]),
+];
+---
+
+<Base
+  title="Présidentielle 2027 : dates, calendrier et débats"
+  description={`Élection présidentielle 2027 : premier tour le ${formatDay(firstDay)}, second tour le ${formatDay(secondDay)}. Dates clés (inscriptions, campagne officielle) et débats télévisés entre candidats, avec sources.`}
+  section="calendrier"
+  jsonLd={jsonLd}
+>
+  <article class="page">
+    <nav class="crumbs" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a> › Calendrier
+    </nav>
+    <h1>Présidentielle 2027 : dates et débats</h1>
+    <p class="lead">
+      Premier tour le {formatDay(firstDay)}, second tour le {formatDay(secondDay)}.
+    </p>
+
+    <section>
+      <h2>Dates clés</h2>
+      <ol class="timeline">
+        {dates.map((d) => (
+          <li class={d.round ? 'round' : undefined}>
+            <time datetime={d.date}>{formatDay(d.date)}</time>
+            <span>
+              {d.label}
+              <Cite numbers={reg.cite(d.sources)} idPrefix={id} />
+            </span>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    {[
+      { title: 'Débats à venir', list: upcoming, empty: 'Aucun débat annoncé à ce jour.' },
+      { title: 'Débats passés', list: past, empty: 'Aucun débat pour le moment.' },
+    ].map((group) => (
+      <section>
+        <h2>{group.title}</h2>
+        {group.list.length ? (
+          <ul class="debates">
+            {group.list.map((e) => (
+              <li>
+                <p class="when">
+                  <time datetime={e.date}>{formatDay(e.date)}</time>
+                  {e.time && ` à ${e.time.replace(':', ' h ')}`} · {e.channels.join(' et ')}
+                </p>
+                <h3>
+                  {e.title}
+                  <Cite numbers={reg.cite(e.sources)} idPrefix={id} />
+                </h3>
+                <p>{e.summary}</p>
+                {e.participants.length > 0 && (
+                  <p class="who">
+                    Avec{' '}
+                    {e.participants.map((slug, i) => {
+                      const p = person(slug);
+                      return (
+                        <>
+                          {p ? <a href={p.path}>{p.name}</a> : slug}
+                          {i < e.participants.length - 1 ? ', ' : '.'}
+                        </>
+                      );
+                    })}
+                  </p>
+                )}
+                {e.absents.length > 0 && (
+                  <p class="who">
+                    Absents :{' '}
+                    {e.absents.map((a, i) => {
+                      const p = person(a.slug);
+                      return (
+                        <>
+                          {p ? <a href={p.path}>{p.name}</a> : a.slug} ({a.note.replace(/\.$/, '')})
+                          {i < e.absents.length - 1 ? ' ; ' : '.'}
+                        </>
+                      );
+                    })}
+                  </p>
+                )}
+                {e.replayUrl && (
+                  <p>
+                    <a href={e.replayUrl} target="_blank" rel="noopener">
+                      Revoir le débat
+                    </a>
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="empty">{group.empty}</p>
+        )}
+      </section>
+    ))}
+
+    <section class="sources">
+      <h2>Sources</h2>
+      <ol>
+        {reg.list.map((s, i) => (
+          <li id={`${id}-src-${i + 1}`}>
+            <a href={s.url} target="_blank" rel="noopener">
+              {s.outlet}
+              {s.title ? ` : ${s.title}` : ''}
+            </a>{' '}
+            <span>({formatDay(s.date)})</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  </article>
+</Base>
+
+<style>
+  .crumbs {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .lead {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 28px 0 10px;
+  }
+  h3 {
+    font-size: 17px;
+    margin: 2px 0 6px;
+  }
+  .timeline,
+  .debates {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .timeline time {
+    color: var(--muted);
+  }
+  .timeline .round span {
+    font-weight: 700;
+    color: var(--ink-strong);
+  }
+  .debates li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .debates p {
+    margin: 4px 0;
+  }
+  .when,
+  .who {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .empty {
+    color: var(--muted);
+  }
+  .sources ol {
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 22px;
+  }
+  @media (max-width: 520px) {
+    .timeline li {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+</style>

@@ -4,7 +4,7 @@
  * « liste candidats »). Same data and order rules as the rest of the site (by last name, no ranking).
  */
 import Base from '../layouts/Base.astro';
-import { activeCandidates, election, familleOf, fullName, partyOf, site } from '../lib/data';
+import { activeCandidates, candidates, election, familleOf, fullName, partyOf, site } from '../lib/data';
 import { parisDay } from '../lib/freshness';
 import { formatDay, formatDeclarationDate } from '../lib/dates';
 import { FAMILLE_LABEL, statusLabel } from '../lib/labels';
@@ -21,6 +21,9 @@ const groups = [
   { id: 'declares', title: `Candidats déclarés (${declared.length})`, list: declared },
   { id: 'potentiels', title: `Candidatures évoquées (${potential.length})`, list: potential },
 ];
+const retired = candidates.filter((c) => c.status === 'retire').toSorted(byName);
+/** Latest source of the withdrawal (status sources are about the current status). */
+const withdrawal = (c: Candidate) => c.statusSources.toSorted((a, b) => b.date.localeCompare(a.date))[0]!;
 const firstRound = formatDay(election.firstRound.slice(0, 10));
 const secondRound = formatDay(election.secondRound.slice(0, 10));
 const checkedOn = formatDay(parisDay(site.lastChecked));
@@ -67,6 +70,28 @@ const jsonLd = itemListLd(
         </ul>
       </section>
     ))}
+
+    {retired.length > 0 && (
+      <section aria-labelledby="retires">
+        <h2 id="retires">Candidatures retirées ({retired.length})</h2>
+        <ul class="list">
+          {retired.map((c) => {
+            const src = withdrawal(c);
+            return (
+              <li>
+                <a href={`/candidat/${c.slug}`}>{fullName(c)}</a>
+                <span class="meta">
+                  {c.genre === 'f' ? 'Retirée' : 'Retiré'} ·{' '}
+                  <a class="src" href={src.url} target="_blank" rel="noopener">
+                    {src.outlet}, {formatDay(src.date)}
+                  </a>
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    )}
   </article>
 </Base>
 
@@ -106,5 +131,10 @@ const jsonLd = itemListLd(
   .meta {
     font-size: 13px;
     color: var(--muted);
+  }
+  .meta .src {
+    font-weight: 400;
+    color: inherit;
+    text-decoration: underline;
   }
 </style>
