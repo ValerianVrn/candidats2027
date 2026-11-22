@@ -65,6 +65,30 @@
   },
   "programme": [
     {
+      "theme": "fiscalite",
+      "text": "Propose de supprimer les droits de succession.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/je-serai-le-candidat-de-la-liberte-de-pensee-de-parler-de-dire-ce-que-vous-voyez-clame-eric-zemmour-lors-de-son-premier-meeting-de-campagne-presidentielle_8294024.html",
+          "outlet": "franceinfo",
+          "title": "\"Je serai le candidat de la liberté de pensée, de parler, de dire ce que vous voyez\", clame Eric Zemmour lors de son premier meeting de campagne présidentielle",
+          "date": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Propose de supprimer l'Arcom, le régulateur de l'audiovisuel.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/je-serai-le-candidat-de-la-liberte-de-pensee-de-parler-de-dire-ce-que-vous-voyez-clame-eric-zemmour-lors-de-son-premier-meeting-de-campagne-presidentielle_8294024.html",
+          "outlet": "franceinfo",
+          "title": "\"Je serai le candidat de la liberté de pensée, de parler, de dire ce que vous voyez\", clame Eric Zemmour lors de son premier meeting de campagne présidentielle",
+          "date": "2026-11-21"
+        }
+      ]
+    },
+    {
       "theme": "defense",
       "text": "Veut « couper court à toute forme de soutien » à l'Ukraine et privilégier les efforts diplomatiques pour la paix.",
       "sources": [
@@ -143,7 +167,21 @@
       ]
     }
   ],
-  "meetings": [],
+  "meetings": [
+    {
+      "date": "2026-11-21",
+      "city": "Toulon",
+      "title": "Meeting de lancement de campagne",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/je-serai-le-candidat-de-la-liberte-de-pensee-de-parler-de-dire-ce-que-vous-voyez-clame-eric-zemmour-lors-de-son-premier-meeting-de-campagne-presidentielle_8294024.html",
+          "outlet": "franceinfo",
+          "title": "\"Je serai le candidat de la liberté de pensée, de parler, de dire ce que vous voyez\", clame Eric Zemmour lors de son premier meeting de campagne présidentielle",
+          "date": "2026-11-21"
+        }
+      ]
+    }
+  ],
   "risques": [],
   "lastChecked": "2026-11-22"
 }

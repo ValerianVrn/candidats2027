@@ -3,19 +3,19 @@
   "firstName": "Dominique",
   "lastName": "de Villepin",
   "genre": "m",
-  "status": "potentiel",
+  "status": "declare",
   "statusSources": [
     {
-      "url": "https://www.franceinfo.fr/elections/presidentielle/je-ne-suis-pas-encore-candidat-a-la-presidentielle-2027-indique-dominique-de-villepin_8265395.html",
-      "outlet": "franceinfo",
-      "title": "\"Je ne suis pas encore candidat\" à la présidentielle 2027, indique Dominique de Villepin",
-      "date": "2026-11-03"
+      "url": "https://lcp.fr/actualites/presidentielle-2027-dominique-de-villepin-officiellement-candidat-a-l-elysee-445372",
+      "outlet": "LCP",
+      "title": "Présidentielle 2027: Dominique de Villepin officiellement candidat à l'Élysée",
+      "date": "2026-11-20"
     },
     {
-      "url": "https://www.cnews.fr/france/2026-11-03/presidentielle-2027-dominique-de-villepin-sera-bien-candidat-mais-attend-avant-de",
-      "outlet": "CNEWS",
-      "title": "Présidentielle 2027 : Dominique de Villepin sera bien candidat, mais attend avant de l'annoncer officiellement",
-      "date": "2026-11-03"
+      "url": "https://www.franceinfo.fr/elections/dominique-de-villepin-annonce-sa-candidature-a-l-election-presidentielle-evoquant-une-decision-lourde-difficile_8292431.html",
+      "outlet": "franceinfo",
+      "title": "Dominique de Villepin annonce sa candidature à l'élection présidentielle, évoquant une \"décision lourde, difficile\"",
+      "date": "2026-11-20"
     }
   ],
   "party": null,
@@ -27,10 +27,64 @@
     "licence": "CC BY-SA 3.0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dominique_de_Villepin_20100330_Salon_du_livre_de_Paris_2_cropped.jpg"
   },
-  "declaration": null,
+  "declaration": {
+    "date": "2026-11-20",
+    "datePrecision": "day",
+    "videoUrl": null,
+    "sources": [
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-dominique-de-villepin-officiellement-candidat-a-l-elysee-445372",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: Dominique de Villepin officiellement candidat à l'Élysée",
+        "date": "2026-11-20"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/dominique-de-villepin-annonce-sa-candidature-a-l-election-presidentielle-evoquant-une-decision-lourde-difficile_8292431.html",
+        "outlet": "franceinfo",
+        "title": "Dominique de Villepin annonce sa candidature à l'élection présidentielle, évoquant une \"décision lourde, difficile\"",
+        "date": "2026-11-20"
+      }
+    ]
+  },
   "qualified2022": null,
   "parrainages": null,
   "programme": [
+    {
+      "theme": "institutions",
+      "text": "Veut restaurer le référendum pour « donner la parole aux Français ».",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/dominique-de-villepin-annonce-sa-candidature-a-lelection-presidentielle-une-decision-lourde-et-difficile-declare-t-il",
+          "outlet": "Public Sénat",
+          "title": "Dominique de Villepin annonce sa candidature à l’élection présidentielle : « Une décision lourde et difficile », déclare-t-il",
+          "date": "2026-11-20"
+        }
+      ]
+    },
+    {
+      "theme": "europe",
+      "text": "Propose un conseil de sécurité réunissant les cinq principaux pays européens pour un « pacte de souveraineté ».",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/dominique-de-villepin-annonce-sa-candidature-a-lelection-presidentielle-une-decision-lourde-et-difficile-declare-t-il",
+          "outlet": "Public Sénat",
+          "title": "Dominique de Villepin annonce sa candidature à l’élection présidentielle : « Une décision lourde et difficile », déclare-t-il",
+          "date": "2026-11-20"
+        }
+      ]
+    },
+    {
+      "theme": "fiscalite",
+      "text": "Propose de restaurer l’impôt de solidarité sur la fortune (ISF), supprimé en 2018.",
+      "sources": [
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/dominique-de-villepin-annonce-sa-candidature-a-lelection-presidentielle-une-decision-lourde-et-difficile-declare-t-il",
+          "outlet": "Public Sénat",
+          "title": "Dominique de Villepin annonce sa candidature à l’élection présidentielle : « Une décision lourde et difficile », déclare-t-il",
+          "date": "2026-11-20"
+        }
+      ]
+    },
     {
       "theme": "economie",
       "text": "Veut ramener le déficit public à 3 % du PIB d'ici la fin du quinquennat, par une réduction des dépenses publiques.",
