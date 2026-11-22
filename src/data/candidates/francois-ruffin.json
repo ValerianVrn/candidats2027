@@ -3,19 +3,19 @@
   "firstName": "François",
   "lastName": "Ruffin",
   "genre": "m",
-  "status": "declare",
+  "status": "retire",
   "statusSources": [
     {
-      "url": "https://www.franceinfo.fr/elections/presidentielle/francois-ruffin-n-exclut-pas-de-se-retirer-de-la-presidentielle-si-une-solution-se-degage-pour-battre-marine-le-pen-au-second-tour_8270501.html",
-      "outlet": "franceinfo",
-      "title": "François Ruffin n'exclut pas de se retirer de la présidentielle \"si une solution se dégage pour battre Marine Le Pen au second tour\" en 2027",
-      "date": "2026-11-06"
+      "url": "https://www.lemonde.fr/politique/article/2026/11/21/presidentielle-2027-francois-ruffin-renonce-a-sa-candidature-face-au-risque-de-l-arrivee-de-l-extreme-droite-au-pouvoir_6814051_823448.html",
+      "outlet": "Le Monde",
+      "title": "Présidentielle 2027 : François Ruffin renonce à sa candidature face au risque de l’arrivée de l’extrême droite au pouvoir",
+      "date": "2026-11-21"
     },
     {
-      "url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-declares-et-potentiels-444932",
-      "outlet": "LCP",
-      "title": "Présidentielle 2027: la liste des candidats déclarés et potentiels",
-      "date": "2026-11-10"
+      "url": "https://www.france24.com/fr/france/20261121-pr%C3%A9sidentielle-prenant-acte-de-l-impasse-de-sa-campagne-fran%C3%A7ois-ruffin-retire-sa-candidature",
+      "outlet": "France 24",
+      "title": "Présidentielle : prenant « acte de l’impasse » de sa campagne, François Ruffin retire sa candidature",
+      "date": "2026-11-21"
     }
   ],
   "party": "debout",
