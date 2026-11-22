@@ -7,6 +7,12 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Fixed
+
+- Daily routine missed real news (Ruffin's withdrawal, Hollande's timing): searches now carry the date and are
+  restricted to allowlisted news sites, a dated news sweep comes first, articles that can't be opened are
+  confirmed by a second outlet, and status changes resting on search snippets only wait for the owner.
+
 ## [1.2.0] - 2026-11-19
 
 ### Fixed
