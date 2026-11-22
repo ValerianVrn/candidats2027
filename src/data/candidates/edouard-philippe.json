@@ -50,6 +50,30 @@
   "parrainages": null,
   "programme": [
     {
+      "theme": "travail",
+      "text": "Propose la suppression des 35 heures et la privatisation de l'agence France Travail (ex-Pôle emploi).",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261118-france-presidentielle-2027-pour-relancer-campagne-edouard-philippe-promet-retablir-ordre-comptes-rues",
+          "outlet": "France 24",
+          "title": "Pour se relancer, Édouard Philippe promet de \"rétablir l'ordre\" dans \"nos comptes\" et \"nos rues\"",
+          "date": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "theme": "securite",
+      "text": "Propose de suspendre automatiquement le RSA pour les délinquants condamnés, avec une possibilité d'opposition laissée aux maires dans des cas particuliers.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261118-france-presidentielle-2027-pour-relancer-campagne-edouard-philippe-promet-retablir-ordre-comptes-rues",
+          "outlet": "France 24",
+          "title": "Pour se relancer, Édouard Philippe promet de \"rétablir l'ordre\" dans \"nos comptes\" et \"nos rues\"",
+          "date": "2026-11-18"
+        }
+      ]
+    },
+    {
       "theme": "logement",
       "text": "Propose de construire 4 millions de logements supplémentaires en dix ans et de supprimer les frais de notaire pour les acheteurs de moins de 35 ans.",
       "sources": [

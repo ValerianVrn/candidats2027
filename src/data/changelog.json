@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-11-22",
-    "summary": "François Ruffin retire sa candidature ; sources mises à jour pour François Hollande.",
+    "summary": "François Ruffin retire sa candidature, Dominique de Villepin se déclare candidat ; sources mises à jour pour François Hollande, propositions ajoutées pour Édouard Philippe, Marine Le Pen et Éric Zemmour.",
     "changes": [
       {
         "candidate": "francois-ruffin",
@@ -10,6 +10,22 @@
       {
         "candidate": "francois-hollande",
         "text": "Candidature toujours évoquée : selon Le Monde, François Hollande ne prendra pas sa décision avant février 2027."
+      },
+      {
+        "candidate": "dominique-de-villepin",
+        "text": "Dominique de Villepin a annoncé le 20 novembre 2026 sa candidature à l’élection présidentielle, lors d’une conférence de presse à Paris. Trois propositions ajoutées (référendum, conseil de sécurité européen, ISF)."
+      },
+      {
+        "candidate": "edouard-philippe",
+        "text": "Deux propositions ajoutées : suppression des 35 heures et privatisation de France Travail ; suspension automatique du RSA pour les délinquants condamnés."
+      },
+      {
+        "candidate": "marine-le-pen",
+        "text": "Proposition sur les retraites mise à jour d’après la réforme présentée le 17 novembre 2026."
+      },
+      {
+        "candidate": "eric-zemmour",
+        "text": "Meeting de Toulon du 21 novembre 2026 ajouté, avec deux propositions (droits de succession, Arcom)."
       }
     ],
     "sources": [
@@ -30,6 +46,42 @@
         "outlet": "Le Monde",
         "title": "Présidentielle 2027 : François Hollande laisse à Raphaël Glucksmann jusqu’à février pour convaincre",
         "date": "2026-11-20"
+      },
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-dominique-de-villepin-officiellement-candidat-a-l-elysee-445372",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: Dominique de Villepin officiellement candidat à l'Élysée",
+        "date": "2026-11-20"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/dominique-de-villepin-annonce-sa-candidature-a-l-election-presidentielle-evoquant-une-decision-lourde-difficile_8292431.html",
+        "outlet": "franceinfo",
+        "title": "Dominique de Villepin annonce sa candidature à l'élection présidentielle, évoquant une \"décision lourde, difficile\"",
+        "date": "2026-11-20"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/dominique-de-villepin-annonce-sa-candidature-a-lelection-presidentielle-une-decision-lourde-et-difficile-declare-t-il",
+        "outlet": "Public Sénat",
+        "title": "Dominique de Villepin annonce sa candidature à l’élection présidentielle : « Une décision lourde et difficile », déclare-t-il",
+        "date": "2026-11-20"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20261118-france-presidentielle-2027-pour-relancer-campagne-edouard-philippe-promet-retablir-ordre-comptes-rues",
+        "outlet": "France 24",
+        "title": "Pour se relancer, Édouard Philippe promet de \"rétablir l'ordre\" dans \"nos comptes\" et \"nos rues\"",
+        "date": "2026-11-18"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies",
+        "outlet": "France 24",
+        "title": "Réforme des retraites de Marine Le Pen : départ à 60 ou 62 ans, capitalisation et conditions durcies",
+        "date": "2026-11-17"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/je-serai-le-candidat-de-la-liberte-de-pensee-de-parler-de-dire-ce-que-vous-voyez-clame-eric-zemmour-lors-de-son-premier-meeting-de-campagne-presidentielle_8294024.html",
+        "outlet": "franceinfo",
+        "title": "\"Je serai le candidat de la liberté de pensée, de parler, de dire ce que vous voyez\", clame Eric Zemmour lors de son premier meeting de campagne présidentielle",
+        "date": "2026-11-21"
       }
     ]
   },

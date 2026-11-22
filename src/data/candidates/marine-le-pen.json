@@ -65,6 +65,18 @@
   },
   "programme": [
     {
+      "theme": "retraites",
+      "text": "Propose de ramener l'âge légal de départ à 62 ans, et à 60 ans avec 160 trimestres pour les personnes ayant commencé à travailler avant 20 ans, de créer un pilier de capitalisation obligatoire pour les actifs, en commençant par ceux de 52 ans au plus, et de porter la décote à 2,5 % par trimestre manquant, dans la limite de 50 %.",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261117-france-presidentielle-2027-reforme-des-retraites-marine-le-pen-depart-a-60-ou-62-ans-capitalisation-conditions-durcies",
+          "outlet": "France 24",
+          "title": "Réforme des retraites de Marine Le Pen : départ à 60 ou 62 ans, capitalisation et conditions durcies",
+          "date": "2026-11-17"
+        }
+      ]
+    },
+    {
       "theme": "defense",
       "text": "Veut mettre fin dans les six mois à l'aide financière de la France à l'Ukraine, tout en jugeant possible de maintenir un soutien militaire et logistique.",
       "sources": [
@@ -121,18 +133,6 @@
     {
       "theme": "fiscalite",
       "text": "Propose une baisse de 30 milliards d'euros des impôts.",
-      "sources": [
-        {
-          "url": "https://www.france24.com/fr/info-en-continu/20261006-140-milliards-d-%C3%A9conomies-ce-qu-il-faut-retenir-de-l-intervention-de-marine-le-pen",
-          "outlet": "France 24",
-          "title": "\"140 milliards\" d'économies : ce qu'il faut retenir de l'intervention de Marine Le Pen",
-          "date": "2026-10-06"
-        }
-      ]
-    },
-    {
-      "theme": "retraites",
-      "text": "Défend un âge de départ à la retraite de 62 ans, voire 60 ans, vise 15 à 20 milliards d'euros d'économies à terme sur les retraites et annonce une réforme créant un « pilier de capitalisation ».",
       "sources": [
         {
           "url": "https://www.france24.com/fr/info-en-continu/20261006-140-milliards-d-%C3%A9conomies-ce-qu-il-faut-retenir-de-l-intervention-de-marine-le-pen",
