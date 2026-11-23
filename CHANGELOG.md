@@ -7,6 +7,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-11-23
+
 ### Added
 
 - Campaign chronology on `/calendrier` (« À venir » and « Ce qui s’est passé » by month): declarations,
