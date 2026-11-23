@@ -1,9 +1,25 @@
 {
-  "lastChecked": "2026-11-22T11:17:00+01:00",
+  "lastChecked": "2026-11-23T05:11:00+01:00",
   "checks": [
-    { "date": "2026-11-22", "reviewed": 44 },
-    { "date": "2026-11-21", "reviewed": 44 },
-    { "date": "2026-11-20", "reviewed": 44 },
-    { "date": "2026-11-19", "reviewed": 44 }
+    {
+      "date": "2026-11-23",
+      "reviewed": 44
+    },
+    {
+      "date": "2026-11-22",
+      "reviewed": 44
+    },
+    {
+      "date": "2026-11-21",
+      "reviewed": 44
+    },
+    {
+      "date": "2026-11-20",
+      "reviewed": 44
+    },
+    {
+      "date": "2026-11-19",
+      "reviewed": 44
+    }
   ]
 }
