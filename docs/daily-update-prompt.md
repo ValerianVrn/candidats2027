@@ -88,8 +88,10 @@ The cost of a run is in opening and verifying pages, not in searching. So:
      published if two independent outlets state it, with nothing added beyond what the snippets say. In that case
      the PR gets the label `needs-human` (don't merge it) when the change is a status change, a procedure
      (`risques`) or a removal, so the owner can check it. Say in the PR body which facts rest on snippets only.
-   - A withdrawal (« retire sa candidature », « renonce ») sets `status` to `retire` with its two sources: the
-     candidate then disappears from the home page and the list.
+   - A withdrawal (« retire sa candidature », « renonce ») sets `status` to `retire` and fills
+     `withdrawal: { date, sources }` (the day it was announced, two independent outlets; the build fails without
+     it). The candidate then moves to « Candidatures retirées » on the home page and the list, and the withdrawal
+     appears in the chronology on `/calendrier`.
 4. Keep a list of the candidates reviewed: it goes in the summary (section 8).
 
 What to look for:

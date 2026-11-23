@@ -6,6 +6,8 @@ import QuizLens from '../components/QuizLens.astro';
 import OtherCandidates from '../components/OtherCandidates.astro';
 import AdSlot from '../components/AdSlot.astro';
 import DebateStrip from '../components/DebateStrip.astro';
+import LatestStrip from '../components/LatestStrip.astro';
+import RetiredCandidates from '../components/RetiredCandidates.astro';
 import { activeCandidates, election, featuredCandidates, otherCandidates } from '../lib/data';
 import { formatDay } from '../lib/dates';
 import { websiteLd } from '../lib/seo';
@@ -25,7 +27,9 @@ const potentialCount = activeCandidates.filter((c) => c.status === 'potentiel').
   </div>
   <QuizLens />
   <DebateStrip />
+  <LatestStrip />
   <CardCloud candidates={featuredCandidates} everyone={activeCandidates} />
+  <RetiredCandidates />
   <OtherCandidates candidates={otherCandidates} />
 
   <AdSlot placement="home" />

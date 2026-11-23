@@ -120,6 +120,8 @@ export const candidateSchema = z
         sources,
       })
       .nullable(),
+    /** When the candidate withdrew (status `retire`), with its sources. Absent otherwise. */
+    withdrawal: z.object({ date: isoDate, sources }).nullable().default(null),
     programme: z.array(programmeItemSchema),
     meetings: z.array(meetingSchema),
     risques: z.array(risqueSchema),
@@ -131,6 +133,13 @@ export const candidateSchema = z
         code: 'custom',
         path: ['declaration'],
         message: 'declared candidates need a declaration',
+      });
+    }
+    if (c.status === 'retire' && c.withdrawal === null) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['withdrawal'],
+        message: 'withdrawn candidates need a dated withdrawal',
       });
     }
   });

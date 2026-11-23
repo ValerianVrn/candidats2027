@@ -13,7 +13,8 @@ French-language static site about the 2027 French presidential election. Code, c
 
 ## Layout
 
-- `src/pages/`: routes (incl. `/programmes/[theme]` and `/calendrier`, built from the same data). `src/components/`: Astro components. `src/lib/`: pure, unit-tested TS.
+- `src/pages/`: routes (incl. `/programmes/[theme]` and `/calendrier`, built from the same data; the chronology
+  comes from `src/lib/chronology.ts`). A withdrawn candidate needs `withdrawal: { date, sources }`. `src/components/`: Astro components. `src/lib/`: pure, unit-tested TS.
 - `src/data/`: all content as JSON (schemas in `src/lib/schemas.ts`); debates and broadcasts are shared in
   `src/data/events.json`.
 - `docs/adr/`: decisions. `docs/research-brief.md`: rules for writing candidate data.
