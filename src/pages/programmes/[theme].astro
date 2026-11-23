@@ -1,0 +1,166 @@
+---
+/**
+ * One theme: every declared or evoked candidate's sourced proposals on it, by last name, then the candidates
+ * without a sourced proposal. Citations are numbered for the whole page, inline in document order (see the
+ * CandidateDetail gotcha in CLAUDE.md).
+ */
+import Base from '../../layouts/Base.astro';
+import Cite from '../../components/Cite.astro';
+import { activeCandidates, fullName, partyOf } from '../../lib/data';
+import { CitationRegistry } from '../../lib/citations';
+import { formatDay } from '../../lib/dates';
+import { programmeByTheme } from '../../lib/programmes';
+import { THEME_IDS, THEMES, type Theme } from '../../lib/themes';
+import { breadcrumbLd } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return THEME_IDS.map((theme) => ({ params: { theme } }));
+}
+
+const theme = Astro.params.theme as Theme;
+const label = THEMES[theme];
+const { entries, without } = programmeByTheme(activeCandidates, theme);
+const reg = new CitationRegistry();
+const id = 'theme';
+const jsonLd = breadcrumbLd(Astro.site!, [
+  { name: 'Accueil', path: '/' },
+  { name: 'Programmes', path: '/programmes' },
+  { name: label, path: `/programmes/${theme}` },
+]);
+const count = entries.length;
+const names = entries.slice(0, 4).map((e) => fullName(e.candidate));
+const description = count
+  ? `${label} : les propositions de ${count} candidat${count > 1 ? 's' : ''} à l'élection présidentielle 2027, avec leurs sources. ${names.join(', ')}${count > 4 ? '…' : '.'}`
+  : `${label} : aucune proposition sourcée des candidats à l'élection présidentielle 2027 à ce jour.`;
+const lead = count
+  ? `${count} candidat${count > 1 ? 's ont' : ' a'} publié des propositions sur ce thème. Ordre alphabétique, sans classement.`
+  : 'Aucun candidat n’a publié de proposition sourcée sur ce thème à ce jour.';
+const otherThemes = THEME_IDS.filter((t) => t !== theme);
+---
+
+<Base
+  title={`${label} : les propositions des candidats à la présidentielle 2027`}
+  description={description}
+  section="programmes"
+  jsonLd={jsonLd}
+>
+  <article class="page">
+    <nav class="crumbs" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a> › <a href="/programmes">Programmes</a> › {label}
+    </nav>
+    <h1>{label} : les propositions des candidats à la présidentielle 2027</h1>
+    <p class="lead">{lead}</p>
+
+    {entries.map((e) => {
+      const party = partyOf(e.candidate);
+      return (
+        <section class="cand">
+          <h2>
+            <a href={`/candidat/${e.candidate.slug}`}>{fullName(e.candidate)}</a>
+            {party && <span class="party">{party.name}</span>}
+          </h2>
+          <ul>
+            {e.items.map((p) => (
+              <li>
+                {p.text}
+                <Cite numbers={reg.cite(p.sources)} idPrefix={id} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    })}
+
+    {without.length > 0 && (
+      <section class="without">
+        <h2>Pas de proposition sourcée à ce jour</h2>
+        <p>
+          {without.map((c, i) => (
+            <>
+              <a href={`/candidat/${c.slug}`}>{fullName(c)}</a>
+              {i < without.length - 1 ? ', ' : '.'}
+            </>
+          ))}
+        </p>
+      </section>
+    )}
+
+    <nav class="other" aria-label="Autres thèmes">
+      <h2>Autres thèmes</h2>
+      <p>
+        {otherThemes.map((t, i) => (
+          <>
+            <a href={`/programmes/${t}`}>{THEMES[t]}</a>
+            {i < otherThemes.length - 1 ? ' · ' : ''}
+          </>
+        ))}
+      </p>
+    </nav>
+
+    {reg.list.length > 0 && (
+      <section class="sources">
+        <h2>Sources</h2>
+        <ol>
+          {reg.list.map((s, i) => (
+            <li id={`${id}-src-${i + 1}`}>
+              <a href={s.url} target="_blank" rel="noopener">
+                {s.outlet}
+                {s.title ? ` : ${s.title}` : ''}
+              </a>{' '}
+              <span>({formatDay(s.date)})</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+  </article>
+</Base>
+
+<style>
+  .crumbs {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .lead {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 28px 0 8px;
+  }
+  .cand h2 a {
+    text-decoration: none;
+  }
+  .cand h2 a:hover {
+    text-decoration: underline;
+  }
+  .party {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .cand ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .cand li {
+    margin: 6px 0;
+    line-height: 1.5;
+  }
+  .without p,
+  .other p {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .sources ol {
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 22px;
+  }
+  .sources li {
+    margin: 4px 0;
+  }
+</style>

@@ -50,6 +50,56 @@ export function personLd(
   };
 }
 
+/** Profile page around a Person, with the date its content was last checked. */
+export function profilePageLd(person: JsonLd, dateModified: string): JsonLd {
+  const { '@context': _ctx, ...mainEntity } = person;
+  return { '@context': CONTEXT, '@type': 'ProfilePage', dateModified, mainEntity };
+}
+
+/**
+ * A dated event (election round, televised debate). Only facts the page shows: name, start, place or channels,
+ * participants. No ticketing or rating fields.
+ */
+export function eventLd(
+  site: URL,
+  e: {
+    name: string;
+    /** ISO date or date-time. */
+    startDate: string;
+    description: string;
+    /** Page that shows the event. */
+    path: string;
+    /** Physical place (e.g. « France ») or, for a broadcast, the channels. */
+    place: string;
+    broadcast: boolean;
+    performers: { name: string; path: string }[];
+  },
+): JsonLd {
+  return {
+    '@context': CONTEXT,
+    '@type': 'Event',
+    name: e.name,
+    startDate: e.startDate,
+    description: e.description,
+    url: new URL(e.path, site).href,
+    eventAttendanceMode: e.broadcast
+      ? 'https://schema.org/OnlineEventAttendanceMode'
+      : 'https://schema.org/OfflineEventAttendanceMode',
+    location: e.broadcast
+      ? { '@type': 'VirtualLocation', name: e.place }
+      : { '@type': 'Place', name: e.place },
+    ...(e.performers.length
+      ? {
+          performer: e.performers.map((p) => ({
+            '@type': 'Person',
+            name: p.name,
+            url: new URL(p.path, site).href,
+          })),
+        }
+      : {}),
+  };
+}
+
 export function breadcrumbLd(site: URL, crumbs: { name: string; path: string }[]): JsonLd {
   return {
     '@context': CONTEXT,

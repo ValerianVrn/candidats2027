@@ -1,0 +1,94 @@
+---
+/**
+ * « Programmes » index: the 16 themes with the number of sourced proposals, each linking to its theme page.
+ */
+import Base from '../../layouts/Base.astro';
+import { activeCandidates } from '../../lib/data';
+import { themeCounts } from '../../lib/programmes';
+import { THEMES } from '../../lib/themes';
+import { breadcrumbLd, itemListLd } from '../../lib/seo';
+
+const counts = themeCounts(activeCandidates);
+const site = Astro.site!;
+const jsonLd = [
+  itemListLd(
+    site,
+    'Programmes des candidats à la présidentielle 2027, par thème',
+    counts.map((c) => ({ name: THEMES[c.theme], path: `/programmes/${c.theme}` })),
+  ),
+  breadcrumbLd(site, [
+    { name: 'Accueil', path: '/' },
+    { name: 'Programmes', path: '/programmes' },
+  ]),
+];
+---
+
+<Base
+  title="Programmes des candidats à la présidentielle 2027, thème par thème"
+  description="Les propositions des candidats à l'élection présidentielle 2027 classées par thème : retraites, immigration, fiscalité, santé, écologie, sécurité… Chaque proposition est sourcée."
+  section="programmes"
+  jsonLd={jsonLd}
+>
+  <article class="page">
+    <nav class="crumbs" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a> › Programmes
+    </nav>
+    <h1>Programmes des candidats à la présidentielle 2027</h1>
+    <!-- prettier-ignore -->
+    <p class="lead">Les propositions publiées par les candidats, classées par thème. Chaque proposition cite ses sources ; un candidat sans proposition sourcée sur un thème est indiqué comme tel. Voir la <a href="/methode">méthode</a>.</p>
+    <ul class="themes">
+      {counts.map((c) => (
+        <li>
+          <a href={`/programmes/${c.theme}`}>
+            <span class="name">{THEMES[c.theme]}</span>
+            <span class="meta">
+              {c.proposals
+                ? `${c.proposals} proposition${c.proposals > 1 ? 's' : ''} · ${c.candidates} candidat${c.candidates > 1 ? 's' : ''}`
+                : 'Aucune proposition sourcée'}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </article>
+</Base>
+
+<style>
+  .crumbs {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .lead {
+    font-size: 16px;
+  }
+  .themes {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .themes a {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    text-decoration: none;
+  }
+  .themes a:hover {
+    border-color: var(--accent);
+  }
+  .name {
+    font-weight: 600;
+    color: var(--ink-strong);
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>

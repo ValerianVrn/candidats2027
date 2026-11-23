@@ -7,6 +7,22 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Added
+
+- SEO landing pages: « Programmes » (`/programmes` and one page per theme, every sourced proposal by candidate,
+  candidates without one listed too) and « Calendrier » (`/calendrier`: rounds, key dates, upcoming and past
+  debates, schema.org `Event`). Programme themes on profiles link to their theme page; « Programmes » in the
+  nav, the countdown links to the calendar.
+- « Candidatures retirées » section on `/candidats`; withdrawn candidates' pages are back in the sitemap.
+- Candidate pages' structured data is a `ProfilePage` with `dateModified` (last check); large image previews
+  allowed (`max-image-preview:large`).
+
+### Fixed
+
+- Daily routine missed real news (Ruffin's withdrawal, Hollande's timing): searches now carry the date and are
+  restricted to allowlisted news sites, a dated news sweep comes first, articles that can't be opened are
+  confirmed by a second outlet, and status changes resting on search snippets only wait for the owner.
+
 ## [1.2.0] - 2026-11-19
 
 ### Fixed
