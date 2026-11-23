@@ -9,6 +9,12 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ### Added
 
+- Campaign chronology on `/calendrier` (« À venir » and « Ce qui s’est passé » by month): declarations,
+  withdrawals, debates, meetings and election dates at their own date, with sources and filter chips. « Calendrier »
+  joins the top menu; « Journal » moves to the footer as « Journal des mises à jour ».
+- Home page: « Dernièrement » (three latest campaign facts) and « Candidatures retirées » (withdrawal date), right
+  after the cloud.
+- Candidates: `withdrawal: { date, sources }`, required for status `retire` (two independent outlets).
 - SEO landing pages: « Programmes » (`/programmes` and one page per theme, every sourced proposal by candidate,
   candidates without one listed too) and « Calendrier » (`/calendrier`: rounds, key dates, upcoming and past
   debates, schema.org `Event`). Programme themes on profiles link to their theme page; « Programmes » in the

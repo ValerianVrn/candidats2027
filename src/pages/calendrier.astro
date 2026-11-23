@@ -1,15 +1,17 @@
 ---
 /**
- * « Calendrier »: the two rounds, the key dates and the televised debates, each with its sources. The page that
- * answers « date présidentielle 2027 » and « débat présidentielle 2027 ». Rebuilt every day by the routine, so
- * « à venir » / « passés » stay true.
+ * « Calendrier »: what is coming (rounds, key dates, announced debates and meetings) and the campaign chronology
+ * (declarations, withdrawals, debates, meetings), every dated fact the data holds, each with its sources.
+ * Rebuilt every day by the routine, so « à venir » / « ce qui s'est passé » stay true. Every item is in the HTML;
+ * the filter chips only hide items client-side.
  */
 import Base from '../layouts/Base.astro';
 import Cite from '../components/Cite.astro';
 import { candidates, election, events, fullName } from '../lib/data';
 import { CitationRegistry } from '../lib/citations';
-import { formatDay, parisDateTime } from '../lib/dates';
+import { formatDay, formatDeclarationDate, parisDateTime } from '../lib/dates';
 import { parisDay } from '../lib/freshness';
+import { buildChronology, byMonth, CHRONO_GROUP, type ChronoItem } from '../lib/chronology';
 import { breadcrumbLd, eventLd, type JsonLd } from '../lib/seo';
 
 const site = Astro.site!;
@@ -19,19 +21,35 @@ const person = (slug: string) => {
   const c = bySlug.get(slug);
   return c ? { name: fullName(c), path: `/candidat/${c.slug}` } : null;
 };
+const eventById = new Map(events.map((e) => [e.id, e]));
+const { upcoming, past } = buildChronology(candidates, events, election, today);
+const months = byMonth(past);
 const firstDay = election.firstRound.slice(0, 10);
 const secondDay = election.secondRound.slice(0, 10);
-const dates = [
-  ...election.milestones.map((m) => ({ date: m.date, label: m.label, sources: m.sources, round: false })),
-  { date: firstDay, label: 'Premier tour', sources: election.sources, round: true },
-  { date: secondDay, label: 'Second tour', sources: election.sources, round: true },
-].toSorted((a, b) => a.date.localeCompare(b.date));
-const debates = events.filter((e) => e.kind === 'debat');
-const upcoming = debates.filter((e) => e.date >= today).toSorted((a, b) => a.date.localeCompare(b.date));
-const past = debates.filter((e) => e.date < today).toSorted((a, b) => b.date.localeCompare(a.date));
 const reg = new CitationRegistry();
 const id = 'cal';
 
+const KIND_LABEL: Record<ChronoItem['kind'], string> = {
+  declaration: 'Candidature',
+  retrait: 'Retrait',
+  debat: 'Débat',
+  emission: 'Émission',
+  meeting: 'Meeting',
+  scrutin: 'Scrutin',
+  etape: 'Étape',
+};
+const FILTERS = [
+  { id: 'tout', label: 'Tout' },
+  { id: 'candidatures', label: 'Candidatures' },
+  { id: 'debats', label: 'Débats' },
+  { id: 'meetings', label: 'Meetings' },
+] as const;
+const when = (i: ChronoItem) =>
+  i.precision === 'day'
+    ? `${formatDay(i.date)}${i.time ? ` à ${i.time.replace(':', ' h ')}` : ''}`
+    : formatDeclarationDate(i.date, i.precision);
+
+const debates = events.filter((e) => e.kind === 'debat');
 const jsonLd: JsonLd[] = [
   eventLd(site, {
     name: 'Premier tour de l’élection présidentielle 2027',
@@ -70,8 +88,8 @@ const jsonLd: JsonLd[] = [
 ---
 
 <Base
-  title="Présidentielle 2027 : dates, calendrier et débats"
-  description={`Élection présidentielle 2027 : premier tour le ${formatDay(firstDay)}, second tour le ${formatDay(secondDay)}. Dates clés (inscriptions, campagne officielle) et débats télévisés entre candidats, avec sources.`}
+  title="Présidentielle 2027 : calendrier et chronologie de la campagne"
+  description={`Élection présidentielle 2027 : premier tour le ${formatDay(firstDay)}, second tour le ${formatDay(secondDay)}. Dates clés, débats télévisés, meetings, déclarations et retraits de candidature, avec sources.`}
   section="calendrier"
   jsonLd={jsonLd}
 >
@@ -79,86 +97,84 @@ const jsonLd: JsonLd[] = [
     <nav class="crumbs" aria-label="Fil d'Ariane">
       <a href="/">Accueil</a> › Calendrier
     </nav>
-    <h1>Présidentielle 2027 : dates et débats</h1>
+    <h1>Présidentielle 2027 : calendrier et chronologie</h1>
     <p class="lead">
       Premier tour le {formatDay(firstDay)}, second tour le {formatDay(secondDay)}.
     </p>
 
-    <section>
-      <h2>Dates clés</h2>
-      <ol class="timeline">
-        {dates.map((d) => (
-          <li class={d.round ? 'round' : undefined}>
-            <time datetime={d.date}>{formatDay(d.date)}</time>
-            <span>
-              {d.label}
-              <Cite numbers={reg.cite(d.sources)} idPrefix={id} />
-            </span>
-          </li>
-        ))}
-      </ol>
-    </section>
+    <div class="filters" role="group" aria-label="Filtrer" data-filters hidden>
+      {FILTERS.map((f, i) => (
+        <button type="button" data-filter={f.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {f.label}
+        </button>
+      ))}
+    </div>
 
     {[
-      { title: 'Débats à venir', list: upcoming, empty: 'Aucun débat annoncé à ce jour.' },
-      { title: 'Débats passés', list: past, empty: 'Aucun débat pour le moment.' },
-    ].map((group) => (
-      <section>
-        <h2>{group.title}</h2>
-        {group.list.length ? (
-          <ul class="debates">
-            {group.list.map((e) => (
-              <li>
-                <p class="when">
-                  <time datetime={e.date}>{formatDay(e.date)}</time>
-                  {e.time && ` à ${e.time.replace(':', ' h ')}`} · {e.channels.join(' et ')}
-                </p>
-                <h3>
-                  {e.title}
-                  <Cite numbers={reg.cite(e.sources)} idPrefix={id} />
-                </h3>
-                <p>{e.summary}</p>
-                {e.participants.length > 0 && (
-                  <p class="who">
-                    Avec{' '}
-                    {e.participants.map((slug, i) => {
-                      const p = person(slug);
-                      return (
-                        <>
-                          {p ? <a href={p.path}>{p.name}</a> : slug}
-                          {i < e.participants.length - 1 ? ', ' : '.'}
-                        </>
-                      );
-                    })}
-                  </p>
-                )}
-                {e.absents.length > 0 && (
-                  <p class="who">
-                    Absents :{' '}
-                    {e.absents.map((a, i) => {
-                      const p = person(a.slug);
-                      return (
-                        <>
-                          {p ? <a href={p.path}>{p.name}</a> : a.slug} ({a.note.replace(/\.$/, '')})
-                          {i < e.absents.length - 1 ? ' ; ' : '.'}
-                        </>
-                      );
-                    })}
-                  </p>
-                )}
-                {e.replayUrl && (
-                  <p>
-                    <a href={e.replayUrl} target="_blank" rel="noopener">
-                      Revoir le débat
-                    </a>
-                  </p>
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p class="empty">{group.empty}</p>
-        )}
+      {
+        title: 'À venir',
+        groups: [{ month: null as string | null, items: upcoming }],
+        empty: 'Rien d’annoncé.',
+      },
+      { title: 'Ce qui s’est passé', groups: months, empty: 'Rien pour le moment.' },
+    ].map((section) => (
+      <section class="block">
+        <h2>{section.title}</h2>
+        {section.groups.every((g) => g.items.length === 0) && <p class="empty">{section.empty}</p>}
+        {section.groups.map((g) => (
+          <>
+            {g.month && <h3 class="month">{g.month}</h3>}
+            <ol class="items">
+              {g.items.map((item) => {
+                const ev = eventById.get(item.id);
+                const people = item.slugs.map(person).filter((p) => p !== null);
+                const linkNames = item.kind === 'debat' || item.kind === 'emission';
+                return (
+                  <li data-group={CHRONO_GROUP[item.kind]} data-kind={item.kind}>
+                    <p class="when">
+                      <span class="kind">{KIND_LABEL[item.kind]}</span>
+                      <time datetime={item.date}>{when(item)}</time>
+                    </p>
+                    <p class="what">
+                      {!linkNames && people.length === 1 ? (
+                        <a href={people[0]!.path}>{item.text}</a>
+                      ) : (
+                        item.text
+                      )}
+                      <Cite numbers={reg.cite(item.sources)} idPrefix={id} />
+                    </p>
+                    {ev && <p class="detail">{ev.summary}</p>}
+                    {linkNames && people.length > 0 && (
+                      <p class="detail">
+                        Avec{' '}
+                        {people.map((p, i) => (
+                          <>
+                            <a href={p.path}>{p.name}</a>
+                            {i < people.length - 1 ? ', ' : '.'}
+                          </>
+                        ))}
+                      </p>
+                    )}
+                    {ev && ev.absents.length > 0 && (
+                      <p class="detail">
+                        Absents :{' '}
+                        {ev.absents.map((a, i) => {
+                          const p = person(a.slug);
+                          return (
+                            <>
+                              {p ? <a href={p.path}>{p.name}</a> : a.slug} ({a.note.replace(/\.$/, '')})
+                              {i < ev.absents.length - 1 ? ' ; ' : '.'}
+                            </>
+                          );
+                        })}
+                      </p>
+                    )}
+                  </li>
+                );
+              })}
+            </ol>
+          </>
+        ))}
       </section>
     ))}
 
@@ -179,6 +195,30 @@ const jsonLd: JsonLd[] = [
   </article>
 </Base>
 
+<script>
+  const bar = document.querySelector<HTMLElement>('[data-filters]');
+  if (bar) {
+    bar.hidden = false;
+    const buttons = [...bar.querySelectorAll<HTMLButtonElement>('button')];
+    const items = [...document.querySelectorAll<HTMLElement>('[data-group]')];
+    const months = [...document.querySelectorAll<HTMLElement>('.month')];
+    bar.addEventListener('click', (ev) => {
+      const btn = (ev.target as HTMLElement).closest('button');
+      if (!btn) return;
+      const f = btn.dataset.filter!;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      items.forEach((li) => {
+        li.hidden = f !== 'tout' && li.dataset.group !== f;
+      });
+      // Hide month headings whose list became empty.
+      months.forEach((h) => {
+        const list = h.nextElementSibling;
+        h.hidden = !!list && [...list.children].every((c) => (c as HTMLElement).hidden);
+      });
+    });
+  }
+</script>
+
 <style>
   .crumbs {
     font-size: 13px;
@@ -188,43 +228,81 @@ const jsonLd: JsonLd[] = [
   .lead {
     font-size: 18px;
   }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 4px;
+  }
+  .filters[hidden],
+  [hidden] {
+    display: none !important;
+  }
+  .filters button {
+    font: inherit;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .filters button[aria-pressed='true'] {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
   h2 {
-    font-size: 20px;
-    margin: 28px 0 10px;
+    font-size: 22px;
+    margin: 28px 0 6px;
   }
-  h3 {
-    font-size: 17px;
-    margin: 2px 0 6px;
+  .month {
+    font-size: 15px;
+    text-transform: capitalize;
+    color: var(--accent);
+    margin: 18px 0 4px;
   }
-  .timeline,
-  .debates {
+  .items {
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  .timeline li {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 12px;
-    padding: 8px 0;
+  .items li {
+    padding: 10px 0;
     border-bottom: 1px solid var(--line-soft);
   }
-  .timeline time {
+  .items p {
+    margin: 2px 0;
+  }
+  .when {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 13px;
     color: var(--muted);
   }
-  .timeline .round span {
+  .kind {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--faint);
+    min-width: 86px;
+  }
+  .items li[data-kind='retrait'] .kind {
+    color: var(--warn-text);
+  }
+  .items li[data-kind='scrutin'] .what {
     font-weight: 700;
     color: var(--ink-strong);
   }
-  .debates li {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line-soft);
+  .what a {
+    text-decoration: none;
   }
-  .debates p {
-    margin: 4px 0;
+  .what a:hover {
+    text-decoration: underline;
   }
-  .when,
-  .who {
+  .detail {
     font-size: 14px;
     color: var(--muted);
   }
@@ -235,11 +313,5 @@ const jsonLd: JsonLd[] = [
     font-size: 13px;
     color: var(--muted);
     padding-left: 22px;
-  }
-  @media (max-width: 520px) {
-    .timeline li {
-      grid-template-columns: 1fr;
-      gap: 2px;
-    }
   }
 </style>

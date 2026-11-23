@@ -24,6 +24,7 @@ function candidate(overrides: Partial<Candidate> = {}): Candidate {
       videoUrl: 'https://www.youtube.com/watch?v=abcdefghijk',
       sources: [src('https://afp.com/3')],
     },
+    withdrawal: null,
     qualified2022: null,
     parrainages: null,
     programme: [{ theme: 'energie', text: 'Propose…', sources: [src('https://ab2027.fr/programme')] }],
@@ -44,6 +45,22 @@ describe('matchDomain', () => {
 });
 
 describe('checkCandidate', () => {
+  it('needs two independent outlets for a withdrawal', () => {
+    const issues = checkCandidate(
+      candidate({
+        status: 'retire',
+        withdrawal: {
+          date: '2026-11-21',
+          sources: [src('https://www.lemonde.fr/1'), src('https://www.lemonde.fr/2')],
+        },
+      }),
+      'f',
+      allowlist,
+      new Set(),
+    );
+    expect(issues.map((i) => i.path)).toContain('withdrawal.sources');
+  });
+
   it('accepts a valid candidate (official domain allowed for programme)', () => {
     expect(checkCandidate(candidate(), 'f', allowlist, new Set())).toEqual([]);
   });

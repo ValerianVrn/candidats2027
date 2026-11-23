@@ -1,0 +1,108 @@
+---
+/**
+ * Home page: candidates who withdrew, so a reader sees at a glance who left the race and when.
+ * Plain links to the profile (no drawer: the drawer only holds active candidates).
+ */
+import Avatar from './Avatar.astro';
+import { candidates, fullName, partyOf } from '../lib/data';
+import { formatDay } from '../lib/dates';
+
+const retired = candidates
+  .filter((c) => c.status === 'retire' && c.withdrawal)
+  .toSorted((a, b) => b.withdrawal!.date.localeCompare(a.withdrawal!.date));
+---
+
+{retired.length > 0 && (
+  <section class="retired" aria-labelledby="retires-titre">
+    <h2 id="retires-titre">
+      Candidatures retirées <span class="count">{retired.length}</span>
+    </h2>
+    <ul>
+      {retired.map((c) => {
+        const party = partyOf(c);
+        return (
+          <li>
+            <a class="mini" href={`/candidat/${c.slug}`}>
+              <span class="ring">
+                <Avatar candidate={c} size={40} />
+              </span>
+              <span class="txt">
+                <span class="name">{fullName(c)}</span>
+                <span class="sub">
+                  {party ? `${party.name} · ` : ''}
+                  {c.genre === 'f' ? 'Retirée' : 'Retiré'} le {formatDay(c.withdrawal!.date)}
+                </span>
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+)}
+
+<style>
+  .retired {
+    padding: 0 var(--gutter) 24px;
+  }
+  h2 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .count {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--muted);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+  }
+  .mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 56px;
+    padding: 8px 10px;
+    border-radius: 14px;
+    border: 1px dashed var(--line);
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .mini:hover {
+    border-color: var(--accent);
+  }
+  .ring {
+    display: flex;
+    border-radius: 50%;
+    border: 2px solid var(--line);
+    filter: grayscale(1);
+    opacity: 0.7;
+  }
+  .txt {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: line-through;
+    text-decoration-color: var(--faint);
+  }
+  .sub {
+    font-size: 12px;
+  }
+</style>
