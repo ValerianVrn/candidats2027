@@ -23,6 +23,8 @@ const quietDays = site.checks
       Chaque jour, les informations du site sont vérifiées et mises à jour à partir de sources publiques.
       Voici ce qui a changé, et pourquoi. Une erreur ? <a href={REPORT_ERROR_URL} target="_blank" rel="noopener">Signalez-la</a>.
     </p>
+    <!-- prettier-ignore -->
+    <p class="lead">Pour les événements de la campagne (déclarations, retraits, débats, meetings) à leur date, voir le <a href="/calendrier">calendrier</a>.</p>
     <p class="status">
       Dernière vérification : {formatDateTime(site.lastChecked)}.
       {lastChange && ` Dernier changement : ${formatDay(lastChange)}.`}

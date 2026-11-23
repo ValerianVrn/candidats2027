@@ -12,7 +12,7 @@ import { serializeLd, type JsonLd } from '../lib/seo';
 interface Props {
   title?: string;
   description?: string;
-  section?: 'candidats' | 'quiz' | 'journal' | null;
+  section?: 'candidats' | 'programmes' | 'quiz' | 'journal' | 'calendrier' | null;
   /** Load the ad script (and consent message). Only the home page and the journal set it. */
   ads?: boolean;
   /** schema.org structured data for this page. */
@@ -43,6 +43,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="max-image-preview:large" />
     <meta name="theme-color" content="#0b1020" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

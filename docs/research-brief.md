@@ -30,7 +30,8 @@ review**, so these rules are strict. The daily routine follows them too.
   accepted). `declaration` is required.
 - `potentiel`: has not declared, but at least two allowlisted outlets reported in the last 3 months that they
   are considering it or are being considered. `declaration` is `null`.
-- `retire`: declared then withdrew. Only keep withdrawn candidates if they were main candidates.
+- `retire`: declared then withdrew. Only keep withdrawn candidates if they were main candidates. Fill
+  `withdrawal: { date, sources }` with the announcement date and two independent outlets (required by the schema).
 - `officiel`: only once the Conseil constitutionnel publishes the official list (March 2027).
 
 ## Main cloud criterion (published on the Méthode page)

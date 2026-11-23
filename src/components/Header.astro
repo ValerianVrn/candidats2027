@@ -3,7 +3,7 @@ import { election, site } from '../lib/data';
 import { countdown, formatDateTime, formatDay, relativeAgo } from '../lib/dates';
 
 interface Props {
-  section: 'candidats' | 'quiz' | 'journal' | null;
+  section: 'candidats' | 'programmes' | 'quiz' | 'journal' | 'calendrier' | null;
 }
 const { section } = Astro.props;
 
@@ -13,8 +13,9 @@ const cd = countdown(target, now);
 const firstRoundDay = formatDay(election.firstRound.slice(0, 10));
 const links = [
   { id: 'candidats', href: '/', label: 'Candidats' },
+  { id: 'programmes', href: '/programmes', label: 'Programmes' },
+  { id: 'calendrier', href: '/calendrier', label: 'Calendrier' },
   { id: 'quiz', href: '/quiz', label: 'Quiz' },
-  { id: 'journal', href: '/journal', label: 'Journal' },
 ] as const;
 ---
 
@@ -37,7 +38,12 @@ const links = [
   </nav>
 
   <div class="status">
-    <p class="countdown" data-countdown={election.firstRound} title={`Premier tour le ${firstRoundDay}`}>
+    <a
+      class="countdown"
+      href="/calendrier"
+      data-countdown={election.firstRound}
+      title={`Premier tour le ${firstRoundDay} : voir le calendrier`}
+    >
       <span class="countdown-days" data-days>
         {cd.done ? 'Jour J' : `J‑${cd.days}`}
       </span>
@@ -47,7 +53,7 @@ const links = [
         </span>
         <span data-hm>{firstRoundDay}</span>
       </span>
-    </p>
+    </a>
     <p class="updated">
       <span class="dot" aria-hidden="true"></span>
       <time
@@ -150,6 +156,7 @@ const links = [
     margin: 0;
   }
   .countdown {
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -193,6 +200,9 @@ const links = [
       order: 3;
       width: 100%;
       justify-content: center;
+    }
+    .nav a {
+      padding: 9px 12px;
     }
   }
 </style>

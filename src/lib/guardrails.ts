@@ -89,6 +89,9 @@ export function checkCandidate(
       ctx.issues.push({ file, path: 'declaration.videoUrl', message: `unexpected video host ${hostOf(v)}` });
     }
   }
+  if (c.withdrawal) {
+    checkSources(ctx, file, 'withdrawal.sources', c.withdrawal.sources, { minIndependent: 2 });
+  }
   if (c.qualified2022) checkSources(ctx, file, 'qualified2022.sources', c.qualified2022.sources);
   if (c.parrainages) checkSources(ctx, file, 'parrainages.sources', c.parrainages.sources);
   c.programme.forEach((p, i) =>
