@@ -16,8 +16,12 @@ const STATUS_WORD: Record<Status, string> = {
   retire: 'retiré',
 };
 
-/** « Déclarée », « Potentiel »… agreed with the candidate's grammatical gender. */
-export function statusLabel(c: Pick<Candidate, 'status' | 'genre'>): string {
+/**
+ * « Déclarée », « Potentiel »… agreed with the candidate's grammatical gender. A withdrawn candidate who never
+ * declared (an evoked candidacy ruled out) reads « A renoncé ».
+ */
+export function statusLabel(c: Pick<Candidate, 'status' | 'genre'> & { declaration?: unknown }): string {
+  if (c.status === 'retire' && c.declaration === null) return 'A renoncé';
   const w = STATUS_WORD[c.status];
   const agreed = c.genre === 'f' ? (w.endsWith('el') ? `${w}le` : `${w}e`) : w;
   return agreed.charAt(0).toUpperCase() + agreed.slice(1);
