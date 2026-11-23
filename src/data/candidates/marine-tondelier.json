@@ -148,7 +148,7 @@
       "active": true,
       "title": "Vote des adhérents des Écologistes sur le maintien de la candidature",
       "statutJuridique": "Procédure interne au parti, sans caractère judiciaire.",
-      "resume": "Le conseil fédéral des Écologistes a adopté le 21 septembre 2026 une motion renvoyant le choix de la stratégie présidentielle à un vote des adhérents du 10 au 13 décembre 2026. Les adhérents choisiront entre la candidature de Marine Tondelier et le soutien à un candidat d'une autre formation de gauche. Le 5 novembre 2026, Marine Tondelier n'a pas exclu de se retirer « sans chemin de victoire ».",
+      "resume": "Le conseil fédéral des Écologistes a adopté le 21 septembre 2026 une motion renvoyant le choix de la stratégie présidentielle à un vote des adhérents du 10 au 13 décembre 2026. Le 18 novembre 2026, sur France 2, Marine Tondelier s'est dite « prête » à « travailler à une coalition autour de la candidature de Jean-Luc Mélenchon » et a déclaré être « toujours candidate ». Selon Public Sénat, le conseil fédéral du 26 novembre doit fixer les options soumises aux adhérents : candidature autonome, soutien à Jean-Luc Mélenchon ou rapprochement avec Raphaël Glucksmann.",
       "impact": "Selon les sources, ce vote peut conduire au retrait de sa candidature au profit d'un autre candidat de gauche.",
       "sources": [
         {
@@ -168,10 +168,22 @@
           "outlet": "Public Sénat",
           "title": "Présidentielle 2027 : « Personne ne gagnera seul », assure Marine Tondelier",
           "date": "2026-11-05"
+        },
+        {
+          "url": "https://www.france24.com/fr/france/20261118-presidentielle-2027-election-marine-tondelier-ecologistes-prete-travailler-coalition-autour-jean-luc-melenchon-la-france-insoumise-soutien",
+          "outlet": "France 24",
+          "title": "Présidentielle : Marine Tondelier \"prête à travailler à une coalition\" autour de Jean-Luc Mélenchon",
+          "date": "2026-11-18"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/la-main-tendue-de-marine-tondelier-a-melenchon-peut-elle-faire-imploser-les-ecologistes",
+          "outlet": "Public Sénat",
+          "title": "La main tendue de Marine Tondelier à Jean-Luc Mélenchon peut-elle faire imploser les Écologistes ?",
+          "date": "2026-11-19"
         }
       ],
-      "updatedAt": "2026-11-16"
+      "updatedAt": "2026-11-23"
     }
   ],
-  "lastChecked": "2026-11-22"
+  "lastChecked": "2026-11-23"
 }

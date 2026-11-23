@@ -166,7 +166,7 @@
       "active": true,
       "title": "Projet de primaire de la droite et du centre",
       "statutJuridique": "Sans objet : processus politique, aucune procédure judiciaire",
-      "resume": "Le 10 novembre 2026, Bruno Retailleau a proposé par lettre à Édouard Philippe, Gabriel Attal et David Lisnard une primaire les 31 janvier et 7 février 2027. Les directeurs de campagne de Bruno Retailleau, Gabriel Attal et David Lisnard doivent se réunir le 17 novembre ; Édouard Philippe refuse d'y participer.",
+      "resume": "Le 10 novembre 2026, Bruno Retailleau a proposé par lettre à Édouard Philippe, Gabriel Attal et David Lisnard une primaire les 31 janvier et 7 février 2027. Leurs équipes se sont réunies le 17 novembre ; elles divergent sur la participation d'Éric Zemmour, que David Lisnard accepterait s'il respecte les critères de la primaire et que Bruno Retailleau et Gabriel Attal refusent. Édouard Philippe refuse d'y participer.",
       "impact": "Gérard Larcher a proposé aux quatre candidats de discuter d'une « méthode de départage » en vue d'une candidature unique au début de 2027. Les sources ne précisent pas si les candidats battus à une éventuelle primaire se retireraient.",
       "sources": [
         {
@@ -186,10 +186,22 @@
           "outlet": "France 24 (AFP)",
           "title": "Philippe d'accord pour une réunion autour de Larcher, mais pas pour parler d'une primaire",
           "date": "2026-11-15"
+        },
+        {
+          "url": "https://www.france24.com/fr/info-en-continu/20261118-lisnard-et-retailleau-appellent-philippe-%C3%A0-rejoindre-la-primaire-mais-se-divisent-sur-son-p%C3%A9rim%C3%A8tre",
+          "outlet": "France 24 (AFP)",
+          "title": "Lisnard et Retailleau appellent Philippe à rejoindre la primaire mais se divisent sur son périmètre",
+          "date": "2026-11-18"
+        },
+        {
+          "url": "https://www.publicsenat.fr/actualites/politique/primaire-en-incluant-eric-zemmour-david-lisnard-cherche-t-il-a-planter-le-processus-ou-a-en-faire-un-pre-premier-tour-de-la-presidentielle",
+          "outlet": "Public Sénat",
+          "title": "Primaire : en incluant Eric Zemmour, David Lisnard cherche-t-il à « planter le processus » ou à en faire un « pré-premier tour » de la présidentielle ?",
+          "date": "2026-11-19"
         }
       ],
-      "updatedAt": "2026-11-16"
+      "updatedAt": "2026-11-23"
     }
   ],
-  "lastChecked": "2026-11-22"
+  "lastChecked": "2026-11-23"
 }
