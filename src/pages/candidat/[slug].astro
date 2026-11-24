@@ -5,6 +5,7 @@ import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { candidates, fullName, partyOf } from '../../lib/data';
 import { breadcrumbLd, personLd, profilePageLd } from '../../lib/seo';
+import { parisDateTime } from '../../lib/dates';
 import type { Candidate } from '../../lib/schemas';
 
 export function getStaticPaths() {
@@ -43,7 +44,7 @@ const jsonLd = [
       party: party?.name ?? null,
       image,
     }),
-    candidate.lastChecked,
+    parisDateTime(candidate.lastChecked, '00:00'),
   ),
   breadcrumbLd(site, crumbs),
 ];
