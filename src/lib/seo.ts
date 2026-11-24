@@ -50,7 +50,7 @@ export function personLd(
   };
 }
 
-/** Profile page around a Person, with the date its content was last checked. */
+/** Profile page around a Person. `dateModified` must be a full ISO date-time with offset (Google rejects a bare day). */
 export function profilePageLd(person: JsonLd, dateModified: string): JsonLd {
   const { '@context': _ctx, ...mainEntity } = person;
   return { '@context': CONTEXT, '@type': 'ProfilePage', dateModified, mainEntity };
@@ -66,6 +66,10 @@ export function eventLd(
     name: string;
     /** ISO date or date-time. */
     startDate: string;
+    /** ISO date-time, when known (e.g. polls closing). */
+    endDate?: string;
+    /** Image path (share card). */
+    image: string;
     description: string;
     /** Page that shows the event. */
     path: string;
@@ -80,14 +84,21 @@ export function eventLd(
     '@type': 'Event',
     name: e.name,
     startDate: e.startDate,
+    ...(e.endDate ? { endDate: e.endDate } : {}),
+    eventStatus: 'https://schema.org/EventScheduled',
     description: e.description,
+    image: [new URL(e.image, site).href],
     url: new URL(e.path, site).href,
     eventAttendanceMode: e.broadcast
       ? 'https://schema.org/OnlineEventAttendanceMode'
       : 'https://schema.org/OfflineEventAttendanceMode',
     location: e.broadcast
       ? { '@type': 'VirtualLocation', name: e.place }
-      : { '@type': 'Place', name: e.place },
+      : {
+          '@type': 'Place',
+          name: e.place,
+          address: { '@type': 'PostalAddress', addressCountry: 'FR' },
+        },
     ...(e.performers.length
       ? {
           performer: e.performers.map((p) => ({
