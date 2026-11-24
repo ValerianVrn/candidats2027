@@ -7,6 +7,14 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Fixed
+
+- Structured data flagged by Search Console: candidate pages' `dateModified` is a full date-time; election rounds
+  carry a country address, `eventStatus`, an end time (polls closing) and an image; debates get `eventStatus` and an
+  image.
+- Daily routine: re-checks every evoked candidacy on each run (declared since, ruled out, no longer reported),
+  whatever the date of the news, so an older « je ne suis pas candidat » is no longer missed.
+
 ### Changed
 
 - An evoked candidate who explicitly rules it out is recorded as withdrawn and shown « A renoncé » (« renonce à être

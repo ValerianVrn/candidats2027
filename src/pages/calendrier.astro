@@ -50,10 +50,14 @@ const when = (i: ChronoItem) =>
     : formatDeclarationDate(i.date, i.precision);
 
 const debates = events.filter((e) => e.kind === 'debat');
+/** Polls close at the end of each round's silence window (20:00 Paris, `election.silence`). */
+const closing = (iso: string) => election.silence.find((w) => w.end.slice(0, 10) === iso.slice(0, 10))?.end;
 const jsonLd: JsonLd[] = [
   eventLd(site, {
     name: 'Premier tour de l’élection présidentielle 2027',
     startDate: election.firstRound,
+    endDate: closing(election.firstRound),
+    image: '/og/accueil.png',
     description: 'Premier tour de scrutin de l’élection présidentielle française.',
     path: '/calendrier',
     place: 'France',
@@ -63,6 +67,8 @@ const jsonLd: JsonLd[] = [
   eventLd(site, {
     name: 'Second tour de l’élection présidentielle 2027',
     startDate: election.secondRound,
+    endDate: closing(election.secondRound),
+    image: '/og/accueil.png',
     description: 'Second tour de scrutin de l’élection présidentielle française.',
     path: '/calendrier',
     place: 'France',
@@ -73,6 +79,7 @@ const jsonLd: JsonLd[] = [
     eventLd(site, {
       name: e.title,
       startDate: parisDateTime(e.date, e.time),
+      image: '/og/accueil.png',
       description: e.summary,
       path: '/calendrier',
       place: e.channels.join(', '),
