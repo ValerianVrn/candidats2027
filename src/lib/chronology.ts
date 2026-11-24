@@ -64,7 +64,7 @@ export function buildChronology(
         precision: 'day',
         time: null,
         kind: 'retrait',
-        text: `${name(c)} retire sa candidature`,
+        text: c.declaration ? `${name(c)} retire sa candidature` : `${name(c)} renonce à être candidat`,
         slugs: [c.slug],
         sources: c.withdrawal.sources,
       });

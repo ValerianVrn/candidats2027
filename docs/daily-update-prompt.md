@@ -104,8 +104,10 @@ What to look for:
   `src/data/events.json`, following the research brief (two outlets, absents only when sourced).
 - New programme proposals (most recent first; keep at most ~10 items per candidate, replacing outdated ones).
 - From February 2027: validated sponsorships published by the Conseil constitutionnel (`parrainages`).
-- New potential candidates (2+ outlets in the last 3 months) and potential ones who ruled it out (remove their
-  file only through a `needs-human` PR, never by yourself).
+- New potential candidates (2+ outlets in the last 3 months). A potential candidate who explicitly rules it out
+  (« je ne suis pas candidat », « je ne serai pas candidat »; two independent outlets, not a « pas pour
+  l'instant ») gets `status: retire` and `withdrawal: { date of the statement, sources }`: the site then shows « A
+  renoncé ». Label that PR `needs-human`: the owner checks it before it merges. Never delete a candidate file.
 - Quiz positions in `src/data/quiz.json` when a candidate states a new position, following
   `docs/quiz-research-brief.md` (strict matching, two outlets, nothing inferred).
 

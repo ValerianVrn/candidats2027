@@ -89,3 +89,11 @@ describe('byMonth', () => {
     expect(monthLabel('2027-04-18')).toBe('avril 2027');
   });
 });
+
+describe('ruled-out candidacies', () => {
+  it('reads « renonce à être candidat » when the person never declared', () => {
+    const c = cand('v', { status: 'retire', withdrawal: { date: '2026-11-16', sources: src } });
+    const { past } = buildChronology([c], [], election, '2026-11-23');
+    expect(past[0]!.text).toBe('A V renonce à être candidat');
+  });
+});

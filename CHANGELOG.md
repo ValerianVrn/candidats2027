@@ -7,6 +7,12 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Changed
+
+- An evoked candidate who explicitly rules it out is recorded as withdrawn and shown « A renoncé » (« renonce à être
+  candidat » in the chronology); the home and list sections become « Retraits et renoncements ». The routine labels
+  such PRs `needs-human`.
+
 ## [1.3.0] - 2026-11-23
 
 ### Added

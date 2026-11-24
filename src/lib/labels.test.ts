@@ -31,3 +31,13 @@ describe('hasActiveProcedure', () => {
     expect(hasActiveProcedure({ risques: [r('fiscal', true)] })).toBe(true);
   });
 });
+
+describe('statusLabel for withdrawals', () => {
+  it('distinguishes a withdrawn candidacy from an evoked one ruled out', () => {
+    expect(statusLabel({ status: 'retire', genre: 'f', declaration: { date: '2026-01-01' } })).toBe(
+      'Retirée',
+    );
+    expect(statusLabel({ status: 'retire', genre: 'm', declaration: null })).toBe('A renoncé');
+    expect(statusLabel({ status: 'retire', genre: 'm' })).toBe('Retiré');
+  });
+});
