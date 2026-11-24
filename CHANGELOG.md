@@ -7,6 +7,12 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-11-24
+
+### Dependencies
+
+- Astro and dev tools updated (Dependabot #63, #64).
+
 ### Fixed
 
 - Structured data flagged by Search Console: candidate pages' `dateModified` is a full date-time; election rounds
