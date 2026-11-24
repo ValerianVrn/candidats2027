@@ -92,7 +92,17 @@ The cost of a run is in opening and verifying pages, not in searching. So:
      `withdrawal: { date, sources }` (the day it was announced, two independent outlets; the build fails without
      it). The candidate then moves to « Candidatures retirées » on the home page and the list, and the withdrawal
      appears in the chronology on `/calendrier`.
-4. Keep a list of the candidates reviewed: it goes in the summary (section 8).
+4. **Status check of every evoked candidacy (`status: potentiel`), every run, whatever the date of the news.**
+   Step 3 only looks at results newer than `lastChecked`, so a statement made before (e.g. « je ne suis pas
+   candidat » on a day nothing else happened) is never picked up. For each `potentiel` file, one search
+   « Prénom Nom candidat présidentielle 2027 » (and « Prénom Nom pas candidat ») over the last 3 months:
+   - if they have since declared: status `declare` with `declaration` (two sources);
+   - if they explicitly ruled it out: `status: retire` + `withdrawal` (see « What to look for »), PR labelled
+     `needs-human`;
+   - if no allowlisted outlet reported them as considering it in the last 3 months: flag it in the summary
+     (the owner decides; never delete a file).
+     Write the outcome on their summary line.
+5. Keep a list of the candidates reviewed: it goes in the summary (section 8).
 
 What to look for:
 

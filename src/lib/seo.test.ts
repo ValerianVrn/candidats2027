@@ -84,10 +84,36 @@ describe('profilePageLd and eventLd', () => {
       description: 'd',
       path: '/calendrier',
       place: 'TF1, LCI',
+      image: '/og/accueil.png',
       broadcast: true,
       performers: [{ name: 'A B', path: '/candidat/a-b' }],
     });
     expect(e.location).toEqual({ '@type': 'VirtualLocation', name: 'TF1, LCI' });
+    expect(e.eventStatus).toBe('https://schema.org/EventScheduled');
+    expect(e.image).toEqual(['https://exemple.fr/og/accueil.png']);
     expect(e.performer).toEqual([{ '@type': 'Person', name: 'A B', url: 'https://exemple.fr/candidat/a-b' }]);
+  });
+});
+
+describe('eventLd for an election round', () => {
+  it('gives the country address and the closing time', () => {
+    const e = eventLd(site, {
+      name: 'Premier tour',
+      startDate: '2027-04-18T08:00:00+02:00',
+      endDate: '2027-04-18T20:00:00+02:00',
+      description: 'd',
+      path: '/calendrier',
+      place: 'France',
+      image: '/og/accueil.png',
+      broadcast: false,
+      performers: [],
+    });
+    expect(e.location).toEqual({
+      '@type': 'Place',
+      name: 'France',
+      address: { '@type': 'PostalAddress', addressCountry: 'FR' },
+    });
+    expect(e.endDate).toBe('2027-04-18T20:00:00+02:00');
+    expect(e.performer).toBeUndefined();
   });
 });
