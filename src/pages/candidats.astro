@@ -73,7 +73,7 @@ const jsonLd = itemListLd(
 
     {retired.length > 0 && (
       <section aria-labelledby="retires">
-        <h2 id="retires">Candidatures retirées ({retired.length})</h2>
+        <h2 id="retires">Retraits et renoncements ({retired.length})</h2>
         <ul class="list">
           {retired.map((c) => {
             const src = withdrawal(c);
@@ -81,7 +81,7 @@ const jsonLd = itemListLd(
               <li>
                 <a href={`/candidat/${c.slug}`}>{fullName(c)}</a>
                 <span class="meta">
-                  {c.genre === 'f' ? 'Retirée' : 'Retiré'} ·{' '}
+                  {statusLabel(c)} ·{' '}
                   <a class="src" href={src.url} target="_blank" rel="noopener">
                     {src.outlet}, {formatDay(src.date)}
                   </a>

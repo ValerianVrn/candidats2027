@@ -6,6 +6,7 @@
 import Avatar from './Avatar.astro';
 import { candidates, fullName, partyOf } from '../lib/data';
 import { formatDay } from '../lib/dates';
+import { statusLabel } from '../lib/labels';
 
 const retired = candidates
   .filter((c) => c.status === 'retire' && c.withdrawal)
@@ -15,7 +16,7 @@ const retired = candidates
 {retired.length > 0 && (
   <section class="retired" aria-labelledby="retires-titre">
     <h2 id="retires-titre">
-      Candidatures retirées <span class="count">{retired.length}</span>
+      Retraits et renoncements <span class="count">{retired.length}</span>
     </h2>
     <ul>
       {retired.map((c) => {
@@ -30,7 +31,7 @@ const retired = candidates
                 <span class="name">{fullName(c)}</span>
                 <span class="sub">
                   {party ? `${party.name} · ` : ''}
-                  {c.genre === 'f' ? 'Retirée' : 'Retiré'} le {formatDay(c.withdrawal!.date)}
+                  {statusLabel(c)} le {formatDay(c.withdrawal!.date)}
                 </span>
               </span>
             </a>

@@ -92,7 +92,17 @@ The cost of a run is in opening and verifying pages, not in searching. So:
      `withdrawal: { date, sources }` (the day it was announced, two independent outlets; the build fails without
      it). The candidate then moves to « Candidatures retirées » on the home page and the list, and the withdrawal
      appears in the chronology on `/calendrier`.
-4. Keep a list of the candidates reviewed: it goes in the summary (section 8).
+4. **Status check of every evoked candidacy (`status: potentiel`), every run, whatever the date of the news.**
+   Step 3 only looks at results newer than `lastChecked`, so a statement made before (e.g. « je ne suis pas
+   candidat » on a day nothing else happened) is never picked up. For each `potentiel` file, one search
+   « Prénom Nom candidat présidentielle 2027 » (and « Prénom Nom pas candidat ») over the last 3 months:
+   - if they have since declared: status `declare` with `declaration` (two sources);
+   - if they explicitly ruled it out: `status: retire` + `withdrawal` (see « What to look for »), PR labelled
+     `needs-human`;
+   - if no allowlisted outlet reported them as considering it in the last 3 months: flag it in the summary
+     (the owner decides; never delete a file).
+     Write the outcome on their summary line.
+5. Keep a list of the candidates reviewed: it goes in the summary (section 8).
 
 What to look for:
 
@@ -104,8 +114,10 @@ What to look for:
   `src/data/events.json`, following the research brief (two outlets, absents only when sourced).
 - New programme proposals (most recent first; keep at most ~10 items per candidate, replacing outdated ones).
 - From February 2027: validated sponsorships published by the Conseil constitutionnel (`parrainages`).
-- New potential candidates (2+ outlets in the last 3 months) and potential ones who ruled it out (remove their
-  file only through a `needs-human` PR, never by yourself).
+- New potential candidates (2+ outlets in the last 3 months). A potential candidate who explicitly rules it out
+  (« je ne suis pas candidat », « je ne serai pas candidat »; two independent outlets, not a « pas pour
+  l'instant ») gets `status: retire` and `withdrawal: { date of the statement, sources }`: the site then shows « A
+  renoncé ». Label that PR `needs-human`: the owner checks it before it merges. Never delete a candidate file.
 - Quiz positions in `src/data/quiz.json` when a candidate states a new position, following
   `docs/quiz-research-brief.md` (strict matching, two outlets, nothing inferred).
 
