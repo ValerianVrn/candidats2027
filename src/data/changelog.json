@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-11-25",
+    "summary": "Ajout d'une enquête du parquet du Havre visant la communauté urbaine présidée par Édouard Philippe.",
+    "changes": [
+      {
+        "candidate": "edouard-philippe",
+        "text": "Enquête ouverte par le parquet du Havre pour détournement de fonds publics sur des frais d'avocats et de déplacement pris en charge par la communauté urbaine du Havre (annoncée le 24 novembre 2026) ; aucune mise en cause personnelle d'Édouard Philippe selon les sources."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/politique/edouard-philippe/une-enquete-ouverte-apres-un-signalement-pour-detournement-de-fonds-publics-a-l-agglomeration-du-havre-presidee-par-edouard-philippe_8297676.html",
+        "outlet": "franceinfo",
+        "title": "Une enquête ouverte après un signalement pour détournement de fonds publics à l'agglomération du Havre présidée par Edouard Philippe",
+        "date": "2026-11-24"
+      },
+      {
+        "url": "https://www.france24.com/fr/france/20261124-edouard-philippe-vis%C3%A9-par-une-enqu%C3%AAte-pour-d%C3%A9tournement-de-fonds-publics-au-havre",
+        "outlet": "France 24",
+        "title": "Détournement de fonds de publics : une enquête vise l'agglomération du Havre d'Édouard Philippe",
+        "date": "2026-11-24"
+      }
+    ]
+  },
+  {
     "date": "2026-11-23",
     "summary": "Point d'étape sur le vote interne des Écologistes et sur le projet de primaire de la droite et du centre.",
     "changes": [
