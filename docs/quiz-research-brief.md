@@ -29,7 +29,8 @@ For one question and one candidate: the option that matches the candidate's **ow
 
 - `salaires` → `smic-hausse` for any increase of the Smic decided by the State, whatever the amount and whether
   it is stated gross or net. Amounts belong in the candidate's programme items, not in the quiz.
-- `capitalisation` → `capitalisation` as soon as the candidate wants a funded part, mandatory or optional;
+- `capitalisation` → `capitalisation` as soon as the candidate wants a funded part next to répartition, mandatory or
+  optional; `bascule` when they want to move progressively out of répartition;
   `repartition` only when they reject any funded part.
 - `temps-de-travail` → `abroger` when the candidate says they will « supprimer les 35 heures » (the legal
   duration), even if the measures described are about overtime; `assouplir` when they keep the legal duration and
