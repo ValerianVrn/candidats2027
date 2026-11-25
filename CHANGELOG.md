@@ -7,6 +7,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-11-25
+
 ### Changed
 
 - Sources: ici (ex-France Bleu), Sud Radio and Slate.fr join the accepted outlets; `/methode` lists every accepted
