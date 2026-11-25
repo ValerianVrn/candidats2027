@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-11-25",
-    "summary": "Ajout d'une enquête du parquet du Havre visant la communauté urbaine présidée par Édouard Philippe ; onze positions ajoutées à la comparaison des positions.",
+    "summary": "Ajout d'une enquête du parquet du Havre visant la communauté urbaine présidée par Édouard Philippe ; onze positions ajoutées à la comparaison des positions ; réponses de la comparaison des positions reformulées.",
     "changes": [
       {
         "candidate": "edouard-philippe",
@@ -54,6 +54,10 @@
       {
         "candidate": "edouard-philippe",
         "text": "Comparaison des positions, « Faut-il revenir sur les 35 heures ? » : position retirée (non renseigné en attendant des sources concordantes)."
+      },
+      {
+        "candidate": null,
+        "text": "Comparaison des positions : réponses reformulées pour mieux correspondre aux propositions publiées. Smic : une seule réponse « Augmenter nettement le Smic par décision de l’État », quel que soit le montant. Capitalisation : « Oui, ajouter une part de capitalisation à la répartition » regroupe les parts facultative et obligatoire, et une réponse « Passer progressivement à un système par capitalisation » est ajoutée. Ajout de la proportionnelle parmi les changements institutionnels. Libellés précisés pour les 35 heures, le nucléaire, l’Europe et l’immigration. Les positions déjà publiées sont conservées."
       }
     ],
     "sources": [

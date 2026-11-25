@@ -165,17 +165,17 @@
           "label": "Non, seulement la retraite par répartition"
         },
         {
-          "id": "facultative",
-          "label": "Oui, une part de capitalisation facultative ou encouragée"
+          "id": "capitalisation",
+          "label": "Oui, ajouter une part de capitalisation à la répartition"
         },
         {
-          "id": "obligatoire",
-          "label": "Oui, une part de capitalisation obligatoire"
+          "id": "bascule",
+          "label": "Passer progressivement à un système par capitalisation"
         }
       ],
       "positions": {
         "edouard-philippe": {
-          "option": "obligatoire",
+          "option": "capitalisation",
           "kind": "declaration",
           "sources": [
             {
@@ -217,7 +217,7 @@
           ]
         },
         "marine-le-pen": {
-          "option": "obligatoire",
+          "option": "capitalisation",
           "kind": "programme",
           "sources": [
             {
@@ -244,12 +244,8 @@
       "text": "Comment augmenter les salaires ?",
       "options": [
         {
-          "id": "smic-2000",
-          "label": "Porter le Smic à 2 000 € net ou plus"
-        },
-        {
-          "id": "smic-1700",
-          "label": "Porter le Smic à environ 1 700 € net"
+          "id": "smic-hausse",
+          "label": "Augmenter nettement le Smic par décision de l'État"
         },
         {
           "id": "baisse-cotisations",
@@ -280,7 +276,7 @@
           ]
         },
         "jean-luc-melenchon": {
-          "option": "smic-1700",
+          "option": "smic-hausse",
           "kind": "programme",
           "sources": [
             {
@@ -298,7 +294,7 @@
           ]
         },
         "nathalie-arthaud": {
-          "option": "smic-2000",
+          "option": "smic-hausse",
           "kind": "programme",
           "sources": [
             {
@@ -322,7 +318,7 @@
           ]
         },
         "raphael-glucksmann": {
-          "option": "smic-1700",
+          "option": "smic-hausse",
           "kind": "programme",
           "sources": [
             {
@@ -680,7 +676,7 @@
       "options": [
         {
           "id": "assouplir",
-          "label": "Assouplir l'accueil des étrangers"
+          "label": "Assouplir l'accueil (régularisations, voies légales)"
         },
         {
           "id": "maintenir",
@@ -793,7 +789,7 @@
         },
         {
           "id": "renegocier",
-          "label": "Renégocier les traités ou ne plus les appliquer"
+          "label": "Renégocier les traités ou affirmer la primauté du droit français"
         },
         {
           "id": "sortir",
@@ -893,6 +889,10 @@
         {
           "id": "reforme-referendum",
           "label": "Une réforme de la Constitution par référendum, sans changer de République"
+        },
+        {
+          "id": "proportionnelle",
+          "label": "Changer le mode de scrutin (proportionnelle aux législatives)"
         },
         {
           "id": "statu-quo",
@@ -997,11 +997,11 @@
         },
         {
           "id": "assouplir",
-          "label": "Les assouplir, notamment par les heures supplémentaires"
+          "label": "Garder la durée légale mais l'assouplir (heures supplémentaires, annualisation, accords d'entreprise)"
         },
         {
           "id": "abroger",
-          "label": "Abroger les 35 heures"
+          "label": "Supprimer la durée légale des 35 heures"
         }
       ],
       "positions": {}
@@ -1023,7 +1023,7 @@
         },
         {
           "id": "maintenir",
-          "label": "Maintenir le parc existant"
+          "label": "Maintenir le parc existant, sans nouveaux réacteurs"
         },
         {
           "id": "relancer",
