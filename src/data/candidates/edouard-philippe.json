@@ -244,6 +244,30 @@
       "updatedAt": "2026-11-16"
     },
     {
+      "id": "enquete-parquet-le-havre-frais-avocats",
+      "nature": "judiciaire",
+      "active": true,
+      "title": "Enquête du parquet du Havre sur des frais pris en charge par la communauté urbaine",
+      "statutJuridique": "Enquête ouverte par le parquet du Havre et confiée au commissariat du Havre (annoncée le 24 novembre 2026) ; les sources ne font état d'aucune mise en cause personnelle d'Édouard Philippe dans cette enquête",
+      "resume": "À la suite d'un signalement d'une ancienne directrice générale adjointe de la communauté urbaine du Havre, le parquet du Havre a ouvert une enquête pour détournement de fonds publics. Elle porte sur la prise en charge par la communauté urbaine de plus de 28 000 euros d'honoraires d'avocats et de frais de déplacement d'agents entendus à Paris. Édouard Philippe, président de la communauté urbaine, dénonce une « vendetta judiciaire » et affirme qu'il répondra à toutes les questions de la justice.",
+      "impact": "Les sources ne font état d'aucun effet sur la candidature ou l'éligibilité.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/politique/edouard-philippe/une-enquete-ouverte-apres-un-signalement-pour-detournement-de-fonds-publics-a-l-agglomeration-du-havre-presidee-par-edouard-philippe_8297676.html",
+          "outlet": "franceinfo",
+          "title": "Une enquête ouverte après un signalement pour détournement de fonds publics à l'agglomération du Havre présidée par Edouard Philippe",
+          "date": "2026-11-24"
+        },
+        {
+          "url": "https://www.france24.com/fr/france/20261124-edouard-philippe-vis%C3%A9-par-une-enqu%C3%AAte-pour-d%C3%A9tournement-de-fonds-publics-au-havre",
+          "outlet": "France 24",
+          "title": "Détournement de fonds de publics : une enquête vise l'agglomération du Havre d'Édouard Philippe",
+          "date": "2026-11-24"
+        }
+      ],
+      "updatedAt": "2026-11-25"
+    },
+    {
       "id": "primaire-droite-centre",
       "nature": "politique",
       "active": true,
@@ -268,5 +292,5 @@
       "updatedAt": "2026-11-16"
     }
   ],
-  "lastChecked": "2026-11-24"
+  "lastChecked": "2026-11-25"
 }
