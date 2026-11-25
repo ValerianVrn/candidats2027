@@ -1,11 +1,59 @@
 [
   {
     "date": "2026-11-25",
-    "summary": "Ajout d'une enquête du parquet du Havre visant la communauté urbaine présidée par Édouard Philippe.",
+    "summary": "Ajout d'une enquête du parquet du Havre visant la communauté urbaine présidée par Édouard Philippe ; onze positions ajoutées à la comparaison des positions.",
     "changes": [
       {
         "candidate": "edouard-philippe",
         "text": "Enquête ouverte par le parquet du Havre pour détournement de fonds publics sur des frais d'avocats et de déplacement pris en charge par la communauté urbaine du Havre (annoncée le 24 novembre 2026) ; aucune mise en cause personnelle d'Édouard Philippe selon les sources."
+      },
+      {
+        "candidate": "marine-le-pen",
+        "text": "Comparaison des positions, « Que faire de l'OTAN ? » : « Rester en prenant ses distances »."
+      },
+      {
+        "candidate": "marine-le-pen",
+        "text": "Comparaison des positions, « Quelle place pour l'écologie ? » : « Alléger les normes environnementales »."
+      },
+      {
+        "candidate": "gabriel-attal",
+        "text": "Comparaison des positions, « Que faire de l'âge de départ à la retraite ? » : « Supprimer l'âge légal : seule la durée de cotisation compte »."
+      },
+      {
+        "candidate": "gabriel-attal",
+        "text": "Comparaison des positions, « Que faire de la dépense publique ? » : « La réduire fortement (100 Md€ d'économies ou plus sur le quinquennat, ou 200 000 postes publics en moins ou plus) »."
+      },
+      {
+        "candidate": "edouard-philippe",
+        "text": "Comparaison des positions, « Que faire de l'OTAN ? » : « Rester et renforcer l'Europe de la défense »."
+      },
+      {
+        "candidate": "bruno-retailleau",
+        "text": "Comparaison des positions, « Comment augmenter les salaires ? » : « Baisser les cotisations pour augmenter le salaire net »."
+      },
+      {
+        "candidate": "bruno-retailleau",
+        "text": "Comparaison des positions, « Quelle politique d'immigration ? » : « La réduire drastiquement (fin du droit du sol, référendum, expulsions massives) »."
+      },
+      {
+        "candidate": "bruno-retailleau",
+        "text": "Comparaison des positions, « Quelle place pour l'écologie ? » : « Alléger les normes environnementales »."
+      },
+      {
+        "candidate": "david-lisnard",
+        "text": "Comparaison des positions, « Que faire de l'âge de départ à la retraite ? » : « Reculer l'âge de départ (65 ans ou plus) »."
+      },
+      {
+        "candidate": "david-lisnard",
+        "text": "Comparaison des positions, « Faut-il taxer davantage les grands patrimoines ? » : « Baisser la fiscalité du capital »."
+      },
+      {
+        "candidate": "raphael-glucksmann",
+        "text": "Comparaison des positions, « Que faire du nucléaire ? » : « Relancer le nucléaire avec de nouveaux réacteurs »."
+      },
+      {
+        "candidate": "edouard-philippe",
+        "text": "Comparaison des positions, « Faut-il revenir sur les 35 heures ? » : position retirée (non renseigné en attendant des sources concordantes)."
       }
     ],
     "sources": [
@@ -20,6 +68,150 @@
         "outlet": "France 24",
         "title": "Détournement de fonds de publics : une enquête vise l'agglomération du Havre d'Édouard Philippe",
         "date": "2026-11-24"
+      },
+      {
+        "url": "https://lcp.fr/actualites/a-euronaval-marine-le-pen-plaide-pour-davantage-de-fregates-dans-la-flotte-francaise",
+        "outlet": "LCP",
+        "title": "A Euronaval, Marine Le Pen plaide pour davantage de frégates dans la flotte française",
+        "date": "2026-11-05"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/direct-presidentielle-2027-le-congres-des-maires-s-ouvre-plusieurs-candidats-attendus-sur-place_8297094.html",
+        "outlet": "franceinfo",
+        "title": "Présidentielle 2027 : Edouard Philippe \"vote blanc\" dans un duel hypothétique entre Jean-Luc Mélenchon et Marine Le Pen au second tour",
+        "date": "2026-11-24"
+      },
+      {
+        "url": "https://www.franceinfo.fr/politique/marine-le-pen/video-marine-le-pen-candidate-du-rn-a-la-presidentielle-2027-detaille-une-serie-de-propositions-sur-le-logement-qui-sera-un-des-grands-chantiers-de-son-quinquennat-si-elle-est-elue_8190839.html",
+        "outlet": "franceinfo",
+        "title": "VIDEO. Marine Le Pen, candidate du RN à la présidentielle, détaille une série de propositions sur le logement, qui sera l'\"un des grands chantiers\" de son quinquennat si elle est élue",
+        "date": "2026-09-13"
+      },
+      {
+        "url": "https://lcp.fr/actualites/reserver-les-logements-hlm-aux-francais-la-proposition-de-marine-le-pen-provoque-une",
+        "outlet": "LCP",
+        "title": "Réserver les logements HLM aux Français: la proposition de Marine Le Pen provoque une levée de boucliers",
+        "date": "2026-09-14"
+      },
+      {
+        "url": "https://france3-regions.franceinfo.fr/hauts-de-france/pas-calais/lens/marine-le-pen-fait-sa-rentree-politique-a-henin-beaumont-et-met-la-priorite-nationale-au-c-ur-de-son-programme-pour-la-presidentielle-de-2027-3416348.html",
+        "outlet": "France 3 Hauts-de-France",
+        "title": "Marine Le Pen fait sa rentrée politique à Hénin-Beaumont et met \"la priorité nationale\" au cœur de son programme pour la présidentielle de 2027",
+        "date": "2026-09-13"
+      },
+      {
+        "url": "https://www.franceinfo.fr/economie/retraite/reforme-des-retraites/changement-de-systeme-passage-a-60-ou-a-65-ans-capitalisation-que-proposent-les-principaux-candidats-a-l-election-presidentielle-pour-les-retraites_8215784.html",
+        "outlet": "franceinfo",
+        "title": "Changement de système, passage à 60 ou à 65 ans, capitalisation... Que proposent les principaux candidats à l'élection présidentielle pour les retraites ?",
+        "date": "2026-09-30"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/reculer-ou-avancer-lage-legal-avec-ou-sans-capitalisation-ce-que-proposent-les-principaux-candidats-a-lelection-presidentielle-sur-les-retraites",
+        "outlet": "Public Sénat",
+        "title": "Reculer ou avancer l’âge légal, avec ou sans capitalisation : ce que proposent les principaux candidats à l’élection présidentielle sur les retraites",
+        "date": "2026-09-30"
+      },
+      {
+        "url": "https://www.france24.com/fr/info-en-continu/20261015-pr%C3%A9sidentielle-attal-pour-une-coalition-des-d%C3%A9mocrates",
+        "outlet": "France 24 (AFP)",
+        "title": "Présidentielle: Attal pour une \"coalition des démocrates\"",
+        "date": "2026-10-15"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-attal-le-pen-et-melenchon-trois-manieres-de-parler-a-un-pays-exaspere",
+        "outlet": "Public Sénat",
+        "title": "Présidentielle 2027 : Attal, Le Pen et Mélenchon, trois manières de parler à un pays « exaspéré »",
+        "date": "2026-09-24"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/international/aide-a-lukraine-que-proposent-les-candidats-a-la-presidentielle",
+        "outlet": "Public Sénat",
+        "title": "Aide à l’Ukraine : que proposent les candidats à la présidentielle ?",
+        "date": "2026-11-16"
+      },
+      {
+        "url": "https://www.euronews.com/2026/11/18/former-macron-ally-philippe-unveils-conservative-agenda-as-french-centre-and-right-loses-g",
+        "outlet": "Euronews",
+        "title": "Former Macron ally Philippe unveils conservative agenda as French centre and right loses ground",
+        "date": "2026-11-18"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/economie/presidentielle-que-proposent-les-candidats-pour-augmenter-les-salaires",
+        "outlet": "Public Sénat",
+        "title": "Présidentielle : que proposent les candidats pour augmenter les salaires ?",
+        "date": "2026-10-30"
+      },
+      {
+        "url": "https://www.franceinfo.fr/replay-jt/france-2/20-heures/rapprocher-le-salaire-net-du-brut-une-mesure-possible-ou-pas_8171264.html",
+        "outlet": "franceinfo",
+        "title": "Est-il possible de rapprocher le salaire net du brut comme le promettent plusieurs candidats à la présidentielle, et à quel prix ?",
+        "date": "2026-08-31"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-bruno-retailleau-propose-une-revolution-copernicienne-dans-laquelle-la-constitution-ne-serait-plus-le-bouclier-qui-prote",
+        "outlet": "Public Sénat",
+        "title": "Présidentielle 2027 : « Bruno Retailleau propose une révolution copernicienne » dans laquelle « la Constitution ne serait plus le bouclier » qui protège les institutions, relèvent les juristes",
+        "date": "2026-09-03"
+      },
+      {
+        "url": "https://la1ere.franceinfo.fr/mayotte/passes-d-armes-entre-le-pen-et-melenchon-le-droit-du-sol-a-mayotte-s-invite-une-nouvelle-fois-dans-la-campagne-presidentielle-1755522.html",
+        "outlet": "franceinfo (Outre-mer La 1ère)",
+        "title": "Passes d'armes entre Le Pen et Mélenchon, le droit du sol à Mayotte s'invite une nouvelle fois dans la campagne présidentielle",
+        "date": "2026-11-07"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/referendum-sur-limmigration-primaute-du-droit-national-le-projet-de-bruno-retailleau-est-il-faisable",
+        "outlet": "Public Sénat",
+        "title": "Référendum sur l’immigration, primauté du droit national : le projet de Bruno Retailleau est-il faisable ?",
+        "date": "2026-02-13"
+      },
+      {
+        "url": "https://www.publicsenat.fr/actualites/politique/essence-energie-logement-travail-bruno-retailleau-promet-daugmenter-le-pouvoir-dachat-des-francais-sans-un-euro-de-dette-en-plus",
+        "outlet": "Public Sénat",
+        "title": "Logement : Bruno Retailleau propose de déduire de l’impôt, les intérêts d’emprunt pour un prêt immobilier, en fonction du nombre d’enfants",
+        "date": "2026-09-15"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle/dette-publique-retraites-reindustrialisation-ce-qu-il-faut-retenir-du-premier-debat-des-principaux-candidats-a-la-presidentielle_8165342.html",
+        "outlet": "franceinfo",
+        "title": "Dette publique, retraites, réindustrialisation… Ce qu'il faut retenir du premier débat des principaux candidats à la présidentielle, organisé par le Medef",
+        "date": "2026-08-27"
+      },
+      {
+        "url": "https://www.france24.com/fr/info-en-continu/20261122-attaqu%C3%A9-par-le-rn-et-le-centre-lisnard-ne-l%C3%A2che-rien-sur-la-primaire",
+        "outlet": "France 24 (AFP)",
+        "title": "Attaqué par le RN et le centre, Lisnard ne lâche rien sur la primaire",
+        "date": "2026-11-22"
+      },
+      {
+        "url": "https://www.franceinfo.fr/replay-radio/l-edito-politique/edito-que-propose-david-lisnard-de-nouveau-aux-francais_8275352.html",
+        "outlet": "franceinfo",
+        "title": "EDITO. David Lisnard propose-t-il vraiment du nouveau aux Français ?",
+        "date": "2026-11-24"
+      },
+      {
+        "url": "https://www.france24.com/fr/info-en-continu/20260527-pr%C3%A9sidentielle-lisnard-veut-lib%C3%A9rer-l-innovation-en-supprimant-le-principe-de-pr%C3%A9caution",
+        "outlet": "France 24 (AFP)",
+        "title": "Présidentielle: Lisnard veut \"libérer l'innovation\" en supprimant le principe de précaution",
+        "date": "2026-05-27"
+      },
+      {
+        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/cannes/en-pleine-campagne-pour-l-election-presidentielle-david-lisnard-appelle-a-liberer-l-innovation-en-supprimant-le-principe-de-precaution-de-la-constitution-3358204.html",
+        "outlet": "France 3 Provence-Alpes-Côte d'Azur (franceinfo)",
+        "title": "En pleine campagne pour l’élection présidentielle, David Lisnard appelle à \"libérer l’innovation\" en supprimant le principe de précaution de la Constitution",
+        "date": "2026-05-28"
+      },
+      {
+        "url": "https://www.france24.com/fr/info-en-continu/20261109-rapha%C3%ABl-glucksmann-veut-embarquer-les-verts-dans-sa-r%C3%A9volution-%C3%A9cologique",
+        "outlet": "France 24",
+        "title": "Raphaël Glucksmann veut embarquer les Verts dans sa \"révolution écologique\"",
+        "date": "2026-11-09"
+      },
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-s-il-gagne-raphael-glucksmann-engagera-les-100-jours-de-la",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: s'il gagne, Raphaël Glucksmann engagera \"les 100 jours de la révolution écologique\"",
+        "date": "2026-08-25"
       }
     ]
   },
