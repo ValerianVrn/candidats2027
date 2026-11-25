@@ -117,6 +117,10 @@ const byFamille = FAMILLES.map((f) => ({ f, list: parties.filter((p) => p.famill
         régionaux et audiovisuels, des sites publics (Conseil constitutionnel, ministères, Parlement…) et,
         pour les programmes uniquement, le site officiel du candidat. Pas de sondages, de blogs ni de réseaux
         sociaux.
+        <details class="outlets">
+          <summary>Voir la liste des médias acceptés</summary>
+          <p>{allowlist.media.toSorted().join(', ')}.</p>
+        </details>
       </li>
       <li>
         Les pages « Programmes » rassemblent, thème par thème, les seules propositions sourcées. Un candidat
@@ -183,5 +187,14 @@ const byFamille = FAMILLES.map((f) => ({ f, list: parties.filter((p) => p.famill
     border-radius: 50%;
     flex: 0 0 auto;
     transform: translateY(1px);
+  }
+  .outlets summary {
+    cursor: pointer;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+  .outlets p {
+    font-size: 14px;
+    color: var(--muted);
   }
 </style>

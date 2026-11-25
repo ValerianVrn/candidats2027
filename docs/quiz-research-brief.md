@@ -24,3 +24,20 @@ For one question and one candidate: the option that matches the candidate's **ow
   the question out for that candidate (it shows as « non renseigné », which is neutral).
 - Scale questions are ordered: pick the option closest to the stated position only if it is unambiguous.
 - Same standard for every candidate, whatever their side. Better few solid positions than many shaky ones.
+
+## Notes per question (options reworded on 2026-11-25)
+
+- `salaires` → `smic-hausse` for any increase of the Smic decided by the State, whatever the amount and whether
+  it is stated gross or net. Amounts belong in the candidate's programme items, not in the quiz.
+- `capitalisation` → `capitalisation` as soon as the candidate wants a funded part next to répartition, mandatory or
+  optional; `bascule` when they want to move progressively out of répartition;
+  `repartition` only when they reject any funded part.
+- `temps-de-travail` → `abroger` when the candidate says they will « supprimer les 35 heures » (the legal
+  duration), even if the measures described are about overtime; `assouplir` when they keep the legal duration and
+  only loosen it (overtime, annualisation, company agreements).
+- `institutions` → `proportionnelle` when the main institutional change they put forward is the voting system;
+  if they also call for a constituent assembly or the RIC as their priority, follow their own priority, and leave
+  it out if they don't state one.
+- `nucleaire` → `maintenir` = keep existing reactors, no new ones; `relancer` = new reactors, whatever the number.
+- `europe` → `renegocier` includes asserting the primacy of French law over EU law.
+- `immigration` → `assouplir` = more regularisations or legal routes, stated as the direction of their policy.

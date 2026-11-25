@@ -7,6 +7,15 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-11-25
+
+### Changed
+
+- Sources: ici (ex-France Bleu), Sud Radio and Slate.fr join the accepted outlets; `/methode` lists every accepted
+  outlet; the research brief records which outlets agents can actually search and open (audit of 2026-11-25).
+- Quiz research brief: matching notes for the reworded options (Smic, capitalisation, 35 heures, proportionnelle,
+  nuclear, Europe, immigration).
+
 ## [1.4.0] - 2026-11-24
 
 ### Dependencies
