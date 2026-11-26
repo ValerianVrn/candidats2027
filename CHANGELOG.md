@@ -7,6 +7,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-11-26
+
 ### Changed
 
 - « Soutenir le site » is easier to find: a short block at the bottom of the home page (after all candidates) and
