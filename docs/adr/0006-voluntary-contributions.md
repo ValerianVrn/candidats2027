@@ -28,9 +28,10 @@ neutrality during an election.
   contributions is shown.
 - Monthly totals and, optionally, actual costs are entered by the owner in `src/data/funding.json`. Nothing is
   estimated.
-- Entry points: `/financement`, the bottom of the Journal, and a footer link shown only on pages without
-  candidate content (`/financement`, `/journal`, `/methode`, `/ia`, legal notice, privacy policy). Never on the
-  home page, candidate pages, the list, the quiz, the programmes, the calendar or the detail drawer.
+- Entry points: `/financement`, the bottom of the Journal, a « Soutenir le site » block at the bottom of the home
+  page (after all candidates and the ad slot), and a footer link on every page except candidate profiles and the
+  quiz. Never on a candidate profile, the quiz or the candidate detail drawer: no donation request next to a
+  candidate. (Widened on 2026-11-26 at the owner's request: the call was too hard to find.)
 - `src/data/funding.json` is owner-only: the diff guard blocks any automated change to it, and a push touching it
   deploys through the `production` environment (owner approval), never `production-data`.
 

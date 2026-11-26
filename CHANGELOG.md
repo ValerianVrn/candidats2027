@@ -7,6 +7,11 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Changed
+
+- « Soutenir le site » is easier to find: a short block at the bottom of the home page (after all candidates) and
+  the footer link on every page except candidate profiles and the quiz (ADR 0006).
+
 ## [1.6.0] - 2026-11-26
 
 ### Added

@@ -5,6 +5,7 @@ import CandidateDetail from '../components/CandidateDetail.astro';
 import QuizLens from '../components/QuizLens.astro';
 import OtherCandidates from '../components/OtherCandidates.astro';
 import AdSlot from '../components/AdSlot.astro';
+import SupportBlock from '../components/SupportBlock.astro';
 import DebateStrip from '../components/DebateStrip.astro';
 import LatestStrip from '../components/LatestStrip.astro';
 import RetiredCandidates from '../components/RetiredCandidates.astro';
@@ -19,7 +20,7 @@ const declaredCount = activeCandidates.filter(
 const potentialCount = activeCandidates.filter((c) => c.status === 'potentiel').length;
 ---
 
-<Base section="candidats" ads jsonLd={websiteLd(Astro.site!, SITE_NAME, SITE_DESCRIPTION)}>
+<Base section="candidats" ads support jsonLd={websiteLd(Astro.site!, SITE_NAME, SITE_DESCRIPTION)}>
   <div class="intro">
     <h1>Candidats à l'élection présidentielle 2027</h1>
     <!-- prettier-ignore -->
@@ -33,6 +34,7 @@ const potentialCount = activeCandidates.filter((c) => c.status === 'potentiel').
   <OtherCandidates candidates={otherCandidates} />
 
   <AdSlot placement="home" />
+  <SupportBlock />
 
   <!-- Candidate details: a wide drawer (native modal dialog: focus trap, Escape, backdrop, inert page). -->
   <dialog class="drawer" aria-label="Détail du candidat" data-drawer>
