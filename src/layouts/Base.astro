@@ -19,6 +19,8 @@ interface Props {
   jsonLd?: JsonLd | JsonLd[];
   /** Share card path (1200 × 630 PNG); defaults to the site card. */
   ogImage?: string;
+  /** Show « Soutenir le site » in the footer. Only pages without candidate content set it (ADR 0006). */
+  support?: boolean;
 }
 
 const {
@@ -28,6 +30,7 @@ const {
   ads = false,
   jsonLd,
   ogImage = '/og/accueil.png',
+  support = false,
 } = Astro.props;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
 const fullTitle = title
@@ -70,7 +73,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     <main id="contenu">
       <slot />
     </main>
-    <Footer ads={ads} />
+    <Footer ads={ads} support={support} />
   </body>
 </html>
 

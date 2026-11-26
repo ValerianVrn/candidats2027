@@ -14,10 +14,10 @@ const monthLabel = (m: string) => monthFmt.format(new Date(`${m}-15T12:00:00Z`))
 const euros = (n: number) =>
   n.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 2 });
 const received = funding.received.toSorted((a, b) => b.month.localeCompare(a.month));
-const amounts = DONATION_RULES.amounts.map((a) => `${a} €`).join(', ');
 ---
 
 <Base
+  support
   title="Qui finance ce site ?"
   description={
     donations
@@ -92,8 +92,9 @@ const amounts = DONATION_RULES.amounts.map((a) => `${a} €`).join(', ');
             Contribuer
           </a>
           <span>
-            Par exemple {amounts}, une fois ou chaque mois. Minimum {DONATION_RULES.minimum} € : en dessous,
-            les frais de paiement absorbent une grande partie de la somme.
+            Vous choisissez le montant : {DONATION_RULES.suggested} € proposés, de {DONATION_RULES.minimum} €
+            à {DONATION_RULES.maximum} €, en une fois. En dessous de {DONATION_RULES.minimum} €, les frais de
+            paiement absorbent une grande partie de la somme.
           </span>
         </p>
 

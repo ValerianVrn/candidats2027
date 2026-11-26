@@ -20,8 +20,10 @@ export const DONATION_URL = donationUrl(import.meta.env.PUBLIC_DONATION_URL as s
 
 /** Rules shown wherever contributions are offered. */
 export const DONATION_RULES = {
-  amounts: [3, 5, 10],
+  /** Amount suggested on the Stripe page; the donor chooses between minimum and maximum (one-off only). */
+  suggested: 5,
   minimum: 2,
+  maximum: 100,
   monthlyCapPerPerson: 100,
   refundDays: 30,
 } as const;

@@ -17,14 +17,18 @@ Production stays empty until every item is done.
 - [ ] Make sure `contact@liste-candidats-2027.fr` is read regularly (rights of reply, data requests).
 - [x] Approve the first `production` deployment in GitHub.
 
-- [ ] Contributions (ADR 0006):
-  - create a Stripe account for the SASU (business name = the company, statement descriptor « LISTE-CANDIDATS »);
-  - create a Payment Link: customer chooses the amount, suggested 3/5/10 €, minimum 2 €, one-off and monthly;
-  - add a required checkbox field « Je suis un particulier, sans lien avec un candidat, un parti ou une équipe de
-    campagne », and enable e-mail receipts;
-  - send Claude the link (it becomes `PUBLIC_DONATION_URL` on `production` and `production-data`);
+- [x] Contributions (ADR 0006), done 2026-11-26:
+  - Stripe account « Candidats 2027 » for the SASU; Payment Link `https://buy.stripe.com/3cI8wP6dl7AofqbcxN3AY00`:
+    donor chooses the amount (5 € suggested, 2 € to 100 €), one-off only, « Faire un don », terms checkbox with
+    terms → `/financement#soutenir` and privacy → `/confidentialite`;
+  - `PUBLIC_DONATION_URL` set on `production` and `production-data`.
+- [ ] Contributions, still to do:
+  - turn off Klarna in the Stripe payment methods (instalments make no sense for a gift and cost more);
   - ask the accountant how to book the contributions (corporate tax, outside VAT);
-  - each month, report the number and total of contributions in `src/data/funding.json`, or ask Claude to.
+  - add a Journal entry « Le site accepte les contributions volontaires » in the release that makes the section
+    visible;
+  - each month, report the number and total of contributions in `src/data/funding.json`. Claude may prepare
+    it, in a PR that waits for you: the diff guard never lets it merge or deploy on its own.
 
 ## Claude (with the owner's approval for each step)
 

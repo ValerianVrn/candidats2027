@@ -13,7 +13,8 @@ neutrality during an election.
 
 - Contributions **besides** the ads, through a **Stripe Payment Link**, a page hosted by Stripe. Stripe has the
   lowest fees of the options compared (1.5 % + 0.25 € per EU card payment); the site handles no payment data.
-- Suggested amounts 3, 5 or 10 €, one-off or monthly; minimum 2 € because of the fixed fee.
+- One-off contributions only (the election is a few months away): the donor chooses the amount, 5 € suggested,
+  from 2 € (the fixed fee makes smaller gifts pointless) to 100 € (the cap, enforced by Stripe).
 - Rules shown on `/financement`, the legal notice and the privacy policy:
   - received by the SASU;
   - **no tax receipt**: a company is not a public-interest body;
@@ -27,8 +28,11 @@ neutrality during an election.
   contributions is shown.
 - Monthly totals and, optionally, actual costs are entered by the owner in `src/data/funding.json`. Nothing is
   estimated.
-- Entry points: the footer, `/financement` and the bottom of the Journal. Never on candidate pages, the quiz or
-  the detail drawer.
+- Entry points: `/financement`, the bottom of the Journal, and a footer link shown only on pages without
+  candidate content (`/financement`, `/journal`, `/methode`, `/ia`, legal notice, privacy policy). Never on the
+  home page, candidate pages, the list, the quiz, the programmes, the calendar or the detail drawer.
+- `src/data/funding.json` is owner-only: the diff guard blocks any automated change to it, and a push touching it
+  deploys through the `production` environment (owner approval), never `production-data`.
 
 ## Consequences
 
