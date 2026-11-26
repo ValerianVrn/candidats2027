@@ -7,6 +7,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.8.0] - 2026-11-26
+
 ### Added
 
 - Audience measurement with Cloudflare Web Analytics (cookie-free, no IP kept, no consent needed), production only
