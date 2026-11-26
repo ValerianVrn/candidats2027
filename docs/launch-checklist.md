@@ -17,6 +17,17 @@ Production stays empty until every item is done.
 - [ ] Make sure `contact@liste-candidats-2027.fr` is read regularly (rights of reply, data requests).
 - [x] Approve the first `production` deployment in GitHub.
 
+- [x] Contributions (ADR 0006), done 2026-11-26:
+  - Stripe account « Candidats 2027 » for the SASU; Payment Link `https://buy.stripe.com/3cI8wP6dl7AofqbcxN3AY00`:
+    donor chooses the amount (5 € suggested, 2 € to 100 €), one-off only, « Faire un don », terms checkbox with
+    terms → `/financement#soutenir` and privacy → `/confidentialite`; Klarna turned off;
+  - `PUBLIC_DONATION_URL` set on `production` and `production-data`; live with v1.6.0 and a Journal entry.
+- [ ] Contributions, still to do:
+  - book the contributions in the SASU accounts (corporate tax, outside VAT); the owner will look into it after the
+    first contribution;
+  - each month, report the number and total of contributions in `src/data/funding.json`. Claude may prepare
+    it, in a PR that waits for you: the diff guard never lets it merge or deploy on its own.
+
 ## Claude (with the owner's approval for each step)
 
 - [ ] Switch prod to the Standard plan if traffic justifies it (ADR 0003).

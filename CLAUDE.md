@@ -20,6 +20,9 @@ French-language static site about the 2027 French presidential election. Code, c
 - `docs/adr/`: decisions. `docs/research-brief.md`: rules for writing candidate data.
 - `docs/daily-update-prompt.md`: the daily routine (cloud agent) prompt; `npm run diff-guard` decides whether its
   PR may merge without the owner.
+- `src/data/funding.json`: contributions received (owner-only, ADR 0006): the diff guard blocks automated changes
+  and pushes touching it deploy through `production`. The Stripe link comes from `PUBLIC_DONATION_URL`.
+- `docs/roadmap.md`: ideas kept for later, with the owner's verdicts.
 - `config/sources-allowlist.json`: accepted source domains (outside `src/data/` so data updates can't widen it).
 
 ## Workflow (project-specific exceptions to the global rules)

@@ -20,6 +20,7 @@ describe('evaluateChanges', () => {
     [[{ status: 'D', path: 'src/data/candidates/a.json' }], 'deletes'],
     [[{ status: 'M', path: 'src/data/parties.json' }], 'parties.json'],
     [[{ status: 'M', path: 'src/data/election.json' }], 'election.json'],
+    [[{ status: 'M', path: 'src/data/funding.json' }], 'funding.json'],
     [
       Array.from({ length: 6 }, (_, i) => ({ status: 'M', path: `src/data/candidates/c${i}.json` })),
       'candidate files',
@@ -91,5 +92,18 @@ describe('daily check dates', () => {
       ),
     ).toBe(false);
     expect(differsOnlyByCheckDate(before, 'not json')).toBe(false);
+  });
+});
+
+describe('owner-only funding data', () => {
+  it('never deploys funding.json through the no-approval environment', () => {
+    expect(isDataOnly([{ status: 'M', path: 'src/data/funding.json' }])).toBe(false);
+    expect(
+      isDataOnly([
+        { status: 'M', path: 'src/data/site.json' },
+        { status: 'M', path: 'src/data/funding.json' },
+      ]),
+    ).toBe(false);
+    expect(isDataOnly([{ status: 'M', path: 'src/data/site.json' }])).toBe(true);
   });
 });

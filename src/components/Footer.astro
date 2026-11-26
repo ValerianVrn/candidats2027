@@ -1,11 +1,14 @@
 ---
 import { REPORT_ERROR_URL } from '../lib/site';
 import { ADSENSE_CLIENT } from '../lib/ads';
+import { DONATION_URL } from '../lib/donations';
 
 interface Props {
   ads?: boolean;
+  /** « Soutenir le site »: never next to candidate content (ADR 0006). */
+  support?: boolean;
 }
-const { ads = false } = Astro.props;
+const { ads = false, support = false } = Astro.props;
 ---
 
 <footer class="foot">
@@ -20,6 +23,7 @@ const { ads = false } = Astro.props;
     <a href="/journal">Journal des mises à jour</a>
     <a href="/methode">Méthode</a>
     <a href="/financement">Financement</a>
+    {support && DONATION_URL && <a href="/financement#soutenir">Soutenir le site</a>}
     <a href={REPORT_ERROR_URL} rel="noopener" target="_blank">
       Signaler une erreur
     </a>

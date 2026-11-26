@@ -7,6 +7,19 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-11-26
+
+### Added
+
+- `docs/roadmap.md`: audience measurement (Cloudflare Web Analytics) and ideas from a survey of
+  2027presidentielle.fr, with verdicts.
+- Voluntary contributions besides the ads (ADR 0006): Stripe Payment Link from `PUBLIC_DONATION_URL` (hidden when
+  empty); « Soutenir le site » section on `/financement` (why, conditions, no tax receipt, individuals only,
+  100 €/month cap, refunds, monthly totals from `src/data/funding.json`); paragraphs in the legal notice and the
+  privacy policy; links in the footer and at the bottom of the Journal. One-off only, amount chosen by the donor
+  (5 € suggested, 2–100 €). The footer link only shows on pages without candidate content; `funding.json` is
+  owner-only (diff guard, `production` environment) and validated by `check-data`.
+
 ## [1.5.0] - 2026-11-25
 
 ### Changed

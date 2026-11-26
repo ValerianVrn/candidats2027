@@ -46,6 +46,8 @@ jobs:
           PUBLIC_ADSENSE_CLIENT: ${{ vars.PUBLIC_ADSENSE_CLIENT }}
           PUBLIC_ADSENSE_SLOT_HOME: ${{ vars.PUBLIC_ADSENSE_SLOT_HOME }}
           PUBLIC_ADSENSE_SLOT_JOURNAL: ${{ vars.PUBLIC_ADSENSE_SLOT_JOURNAL }}
+          # PUBLIC_DONATION_URL: Stripe Payment Link (ADR 0006); empty = no contribution offer.
+          PUBLIC_DONATION_URL: ${{ vars.PUBLIC_DONATION_URL }}
       - if: ${{ inputs.noindex }}
         run: node scripts/noindex.mjs dist
 

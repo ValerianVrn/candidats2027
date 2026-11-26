@@ -1,9 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import { HOST, PUBLISHER, TODO } from '../lib/publisher';
+import { DONATION_URL } from '../lib/donations';
 ---
 
-<Base title="Confidentialité">
+<Base support title="Confidentialité">
   <article class="page prose">
     <h1>Politique de confidentialité</h1>
     <p class="lead">
@@ -48,6 +49,21 @@ import { HOST, PUBLISHER, TODO } from '../lib/publisher';
       tant que vous ne cliquez pas sur la vidéo ; le lecteur utilisé est la version « sans cookie »
       (youtube-nocookie.com), soumise à la politique de confidentialité de Google.
     </p>
+
+    {DONATION_URL && (
+      <>
+        <h2 id="contributions">Contributions volontaires</h2>
+        <p>
+          Si vous contribuez, le paiement se fait sur une page de Stripe, qui traite vos données de paiement
+          (nom, adresse électronique, moyen de paiement) en tant que responsable de traitement distinct, selon
+          sa propre politique de confidentialité (stripe.com/fr/privacy). Le site ne reçoit ni ne conserve vos
+          données de paiement. L'éditeur a accès, dans son compte Stripe, au montant, à la date, à votre nom
+          et à votre adresse électronique, uniquement pour la comptabilité de la société et pour traiter une
+          demande de remboursement. Ces données sont conservées le temps exigé par les obligations comptables
+          (dix ans) et ne sont jamais publiées : seuls les totaux mensuels le sont.
+        </p>
+      </>
+    )}
 
     <h2>Mesure d'audience</h2>
     <p>Le site n'utilise actuellement aucun outil de mesure d'audience.</p>
