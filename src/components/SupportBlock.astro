@@ -1,0 +1,59 @@
+---
+/**
+ * Home page: a short call to support the site, placed after all the candidates (never next to one, ADR 0006).
+ * Renders nothing without a donation link.
+ */
+import { DONATION_URL } from '../lib/donations';
+---
+
+{DONATION_URL && (
+  <section class="support" aria-labelledby="support-title">
+    <div class="txt">
+      <h2 id="support-title">Un site gratuit et indépendant</h2>
+      <p>
+        Sans compte ni abonnement, mis à jour chaque jour à partir de sources citées. Il vit de la publicité
+        et des contributions de ses lecteurs.
+      </p>
+    </div>
+    <a class="button" href="/financement#soutenir">
+      Soutenir le site
+    </a>
+  </section>
+)}
+
+<style>
+  .support {
+    margin: 8px var(--gutter) 24px;
+    padding: 16px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--surface);
+  }
+  h2 {
+    margin: 0 0 4px;
+    font-size: 17px;
+  }
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+  .button {
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .button:hover {
+    background: var(--ink-strong);
+  }
+</style>
