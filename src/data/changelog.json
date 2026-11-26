@@ -1,11 +1,15 @@
 [
   {
     "date": "2026-11-26",
-    "summary": "Proposition ajoutée pour Teddy Riner sur l’aide à l’Ukraine.",
+    "summary": "Proposition ajoutée pour Teddy Riner sur l’aide à l’Ukraine ; le site accepte désormais les contributions volontaires de ses lecteurs.",
     "changes": [
       {
         "candidate": "teddy-riner",
         "text": "Proposition ajoutée (défense) : arrêter l’aide financière de la France à l’Ukraine ; se dit prêt à discuter avec la Russie et Zelensky."
+      },
+      {
+        "candidate": null,
+        "text": "Le site accepte désormais les contributions volontaires de particuliers, en plus de la publicité : montant libre de 2 à 100 €, sans contrepartie ni reçu fiscal, refusées aux candidats, partis, équipes de campagne et entreprises. Les conditions et les montants reçus sont publiés sur la page « Qui finance ce site ? »."
       }
     ],
     "sources": [

@@ -7,6 +7,8 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-11-26
+
 ### Added
 
 - `docs/roadmap.md`: audience measurement (Cloudflare Web Analytics) and ideas from a survey of
