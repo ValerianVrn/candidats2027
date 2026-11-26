@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   breadcrumbLd,
+  canonicalPath,
   eventLd,
   itemListLd,
   personLd,
@@ -115,5 +116,14 @@ describe('eventLd for an election round', () => {
     });
     expect(e.endDate).toBe('2027-04-18T20:00:00+02:00');
     expect(e.performer).toBeUndefined();
+  });
+});
+
+describe('canonicalPath', () => {
+  it('drops the trailing slash the host redirects, keeps the root', () => {
+    expect(canonicalPath('/candidats/')).toBe('/candidats');
+    expect(canonicalPath('/candidat/marine-le-pen/')).toBe('/candidat/marine-le-pen');
+    expect(canonicalPath('/candidats')).toBe('/candidats');
+    expect(canonicalPath('/')).toBe('/');
   });
 });

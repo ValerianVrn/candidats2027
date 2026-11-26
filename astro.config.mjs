@@ -9,4 +9,5 @@ import { defineConfig } from 'astro/config';
 const site = process.env.SITE_URL || 'https://kind-wave-0e4cc6003.6.azurestaticapps.net';
 
 // https://astro.build/config
-export default defineConfig({ site });
+// trailingSlash: same rule as the host (staticwebapp.config.json), so URLs have no trailing slash.
+export default defineConfig({ site, trailingSlash: 'never' });

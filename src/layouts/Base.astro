@@ -6,8 +6,9 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import AdsLoader from '../components/AdsLoader.astro';
+import { CF_ANALYTICS_TOKEN } from '../lib/analytics';
 import { SITE_DESCRIPTION, SITE_NAME } from '../lib/site';
-import { serializeLd, type JsonLd } from '../lib/seo';
+import { canonicalPath, serializeLd, type JsonLd } from '../lib/seo';
 
 interface Props {
   title?: string;
@@ -21,6 +22,8 @@ interface Props {
   ogImage?: string;
   /** Show « Soutenir le site » in the footer. Only pages without candidate content set it (ADR 0006). */
   support?: boolean;
+  /** Audience measurement. The quiz turns it off: its URL can carry answers (political opinions). */
+  analytics?: boolean;
 }
 
 const {
@@ -31,12 +34,15 @@ const {
   jsonLd,
   ogImage = '/og/accueil.png',
   support = false,
+  analytics = true,
 } = Astro.props;
+const beacon =
+  analytics && CF_ANALYTICS_TOKEN ? JSON.stringify({ token: CF_ANALYTICS_TOKEN, spa: false }) : null;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
 const fullTitle = title
   ? `${title} · ${SITE_NAME}`
   : 'Candidats à la présidentielle 2027 : liste, programmes et débats';
-const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const canonical = Astro.site ? new URL(canonicalPath(Astro.url.pathname), Astro.site).href : undefined;
 ---
 
 <!doctype html>
@@ -64,6 +70,19 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     {canonical && <meta property="og:url" content={canonical} />}
     {jsonLd && <script type="application/ld+json" set:html={serializeLd(jsonLd)} />}
     {ads && <AdsLoader />}
+    {
+      /* Loaded only when the URL carries no quiz answers (#r=…, #proximite=…), with route tracking off (spa: false):
+         answers never reach the analytics provider. */
+      beacon && <script is:inline data-beacon={beacon}>
+        if (!/^#(r|proximite)=/.test(location.hash)) {
+          var s = document.createElement('script');
+          s.defer = true;
+          s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+          s.setAttribute('data-cf-beacon', document.currentScript.dataset.beacon);
+          document.head.appendChild(s);
+        }
+      </script>
+    }
   </head>
   <body>
     <a class="skip" href="#contenu">
