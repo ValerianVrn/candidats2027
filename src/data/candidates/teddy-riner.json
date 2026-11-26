@@ -50,6 +50,18 @@
   "parrainages": null,
   "programme": [
     {
+      "theme": "defense",
+      "text": "Veut arrêter l’aide financière de la France à l’Ukraine, estimant que la France « n’a plus les moyens », et se dit prêt à « s’asseoir avec la Russie et Zelensky ».",
+      "sources": [
+        {
+          "url": "https://www.france24.com/fr/france/20261125-notre-guerre-teddy-riner-exhorte-arr%C3%AAter-donner-argent-ukraine-%C3%A9lection-fran%C3%A7aise-pr%C3%A9sidentielle",
+          "outlet": "France 24",
+          "title": "\"Ce n'est pas notre guerre\" : Teddy Riner exhorte à arrêter de donner de l'argent à l'Ukraine",
+          "date": "2026-11-25"
+        }
+      ]
+    },
+    {
       "theme": "retraites",
       "text": "Veut une nouvelle réforme des retraites, comprenant une part de capitalisation, estimant que « le système actuel ne tient pas ».",
       "sources": [
@@ -191,5 +203,5 @@
       "updatedAt": "2026-11-17"
     }
   ],
-  "lastChecked": "2026-11-25"
+  "lastChecked": "2026-11-26"
 }
