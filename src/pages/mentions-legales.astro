@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { HOST, PUBLISHER, TODO } from '../lib/publisher';
+import { DONATION_RULES, DONATION_URL } from '../lib/donations';
 import { REPORT_ERROR_URL } from '../lib/site';
 
 const v = (x: string | null) => x ?? TODO;
@@ -55,6 +56,20 @@ const v = (x: string | null) => x ?? TODO;
       la licence de chaque image sont indiqués sur la page du candidat. Les vidéos restent la propriété de
       leurs auteurs et ne sont chargées qu'à votre demande. Le code source du site est public.
     </p>
+
+    {DONATION_URL && (
+      <>
+        <h2 id="contributions">Contributions volontaires</h2>
+        <p>
+          Les contributions volontaires des lecteurs sont reçues par l'éditeur, {PUBLISHER.name}. Elles
+          n'ouvrent droit à aucun reçu fiscal ni à aucune contrepartie et sont réservées aux particuliers,
+          dans la limite de {DONATION_RULES.monthlyCapPerPerson} € par personne et par mois. Le paiement est
+          traité par Stripe Payments Europe, Ltd. (1 Grand Canal Street Lower, Dublin 2, Irlande).
+          Remboursement sur demande dans les {DONATION_RULES.refundDays} jours à {PUBLISHER.email}. Conditions
+          complètes : <a href="/financement#soutenir">qui finance ce site</a>.
+        </p>
+      </>
+    )}
 
     <h2>Données personnelles</h2>
     <p>

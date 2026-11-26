@@ -17,6 +17,15 @@ Production stays empty until every item is done.
 - [ ] Make sure `contact@liste-candidats-2027.fr` is read regularly (rights of reply, data requests).
 - [x] Approve the first `production` deployment in GitHub.
 
+- [ ] Contributions (ADR 0006):
+  - create a Stripe account for the SASU (business name = the company, statement descriptor « LISTE-CANDIDATS »);
+  - create a Payment Link: customer chooses the amount, suggested 3/5/10 €, minimum 2 €, one-off and monthly;
+  - add a required checkbox field « Je suis un particulier, sans lien avec un candidat, un parti ou une équipe de
+    campagne », and enable e-mail receipts;
+  - send Claude the link (it becomes `PUBLIC_DONATION_URL` on `production` and `production-data`);
+  - ask the accountant how to book the contributions (corporate tax, outside VAT);
+  - each month, report the number and total of contributions in `src/data/funding.json`, or ask Claude to.
+
 ## Claude (with the owner's approval for each step)
 
 - [ ] Switch prod to the Standard plan if traffic justifies it (ADR 0003).

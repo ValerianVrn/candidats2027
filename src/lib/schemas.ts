@@ -156,6 +156,25 @@ export const electionSchema = z.object({
 });
 export type Election = z.infer<typeof electionSchema>;
 
+/** Voluntary contributions received and the costs they pay for (filled by the owner, ADR 0006). */
+export const fundingSchema = z.object({
+  received: z
+    .array(
+      z.object({
+        /** YYYY-MM */
+        month: z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/),
+        contributions: z.number().int().min(0),
+        totalEur: z.number().min(0),
+      }),
+    )
+    .default([]),
+  /** Costs shown only when the owner fills them in; nothing is estimated. */
+  costs: z
+    .array(z.object({ item: z.string().min(1), amountEur: z.number().min(0), per: z.enum(['mois', 'an']) }))
+    .default([]),
+});
+export type Funding = z.infer<typeof fundingSchema>;
+
 export const siteSchema = z.object({
   /** Last time the daily routine checked the news, changes or not. */
   lastChecked: isoDateTime,

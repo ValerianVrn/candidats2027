@@ -1,17 +1,36 @@
 ---
+/**
+ * « Qui finance ce site ? »: ads, and voluntary contributions when a Stripe link is configured (ADR 0006).
+ * Without PUBLIC_DONATION_URL the page only describes the ads, as before.
+ */
 import Base from '../layouts/Base.astro';
 import { PUBLISHER } from '../lib/publisher';
+import { DONATION_RULES, DONATION_URL } from '../lib/donations';
+import { funding } from '../lib/data';
+
+const donations = DONATION_URL !== null;
+const monthFmt = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const monthLabel = (m: string) => monthFmt.format(new Date(`${m}-15T12:00:00Z`));
+const euros = (n: number) =>
+  n.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 2 });
+const received = funding.received.toSorted((a, b) => b.month.localeCompare(a.month));
+const amounts = DONATION_RULES.amounts.map((a) => `${a} €`).join(', ');
 ---
 
 <Base
   title="Qui finance ce site ?"
-  description="Comment le site Candidats 2027 est financé, où sont affichées les publicités et ce qui garantit son indépendance."
+  description={
+    donations
+      ? 'Comment le site Candidats 2027 est financé (publicité et contributions volontaires des lecteurs), où sont les publicités et ce qui garantit son indépendance.'
+      : 'Comment le site Candidats 2027 est financé, où sont affichées les publicités et ce qui garantit son indépendance.'
+  }
 >
   <article class="page prose">
     <h1>Qui finance ce site ?</h1>
     <p class="lead">
-      Candidats 2027 est un site indépendant, financé uniquement par la publicité. Aucun candidat, parti ou
-      organisation politique ne le finance ni ne le soutient.
+      {donations
+        ? 'Candidats 2027 est un site indépendant, financé par la publicité et par les contributions volontaires de ses lecteurs. Aucun candidat, parti ou organisation politique ne le finance ni ne le soutient.'
+        : 'Candidats 2027 est un site indépendant, financé uniquement par la publicité. Aucun candidat, parti ou organisation politique ne le finance ni ne le soutient.'}
     </p>
 
     <h2>Qui publie le site</h2>
@@ -21,8 +40,9 @@ import { PUBLISHER } from '../lib/publisher';
     <h2>D'où vient l'argent</h2>
     <ul>
       <li>
-        Les seules recettes sont les publicités affichées sur le site, fournies par une régie (Google
-        AdSense).
+        {donations
+          ? 'Deux sources de recettes : les publicités affichées sur le site, fournies par une régie (Google AdSense), et les contributions volontaires de particuliers.'
+          : 'Les seules recettes sont les publicités affichées sur le site, fournies par une régie (Google AdSense).'}
       </li>
       <li>
         Le site n'accepte aucun don, paiement ou avantage d'un candidat, d'un parti ou d'une équipe de
@@ -31,6 +51,113 @@ import { PUBLISHER } from '../lib/publisher';
         soutien indirect.
       </li>
     </ul>
+
+    {donations && (
+      <section id="soutenir" class="support">
+        <h2>Soutenir le site</h2>
+        <h3>Pourquoi vous demander un soutien</h3>
+        <p>
+          Le site est gratuit, sans inscription, et le restera. Le faire vivre a pourtant un coût. Vos
+          contributions servent à payer :
+        </p>
+        <ul>
+          <li>l'hébergement du site et son nom de domaine ;</li>
+          <li>l'intelligence artificielle qui vérifie chaque jour la fiche de chaque candidat ;</li>
+          <li>le développement et la maintenance du site ;</li>
+          <li>les frais juridiques : relecture par un avocat et assurance de l'éditeur.</li>
+        </ul>
+        {funding.costs.length > 0 && (
+          <table class="table">
+            <caption>Coûts actuels</caption>
+            <thead>
+              <tr>
+                <th scope="col">Poste</th>
+                <th scope="col">Montant</th>
+              </tr>
+            </thead>
+            <tbody>
+              {funding.costs.map((c) => (
+                <tr>
+                  <td>{c.item}</td>
+                  <td>
+                    {euros(c.amountEur)} par {c.per}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+        <p class="cta">
+          <a class="button" href={DONATION_URL} target="_blank" rel="noopener">
+            Contribuer
+          </a>
+          <span>
+            Par exemple {amounts}, une fois ou chaque mois. Minimum {DONATION_RULES.minimum} € : en dessous,
+            les frais de paiement absorbent une grande partie de la somme.
+          </span>
+        </p>
+
+        <h3>Conditions</h3>
+        <ul>
+          <li>
+            Les contributions sont reçues par l'éditeur, {PUBLISHER.name} ({PUBLISHER.legalForm},{' '}
+            {PUBLISHER.registration}).
+          </li>
+          <li>
+            <strong>Pas de reçu fiscal</strong> : le site est édité par une société, pas par une association
+            d'intérêt général. Les contributions n'ouvrent droit à aucune réduction d'impôt.
+          </li>
+          <li>
+            <strong>Aucune contrepartie</strong> : contribuer ne donne accès à aucun service, ne retire pas
+            les publicités et n'a aucune influence sur le contenu, rédigé selon la{' '}
+            <a href="/methode">méthode</a> publique.
+          </li>
+          <li>
+            <strong>Particuliers uniquement</strong> : les candidats, partis, équipes de campagne, élus
+            agissant à ce titre et entreprises ne peuvent pas contribuer. Une contribution de leur part est
+            remboursée.
+          </li>
+          <li>
+            Au plus {DONATION_RULES.monthlyCapPerPerson} € par personne et par mois, pour qu'aucun
+            contributeur ne pèse sur le site.
+          </li>
+          <li>
+            <!-- prettier-ignore -->
+            Remboursement sur simple demande dans les {DONATION_RULES.refundDays} jours, à{' '}
+            <a href={`mailto:${PUBLISHER.email}`}>{PUBLISHER.email}</a>.
+          </li>
+          <li>
+            Le paiement est traité par Stripe, sur sa propre page : le site ne reçoit ni ne conserve aucune
+            donnée de paiement. Les noms des contributeurs ne sont jamais publiés (voir la{' '}
+            <a href="/confidentialite#contributions">politique de confidentialité</a>).
+          </li>
+        </ul>
+
+        <h3>Ce que le site a reçu</h3>
+        {received.length > 0 ? (
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Mois</th>
+                <th scope="col">Contributions</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {received.map((r) => (
+                <tr>
+                  <td>{monthLabel(r.month)}</td>
+                  <td>{r.contributions}</td>
+                  <td>{euros(r.totalEur)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p class="muted">Aucune contribution pour l'instant.</p>
+        )}
+      </section>
+    )}
 
     <h2>Où sont les publicités</h2>
     <ul>
@@ -67,6 +194,10 @@ import { PUBLISHER } from '../lib/publisher';
     margin: 28px 0 8px;
     font-size: 20px;
   }
+  .prose h3 {
+    margin: 20px 0 6px;
+    font-size: 17px;
+  }
   .prose p,
   .prose li {
     line-height: 1.6;
@@ -80,5 +211,54 @@ import { PUBLISHER } from '../lib/publisher';
   .lead {
     color: var(--muted);
     font-size: 16px;
+  }
+  .support {
+    margin-top: 28px;
+    padding: 4px 20px 16px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--surface);
+  }
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    margin: 16px 0;
+  }
+  .cta span {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .button {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .button:hover {
+    background: var(--ink-strong);
+  }
+  .table {
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  .table caption {
+    text-align: left;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .table th,
+  .table td {
+    text-align: left;
+    padding: 6px 16px 6px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .muted {
+    color: var(--muted);
   }
 </style>
