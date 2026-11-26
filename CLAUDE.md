@@ -23,6 +23,10 @@ French-language static site about the 2027 French presidential election. Code, c
 - `src/data/funding.json`: contributions received (owner-only, ADR 0006): the diff guard blocks automated changes
   and pushes touching it deploy through `production`. The Stripe link comes from `PUBLIC_DONATION_URL`.
 - `docs/roadmap.md`: ideas kept for later, with the owner's verdicts.
+- `docs/services.md`: every external service and account (GitHub, Azure, OVH, Google, Stripe, Cloudflare, Claude).
+  Update it in the same PR whenever a service, account or build variable is added or removed. No secrets.
+- Audience: Cloudflare Web Analytics via `PUBLIC_CF_ANALYTICS_TOKEN` (production only, `src/lib/analytics.ts`).
+  Never on `/quiz`, and the loader in `Base.astro` skips URLs carrying quiz answers (`#r=`, `#proximite=`).
 - `config/sources-allowlist.json`: accepted source domains (outside `src/data/` so data updates can't widen it).
 
 ## Workflow (project-specific exceptions to the global rules)
