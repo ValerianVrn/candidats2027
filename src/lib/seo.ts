@@ -124,6 +124,15 @@ export function breadcrumbLd(site: URL, crumbs: { name: string; path: string }[]
   };
 }
 
+/**
+ * Canonical path: no trailing slash except the root. The host (Static Web Apps, `trailingSlash: never`) redirects
+ * `/x/` to `/x`, and a canonical URL that redirects is reported by Search Console as « Page with redirect ».
+ */
+export function canonicalPath(pathname: string): string {
+  const p = pathname.replace(/\/+$/, '');
+  return p === '' ? '/' : p;
+}
+
 /** Serialises JSON-LD for a <script> tag (no « </script> » breakout). */
 export function serializeLd(data: JsonLd | JsonLd[]): string {
   return JSON.stringify(data).replace(/</g, '\\u003c');

@@ -7,6 +7,11 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Fixed
+
+- Canonical and `og:url` URLs no longer end with a slash: the host redirected them, and Search Console reported
+  the pages as « Page with redirect » (not indexed). `trailingSlash: 'never'` in the Astro config.
+
 ## [1.7.0] - 2026-11-26
 
 ### Changed
