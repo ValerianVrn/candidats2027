@@ -16,6 +16,7 @@ import {
   changelogSchema,
   electionSchema,
   eventSchema,
+  fundingSchema,
   partySchema,
   siteSchema,
   type Candidate,
@@ -100,6 +101,7 @@ if (election) {
   }
 }
 parse(siteSchema, readJson(join(dataDir, 'site.json')), 'site.json');
+parse(fundingSchema, readJson(join(dataDir, 'funding.json')), 'funding.json');
 const eventList = parse(z.array(eventSchema), readJson(join(dataDir, 'events.json')), 'events.json');
 if (eventList) {
   const slugSet = new Set(candidates.map((c) => c.slug));

@@ -18,6 +18,8 @@ export const MAX_CANDIDATE_FILES = 5;
 
 const DATA_PREFIX = 'src/data/';
 const PORTRAIT_PREFIX = 'src/assets/portraits/';
+/** Owner-only data (ADR 0006): never merged or deployed without the owner, even though it lives in src/data. */
+const OWNER_ONLY = [`${DATA_PREFIX}funding.json`];
 
 /**
  * @param onlyCheckDates paths whose only change is a `lastChecked` date: they don't count towards the
@@ -45,6 +47,9 @@ export function evaluateChanges(
   if (changes.some((c) => c.path === `${DATA_PREFIX}election.json`)) {
     reasons.push('changes election.json (official dates)');
   }
+  for (const c of changes) {
+    if (OWNER_ONLY.includes(c.path)) reasons.push(`changes ${c.path} (owner-only: contributions received)`);
+  }
   return { autoMerge: reasons.length === 0, reasons };
 }
 
@@ -67,7 +72,11 @@ export function parseNameStatus(output: string): FileChange[] {
 export function isDataOnly(changes: readonly FileChange[]): boolean {
   return (
     changes.length > 0 &&
-    changes.every((c) => c.path.startsWith(DATA_PREFIX) || c.path.startsWith(PORTRAIT_PREFIX))
+    changes.every(
+      (c) =>
+        (c.path.startsWith(DATA_PREFIX) || c.path.startsWith(PORTRAIT_PREFIX)) &&
+        !OWNER_ONLY.includes(c.path),
+    )
   );
 }
 

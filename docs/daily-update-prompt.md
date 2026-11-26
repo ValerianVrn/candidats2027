@@ -203,4 +203,5 @@ without the full candidate list or the news-sweep headlines means the run is inc
   deployments.
 - Never create tags or releases: the `Deploy prod` workflow tags data hotfixes itself.
 - Never edit code, workflows, `config/`, `docs/`, `CLAUDE.md` or tests.
+- Never edit `src/data/funding.json` (owner-only contributions data; the diff guard blocks it).
 - Never publish polls, aggregate quiz results, or describe a candidate with adjectives or opinions.
