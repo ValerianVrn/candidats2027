@@ -4,6 +4,7 @@ import AdSlot from '../components/AdSlot.astro';
 import { activeCandidates, candidates, changelog, fullName, site } from '../lib/data';
 import { formatDateTime, formatDay, formatShortDay } from '../lib/dates';
 import { REPORT_ERROR_URL } from '../lib/site';
+import { DONATION_URL } from '../lib/donations';
 
 const nameBySlug = new Map(candidates.map((c) => [c.slug, fullName(c)]));
 const lastChange = changelog[0]?.date ?? null;
@@ -69,11 +70,22 @@ const quietDays = site.checks
         </li>
       ))}
     </ol>
+    {DONATION_URL && (
+      <p class="support">
+        Ce suivi quotidien est financé par la publicité et par les lecteurs.{' '}
+        <a href="/financement#soutenir">Soutenir le site</a>
+      </p>
+    )}
   </div>
 </Base>
 
 <style>
   .lead {
+    color: var(--muted);
+  }
+  .support {
+    margin-top: 24px;
+    font-size: 14px;
     color: var(--muted);
   }
   .status {

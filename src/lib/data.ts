@@ -4,6 +4,7 @@ import {
   changelogSchema,
   electionSchema,
   eventSchema,
+  fundingSchema,
   partySchema,
   siteSchema,
   type CampaignEvent,
@@ -16,6 +17,7 @@ import partiesJson from '../data/parties.json';
 import changelogJson from '../data/changelog.json';
 import siteJson from '../data/site.json';
 import eventsJson from '../data/events.json';
+import fundingJson from '../data/funding.json';
 import { isFeatured } from './criteria';
 
 function parse<T>(schema: z.ZodType<T>, value: unknown, where: string): T {
@@ -28,6 +30,7 @@ function parse<T>(schema: z.ZodType<T>, value: unknown, where: string): T {
 
 export const election = parse(electionSchema, electionJson, 'src/data/election.json');
 export const site = parse(siteSchema, siteJson, 'src/data/site.json');
+export const funding = parse(fundingSchema, fundingJson, 'src/data/funding.json');
 export const changelog = parse(changelogSchema, changelogJson, 'src/data/changelog.json').toSorted((a, b) =>
   b.date.localeCompare(a.date),
 );

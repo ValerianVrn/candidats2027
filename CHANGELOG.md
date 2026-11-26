@@ -7,6 +7,13 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Added
+
+- Voluntary contributions besides the ads (ADR 0006): Stripe Payment Link from `PUBLIC_DONATION_URL` (hidden when
+  empty); « Soutenir le site » section on `/financement` (why, conditions, no tax receipt, individuals only,
+  100 €/month cap, refunds, monthly totals from `src/data/funding.json`); paragraphs in the legal notice and the
+  privacy policy; links in the footer and at the bottom of the Journal.
+
 ## [1.5.0] - 2026-11-25
 
 ### Changed
