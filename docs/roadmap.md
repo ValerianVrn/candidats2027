@@ -2,7 +2,7 @@
 
 Decided with the owner on 2026-11-26. Not scheduled; each item becomes its own plan when picked.
 
-## Audience measurement
+## Audience measurement (done 2026-11-26: Cloudflare Web Analytics, see `docs/services.md`)
 
 - **Cloudflare Web Analytics**: free, no cookie, no IP kept, no cross-site tracking. That falls under the CNIL
   exemption, so no consent banner change is needed. It gives page views, visits, top pages, referrers, countries

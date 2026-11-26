@@ -7,6 +7,12 @@ Daily content updates are not listed here; they appear on the site's public "Jou
 
 ## [Unreleased]
 
+### Added
+
+- Audience measurement with Cloudflare Web Analytics (cookie-free, no IP kept, no consent needed), production only
+  via `PUBLIC_CF_ANALYTICS_TOKEN`; privacy policy « Mesure d'audience » updated.
+- `docs/services.md`: inventory of every external service and account (no secrets).
+
 ### Fixed
 
 - Canonical and `og:url` URLs no longer end with a slash: the host redirected them, and Search Console reported

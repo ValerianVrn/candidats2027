@@ -48,6 +48,8 @@ jobs:
           PUBLIC_ADSENSE_SLOT_JOURNAL: ${{ vars.PUBLIC_ADSENSE_SLOT_JOURNAL }}
           # PUBLIC_DONATION_URL: Stripe Payment Link (ADR 0006); empty = no contribution offer.
           PUBLIC_DONATION_URL: ${{ vars.PUBLIC_DONATION_URL }}
+          # PUBLIC_CF_ANALYTICS_TOKEN: Cloudflare Web Analytics, production only (cookie-free audience measurement).
+          PUBLIC_CF_ANALYTICS_TOKEN: ${{ vars.PUBLIC_CF_ANALYTICS_TOKEN }}
       - if: ${{ inputs.noindex }}
         run: node scripts/noindex.mjs dist
 

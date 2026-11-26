@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { HOST, PUBLISHER, TODO } from '../lib/publisher';
 import { DONATION_URL } from '../lib/donations';
+import { CF_ANALYTICS_TOKEN } from '../lib/analytics';
 ---
 
 <Base support title="Confidentialité">
@@ -65,8 +66,20 @@ import { DONATION_URL } from '../lib/donations';
       </>
     )}
 
-    <h2>Mesure d'audience</h2>
-    <p>Le site n'utilise actuellement aucun outil de mesure d'audience.</p>
+    <h2 id="audience">Mesure d'audience</h2>
+    {CF_ANALYTICS_TOKEN ? (
+      <p>
+        Le site mesure sa fréquentation avec Cloudflare Web Analytics (Cloudflare, Inc., San Francisco,
+        États-Unis, adhérent au Data Privacy Framework UE–États-Unis). Cet outil ne dépose aucun cookie,
+        n'utilise pas d'empreinte de votre navigateur, ne conserve pas votre adresse IP et ne vous suit pas
+        d'un site à l'autre. Il compte les pages vues, le site d'où vous venez, le pays, le type d'appareil et
+        le navigateur, sous forme de statistiques globales. La page du quiz n'est pas mesurée, et la mesure
+        est désactivée lorsqu'une adresse contient des réponses au quiz : aucune réponse n'est transmise.
+        Conformément aux recommandations de la CNIL, cette mesure anonyme ne nécessite pas votre consentement.
+      </p>
+    ) : (
+      <p>Le site n'utilise actuellement aucun outil de mesure d'audience.</p>
+    )}
 
     <h2>Vos droits</h2>
     <p>
