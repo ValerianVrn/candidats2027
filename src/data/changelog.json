@@ -1,5 +1,43 @@
 [
   {
+    "date": "2026-11-27",
+    "summary": "Propositions ajoutées pour Dominique de Villepin et David Lisnard ; réunion publique ajoutée pour Nathalie Arthaud.",
+    "changes": [
+      {
+        "candidate": "dominique-de-villepin",
+        "text": "Propositions ajoutées (retraites, immigration, institutions) : référendum sur les retraites en avril 2028 après concertation, « livre blanc de l'immigration », droit de vote à 16 ans et reconnaissance du vote blanc."
+      },
+      {
+        "candidate": "david-lisnard",
+        "text": "Proposition ajoutée (institutions) : rétablir l'anonymat des parrainages des élus."
+      },
+      {
+        "candidate": "nathalie-arthaud",
+        "text": "Réunion publique ajoutée : Perpignan, 25 novembre 2026."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de",
+        "outlet": "LCP",
+        "title": "Présidentielle 2027: que retenir des 258 propositions du programme de Dominique de Villepin?",
+        "date": "2026-11-20"
+      },
+      {
+        "url": "https://www.franceinfo.fr/elections/presidentielle-2027-david-lisnard-reclame-l-anonymat-des-parrainages-pour-enlever-la-pression-sur-les-maires_8301468.html",
+        "outlet": "franceinfo",
+        "title": "Présidentielle 2027 : David Lisnard réclame \"l'anonymat des parrainages\" pour \"enlever la pression sur les maires\"",
+        "date": "2026-11-26"
+      },
+      {
+        "url": "https://www.ici.fr/occitanie/pyrenees-orientales-66/perpignan/candidate-hors-categorie-nathalie-arthaud-lo-en-meeting-a-perpignan-pour-presenter-son-programme-de-lutte-5378726",
+        "outlet": "ICI",
+        "title": "\"Candidate hors catégorie\" : Nathalie Arthaud (LO) en meeting à Perpignan pour présenter son \"programme de lutte\"",
+        "date": "2026-11-26"
+      }
+    ]
+  },
+  {
     "date": "2026-11-26",
     "summary": "Proposition ajoutée pour Teddy Riner sur l’aide à l’Ukraine ; le site accepte désormais les contributions volontaires de ses lecteurs.",
     "changes": [

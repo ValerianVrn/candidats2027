@@ -39,6 +39,24 @@
   "parrainages": null,
   "programme": [
     {
+      "theme": "institutions",
+      "text": "Propose de rétablir l'anonymat des parrainages des élus aux candidats à l'élection présidentielle.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/elections/presidentielle-2027-david-lisnard-reclame-l-anonymat-des-parrainages-pour-enlever-la-pression-sur-les-maires_8301468.html",
+          "outlet": "franceinfo",
+          "title": "Présidentielle 2027 : David Lisnard réclame \"l'anonymat des parrainages\" pour \"enlever la pression sur les maires\"",
+          "date": "2026-11-26"
+        },
+        {
+          "url": "https://www.ici.fr/infos/politique/presidentielle-david-lisnard-reclame-l-anonymat-des-parrainages-pour-enlever-la-pression-sur-les-maires-1746269",
+          "outlet": "ICI",
+          "title": "Présidentielle : David Lisnard réclame \"l'anonymat des parrainages\" pour \"enlever la pression sur les maires\"",
+          "date": "2026-11-26"
+        }
+      ]
+    },
+    {
       "theme": "economie",
       "text": "Propose 200 à 300 milliards d'euros d'économies de dépenses publiques, dont 80 milliards la première année, et un moratoire sur les normes.",
       "sources": [
@@ -164,5 +182,5 @@
       "updatedAt": "2026-11-23"
     }
   ],
-  "lastChecked": "2026-11-26"
+  "lastChecked": "2026-11-27"
 }
