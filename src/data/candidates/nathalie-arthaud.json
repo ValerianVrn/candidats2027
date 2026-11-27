@@ -146,6 +146,19 @@
       ]
     },
     {
+      "date": "2026-11-25",
+      "city": "Perpignan",
+      "title": "Réunion publique",
+      "sources": [
+        {
+          "url": "https://www.ici.fr/occitanie/pyrenees-orientales-66/perpignan/candidate-hors-categorie-nathalie-arthaud-lo-en-meeting-a-perpignan-pour-presenter-son-programme-de-lutte-5378726",
+          "outlet": "ICI",
+          "title": "\"Candidate hors catégorie\" : Nathalie Arthaud (LO) en meeting à Perpignan pour présenter son \"programme de lutte\"",
+          "date": "2026-11-26"
+        }
+      ]
+    },
+    {
       "date": "2026-09-26",
       "city": "Paris",
       "title": "Premier meeting de campagne, salle de la Mutualité",
@@ -160,5 +173,5 @@
     }
   ],
   "risques": [],
-  "lastChecked": "2026-11-26"
+  "lastChecked": "2026-11-27"
 }
