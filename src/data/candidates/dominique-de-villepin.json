@@ -50,6 +50,42 @@
   "parrainages": null,
   "programme": [
     {
+      "theme": "retraites",
+      "text": "Propose qu'aucune réforme des retraites ne soit adoptée sans commission d'experts et de citoyens, conférence sociale, convention citoyenne et débat parlementaire, avec un référendum en avril 2028.",
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: que retenir des 258 propositions du programme de Dominique de Villepin?",
+          "date": "2026-11-20"
+        }
+      ]
+    },
+    {
+      "theme": "immigration",
+      "text": "Propose un « livre blanc de l'immigration » préparé par des conférences d'experts et une convention citoyenne, puis une loi de programmation pluriannuelle.",
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: que retenir des 258 propositions du programme de Dominique de Villepin?",
+          "date": "2026-11-20"
+        }
+      ]
+    },
+    {
+      "theme": "institutions",
+      "text": "Propose d'abaisser le droit de vote à 16 ans et de reconnaître le vote blanc.",
+      "sources": [
+        {
+          "url": "https://lcp.fr/actualites/presidentielle-2027-que-retenir-des-258-propositions-du-programme-de-dominique-de",
+          "outlet": "LCP",
+          "title": "Présidentielle 2027: que retenir des 258 propositions du programme de Dominique de Villepin?",
+          "date": "2026-11-20"
+        }
+      ]
+    },
+    {
       "theme": "institutions",
       "text": "Veut restaurer le référendum pour « donner la parole aux Français ».",
       "sources": [
@@ -137,5 +173,5 @@
       "updatedAt": "2026-11-16"
     }
   ],
-  "lastChecked": "2026-11-26"
+  "lastChecked": "2026-11-27"
 }
