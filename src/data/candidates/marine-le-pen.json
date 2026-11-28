@@ -65,6 +65,24 @@
   },
   "programme": [
     {
+      "theme": "economie",
+      "text": "Propose pour les outre-mer une loi de programmation sur douze ans, votée dans les premiers mois du mandat, une réforme de l'octroi de mer pour qu'il ne vise plus les produits français et européens, et un « bouclier tarifaire » garantissant à chaque résident un aller-retour annuel vers l'Hexagone.",
+      "sources": [
+        {
+          "url": "https://www.franceinfo.fr/france/outremer/marine-le-pen-promet-une-grande-loi-programme-pour-l-outre-mer_8303604.html",
+          "outlet": "franceinfo",
+          "title": "Marine Le Pen promet une \"grande loi-programme\" pour l'outre-mer",
+          "date": "2026-11-27"
+        },
+        {
+          "url": "https://lcp.fr/actualites/pouvoir-d-achat-securite-aller-retour-dans-l-hexagone-ce-que-promet-marine-le-pen-aux",
+          "outlet": "LCP",
+          "title": "Pouvoir d'achat, sécurité, aller-retour dans l'Hexagone: Ce que promet Marine Le Pen aux outre-mer pour 2027",
+          "date": "2026-11-27"
+        }
+      ]
+    },
+    {
       "theme": "retraites",
       "text": "Propose de ramener l'âge légal de départ à 62 ans, et à 60 ans avec 160 trimestres pour les personnes ayant commencé à travailler avant 20 ans, de créer un pilier de capitalisation obligatoire pour les actifs, en commençant par ceux de 52 ans au plus, et de porter la décote à 2,5 % par trimestre manquant, dans la limite de 50 %.",
       "sources": [
@@ -238,5 +256,5 @@
       "updatedAt": "2026-11-17"
     }
   ],
-  "lastChecked": "2026-11-27"
+  "lastChecked": "2026-11-28"
 }

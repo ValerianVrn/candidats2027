@@ -1,5 +1,55 @@
 [
   {
+    "date": "2026-11-28",
+    "summary": "Deux procédures judiciaires ajoutées pour Éric Zemmour ; proposition sur les outre-mer ajoutée pour Marine Le Pen.",
+    "changes": [
+      {
+        "candidate": "eric-zemmour",
+        "text": "Procédure ajoutée : placé sous le statut de témoin assisté le 27 novembre 2026 dans l'information judiciaire sur des prêts de particuliers à Reconquête ; non poursuivi pénalement à ce stade."
+      },
+      {
+        "candidate": "eric-zemmour",
+        "text": "Procédure ajoutée : condamnation pour contestation de l'existence de crime contre l'humanité devenue définitive après le rejet de son pourvoi par la Cour de cassation le 24 novembre 2026."
+      },
+      {
+        "candidate": "marine-le-pen",
+        "text": "Proposition ajoutée (économie) : loi de programmation sur douze ans pour les outre-mer, réforme de l'octroi de mer et « bouclier tarifaire » sur un aller-retour annuel vers l'Hexagone."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.franceinfo.fr/politique/eric-zemmour/eric-zemmour-place-sous-le-statut-de-temoin-assiste-dans-l-affaire-des-prets-accordes-au-parti-reconquete_8303232.html",
+        "outlet": "franceinfo",
+        "title": "Eric Zemmour placé sous le statut de témoin assisté dans l'affaire des prêts accordés au parti Reconquête",
+        "date": "2026-11-27"
+      },
+      {
+        "url": "https://www.france24.com/fr/info-en-continu/20261127-pr%C3%AAts-consentis-au-parti-reconqu%C3%AAte-%C3%A9ric-zemmour-plac%C3%A9-sous-le-statut-de-t%C3%A9moin-assist%C3%A9",
+        "outlet": "France 24",
+        "title": "Prêts consentis au parti Reconquête : Éric Zemmour placé sous le statut de témoin assisté",
+        "date": "2026-11-27"
+      },
+      {
+        "url": "https://www.franceinfo.fr/politique/eric-zemmour-definitivement-condamne-pour-contestation-de-l-existence-de-crime-contre-l-humanite_8298975.html",
+        "outlet": "franceinfo",
+        "title": "Eric Zemmour définitivement condamné pour \"contestation de l'existence de crime contre l'humanité\"",
+        "date": "2026-11-25"
+      },
+      {
+        "url": "https://www.franceinfo.fr/france/outremer/marine-le-pen-promet-une-grande-loi-programme-pour-l-outre-mer_8303604.html",
+        "outlet": "franceinfo",
+        "title": "Marine Le Pen promet une \"grande loi-programme\" pour l'outre-mer",
+        "date": "2026-11-27"
+      },
+      {
+        "url": "https://lcp.fr/actualites/pouvoir-d-achat-securite-aller-retour-dans-l-hexagone-ce-que-promet-marine-le-pen-aux",
+        "outlet": "LCP",
+        "title": "Pouvoir d'achat, sécurité, aller-retour dans l'Hexagone: Ce que promet Marine Le Pen aux outre-mer pour 2027",
+        "date": "2026-11-27"
+      }
+    ]
+  },
+  {
     "date": "2026-11-27",
     "summary": "Propositions ajoutées pour Dominique de Villepin et David Lisnard ; réunion publique ajoutée pour Nathalie Arthaud.",
     "changes": [
